@@ -1,14 +1,19 @@
-drop table if exists livre;
-drop table if exists utilisateur;
+drop table if exists album;
+drop table if exists personne;
 
-create table livre (
-    book_id integer not null primary key auto_increment,
-    isbn varchar(13) not null,
-    auteur varchar(100) not null,
-	titre varchar(100));
+create table album(
+    album_id integer not null primary key auto_increment,
+    nom varchar(100) not null,
+    serie varchar(100),
+    auteurs varchar(100) not null,
+    categorie varchar(100) not null,
+    genre varchar(100) not null,
+    editeur varchar(100) not null,
+    couverture varchar(100) );
 
-create table utilisateur (
-	user_id integer not null primary key auto_increment,
-	nom varchar(200) not null,
-	prenom varchar(1000) not null
+create table personne (
+	person_id integer not null primary key auto_increment,
+	type varchar(100) not null,
+	login varchar(100) not null,
+        mdp varchar(100) not null
 );

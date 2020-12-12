@@ -12,7 +12,7 @@
 	</property>
 	<property name="connection.connection_string">
     <!-- A MODIFIER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-  	Server=localhost;Database=biblio_quartier;User ID=Mndl;Password=Leraytest;
+  	Server=localhost;Database=bdtheque;User ID=AMMN;Password=BDmdp;
 	</property>
 	<property name="dialect">
   	NHibernate.Dialect.MySQL5Dialect
