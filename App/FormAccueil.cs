@@ -49,14 +49,18 @@ namespace App
             // fait apparaître la group box correspondante
             gbCreation.Visible = false;
             gbConnexion.Visible = true;
-            
+            btnCreation.BackColor = Color.LightGray;
+            btnConnexion.BackColor = Color.PaleGreen;
+
+
         }
         private void btnCreation_Click(object sender, EventArgs e)
         {
           
             gbCreation.Visible = true;
+            btnConnexion.BackColor = Color.LightGray;
+            btnCreation.BackColor = Color.PeachPuff;
 
-            
         }
 
         private void rbUserConnex_CheckedChanged(object sender, EventArgs e)

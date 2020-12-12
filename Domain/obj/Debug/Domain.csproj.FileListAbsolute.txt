@@ -1,0 +1,6 @@
+C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\Domain\bin\Debug\Domain.dll
+C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\Domain\bin\Debug\Domain.pdb
+C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
+C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\Domain\obj\Debug\Domain.dll
+C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\Domain\obj\Debug\Domain.pdb
