@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAccueil));
             this.gbConnexion = new System.Windows.Forms.GroupBox();
             this.tbMdpConnex = new System.Windows.Forms.TextBox();
             this.tbLoginConnex = new System.Windows.Forms.TextBox();
@@ -49,12 +50,14 @@
             this.btnConnexion = new System.Windows.Forms.Button();
             this.btnCreation = new System.Windows.Forms.Button();
             this.btnValider = new System.Windows.Forms.Button();
+            this.lblDescription = new System.Windows.Forms.Label();
             this.gbConnexion.SuspendLayout();
             this.gbCreation.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbConnexion
             // 
+            this.gbConnexion.Controls.Add(this.gbCreation);
             this.gbConnexion.Controls.Add(this.tbMdpConnex);
             this.gbConnexion.Controls.Add(this.tbLoginConnex);
             this.gbConnexion.Controls.Add(this.label3);
@@ -63,9 +66,9 @@
             this.gbConnexion.Controls.Add(this.rbAdminConnex);
             this.gbConnexion.Controls.Add(this.rbUserConnex);
             this.gbConnexion.Font = new System.Drawing.Font("Calibri", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.gbConnexion.Location = new System.Drawing.Point(97, 189);
+            this.gbConnexion.Location = new System.Drawing.Point(86, 253);
             this.gbConnexion.Name = "gbConnexion";
-            this.gbConnexion.Size = new System.Drawing.Size(524, 190);
+            this.gbConnexion.Size = new System.Drawing.Size(524, 150);
             this.gbConnexion.TabIndex = 0;
             this.gbConnexion.TabStop = false;
             this.gbConnexion.Text = "Informations de connexion";
@@ -154,9 +157,9 @@
             this.gbCreation.Controls.Add(this.rbAdminCrea);
             this.gbCreation.Controls.Add(this.rbUserCrea);
             this.gbCreation.Font = new System.Drawing.Font("Calibri", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.gbCreation.Location = new System.Drawing.Point(103, 189);
+            this.gbCreation.Location = new System.Drawing.Point(6, 0);
             this.gbCreation.Name = "gbCreation";
-            this.gbCreation.Size = new System.Drawing.Size(524, 190);
+            this.gbCreation.Size = new System.Drawing.Size(524, 150);
             this.gbCreation.TabIndex = 12;
             this.gbCreation.TabStop = false;
             this.gbCreation.Text = "Création de compte";
@@ -239,17 +242,17 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(178, 28);
+            this.label4.Location = new System.Drawing.Point(157, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(325, 19);
+            this.label4.Size = new System.Drawing.Size(399, 19);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Bienvenu(e) dans votre gestionnaire d\'album !";
+            this.label4.Text = "Bienvenu(e) sur MarchéBD, votre gestionnaire d\'albums !";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 10F);
-            this.label5.Location = new System.Drawing.Point(206, 93);
+            this.label5.Location = new System.Drawing.Point(237, 168);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(252, 17);
             this.label5.TabIndex = 8;
@@ -260,7 +263,7 @@
             this.btnConnexion.BackColor = System.Drawing.Color.PaleGreen;
             this.btnConnexion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnexion.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btnConnexion.Location = new System.Drawing.Point(143, 126);
+            this.btnConnexion.Location = new System.Drawing.Point(143, 197);
             this.btnConnexion.Name = "btnConnexion";
             this.btnConnexion.Size = new System.Drawing.Size(193, 33);
             this.btnConnexion.TabIndex = 9;
@@ -273,7 +276,7 @@
             this.btnCreation.BackColor = System.Drawing.Color.PeachPuff;
             this.btnCreation.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btnCreation.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btnCreation.Location = new System.Drawing.Point(363, 126);
+            this.btnCreation.Location = new System.Drawing.Point(363, 197);
             this.btnCreation.Name = "btnCreation";
             this.btnCreation.Size = new System.Drawing.Size(193, 33);
             this.btnCreation.TabIndex = 10;
@@ -285,14 +288,23 @@
             // 
             this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnValider.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.btnValider.Location = new System.Drawing.Point(487, 385);
+            this.btnValider.Location = new System.Drawing.Point(491, 409);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(121, 46);
+            this.btnValider.Size = new System.Drawing.Size(86, 34);
             this.btnValider.TabIndex = 11;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = false;
             this.btnValider.Visible = false;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblDescription.Location = new System.Drawing.Point(83, 61);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(565, 79);
+            this.lblDescription.TabIndex = 13;
+            this.lblDescription.Text = resources.GetString("lblDescription.Text");
             // 
             // FormAccueil
             // 
@@ -300,7 +312,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(224)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(700, 455);
-            this.Controls.Add(this.gbCreation);
+            this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.btnCreation);
             this.Controls.Add(this.btnConnexion);
@@ -342,6 +354,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RadioButton rbAdminCrea;
         private System.Windows.Forms.RadioButton rbUserCrea;
+        private System.Windows.Forms.Label lblDescription;
     }
 }
 

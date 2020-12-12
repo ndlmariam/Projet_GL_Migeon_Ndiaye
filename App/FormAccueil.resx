@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>C'est ici que vous pouvez acheter et consulter toutes les bandes dessinées que vous désirez. C'est très simple il vous suffit de vous créer un compte utilisateur et de vous faire plaisir !                             Si jamais vous souhaitez, à l'inverse, ajouter un album dans le marché, créez-vous un compte administrateur et le tour est joué !</value>
+  </data>
 </root>
