@@ -74,6 +74,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -97,6 +98,15 @@
       <Project>{221e1a42-1c04-406d-8d71-67aecd6f6103}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icones\menu_gris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icones\souhaits.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icones\Marché.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

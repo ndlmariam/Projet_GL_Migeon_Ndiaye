@@ -28,20 +28,85 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.gbHeader = new System.Windows.Forms.GroupBox();
+            this.pbMarché = new System.Windows.Forms.PictureBox();
+            this.pbSouhaits = new System.Windows.Forms.PictureBox();
+            this.pbMenu = new System.Windows.Forms.PictureBox();
+            this.gbHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMarché)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSouhaits)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gbHeader
+            // 
+            this.gbHeader.BackColor = System.Drawing.Color.Navy;
+            this.gbHeader.Controls.Add(this.pbMarché);
+            this.gbHeader.Controls.Add(this.pbSouhaits);
+            this.gbHeader.Controls.Add(this.pbMenu);
+            this.gbHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbHeader.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbHeader.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gbHeader.Location = new System.Drawing.Point(0, 0);
+            this.gbHeader.Name = "gbHeader";
+            this.gbHeader.Size = new System.Drawing.Size(700, 66);
+            this.gbHeader.TabIndex = 0;
+            this.gbHeader.TabStop = false;
+            this.gbHeader.Text = "Mes albums";
+            // 
+            // pbMarché
+            // 
+            this.pbMarché.Image = global::App.Properties.Resources.Marché;
+            this.pbMarché.Location = new System.Drawing.Point(512, 16);
+            this.pbMarché.Name = "pbMarché";
+            this.pbMarché.Size = new System.Drawing.Size(53, 44);
+            this.pbMarché.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMarché.TabIndex = 2;
+            this.pbMarché.TabStop = false;
+            // 
+            // pbSouhaits
+            // 
+            this.pbSouhaits.Image = global::App.Properties.Resources.souhaits;
+            this.pbSouhaits.Location = new System.Drawing.Point(442, 16);
+            this.pbSouhaits.Name = "pbSouhaits";
+            this.pbSouhaits.Size = new System.Drawing.Size(63, 44);
+            this.pbSouhaits.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSouhaits.TabIndex = 1;
+            this.pbSouhaits.TabStop = false;
+            // 
+            // pbMenu
+            // 
+            this.pbMenu.Image = global::App.Properties.Resources.menu_gris;
+            this.pbMenu.Location = new System.Drawing.Point(12, 23);
+            this.pbMenu.Name = "pbMenu";
+            this.pbMenu.Size = new System.Drawing.Size(49, 37);
+            this.pbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMenu.TabIndex = 0;
+            this.pbMenu.TabStop = false;
             // 
             // FormUtil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(148)))));
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(224)))), ((int)(((byte)(219)))));
+            this.ClientSize = new System.Drawing.Size(700, 455);
+            this.Controls.Add(this.gbHeader);
             this.Name = "FormUtil";
-            this.Text = "FormUtil";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Mes Albums";
+            this.gbHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMarché)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSouhaits)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.GroupBox gbHeader;
+        private System.Windows.Forms.PictureBox pbMenu;
+        private System.Windows.Forms.PictureBox pbSouhaits;
+        private System.Windows.Forms.PictureBox pbMarché;
     }
 }

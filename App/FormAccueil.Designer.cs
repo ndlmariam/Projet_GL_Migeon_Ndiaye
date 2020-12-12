@@ -30,13 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAccueil));
             this.gbConnexion = new System.Windows.Forms.GroupBox();
-            this.tbMdpConnex = new System.Windows.Forms.TextBox();
-            this.tbLoginConnex = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rbAdminConnex = new System.Windows.Forms.RadioButton();
-            this.rbUserConnex = new System.Windows.Forms.RadioButton();
             this.gbCreation = new System.Windows.Forms.GroupBox();
             this.tbMdpCrea = new System.Windows.Forms.TextBox();
             this.tbLoginCrea = new System.Windows.Forms.TextBox();
@@ -45,6 +38,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.rbAdminCrea = new System.Windows.Forms.RadioButton();
             this.rbUserCrea = new System.Windows.Forms.RadioButton();
+            this.tbMdpConnex = new System.Windows.Forms.TextBox();
+            this.tbLoginConnex = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rbAdminConnex = new System.Windows.Forms.RadioButton();
+            this.rbUserConnex = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnConnexion = new System.Windows.Forms.Button();
@@ -73,79 +73,6 @@
             this.gbConnexion.TabStop = false;
             this.gbConnexion.Text = "Informations de connexion";
             this.gbConnexion.Visible = false;
-            // 
-            // tbMdpConnex
-            // 
-            this.tbMdpConnex.Location = new System.Drawing.Point(228, 119);
-            this.tbMdpConnex.Name = "tbMdpConnex";
-            this.tbMdpConnex.PasswordChar = '*';
-            this.tbMdpConnex.Size = new System.Drawing.Size(100, 24);
-            this.tbMdpConnex.TabIndex = 6;
-            this.tbMdpConnex.TextChanged += new System.EventHandler(this.tbMdpConnex_TextChanged);
-            // 
-            // tbLoginConnex
-            // 
-            this.tbLoginConnex.Location = new System.Drawing.Point(228, 89);
-            this.tbLoginConnex.Name = "tbLoginConnex";
-            this.tbLoginConnex.Size = new System.Drawing.Size(100, 24);
-            this.tbLoginConnex.TabIndex = 5;
-            this.tbLoginConnex.TextChanged += new System.EventHandler(this.tbLoginConnex_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 10F);
-            this.label3.Location = new System.Drawing.Point(48, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Mot de passe :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 10F);
-            this.label2.Location = new System.Drawing.Point(48, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Login :";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 10F);
-            this.label1.Location = new System.Drawing.Point(48, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Vous êtes :";
-            // 
-            // rbAdminConnex
-            // 
-            this.rbAdminConnex.AutoSize = true;
-            this.rbAdminConnex.Font = new System.Drawing.Font("Calibri", 10F);
-            this.rbAdminConnex.Location = new System.Drawing.Point(292, 40);
-            this.rbAdminConnex.Name = "rbAdminConnex";
-            this.rbAdminConnex.Size = new System.Drawing.Size(111, 21);
-            this.rbAdminConnex.TabIndex = 1;
-            this.rbAdminConnex.TabStop = true;
-            this.rbAdminConnex.Text = "Administrateur";
-            this.rbAdminConnex.UseVisualStyleBackColor = true;
-            this.rbAdminConnex.CheckedChanged += new System.EventHandler(this.rbAdminConnex_CheckedChanged);
-            // 
-            // rbUserConnex
-            // 
-            this.rbUserConnex.AutoSize = true;
-            this.rbUserConnex.Font = new System.Drawing.Font("Calibri", 10F);
-            this.rbUserConnex.Location = new System.Drawing.Point(165, 40);
-            this.rbUserConnex.Name = "rbUserConnex";
-            this.rbUserConnex.Size = new System.Drawing.Size(85, 21);
-            this.rbUserConnex.TabIndex = 0;
-            this.rbUserConnex.TabStop = true;
-            this.rbUserConnex.Text = "Utilisateur";
-            this.rbUserConnex.UseVisualStyleBackColor = true;
-            this.rbUserConnex.CheckedChanged += new System.EventHandler(this.rbUserConnex_CheckedChanged);
             // 
             // gbCreation
             // 
@@ -238,6 +165,79 @@
             this.rbUserCrea.UseVisualStyleBackColor = true;
             this.rbUserCrea.CheckedChanged += new System.EventHandler(this.rbUserCrea_CheckedChanged);
             // 
+            // tbMdpConnex
+            // 
+            this.tbMdpConnex.Location = new System.Drawing.Point(228, 119);
+            this.tbMdpConnex.Name = "tbMdpConnex";
+            this.tbMdpConnex.PasswordChar = '*';
+            this.tbMdpConnex.Size = new System.Drawing.Size(100, 24);
+            this.tbMdpConnex.TabIndex = 6;
+            this.tbMdpConnex.TextChanged += new System.EventHandler(this.tbMdpConnex_TextChanged);
+            // 
+            // tbLoginConnex
+            // 
+            this.tbLoginConnex.Location = new System.Drawing.Point(228, 89);
+            this.tbLoginConnex.Name = "tbLoginConnex";
+            this.tbLoginConnex.Size = new System.Drawing.Size(100, 24);
+            this.tbLoginConnex.TabIndex = 5;
+            this.tbLoginConnex.TextChanged += new System.EventHandler(this.tbLoginConnex_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 10F);
+            this.label3.Location = new System.Drawing.Point(48, 120);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Mot de passe :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 10F);
+            this.label2.Location = new System.Drawing.Point(48, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Login :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 10F);
+            this.label1.Location = new System.Drawing.Point(48, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Vous êtes :";
+            // 
+            // rbAdminConnex
+            // 
+            this.rbAdminConnex.AutoSize = true;
+            this.rbAdminConnex.Font = new System.Drawing.Font("Calibri", 10F);
+            this.rbAdminConnex.Location = new System.Drawing.Point(292, 40);
+            this.rbAdminConnex.Name = "rbAdminConnex";
+            this.rbAdminConnex.Size = new System.Drawing.Size(111, 21);
+            this.rbAdminConnex.TabIndex = 1;
+            this.rbAdminConnex.TabStop = true;
+            this.rbAdminConnex.Text = "Administrateur";
+            this.rbAdminConnex.UseVisualStyleBackColor = true;
+            this.rbAdminConnex.CheckedChanged += new System.EventHandler(this.rbAdminConnex_CheckedChanged);
+            // 
+            // rbUserConnex
+            // 
+            this.rbUserConnex.AutoSize = true;
+            this.rbUserConnex.Font = new System.Drawing.Font("Calibri", 10F);
+            this.rbUserConnex.Location = new System.Drawing.Point(165, 40);
+            this.rbUserConnex.Name = "rbUserConnex";
+            this.rbUserConnex.Size = new System.Drawing.Size(85, 21);
+            this.rbUserConnex.TabIndex = 0;
+            this.rbUserConnex.TabStop = true;
+            this.rbUserConnex.Text = "Utilisateur";
+            this.rbUserConnex.UseVisualStyleBackColor = true;
+            this.rbUserConnex.CheckedChanged += new System.EventHandler(this.rbUserConnex_CheckedChanged);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -321,7 +321,7 @@
             this.Controls.Add(this.gbConnexion);
             this.Name = "FormAccueil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestionnaire de BD";
+            this.Text = "Accueil MarchéBD";
             this.gbConnexion.ResumeLayout(false);
             this.gbConnexion.PerformLayout();
             this.gbCreation.ResumeLayout(false);

@@ -39,7 +39,8 @@ namespace App
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-
+            FormUtil formutil = new FormUtil();
+            formutil.ShowDialog();
         }
 
        
