@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Class1
-    {
+    public abstract class Personne
+    { protected int ID { get; set; }
+      protected int Nom { get; set; }
     }
 }
