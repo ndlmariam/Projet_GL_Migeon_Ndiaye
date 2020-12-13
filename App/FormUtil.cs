@@ -17,6 +17,20 @@ namespace App
             InitializeComponent();
            
         }
-       
+
+        private void pbMenu_Click(object sender, EventArgs e)
+        {
+            Menu.Visible = true;
+        }
+
+        private void FormUtil_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormUtil_Click(object sender, EventArgs e)
+        {
+            Menu.Visible = false;
+        }
     }
 }

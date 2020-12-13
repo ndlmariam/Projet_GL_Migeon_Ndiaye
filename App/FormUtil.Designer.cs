@@ -30,20 +30,21 @@
         {
             this.gbHeader = new System.Windows.Forms.GroupBox();
             this.pbMarché = new System.Windows.Forms.PictureBox();
-            this.pbSouhaits = new System.Windows.Forms.PictureBox();
             this.pbMenu = new System.Windows.Forms.PictureBox();
+            this.pbSouhaits = new System.Windows.Forms.PictureBox();
+            this.Menu = new System.Windows.Forms.ListBox();
             this.gbHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMarché)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSouhaits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSouhaits)).BeginInit();
             this.SuspendLayout();
             // 
             // gbHeader
             // 
             this.gbHeader.BackColor = System.Drawing.Color.Navy;
             this.gbHeader.Controls.Add(this.pbMarché);
-            this.gbHeader.Controls.Add(this.pbSouhaits);
             this.gbHeader.Controls.Add(this.pbMenu);
+            this.gbHeader.Controls.Add(this.pbSouhaits);
             this.gbHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbHeader.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbHeader.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -64,6 +65,17 @@
             this.pbMarché.TabIndex = 2;
             this.pbMarché.TabStop = false;
             // 
+            // pbMenu
+            // 
+            this.pbMenu.Image = global::App.Properties.Resources.menu_gris;
+            this.pbMenu.Location = new System.Drawing.Point(6, 26);
+            this.pbMenu.Name = "pbMenu";
+            this.pbMenu.Size = new System.Drawing.Size(49, 37);
+            this.pbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMenu.TabIndex = 0;
+            this.pbMenu.TabStop = false;
+            this.pbMenu.Click += new System.EventHandler(this.pbMenu_Click);
+            // 
             // pbSouhaits
             // 
             this.pbSouhaits.Image = global::App.Properties.Resources.souhaits;
@@ -74,15 +86,26 @@
             this.pbSouhaits.TabIndex = 1;
             this.pbSouhaits.TabStop = false;
             // 
-            // pbMenu
+            // Menu
             // 
-            this.pbMenu.Image = global::App.Properties.Resources.menu_gris;
-            this.pbMenu.Location = new System.Drawing.Point(12, 23);
-            this.pbMenu.Name = "pbMenu";
-            this.pbMenu.Size = new System.Drawing.Size(49, 37);
-            this.pbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMenu.TabIndex = 0;
-            this.pbMenu.TabStop = false;
+            this.Menu.BackColor = System.Drawing.Color.Navy;
+            this.Menu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Menu.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Menu.ForeColor = System.Drawing.SystemColors.Window;
+            this.Menu.FormattingEnabled = true;
+            this.Menu.ItemHeight = 19;
+            this.Menu.Items.AddRange(new object[] {
+            "Mes ",
+            "Albums",
+            "",
+            "Marché",
+            "",
+            "Souhaits"});
+            this.Menu.Location = new System.Drawing.Point(0, 66);
+            this.Menu.Name = "Menu";
+            this.Menu.Size = new System.Drawing.Size(64, 389);
+            this.Menu.TabIndex = 1;
+            this.Menu.Visible = false;
             // 
             // FormUtil
             // 
@@ -90,14 +113,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(224)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(700, 455);
+            this.Controls.Add(this.Menu);
             this.Controls.Add(this.gbHeader);
             this.Name = "FormUtil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mes Albums";
+            this.Load += new System.EventHandler(this.FormUtil_Load);
+            this.Click += new System.EventHandler(this.FormUtil_Click);
             this.gbHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMarché)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSouhaits)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSouhaits)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -108,5 +134,6 @@
         private System.Windows.Forms.PictureBox pbMenu;
         private System.Windows.Forms.PictureBox pbSouhaits;
         private System.Windows.Forms.PictureBox pbMarché;
+        private System.Windows.Forms.ListBox Menu;
     }
 }
