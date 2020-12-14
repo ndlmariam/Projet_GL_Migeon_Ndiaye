@@ -63,6 +63,16 @@ namespace App.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap infobullealbum {
+            get {
+                object obj = ResourceManager.GetObject("infobullealbum", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Marché {
             get {
                 object obj = ResourceManager.GetObject("Marché", resourceCulture);
