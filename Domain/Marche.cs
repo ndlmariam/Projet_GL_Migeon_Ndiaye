@@ -8,8 +8,9 @@ namespace Domain
 {
     public class Marche
     {
-        protected int idMarche { get; set; }
+        protected int idAction { get; set; }
         public string Nom { get; set; }
+        public DateTime Date { get; set; }
         public List<Album> ListAlbums { get; set; }
         //pour date et personnes je sais pas si c'est une liste aussi ?
 

@@ -39,8 +39,16 @@ namespace App
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            FormUtil formutil = new FormUtil();
-            formutil.ShowDialog();
+            if(rbAdminConnex.Checked == true || rbAdminCrea.Checked == true)
+            {
+                FormAdmin formadmin = new FormAdmin();
+                formadmin.ShowDialog();
+            }
+            if (rbUserConnex.Checked == true || rbUserCrea.Checked == true)
+            {
+               
+               FormUtil.InstanceFormUtil.ShowDialog();
+            }
         }
 
        

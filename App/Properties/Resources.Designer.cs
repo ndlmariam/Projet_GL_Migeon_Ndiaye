@@ -63,6 +63,16 @@ namespace App.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap déconnexion {
+            get {
+                object obj = ResourceManager.GetObject("déconnexion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap infobullealbum {
             get {
                 object obj = ResourceManager.GetObject("infobullealbum", resourceCulture);
@@ -86,6 +96,16 @@ namespace App.Properties {
         internal static System.Drawing.Bitmap menu_gris {
             get {
                 object obj = ResourceManager.GetObject("menu_gris", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap panier {
+            get {
+                object obj = ResourceManager.GetObject("panier", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
