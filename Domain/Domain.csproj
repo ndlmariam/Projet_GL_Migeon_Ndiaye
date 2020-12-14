@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrateur.cs" />
+    <Compile Include="Album.cs" />
+    <Compile Include="Marche.cs" />
     <Compile Include="Personne.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilisateur.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mapping\" />

@@ -8,6 +8,7 @@ namespace Domain
 {
     public abstract class Personne
     { protected int ID { get; set; }
-      protected int Nom { get; set; }
+      protected string Nom { get; set; }
+        protected string Type { get; set; }
     }
 }
