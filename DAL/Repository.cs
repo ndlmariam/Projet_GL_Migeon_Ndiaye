@@ -16,7 +16,19 @@ namespace DAL
     {
         private static ISessionFactory sessionFactory;
         private static ISession session;
-
+        private static Configuration configuration;
+        protected static Configuration Configuration
+        {
+            get
+            {
+                // Crée l'objet Configuration au premier accès (lazy loading)
+                if (configuration == null)
+                {
+                    configuration = new Configuration().Configure();
+                }
+                return configuration;
+            }
+        }
         private static ISessionFactory SessionFactory
         {
             get
