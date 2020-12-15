@@ -8,18 +8,18 @@ namespace Domain
 {
     public class Utilisateur : Personne
     {
-        protected List<Album> ListAlbums { get; set; }
-        protected List<Album> ListSouhaits { get; set; }
-        protected List<Album> Panier { get; set; }
+        public virtual IList<Album> ListAlbums { get; set; }
+        public virtual IList<Album> ListSouhaits { get; set; }
+        public virtual IList<Album> Panier { get; set; }
 
-        public Utilisateur(){}
+        public Utilisateur(){ Actions = new List<Marche>(); }
         public Utilisateur(string nom, string type, string login, string mdp)
         {
             Nom = nom;
             Type = type;
             Login = login;
             Mdp = mdp;
-
+            Actions = new List<Marche>();
         }
 
         public virtual void AjouterSouhait(Album alb)

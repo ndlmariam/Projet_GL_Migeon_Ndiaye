@@ -49,13 +49,19 @@
     <Compile Include="Utilisateur.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Mapping\Album.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Album.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Mapping\Personne.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Personne.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Mapping\Marche.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Marche.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

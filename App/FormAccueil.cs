@@ -65,7 +65,7 @@ namespace App
         }
         private void btnCreation_Click(object sender, EventArgs e)
         {
-          
+            gbConnexion.Visible = true;
             gbCreation.Visible = true;
             btnConnexion.BackColor = Color.LightGray;
             btnCreation.BackColor = Color.PeachPuff;

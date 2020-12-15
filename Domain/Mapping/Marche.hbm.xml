@@ -3,15 +3,23 @@
 assembly="Domain"
 namespace="Domain">
 <class name="Marche" table="marché">
+  <!-- Mapping des propriétés de la classe -->
   <id name="idAction" column="action_id" type="int" >
     <generator class="native"></generator>
   </id>
   <property name="Nom" column="action_nom" not-null="true"/>
   <property name="Date" column="date" not-null="true"/>
-  <property name="idPersonne" column="personne_id" not-null="true"/>   <!-- CLE ETRANGERE ????? -->
-  <property name="idAlbum" column="album_id" not-null="true"/> <!-- CLE ETRANGERE ????? -->
-<!-- Mapping des propriétés de la classe -->
+
+
 <!-- Mapping des associations de la classe -->
+  <!-- Le marché contient plusieurs albums  -->
+  <bag name ="ListAlbums" inverse="true" lazy ="true">
+    <key column ="action_id"/>
+    <one-to-many class ="Album"/>
+  </bag>
+  <!-- Plusieurs actions possibles sur le marché pour une personne 
+  <many-to-one name ="Personne" class="Personne" column="personne_id"/>-->
+
 </class>
 </hibernate-mapping>
 

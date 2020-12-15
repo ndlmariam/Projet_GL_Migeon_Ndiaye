@@ -8,11 +8,12 @@ namespace Domain
 {
     public abstract class Personne
     {
-        protected int ID { get; set; }
-      protected string Nom { get; set; }
-        protected string Type { get; set; }
-        protected string Login { get; set; }
-        protected string Mdp { get; set; }
+        public virtual int ID { get; set; }
+        public virtual string Nom { get; set; }
+        public virtual string Type { get; set; }
+        public virtual string Login { get; set; }
+        public virtual string Mdp { get; set; }
+        public virtual IList <Marche> Actions { get; set; }
         
     }
 }

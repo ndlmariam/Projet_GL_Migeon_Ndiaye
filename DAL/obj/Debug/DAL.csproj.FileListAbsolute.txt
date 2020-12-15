@@ -39,6 +39,9 @@ C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\DAL\obj\Debug\DAL.dll
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\DAL\obj\Debug\DAL.pdb
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\DAL\bin\Debug\MySql.Data.dll
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\DAL\bin\Debug\Mapping\Album.hbm.xml
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\DAL\bin\Debug\Mapping\Personne.hbm.xml
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\DAL\bin\Debug\Mapping\Marche.hbm.xml
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\DAL\bin\Debug\hibernate.cfg.xml
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\DAL\bin\Debug\DAL.dll
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\DAL\bin\Debug\DAL.pdb

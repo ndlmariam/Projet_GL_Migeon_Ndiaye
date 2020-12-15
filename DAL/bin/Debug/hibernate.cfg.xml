@@ -12,8 +12,8 @@
 	</property>
 	<property name="connection.connection_string">
     <!-- A MODIFIER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-  	Server=localhost;Database=bdtheque;User ID=AMMN;Password=BDmdp;
-	</property>
+    Server=localhost;Database=bdtheque;User ID=AdminBD;Password=BDmdp;
+  </property>
 	<property name="dialect">
   	NHibernate.Dialect.MySQL5Dialect
 	</property>

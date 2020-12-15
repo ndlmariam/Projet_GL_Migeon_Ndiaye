@@ -10,13 +10,14 @@ namespace Domain
     {
        
 
-        public Administrateur() { }
+        public Administrateur() { Actions = new List<Marche>(); }
         public Administrateur(string nom, string type, string login, string mdp)
         {
             Nom = nom;
             Type = type;
             Login = login;
             Mdp = mdp;
+            Actions = new List<Marche>();
         }
 
         public virtual void AjouterAuMarche(Marche marche, Album alb)

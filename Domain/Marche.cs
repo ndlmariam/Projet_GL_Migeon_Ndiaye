@@ -8,15 +8,15 @@ namespace Domain
 {
     public class Marche
     {
-        protected int idAction { get; set; }
-        public string Nom { get; set; }
-        public DateTime Date { get; set; }
-        protected int idPersonne{get;set;}
-        protected int idAlbum { get; set; }
-        public List<Album> ListAlbums { get; set; }
-        //pour date et personnes je sais pas si c'est une liste aussi ?
+        public virtual int idAction { get; set; }
+        public virtual string Nom { get; set; }
+        public virtual DateTime Date { get; set; }
+        public virtual Personne Personne{get;set;}
+       // public virtual Album Album { get; set; }
+        public virtual IList <Album> ListAlbums { get; set; }
+       
 
-        public Marche() { }
+        public Marche() { ListAlbums = new List<Album>(); }
         public Marche(string nom)
         {
             Nom = nom;

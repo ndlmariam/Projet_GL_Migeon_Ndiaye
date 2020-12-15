@@ -35,7 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(224)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(700, 455);
+            this.ClientSize = new System.Drawing.Size(742, 455);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormAdmin";

@@ -12,13 +12,13 @@ namespace DAL
         /// <summary>
         /// Retourner tous les albums
         /// </summary>
-        /// <returns></returns>
+       
         List<Album> GetAll();
 
         /// <summary>
         /// Sauvegarder un album
         /// </summary>
-        /// <param name="album">L'album </param>
+      
         void Save(Album album);
     }
 }

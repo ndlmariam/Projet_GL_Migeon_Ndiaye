@@ -9,9 +9,9 @@ namespace DAL
 {
     public class MarcheRepository : Repository, IMarcheRepository
     {
-        public List<Marche> GetAll()
+        public List<Album> GetAll()
         {
-            return Session.Query<Marche>().ToList();
+            return Session.Query<Album>().ToList();
         }
 
         public void Save(Marche marche)

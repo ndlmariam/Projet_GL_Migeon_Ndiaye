@@ -13,13 +13,13 @@ namespace DAL
         /// Retourner tous les marches
         /// </summary>
         /// <returns></returns>
-        List<Marche> GetAll();
+     List<Album> GetAll();
 
         /// <summary>
         /// Sauvegarder un marche
         /// </summary>
         /// <param name="marche">Le marche </param>
-        void Save(Marche marche);
+      void Save(Marche marche);
     }
 }
 

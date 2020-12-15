@@ -242,7 +242,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(157, 19);
+            this.label4.Location = new System.Drawing.Point(195, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(399, 19);
             this.label4.TabIndex = 7;
@@ -252,7 +252,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 10F);
-            this.label5.Location = new System.Drawing.Point(237, 168);
+            this.label5.Location = new System.Drawing.Point(272, 160);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(252, 17);
             this.label5.TabIndex = 8;
@@ -263,7 +263,7 @@
             this.btnConnexion.BackColor = System.Drawing.Color.PaleGreen;
             this.btnConnexion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnexion.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btnConnexion.Location = new System.Drawing.Point(143, 197);
+            this.btnConnexion.Location = new System.Drawing.Point(199, 197);
             this.btnConnexion.Name = "btnConnexion";
             this.btnConnexion.Size = new System.Drawing.Size(193, 33);
             this.btnConnexion.TabIndex = 9;
@@ -276,7 +276,7 @@
             this.btnCreation.BackColor = System.Drawing.Color.PeachPuff;
             this.btnCreation.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btnCreation.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btnCreation.Location = new System.Drawing.Point(363, 197);
+            this.btnCreation.Location = new System.Drawing.Point(423, 197);
             this.btnCreation.Name = "btnCreation";
             this.btnCreation.Size = new System.Drawing.Size(193, 33);
             this.btnCreation.TabIndex = 10;
@@ -300,7 +300,7 @@
             // lblDescription
             // 
             this.lblDescription.Font = new System.Drawing.Font("Calibri", 10F);
-            this.lblDescription.Location = new System.Drawing.Point(83, 61);
+            this.lblDescription.Location = new System.Drawing.Point(123, 65);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(565, 79);
             this.lblDescription.TabIndex = 13;
@@ -311,7 +311,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(224)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(700, 455);
+            this.ClientSize = new System.Drawing.Size(742, 455);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.btnCreation);
