@@ -8,8 +8,6 @@ namespace Domain
 {
     public class Utilisateur : Personne
     {
-        protected string Login { get; set; }
-        protected string Mdp { get; set; }
         protected List<Album> ListAlbums { get; set; }
         protected List<Album> ListSouhaits { get; set; }
         protected List<Album> Panier { get; set; }

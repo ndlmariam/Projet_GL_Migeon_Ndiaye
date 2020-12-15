@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+assembly="Domain"
+namespace="Domain">
+<class name="Personne" table="personne">
+  <id name="ID" column="person_id" type="int" >
+    <generator class="native"></generator>
+  </id>
+  <property name="Nom" column="nom" not-null="true"/>
+  <property name="Type" column="type" not-null="true"/>
+  <property name="Login" column="login" not-null="true"/>
+  <property name="Mdp" column="mdp" not-null="true"/>
+<!-- Mapping des propriétés de la classe -->
+<!-- Mapping des associations de la classe -->
+</class>
+</hibernate-mapping>
+
+

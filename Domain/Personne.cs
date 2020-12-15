@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 namespace Domain
 {
     public abstract class Personne
-    { protected int ID { get; set; }
+    {
+        protected int ID { get; set; }
       protected string Nom { get; set; }
         protected string Type { get; set; }
+        protected string Login { get; set; }
+        protected string Mdp { get; set; }
+        
     }
 }

@@ -8,8 +8,7 @@ namespace Domain
 {
     class Administrateur : Personne
     {
-        protected string Login { get; set; }
-        protected string Mdp { get; set; }
+       
 
         public Administrateur() { }
         public Administrateur(string nom, string type, string login, string mdp)

@@ -69,3 +69,4 @@ C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.FormUtil.resources
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.Properties.Resources.resources
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.csproj.GenerateResource.Cache
+C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.FormAdmin.resources
