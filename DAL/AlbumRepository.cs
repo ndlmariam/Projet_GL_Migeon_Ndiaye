@@ -19,5 +19,7 @@ namespace DAL
             Session.SaveOrUpdate(album);
             Session.Flush();
         }
+
+        
     }
 }

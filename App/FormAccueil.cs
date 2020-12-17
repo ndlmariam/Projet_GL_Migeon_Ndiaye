@@ -51,7 +51,7 @@ namespace App
                     if (verificationad == true)
                     {
                         Personne administrateur = _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "Admin");
-                        FormAdmin formadmin = new FormAdmin();
+                        FormAdmin formadmin =  FormAdmin.InstanceFormAdmin;
                         formadmin.ShowDialog();
                     }
                 }
@@ -59,7 +59,7 @@ namespace App
                 {
                     Personne administrateur = new Administrateur(tbPseudo.Text, "Admin", tbLoginCrea.Text, tbMdpCrea.Text);
                     _personnerepo.Save(administrateur);
-                    FormAdmin formadmin = new FormAdmin();
+                    FormAdmin formadmin = FormAdmin.InstanceFormAdmin;
                     formadmin.ShowDialog();
                 }
                 }
