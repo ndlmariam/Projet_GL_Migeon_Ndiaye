@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    class Administrateur : Personne
+   public class Administrateur : Personne
     {
        
 
-        public Administrateur() { Actions = new List<Marche>(); }
+        public Administrateur() { Suppression = new List<Marche>(); Ajouts = new List<Marche>(); }
         public Administrateur(string nom, string type, string login, string mdp)
         {
             Nom = nom;
             Type = type;
             Login = login;
             Mdp = mdp;
-            Actions = new List<Marche>();
+           Suppression = new List<Marche>();
+            Ajouts = new List<Marche>();
         }
 
         public virtual void AjouterAuMarche(Marche marche, Album alb)

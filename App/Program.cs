@@ -1,4 +1,5 @@
 ﻿using System;
+using DAL;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +15,10 @@ namespace App
         [STAThread]
         static void Main()
         {
+            IPersonneRepository PersonneRepository = new PersonneRepository();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAccueil());
+            Application.Run(new FormAccueil(PersonneRepository));
         }
     }
 }

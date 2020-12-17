@@ -17,8 +17,8 @@ namespace="Domain">
     <key column ="action_id"/>
     <one-to-many class ="Album"/>
   </bag>
-  <!-- Plusieurs actions possibles sur le marché pour une personne 
-  <many-to-one name ="Personne" class="Personne" column="personne_id"/>-->
+  <!-- Plusieurs actions possibles sur le marché pour une personne -->
+  <many-to-one name ="Personne" class="Personne" column="personne_id"/>
 
 </class>
 </hibernate-mapping>

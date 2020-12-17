@@ -16,6 +16,7 @@ namespace App
     {
         private bool ClickedOnce; // booléen utile pour l'appartition ou disparition du menu
         private  IMarcheRepository _marcherepo;
+        public Personne Utilisateur { get; set; }
         // technique du singleton pour avoir une seule instance de notre form
         private static FormUtil instanceformutil = null;
         public static FormUtil InstanceFormUtil
@@ -24,6 +25,7 @@ namespace App
                     IMarcheRepository RepositoryDuMarche = new MarcheRepository();
                     instanceformutil = new FormUtil(RepositoryDuMarche); }
                     return instanceformutil; }
+            
         }
         private FormUtil(IMarcheRepository MarcheRepository)
         {
@@ -34,6 +36,7 @@ namespace App
         // événements du form
         private void FormUtil_Load(object sender, EventArgs e)
         {
+            lblNom.Text = Utilisateur.Nom;
             gbSouhaits.Visible = false;
             gbMarché.Visible = false;
             RefreshDgv();
@@ -45,6 +48,7 @@ namespace App
            
             List<Album> AlbumsDuMarché = _marcherepo.GetAll();
             dgvMarché.DataSource = AlbumsDuMarché;
+
         }
 
         private void FormUtil_Click(object sender, EventArgs e)

@@ -28,7 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.gbAjoutAlbum = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
+            // 
+            // gbAjoutAlbum
+            // 
+            this.gbAjoutAlbum.Location = new System.Drawing.Point(51, 42);
+            this.gbAjoutAlbum.Name = "gbAjoutAlbum";
+            this.gbAjoutAlbum.Size = new System.Drawing.Size(482, 378);
+            this.gbAjoutAlbum.TabIndex = 0;
+            this.gbAjoutAlbum.TabStop = false;
+            this.gbAjoutAlbum.Text = "Informations";
             // 
             // FormAdmin
             // 
@@ -36,6 +46,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(224)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(742, 455);
+            this.Controls.Add(this.gbAjoutAlbum);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormAdmin";
@@ -46,5 +57,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.GroupBox gbAjoutAlbum;
     }
 }

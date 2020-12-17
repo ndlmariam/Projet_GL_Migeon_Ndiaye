@@ -51,6 +51,8 @@
             this.btnCreation = new System.Windows.Forms.Button();
             this.btnValider = new System.Windows.Forms.Button();
             this.lblDescription = new System.Windows.Forms.Label();
+            this.lblPseudo = new System.Windows.Forms.Label();
+            this.tbPseudo = new System.Windows.Forms.TextBox();
             this.gbConnexion.SuspendLayout();
             this.gbCreation.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +78,8 @@
             // 
             // gbCreation
             // 
+            this.gbCreation.Controls.Add(this.tbPseudo);
+            this.gbCreation.Controls.Add(this.lblPseudo);
             this.gbCreation.Controls.Add(this.tbMdpCrea);
             this.gbCreation.Controls.Add(this.tbLoginCrea);
             this.gbCreation.Controls.Add(this.label6);
@@ -84,9 +88,9 @@
             this.gbCreation.Controls.Add(this.rbAdminCrea);
             this.gbCreation.Controls.Add(this.rbUserCrea);
             this.gbCreation.Font = new System.Drawing.Font("Calibri", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.gbCreation.Location = new System.Drawing.Point(6, 0);
+            this.gbCreation.Location = new System.Drawing.Point(0, 0);
             this.gbCreation.Name = "gbCreation";
-            this.gbCreation.Size = new System.Drawing.Size(524, 150);
+            this.gbCreation.Size = new System.Drawing.Size(530, 150);
             this.gbCreation.TabIndex = 12;
             this.gbCreation.TabStop = false;
             this.gbCreation.Text = "Création de compte";
@@ -244,9 +248,9 @@
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(195, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(399, 19);
+            this.label4.Size = new System.Drawing.Size(391, 19);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Bienvenu(e) sur MarchéBD, votre gestionnaire d\'albums !";
+            this.label4.Text = "Bienvenu(e) sur CircuitBD, votre gestionnaire d\'albums !";
             // 
             // label5
             // 
@@ -306,6 +310,23 @@
             this.lblDescription.TabIndex = 13;
             this.lblDescription.Text = resources.GetString("lblDescription.Text");
             // 
+            // lblPseudo
+            // 
+            this.lblPseudo.AutoSize = true;
+            this.lblPseudo.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblPseudo.Location = new System.Drawing.Point(344, 90);
+            this.lblPseudo.Name = "lblPseudo";
+            this.lblPseudo.Size = new System.Drawing.Size(55, 17);
+            this.lblPseudo.TabIndex = 7;
+            this.lblPseudo.Text = "Pseudo :";
+            // 
+            // tbPseudo
+            // 
+            this.tbPseudo.Location = new System.Drawing.Point(405, 87);
+            this.tbPseudo.Name = "tbPseudo";
+            this.tbPseudo.Size = new System.Drawing.Size(100, 24);
+            this.tbPseudo.TabIndex = 8;
+            // 
             // FormAccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,7 +342,7 @@
             this.Controls.Add(this.gbConnexion);
             this.Name = "FormAccueil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Accueil MarchéBD";
+            this.Text = "Accueil CircuitBD";
             this.gbConnexion.ResumeLayout(false);
             this.gbConnexion.PerformLayout();
             this.gbCreation.ResumeLayout(false);
@@ -355,6 +376,8 @@
         private System.Windows.Forms.RadioButton rbAdminCrea;
         private System.Windows.Forms.RadioButton rbUserCrea;
         private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.TextBox tbPseudo;
+        private System.Windows.Forms.Label lblPseudo;
     }
 }
 

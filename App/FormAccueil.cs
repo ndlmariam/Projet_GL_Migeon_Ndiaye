@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DAL;
+using Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,12 +17,14 @@ namespace App
         bool RempliMdp;
         bool RempliLogin;
         bool CocheStatut;
-        public FormAccueil()
+        IPersonneRepository _personnerepo;
+        public FormAccueil(IPersonneRepository personnerepository)
         {
             InitializeComponent();
             RempliMdp = false;
             RempliLogin = false;
             CocheStatut = false;
+            _personnerepo = personnerepository;
             AffichageRefresh();
 
         }
@@ -39,16 +43,51 @@ namespace App
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            if(rbAdminConnex.Checked == true || rbAdminCrea.Checked == true)
+            if (rbAdminConnex.Checked == true || rbAdminCrea.Checked == true)
             {
-                FormAdmin formadmin = new FormAdmin();
-                formadmin.ShowDialog();
-            }
-            if (rbUserConnex.Checked == true || rbUserCrea.Checked == true)
-            {
-               
-               FormUtil.InstanceFormUtil.ShowDialog();
-            }
+                if (rbAdminConnex.Checked == true)
+                {
+                    bool verificationad = _personnerepo.CompareMdp(tbLoginConnex.Text, tbMdpConnex.Text);
+                    if (verificationad == true)
+                    {
+                        Personne administrateur = _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "Admin");
+                        FormAdmin formadmin = new FormAdmin();
+                        formadmin.ShowDialog();
+                    }
+                }
+                if (rbAdminCrea.Checked == true)
+                {
+                    Personne administrateur = new Administrateur(tbPseudo.Text, "Admin", tbLoginCrea.Text, tbMdpCrea.Text);
+                    _personnerepo.Save(administrateur);
+                    FormAdmin formadmin = new FormAdmin();
+                    formadmin.ShowDialog();
+                }
+                }
+                if (rbUserConnex.Checked == true || rbUserCrea.Checked == true)
+                {
+                    if (rbUserConnex.Checked == true)
+                    {
+                        bool verificationus = _personnerepo.CompareMdp(tbLoginConnex.Text, tbMdpConnex.Text);
+                        if (verificationus == true)
+                        {
+                            Personne utilisateur = _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "User");
+                            FormUtil.InstanceFormUtil.Utilisateur = utilisateur;
+                            FormUtil.InstanceFormUtil.ShowDialog();
+                        }
+                    }
+                    if (rbUserCrea.Checked == true)
+                    {
+                        Personne utilisateur = new Utilisateur(tbPseudo.Text, "User", tbLoginCrea.Text, tbMdpCrea.Text);
+                        _personnerepo.Save(utilisateur);
+
+                        FormUtil.InstanceFormUtil.Utilisateur = utilisateur;
+                        FormUtil.InstanceFormUtil.ShowDialog();
+
+
+                    }
+
+                }
+            
         }
 
        
@@ -120,5 +159,7 @@ namespace App
             RempliMdp = true;
             AffichageRefresh();
         }
+
+      
     }
 }

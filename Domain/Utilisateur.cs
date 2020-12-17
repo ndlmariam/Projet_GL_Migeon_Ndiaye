@@ -12,14 +12,17 @@ namespace Domain
         public virtual IList<Album> ListSouhaits { get; set; }
         public virtual IList<Album> Panier { get; set; }
 
-        public Utilisateur(){ Actions = new List<Marche>(); }
+        public Utilisateur(){ Achats = new List<Marche>();
+           Voeux = new List<Marche>();
+        }
         public Utilisateur(string nom, string type, string login, string mdp)
         {
             Nom = nom;
             Type = type;
             Login = login;
             Mdp = mdp;
-            Actions = new List<Marche>();
+            Achats = new List<Marche>();
+            Voeux = new List<Marche>();
         }
 
         public virtual void AjouterSouhait(Album alb)

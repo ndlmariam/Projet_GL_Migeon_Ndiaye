@@ -30,38 +30,38 @@
         {
             this.gbHeader = new System.Windows.Forms.GroupBox();
             this.lblNom = new System.Windows.Forms.Label();
-            this.gbAlbums = new System.Windows.Forms.GroupBox();
-            this.dgvAlbums = new System.Windows.Forms.DataGridView();
-            this.gbSouhaits = new System.Windows.Forms.GroupBox();
-            this.dgvSouhaits = new System.Windows.Forms.DataGridView();
-            this.gbMarché = new System.Windows.Forms.GroupBox();
-            this.dgvMarché = new System.Windows.Forms.DataGridView();
-            this.lblAlbums = new System.Windows.Forms.Label();
-            this.Menu = new System.Windows.Forms.GroupBox();
-            this.lblMarché = new System.Windows.Forms.Label();
-            this.lblSouhaits = new System.Windows.Forms.Label();
-            this.pbinfo = new System.Windows.Forms.PictureBox();
-            this.pbInfo1 = new System.Windows.Forms.PictureBox();
             this.pbDeco = new System.Windows.Forms.PictureBox();
             this.pbPanier = new System.Windows.Forms.PictureBox();
             this.pbMarché = new System.Windows.Forms.PictureBox();
             this.pbMenu = new System.Windows.Forms.PictureBox();
             this.pbSouhaits = new System.Windows.Forms.PictureBox();
+            this.gbAlbums = new System.Windows.Forms.GroupBox();
+            this.dgvAlbums = new System.Windows.Forms.DataGridView();
+            this.pbInfo1 = new System.Windows.Forms.PictureBox();
+            this.gbSouhaits = new System.Windows.Forms.GroupBox();
+            this.gbMarché = new System.Windows.Forms.GroupBox();
+            this.pbinfo = new System.Windows.Forms.PictureBox();
+            this.dgvMarché = new System.Windows.Forms.DataGridView();
+            this.dgvSouhaits = new System.Windows.Forms.DataGridView();
+            this.lblAlbums = new System.Windows.Forms.Label();
+            this.Menu = new System.Windows.Forms.GroupBox();
+            this.lblSouhaits = new System.Windows.Forms.Label();
+            this.lblMarché = new System.Windows.Forms.Label();
             this.gbHeader.SuspendLayout();
-            this.gbAlbums.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlbums)).BeginInit();
-            this.gbSouhaits.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSouhaits)).BeginInit();
-            this.gbMarché.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMarché)).BeginInit();
-            this.Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbInfo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDeco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPanier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMarché)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSouhaits)).BeginInit();
+            this.gbAlbums.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlbums)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInfo1)).BeginInit();
+            this.gbSouhaits.SuspendLayout();
+            this.gbMarché.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMarché)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSouhaits)).BeginInit();
+            this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbHeader
@@ -91,139 +91,6 @@
             this.lblNom.Size = new System.Drawing.Size(62, 20);
             this.lblNom.TabIndex = 5;
             this.lblNom.Text = "Inconnu";
-            // 
-            // gbAlbums
-            // 
-            this.gbAlbums.Controls.Add(this.dgvAlbums);
-            this.gbAlbums.Controls.Add(this.pbInfo1);
-            this.gbAlbums.Location = new System.Drawing.Point(70, 72);
-            this.gbAlbums.Name = "gbAlbums";
-            this.gbAlbums.Size = new System.Drawing.Size(656, 383);
-            this.gbAlbums.TabIndex = 2;
-            this.gbAlbums.TabStop = false;
-            this.gbAlbums.Text = "Mes Albums";
-            this.gbAlbums.MouseHover += new System.EventHandler(this.gb_MouseHover);
-            // 
-            // dgvAlbums
-            // 
-            this.dgvAlbums.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dgvAlbums.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlbums.Location = new System.Drawing.Point(0, 19);
-            this.dgvAlbums.Name = "dgvAlbums";
-            this.dgvAlbums.Size = new System.Drawing.Size(308, 320);
-            this.dgvAlbums.TabIndex = 4;
-            // 
-            // gbSouhaits
-            // 
-            this.gbSouhaits.Controls.Add(this.gbMarché);
-            this.gbSouhaits.Controls.Add(this.dgvSouhaits);
-            this.gbSouhaits.Location = new System.Drawing.Point(64, 71);
-            this.gbSouhaits.Name = "gbSouhaits";
-            this.gbSouhaits.Size = new System.Drawing.Size(666, 384);
-            this.gbSouhaits.TabIndex = 5;
-            this.gbSouhaits.TabStop = false;
-            this.gbSouhaits.Text = "Mes Souhaits";
-            this.gbSouhaits.MouseHover += new System.EventHandler(this.gb_MouseHover);
-            // 
-            // dgvSouhaits
-            // 
-            this.dgvSouhaits.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.dgvSouhaits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSouhaits.Location = new System.Drawing.Point(12, 19);
-            this.dgvSouhaits.Name = "dgvSouhaits";
-            this.dgvSouhaits.Size = new System.Drawing.Size(308, 320);
-            this.dgvSouhaits.TabIndex = 5;
-            this.dgvSouhaits.MouseHover += new System.EventHandler(this.gb_MouseHover);
-            // 
-            // gbMarché
-            // 
-            this.gbMarché.Controls.Add(this.pbinfo);
-            this.gbMarché.Controls.Add(this.dgvMarché);
-            this.gbMarché.Location = new System.Drawing.Point(0, 1);
-            this.gbMarché.Name = "gbMarché";
-            this.gbMarché.Size = new System.Drawing.Size(666, 384);
-            this.gbMarché.TabIndex = 6;
-            this.gbMarché.TabStop = false;
-            this.gbMarché.Text = "Bienvenu(e) sur le marché";
-            this.gbMarché.MouseHover += new System.EventHandler(this.gb_MouseHover);
-            // 
-            // dgvMarché
-            // 
-            this.dgvMarché.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvMarché.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarché.Location = new System.Drawing.Point(0, 35);
-            this.dgvMarché.Name = "dgvMarché";
-            this.dgvMarché.Size = new System.Drawing.Size(308, 320);
-            this.dgvMarché.TabIndex = 5;
-            // 
-            // lblAlbums
-            // 
-            this.lblAlbums.AutoSize = true;
-            this.lblAlbums.Font = new System.Drawing.Font("Ink Free", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlbums.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblAlbums.Location = new System.Drawing.Point(2, 16);
-            this.lblAlbums.Name = "lblAlbums";
-            this.lblAlbums.Size = new System.Drawing.Size(52, 16);
-            this.lblAlbums.TabIndex = 6;
-            this.lblAlbums.Text = " Albums";
-            this.lblAlbums.Click += new System.EventHandler(this.Album_Click);
-            // 
-            // Menu
-            // 
-            this.Menu.BackColor = System.Drawing.Color.Navy;
-            this.Menu.Controls.Add(this.lblSouhaits);
-            this.Menu.Controls.Add(this.lblMarché);
-            this.Menu.Controls.Add(this.lblAlbums);
-            this.Menu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Menu.Location = new System.Drawing.Point(0, 66);
-            this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(58, 389);
-            this.Menu.TabIndex = 7;
-            this.Menu.TabStop = false;
-            // 
-            // lblMarché
-            // 
-            this.lblMarché.AutoSize = true;
-            this.lblMarché.Font = new System.Drawing.Font("Ink Free", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarché.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblMarché.Location = new System.Drawing.Point(3, 41);
-            this.lblMarché.Name = "lblMarché";
-            this.lblMarché.Size = new System.Drawing.Size(49, 16);
-            this.lblMarché.TabIndex = 7;
-            this.lblMarché.Text = "Marché";
-            this.lblMarché.Click += new System.EventHandler(this.pbMarché_Click);
-            // 
-            // lblSouhaits
-            // 
-            this.lblSouhaits.AutoSize = true;
-            this.lblSouhaits.Font = new System.Drawing.Font("Ink Free", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSouhaits.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSouhaits.Location = new System.Drawing.Point(1, 66);
-            this.lblSouhaits.Name = "lblSouhaits";
-            this.lblSouhaits.Size = new System.Drawing.Size(56, 16);
-            this.lblSouhaits.TabIndex = 8;
-            this.lblSouhaits.Text = "Souhaits";
-            this.lblSouhaits.Click += new System.EventHandler(this.pbSouhaits_Click);
-            // 
-            // pbinfo
-            // 
-            this.pbinfo.Image = global::App.Properties.Resources.infobullemarché;
-            this.pbinfo.Location = new System.Drawing.Point(319, 35);
-            this.pbinfo.Name = "pbinfo";
-            this.pbinfo.Size = new System.Drawing.Size(337, 320);
-            this.pbinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbinfo.TabIndex = 6;
-            this.pbinfo.TabStop = false;
-            // 
-            // pbInfo1
-            // 
-            this.pbInfo1.Image = global::App.Properties.Resources.infobullealbum;
-            this.pbInfo1.Location = new System.Drawing.Point(314, 35);
-            this.pbInfo1.Name = "pbInfo1";
-            this.pbInfo1.Size = new System.Drawing.Size(346, 275);
-            this.pbInfo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbInfo1.TabIndex = 3;
-            this.pbInfo1.TabStop = false;
             // 
             // pbDeco
             // 
@@ -280,6 +147,139 @@
             this.pbSouhaits.TabStop = false;
             this.pbSouhaits.Click += new System.EventHandler(this.pbSouhaits_Click);
             // 
+            // gbAlbums
+            // 
+            this.gbAlbums.Controls.Add(this.dgvAlbums);
+            this.gbAlbums.Controls.Add(this.pbInfo1);
+            this.gbAlbums.Location = new System.Drawing.Point(70, 72);
+            this.gbAlbums.Name = "gbAlbums";
+            this.gbAlbums.Size = new System.Drawing.Size(656, 383);
+            this.gbAlbums.TabIndex = 2;
+            this.gbAlbums.TabStop = false;
+            this.gbAlbums.Text = "Mes Albums";
+            this.gbAlbums.MouseHover += new System.EventHandler(this.gb_MouseHover);
+            // 
+            // dgvAlbums
+            // 
+            this.dgvAlbums.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgvAlbums.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlbums.Location = new System.Drawing.Point(0, 19);
+            this.dgvAlbums.Name = "dgvAlbums";
+            this.dgvAlbums.Size = new System.Drawing.Size(308, 320);
+            this.dgvAlbums.TabIndex = 4;
+            // 
+            // pbInfo1
+            // 
+            this.pbInfo1.Image = global::App.Properties.Resources.infobullealbum;
+            this.pbInfo1.Location = new System.Drawing.Point(314, 35);
+            this.pbInfo1.Name = "pbInfo1";
+            this.pbInfo1.Size = new System.Drawing.Size(346, 275);
+            this.pbInfo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbInfo1.TabIndex = 3;
+            this.pbInfo1.TabStop = false;
+            // 
+            // gbSouhaits
+            // 
+            this.gbSouhaits.Controls.Add(this.gbMarché);
+            this.gbSouhaits.Controls.Add(this.dgvSouhaits);
+            this.gbSouhaits.Location = new System.Drawing.Point(64, 71);
+            this.gbSouhaits.Name = "gbSouhaits";
+            this.gbSouhaits.Size = new System.Drawing.Size(666, 384);
+            this.gbSouhaits.TabIndex = 5;
+            this.gbSouhaits.TabStop = false;
+            this.gbSouhaits.Text = "Mes Souhaits";
+            this.gbSouhaits.MouseHover += new System.EventHandler(this.gb_MouseHover);
+            // 
+            // gbMarché
+            // 
+            this.gbMarché.Controls.Add(this.pbinfo);
+            this.gbMarché.Controls.Add(this.dgvMarché);
+            this.gbMarché.Location = new System.Drawing.Point(0, 1);
+            this.gbMarché.Name = "gbMarché";
+            this.gbMarché.Size = new System.Drawing.Size(666, 384);
+            this.gbMarché.TabIndex = 6;
+            this.gbMarché.TabStop = false;
+            this.gbMarché.Text = "Bienvenu(e) sur MarchéBD, notre marché";
+            this.gbMarché.MouseHover += new System.EventHandler(this.gb_MouseHover);
+            // 
+            // pbinfo
+            // 
+            this.pbinfo.Image = global::App.Properties.Resources.infobullemarché;
+            this.pbinfo.Location = new System.Drawing.Point(319, 35);
+            this.pbinfo.Name = "pbinfo";
+            this.pbinfo.Size = new System.Drawing.Size(337, 320);
+            this.pbinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbinfo.TabIndex = 6;
+            this.pbinfo.TabStop = false;
+            // 
+            // dgvMarché
+            // 
+            this.dgvMarché.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvMarché.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMarché.Location = new System.Drawing.Point(0, 35);
+            this.dgvMarché.Name = "dgvMarché";
+            this.dgvMarché.Size = new System.Drawing.Size(308, 320);
+            this.dgvMarché.TabIndex = 5;
+            // 
+            // dgvSouhaits
+            // 
+            this.dgvSouhaits.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.dgvSouhaits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSouhaits.Location = new System.Drawing.Point(12, 19);
+            this.dgvSouhaits.Name = "dgvSouhaits";
+            this.dgvSouhaits.Size = new System.Drawing.Size(308, 320);
+            this.dgvSouhaits.TabIndex = 5;
+            this.dgvSouhaits.MouseHover += new System.EventHandler(this.gb_MouseHover);
+            // 
+            // lblAlbums
+            // 
+            this.lblAlbums.AutoSize = true;
+            this.lblAlbums.Font = new System.Drawing.Font("Ink Free", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlbums.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblAlbums.Location = new System.Drawing.Point(2, 16);
+            this.lblAlbums.Name = "lblAlbums";
+            this.lblAlbums.Size = new System.Drawing.Size(52, 16);
+            this.lblAlbums.TabIndex = 6;
+            this.lblAlbums.Text = " Albums";
+            this.lblAlbums.Click += new System.EventHandler(this.Album_Click);
+            // 
+            // Menu
+            // 
+            this.Menu.BackColor = System.Drawing.Color.Navy;
+            this.Menu.Controls.Add(this.lblSouhaits);
+            this.Menu.Controls.Add(this.lblMarché);
+            this.Menu.Controls.Add(this.lblAlbums);
+            this.Menu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Menu.Location = new System.Drawing.Point(0, 66);
+            this.Menu.Name = "Menu";
+            this.Menu.Size = new System.Drawing.Size(58, 389);
+            this.Menu.TabIndex = 7;
+            this.Menu.TabStop = false;
+            // 
+            // lblSouhaits
+            // 
+            this.lblSouhaits.AutoSize = true;
+            this.lblSouhaits.Font = new System.Drawing.Font("Ink Free", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSouhaits.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSouhaits.Location = new System.Drawing.Point(1, 66);
+            this.lblSouhaits.Name = "lblSouhaits";
+            this.lblSouhaits.Size = new System.Drawing.Size(56, 16);
+            this.lblSouhaits.TabIndex = 8;
+            this.lblSouhaits.Text = "Souhaits";
+            this.lblSouhaits.Click += new System.EventHandler(this.pbSouhaits_Click);
+            // 
+            // lblMarché
+            // 
+            this.lblMarché.AutoSize = true;
+            this.lblMarché.Font = new System.Drawing.Font("Ink Free", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarché.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblMarché.Location = new System.Drawing.Point(3, 41);
+            this.lblMarché.Name = "lblMarché";
+            this.lblMarché.Size = new System.Drawing.Size(49, 16);
+            this.lblMarché.TabIndex = 7;
+            this.lblMarché.Text = "Marché";
+            this.lblMarché.Click += new System.EventHandler(this.pbMarché_Click);
+            // 
             // FormUtil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,6 +290,8 @@
             this.Controls.Add(this.gbSouhaits);
             this.Controls.Add(this.gbAlbums);
             this.Controls.Add(this.gbHeader);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormUtil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mes Albums";
@@ -297,21 +299,21 @@
             this.Click += new System.EventHandler(this.FormUtil_Click);
             this.gbHeader.ResumeLayout(false);
             this.gbHeader.PerformLayout();
-            this.gbAlbums.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlbums)).EndInit();
-            this.gbSouhaits.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSouhaits)).EndInit();
-            this.gbMarché.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMarché)).EndInit();
-            this.Menu.ResumeLayout(false);
-            this.Menu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbInfo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDeco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPanier)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMarché)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSouhaits)).EndInit();
+            this.gbAlbums.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlbums)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInfo1)).EndInit();
+            this.gbSouhaits.ResumeLayout(false);
+            this.gbMarché.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMarché)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSouhaits)).EndInit();
+            this.Menu.ResumeLayout(false);
+            this.Menu.PerformLayout();
             this.ResumeLayout(false);
 
         }

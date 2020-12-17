@@ -12,14 +12,15 @@ namespace DAL
         /// <summary>
         /// Retourner toutes les personnes
         /// </summary>
-        /// <returns></returns>
+        
         List<Personne> GetAll();
 
         /// <summary>
         /// Sauvegarder une personne
         /// </summary>
-        /// <param name="personne">La personne </param>
+        bool CompareMdp(string login, string mdp);
         void Save(Personne personne);
+       Personne TrouverPersonne(string login, string mdp, string type);
     }
 }
 
