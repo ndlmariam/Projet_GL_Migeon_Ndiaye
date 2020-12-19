@@ -42,6 +42,24 @@ namespace DAL
             return false;
         }
 
+        public bool PresentBDD(string login)
+        {
+            string requete = "select Count(Login),Count(Mdp) from Personne pers where pers.Login = ?";
+            var result = Session.CreateQuery(requete).SetString(0, login).Enumerable<object[]>();
+            foreach (object[] row in result)
+            {
+
+                int nblogin = int.Parse(row[0].ToString());
+                if (nblogin > 0 )
+                {
+                    return true;
+                }
+                else { return false; }
+
+            }
+            return false;
+        }
+
         public Personne TrouverPersonne(string login, string mdp,string type)
         {
             Personne p;
@@ -65,6 +83,7 @@ namespace DAL
             
             return p;
         }
+        
        public void GetWishes(Utilisateur user)
         {
            /* string requete = "select a from Action a where Nom = ? and Personne.ID = ?";

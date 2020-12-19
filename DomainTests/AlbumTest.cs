@@ -17,7 +17,7 @@ namespace DomainTests
         private string _categorie = "";
         private string _genre = "";
         private string _editeur = "";
-        private Marche _marche;
+        private Domain.Action _action;
 
         [TestInitialize()]
         public void Initialize()

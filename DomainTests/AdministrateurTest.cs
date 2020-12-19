@@ -28,11 +28,11 @@ namespace DomainTests
         {
             //ajouter album et tester si le dernier album ajouter à la liste est présent dans la liste
             Album _album = new Album("AlbumTest", "LesTests", "pasdecover", "Lacate", "Fantastique", "Moi");
-            Marche _marche = new Marche("MarcheTest");
-            _admin.AjouterAuMarche(_marche,_album);
-            int taille = _marche.ListAlbums.Count;
+            Domain.Action _action = new Domain.Action("MarcheTest");
+            _admin.AjouterAuMarche(_action, _album);
+            int taille = _action.ListAlbums.Count;
             //vérifier toutes les caractéristiques
-            Assert.AreEqual(_marche.ListAlbums[taille - 1].Nom, _album.Nom);
+            Assert.AreEqual(_action.ListAlbums[taille - 1].Nom, _album.Nom);
         }
 
     }

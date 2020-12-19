@@ -82,6 +82,12 @@ namespace App
             gbMarché.Visible = false;
             gbSouhaits.Visible = false;
             gbAlbums.Visible = true;
+            lblMarché.BackColor = Color.DarkSlateBlue;
+            lblMarché.ForeColor = Color.White;
+            lblSouhaits.BackColor = Color.DarkSlateBlue;
+            lblSouhaits.ForeColor = Color.White;
+            lblAlbums.BackColor = Color.LightSteelBlue;
+            lblAlbums.ForeColor = Color.Black;
             gbHeader.Text = "Mes Albums";
         }
 
@@ -91,12 +97,29 @@ namespace App
             gbMarché.Visible = false;
             gbSouhaits.Visible = true;
             gbHeader.Text = "Mes Souhaits";
+            lblMarché.BackColor = Color.DarkSlateBlue;
+            lblMarché.ForeColor = Color.White;
+            lblAlbums.BackColor = Color.DarkSlateBlue;
+            lblAlbums.ForeColor = Color.White;
+            lblSouhaits.BackColor = Color.LightSteelBlue;
+            lblSouhaits.ForeColor = Color.Black;
+            pbSouhaits.BorderStyle = BorderStyle.Fixed3D;
+            pbMarché.BorderStyle = BorderStyle.None;
+         //   pbAlbums.BorderStyle = BorderStyle.Fixed3D;
         }
         private void pbMarché_Click(object sender, EventArgs e)
         {
             gbSouhaits.Visible = true;
             gbMarché.Visible = true;
             gbHeader.Text = "MarchéBD";
+            lblAlbums.BackColor = Color.DarkSlateBlue;
+            lblAlbums.ForeColor = Color.White;
+            lblSouhaits.BackColor = Color.DarkSlateBlue;
+            lblSouhaits.ForeColor = Color.White;
+            lblMarché.BackColor = Color.LightSteelBlue;
+            lblMarché.ForeColor = Color.Black;
+            pbSouhaits.BorderStyle = BorderStyle.None;
+            pbMarché.BorderStyle = BorderStyle.Fixed3D;
             NumeroAlbum = 0;
             RefreshViews();
         }
@@ -213,12 +236,19 @@ namespace App
             lblTitre4.Text = "";
             RefreshViews();
         }
+
+        private void pbAlbum1_Click(object sender, EventArgs e)
+        {
+            //modifier en fonction de la picturebox et du titre
+            FormDescription formd = new FormDescription(pbAlbum1,lblTitre1.Text);
+            formd.ShowDialog();
+        }
         /* foreach (Album a in AlbumsDuMarché)
 {
-    if (a.Couverture != "")
-    {
-        pbAlbum1.Image = Image.FromFile(a.Couverture);
-    }*/
+if (a.Couverture != "")
+{
+pbAlbum1.Image = Image.FromFile(a.Couverture);
+}*/
 
 
 

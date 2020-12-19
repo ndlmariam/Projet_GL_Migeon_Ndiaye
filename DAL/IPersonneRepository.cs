@@ -19,6 +19,7 @@ namespace DAL
         /// Sauvegarder une personne
         /// </summary>
         bool CompareMdp(string login, string mdp);
+        bool PresentBDD(string login);
         void Save(Personne personne);
        Personne TrouverPersonne(string login, string mdp, string type);
        void GetWishes(Utilisateur user);

@@ -73,7 +73,8 @@ namespace DomainTests
             bool supprimer = true;
             foreach(Album alb in Panier)
             {
-                if (_album.IsEqual(alb)) { supprimer = false; }
+                if (alb == _album) { supprimer = false; }
+                //if (_album.IsEqual(alb)) { supprimer = false; }
             }
             Assert.IsTrue(supprimer);
         }
@@ -87,7 +88,8 @@ namespace DomainTests
             bool supprimer = true;
             foreach (Album alb in ListSouhaits)
             {
-                if (_album.IsEqual(alb)) { supprimer = false; }
+                if (alb == _album) { supprimer = false; }
+                //if (_album.IsEqual(alb)) { supprimer = false; }
             }
             Assert.IsTrue(supprimer);
         }

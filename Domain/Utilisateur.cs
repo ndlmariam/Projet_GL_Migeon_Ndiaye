@@ -43,6 +43,15 @@ namespace Domain
         {
             Panier.Add(alb);
         }
+        public virtual void SupprimerPanier(Album alb)
+        {
+            Panier.Add(alb);
+        }
+
+        public virtual void SupprimerSouhait(Album alb)
+        {
+            ListSouhaits.Remove(alb);
+        }
     }
 
 }

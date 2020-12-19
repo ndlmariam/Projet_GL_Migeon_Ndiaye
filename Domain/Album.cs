@@ -31,5 +31,15 @@ namespace Domain
            // Auteurs = auteurs;
         }
 
+        public Album(string nom, string serie, string couverture, string cate, string genre, string editeur)
+        {
+            Nom = nom;
+            Serie = serie;
+            Couverture = couverture;
+            Categorie = cate;
+            Genre = genre;
+            Editeur = editeur;
+        }
+
     }
 }
