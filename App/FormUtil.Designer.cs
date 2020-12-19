@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbHeader = new System.Windows.Forms.GroupBox();
             this.lblNom = new System.Windows.Forms.Label();
             this.pbDeco = new System.Windows.Forms.PictureBox();
@@ -36,17 +37,36 @@
             this.pbMenu = new System.Windows.Forms.PictureBox();
             this.pbSouhaits = new System.Windows.Forms.PictureBox();
             this.gbAlbums = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAjoutManuel = new System.Windows.Forms.Button();
             this.dgvAlbums = new System.Windows.Forms.DataGridView();
             this.pbInfo1 = new System.Windows.Forms.PictureBox();
-            this.gbSouhaits = new System.Windows.Forms.GroupBox();
-            this.gbMarché = new System.Windows.Forms.GroupBox();
-            this.pbinfo = new System.Windows.Forms.PictureBox();
-            this.dgvMarché = new System.Windows.Forms.DataGridView();
-            this.dgvSouhaits = new System.Windows.Forms.DataGridView();
             this.lblAlbums = new System.Windows.Forms.Label();
             this.Menu = new System.Windows.Forms.GroupBox();
             this.lblSouhaits = new System.Windows.Forms.Label();
             this.lblMarché = new System.Windows.Forms.Label();
+            this.gbSouhaits = new System.Windows.Forms.GroupBox();
+            this.gbMarché = new System.Windows.Forms.GroupBox();
+            this.lblBarreRecherche = new System.Windows.Forms.Label();
+            this.tbBarreRecherche = new System.Windows.Forms.TextBox();
+            this.pbinfo = new System.Windows.Forms.PictureBox();
+            this.dgvSouhaits = new System.Windows.Forms.DataGridView();
+            this.Couverture = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Auteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Retirer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Panier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gbListeAlbums = new System.Windows.Forms.GroupBox();
+            this.pbAlbum1 = new System.Windows.Forms.PictureBox();
+            this.lblTitre1 = new System.Windows.Forms.Label();
+            this.pbAlbum2 = new System.Windows.Forms.PictureBox();
+            this.lblTitre2 = new System.Windows.Forms.Label();
+            this.pbAlbum3 = new System.Windows.Forms.PictureBox();
+            this.lblTitre3 = new System.Windows.Forms.Label();
+            this.pbAlbum4 = new System.Windows.Forms.PictureBox();
+            this.lblTitre4 = new System.Windows.Forms.Label();
+            this.btnNext = new System.Windows.Forms.Button();
             this.gbHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDeco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPanier)).BeginInit();
@@ -56,12 +76,16 @@
             this.gbAlbums.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlbums)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo1)).BeginInit();
+            this.Menu.SuspendLayout();
             this.gbSouhaits.SuspendLayout();
             this.gbMarché.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMarché)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSouhaits)).BeginInit();
-            this.Menu.SuspendLayout();
+            this.gbListeAlbums.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum4)).BeginInit();
             this.SuspendLayout();
             // 
             // gbHeader
@@ -149,6 +173,8 @@
             // 
             // gbAlbums
             // 
+            this.gbAlbums.Controls.Add(this.label1);
+            this.gbAlbums.Controls.Add(this.btnAjoutManuel);
             this.gbAlbums.Controls.Add(this.dgvAlbums);
             this.gbAlbums.Controls.Add(this.pbInfo1);
             this.gbAlbums.Location = new System.Drawing.Point(70, 72);
@@ -158,6 +184,27 @@
             this.gbAlbums.TabStop = false;
             this.gbAlbums.Text = "Mes Albums";
             this.gbAlbums.MouseHover += new System.EventHandler(this.gb_MouseHover);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(320, 315);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(228, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Ajouter manuellement un album à ma collection";
+            // 
+            // btnAjoutManuel
+            // 
+            this.btnAjoutManuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnAjoutManuel.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjoutManuel.Location = new System.Drawing.Point(323, 331);
+            this.btnAjoutManuel.Name = "btnAjoutManuel";
+            this.btnAjoutManuel.Size = new System.Drawing.Size(75, 38);
+            this.btnAjoutManuel.TabIndex = 6;
+            this.btnAjoutManuel.Text = "+";
+            this.btnAjoutManuel.UseVisualStyleBackColor = false;
+            this.btnAjoutManuel.Click += new System.EventHandler(this.btnAjoutManuel_Click);
             // 
             // dgvAlbums
             // 
@@ -177,59 +224,6 @@
             this.pbInfo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbInfo1.TabIndex = 3;
             this.pbInfo1.TabStop = false;
-            // 
-            // gbSouhaits
-            // 
-            this.gbSouhaits.Controls.Add(this.gbMarché);
-            this.gbSouhaits.Controls.Add(this.dgvSouhaits);
-            this.gbSouhaits.Location = new System.Drawing.Point(64, 71);
-            this.gbSouhaits.Name = "gbSouhaits";
-            this.gbSouhaits.Size = new System.Drawing.Size(666, 384);
-            this.gbSouhaits.TabIndex = 5;
-            this.gbSouhaits.TabStop = false;
-            this.gbSouhaits.Text = "Mes Souhaits";
-            this.gbSouhaits.MouseHover += new System.EventHandler(this.gb_MouseHover);
-            // 
-            // gbMarché
-            // 
-            this.gbMarché.Controls.Add(this.pbinfo);
-            this.gbMarché.Controls.Add(this.dgvMarché);
-            this.gbMarché.Location = new System.Drawing.Point(0, 1);
-            this.gbMarché.Name = "gbMarché";
-            this.gbMarché.Size = new System.Drawing.Size(666, 384);
-            this.gbMarché.TabIndex = 6;
-            this.gbMarché.TabStop = false;
-            this.gbMarché.Text = "Bienvenu(e) sur MarchéBD, notre marché";
-            this.gbMarché.MouseHover += new System.EventHandler(this.gb_MouseHover);
-            // 
-            // pbinfo
-            // 
-            this.pbinfo.Image = global::App.Properties.Resources.infobullemarché;
-            this.pbinfo.Location = new System.Drawing.Point(319, 35);
-            this.pbinfo.Name = "pbinfo";
-            this.pbinfo.Size = new System.Drawing.Size(337, 320);
-            this.pbinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbinfo.TabIndex = 6;
-            this.pbinfo.TabStop = false;
-            // 
-            // dgvMarché
-            // 
-            this.dgvMarché.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvMarché.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarché.Location = new System.Drawing.Point(0, 35);
-            this.dgvMarché.Name = "dgvMarché";
-            this.dgvMarché.Size = new System.Drawing.Size(308, 320);
-            this.dgvMarché.TabIndex = 5;
-            // 
-            // dgvSouhaits
-            // 
-            this.dgvSouhaits.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.dgvSouhaits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSouhaits.Location = new System.Drawing.Point(12, 19);
-            this.dgvSouhaits.Name = "dgvSouhaits";
-            this.dgvSouhaits.Size = new System.Drawing.Size(308, 320);
-            this.dgvSouhaits.TabIndex = 5;
-            this.dgvSouhaits.MouseHover += new System.EventHandler(this.gb_MouseHover);
             // 
             // lblAlbums
             // 
@@ -280,14 +274,216 @@
             this.lblMarché.Text = "Marché";
             this.lblMarché.Click += new System.EventHandler(this.pbMarché_Click);
             // 
+            // gbSouhaits
+            // 
+            this.gbSouhaits.Controls.Add(this.gbMarché);
+            this.gbSouhaits.Controls.Add(this.dgvSouhaits);
+            this.gbSouhaits.Location = new System.Drawing.Point(64, 72);
+            this.gbSouhaits.Name = "gbSouhaits";
+            this.gbSouhaits.Size = new System.Drawing.Size(666, 384);
+            this.gbSouhaits.TabIndex = 8;
+            this.gbSouhaits.TabStop = false;
+            this.gbSouhaits.Text = "Mes Souhaits";
+            // 
+            // gbMarché
+            // 
+            this.gbMarché.Controls.Add(this.gbListeAlbums);
+            this.gbMarché.Controls.Add(this.lblBarreRecherche);
+            this.gbMarché.Controls.Add(this.tbBarreRecherche);
+            this.gbMarché.Controls.Add(this.pbinfo);
+            this.gbMarché.Location = new System.Drawing.Point(0, 0);
+            this.gbMarché.Name = "gbMarché";
+            this.gbMarché.Size = new System.Drawing.Size(666, 384);
+            this.gbMarché.TabIndex = 6;
+            this.gbMarché.TabStop = false;
+            this.gbMarché.Text = "Bienvenu(e) sur MarchéBD, notre marché";
+            // 
+            // lblBarreRecherche
+            // 
+            this.lblBarreRecherche.AutoSize = true;
+            this.lblBarreRecherche.Location = new System.Drawing.Point(47, 35);
+            this.lblBarreRecherche.Name = "lblBarreRecherche";
+            this.lblBarreRecherche.Size = new System.Drawing.Size(198, 13);
+            this.lblBarreRecherche.TabIndex = 9;
+            this.lblBarreRecherche.Text = "Rechercher parmi les albums disponibles";
+            // 
+            // tbBarreRecherche
+            // 
+            this.tbBarreRecherche.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbBarreRecherche.Location = new System.Drawing.Point(39, 54);
+            this.tbBarreRecherche.Name = "tbBarreRecherche";
+            this.tbBarreRecherche.Size = new System.Drawing.Size(217, 20);
+            this.tbBarreRecherche.TabIndex = 7;
+            // 
+            // pbinfo
+            // 
+            this.pbinfo.Image = global::App.Properties.Resources.infobullemarché;
+            this.pbinfo.Location = new System.Drawing.Point(319, 35);
+            this.pbinfo.Name = "pbinfo";
+            this.pbinfo.Size = new System.Drawing.Size(337, 320);
+            this.pbinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbinfo.TabIndex = 6;
+            this.pbinfo.TabStop = false;
+            // 
+            // dgvSouhaits
+            // 
+            this.dgvSouhaits.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.dgvSouhaits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSouhaits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Couverture,
+            this.Titre,
+            this.Auteur,
+            this.Date,
+            this.Retirer,
+            this.Panier});
+            this.dgvSouhaits.Location = new System.Drawing.Point(6, 92);
+            this.dgvSouhaits.Name = "dgvSouhaits";
+            this.dgvSouhaits.Size = new System.Drawing.Size(644, 319);
+            this.dgvSouhaits.TabIndex = 5;
+            // 
+            // Couverture
+            // 
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Couverture.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Couverture.HeaderText = "Couverture";
+            this.Couverture.Name = "Couverture";
+            // 
+            // Titre
+            // 
+            this.Titre.HeaderText = "Titre de l\'album";
+            this.Titre.Name = "Titre";
+            // 
+            // Auteur
+            // 
+            this.Auteur.HeaderText = "Auteur(s)";
+            this.Auteur.Name = "Auteur";
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date d\'ajout";
+            this.Date.Name = "Date";
+            // 
+            // Retirer
+            // 
+            this.Retirer.HeaderText = "Retirer de la liste de souhait ?";
+            this.Retirer.Name = "Retirer";
+            // 
+            // Panier
+            // 
+            this.Panier.HeaderText = "Ajouter au panier ?";
+            this.Panier.Name = "Panier";
+            // 
+            // gbListeAlbums
+            // 
+            this.gbListeAlbums.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gbListeAlbums.Controls.Add(this.btnNext);
+            this.gbListeAlbums.Controls.Add(this.lblTitre4);
+            this.gbListeAlbums.Controls.Add(this.pbAlbum4);
+            this.gbListeAlbums.Controls.Add(this.lblTitre3);
+            this.gbListeAlbums.Controls.Add(this.pbAlbum3);
+            this.gbListeAlbums.Controls.Add(this.lblTitre2);
+            this.gbListeAlbums.Controls.Add(this.pbAlbum2);
+            this.gbListeAlbums.Controls.Add(this.lblTitre1);
+            this.gbListeAlbums.Controls.Add(this.pbAlbum1);
+            this.gbListeAlbums.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.gbListeAlbums.Location = new System.Drawing.Point(39, 92);
+            this.gbListeAlbums.Name = "gbListeAlbums";
+            this.gbListeAlbums.Size = new System.Drawing.Size(250, 292);
+            this.gbListeAlbums.TabIndex = 10;
+            this.gbListeAlbums.TabStop = false;
+            // 
+            // pbAlbum1
+            // 
+            this.pbAlbum1.Location = new System.Drawing.Point(6, 0);
+            this.pbAlbum1.Name = "pbAlbum1";
+            this.pbAlbum1.Size = new System.Drawing.Size(112, 119);
+            this.pbAlbum1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAlbum1.TabIndex = 0;
+            this.pbAlbum1.TabStop = false;
+            // 
+            // lblTitre1
+            // 
+            this.lblTitre1.AutoSize = true;
+            this.lblTitre1.Location = new System.Drawing.Point(7, 126);
+            this.lblTitre1.Name = "lblTitre1";
+            this.lblTitre1.Size = new System.Drawing.Size(64, 13);
+            this.lblTitre1.TabIndex = 1;
+            this.lblTitre1.Text = "TitreSuivant";
+            // 
+            // pbAlbum2
+            // 
+            this.pbAlbum2.Location = new System.Drawing.Point(127, 0);
+            this.pbAlbum2.Name = "pbAlbum2";
+            this.pbAlbum2.Size = new System.Drawing.Size(112, 119);
+            this.pbAlbum2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAlbum2.TabIndex = 2;
+            this.pbAlbum2.TabStop = false;
+            // 
+            // lblTitre2
+            // 
+            this.lblTitre2.AutoSize = true;
+            this.lblTitre2.Location = new System.Drawing.Point(133, 126);
+            this.lblTitre2.Name = "lblTitre2";
+            this.lblTitre2.Size = new System.Drawing.Size(64, 13);
+            this.lblTitre2.TabIndex = 3;
+            this.lblTitre2.Text = "TitreSuivant";
+            // 
+            // pbAlbum3
+            // 
+            this.pbAlbum3.Location = new System.Drawing.Point(6, 145);
+            this.pbAlbum3.Name = "pbAlbum3";
+            this.pbAlbum3.Size = new System.Drawing.Size(112, 121);
+            this.pbAlbum3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAlbum3.TabIndex = 4;
+            this.pbAlbum3.TabStop = false;
+            // 
+            // lblTitre3
+            // 
+            this.lblTitre3.AutoSize = true;
+            this.lblTitre3.Location = new System.Drawing.Point(8, 269);
+            this.lblTitre3.Name = "lblTitre3";
+            this.lblTitre3.Size = new System.Drawing.Size(64, 13);
+            this.lblTitre3.TabIndex = 5;
+            this.lblTitre3.Text = "TitreSuivant";
+            // 
+            // pbAlbum4
+            // 
+            this.pbAlbum4.Location = new System.Drawing.Point(127, 145);
+            this.pbAlbum4.Name = "pbAlbum4";
+            this.pbAlbum4.Size = new System.Drawing.Size(112, 121);
+            this.pbAlbum4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAlbum4.TabIndex = 6;
+            this.pbAlbum4.TabStop = false;
+            // 
+            // lblTitre4
+            // 
+            this.lblTitre4.AutoSize = true;
+            this.lblTitre4.Location = new System.Drawing.Point(124, 269);
+            this.lblTitre4.Name = "lblTitre4";
+            this.lblTitre4.Size = new System.Drawing.Size(64, 13);
+            this.lblTitre4.TabIndex = 7;
+            this.lblTitre4.Text = "TitreSuivant";
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnNext.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Location = new System.Drawing.Point(188, 268);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(56, 23);
+            this.btnNext.TabIndex = 8;
+            this.btnNext.Text = "Next >";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
             // FormUtil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(224)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(742, 455);
-            this.Controls.Add(this.Menu);
             this.Controls.Add(this.gbSouhaits);
+            this.Controls.Add(this.Menu);
             this.Controls.Add(this.gbAlbums);
             this.Controls.Add(this.gbHeader);
             this.MaximizeBox = false;
@@ -305,15 +501,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSouhaits)).EndInit();
             this.gbAlbums.ResumeLayout(false);
+            this.gbAlbums.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlbums)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo1)).EndInit();
-            this.gbSouhaits.ResumeLayout(false);
-            this.gbMarché.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMarché)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSouhaits)).EndInit();
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
+            this.gbSouhaits.ResumeLayout(false);
+            this.gbMarché.ResumeLayout(false);
+            this.gbMarché.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSouhaits)).EndInit();
+            this.gbListeAlbums.ResumeLayout(false);
+            this.gbListeAlbums.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,11 +529,7 @@
         private System.Windows.Forms.PictureBox pbMarché;
         private System.Windows.Forms.GroupBox gbAlbums;
         private System.Windows.Forms.PictureBox pbInfo1;
-        private System.Windows.Forms.GroupBox gbSouhaits;
         private System.Windows.Forms.DataGridView dgvAlbums;
-        private System.Windows.Forms.DataGridView dgvSouhaits;
-        private System.Windows.Forms.GroupBox gbMarché;
-        private System.Windows.Forms.DataGridView dgvMarché;
         private System.Windows.Forms.PictureBox pbPanier;
         private System.Windows.Forms.PictureBox pbDeco;
         private System.Windows.Forms.Label lblNom;
@@ -338,6 +537,29 @@
         private System.Windows.Forms.GroupBox Menu;
         private System.Windows.Forms.Label lblSouhaits;
         private System.Windows.Forms.Label lblMarché;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAjoutManuel;
+        private System.Windows.Forms.GroupBox gbSouhaits;
+        private System.Windows.Forms.GroupBox gbMarché;
+        private System.Windows.Forms.Label lblBarreRecherche;
+        private System.Windows.Forms.TextBox tbBarreRecherche;
         private System.Windows.Forms.PictureBox pbinfo;
+        private System.Windows.Forms.DataGridView dgvSouhaits;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Couverture;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Auteur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Retirer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Panier;
+        private System.Windows.Forms.GroupBox gbListeAlbums;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Label lblTitre4;
+        private System.Windows.Forms.PictureBox pbAlbum4;
+        private System.Windows.Forms.Label lblTitre3;
+        private System.Windows.Forms.PictureBox pbAlbum3;
+        private System.Windows.Forms.Label lblTitre2;
+        private System.Windows.Forms.PictureBox pbAlbum2;
+        private System.Windows.Forms.Label lblTitre1;
+        private System.Windows.Forms.PictureBox pbAlbum1;
     }
 }

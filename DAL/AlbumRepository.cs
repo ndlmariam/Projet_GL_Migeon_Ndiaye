@@ -19,7 +19,19 @@ namespace DAL
             Session.SaveOrUpdate(album);
             Session.Flush();
         }
+      public Album GetAlbumByActionID(int actionid)
+        {
+            Album album = new Album();
+            string requete = "select alb from Album alb where alb.Action.idAction= ? ";
+            var result = Session.CreateQuery(requete).SetInt32(0, actionid).Enumerable<Album>();
+            foreach (Album row in result)
+            {
+               album = row;
 
-        
+
+            }
+            return album;
+        }
+
     }
 }

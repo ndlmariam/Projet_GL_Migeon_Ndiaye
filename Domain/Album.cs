@@ -14,8 +14,9 @@ namespace Domain
         public virtual string Couverture { get; set; }
         public virtual string Categorie { get; set; }
         public virtual string Genre { get; set; }
+        public virtual string Auteur { get; set; }
         public virtual string Editeur { get; set; }
-        public virtual Marche Marche { get; set; }
+        public virtual Action Action { get; set; }
         //public virtual IList <string> Auteurs { get; set; }
 
         public Album() { }

@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAccueil));
             this.gbConnexion = new System.Windows.Forms.GroupBox();
             this.gbCreation = new System.Windows.Forms.GroupBox();
+            this.tbPseudo = new System.Windows.Forms.TextBox();
+            this.lblPseudo = new System.Windows.Forms.Label();
             this.tbMdpCrea = new System.Windows.Forms.TextBox();
             this.tbLoginCrea = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,8 +53,6 @@
             this.btnCreation = new System.Windows.Forms.Button();
             this.btnValider = new System.Windows.Forms.Button();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.lblPseudo = new System.Windows.Forms.Label();
-            this.tbPseudo = new System.Windows.Forms.TextBox();
             this.gbConnexion.SuspendLayout();
             this.gbCreation.SuspendLayout();
             this.SuspendLayout();
@@ -95,6 +95,23 @@
             this.gbCreation.TabStop = false;
             this.gbCreation.Text = "Création de compte";
             this.gbCreation.Visible = false;
+            // 
+            // tbPseudo
+            // 
+            this.tbPseudo.Location = new System.Drawing.Point(405, 87);
+            this.tbPseudo.Name = "tbPseudo";
+            this.tbPseudo.Size = new System.Drawing.Size(100, 24);
+            this.tbPseudo.TabIndex = 8;
+            // 
+            // lblPseudo
+            // 
+            this.lblPseudo.AutoSize = true;
+            this.lblPseudo.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblPseudo.Location = new System.Drawing.Point(344, 90);
+            this.lblPseudo.Name = "lblPseudo";
+            this.lblPseudo.Size = new System.Drawing.Size(55, 17);
+            this.lblPseudo.TabIndex = 7;
+            this.lblPseudo.Text = "Pseudo :";
             // 
             // tbMdpCrea
             // 
@@ -298,6 +315,7 @@
             this.btnValider.TabIndex = 11;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = false;
+            this.btnValider.UseWaitCursor = true;
             this.btnValider.Visible = false;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
@@ -309,23 +327,6 @@
             this.lblDescription.Size = new System.Drawing.Size(565, 79);
             this.lblDescription.TabIndex = 13;
             this.lblDescription.Text = resources.GetString("lblDescription.Text");
-            // 
-            // lblPseudo
-            // 
-            this.lblPseudo.AutoSize = true;
-            this.lblPseudo.Font = new System.Drawing.Font("Calibri", 10F);
-            this.lblPseudo.Location = new System.Drawing.Point(344, 90);
-            this.lblPseudo.Name = "lblPseudo";
-            this.lblPseudo.Size = new System.Drawing.Size(55, 17);
-            this.lblPseudo.TabIndex = 7;
-            this.lblPseudo.Text = "Pseudo :";
-            // 
-            // tbPseudo
-            // 
-            this.tbPseudo.Location = new System.Drawing.Point(405, 87);
-            this.tbPseudo.Name = "tbPseudo";
-            this.tbPseudo.Size = new System.Drawing.Size(100, 24);
-            this.tbPseudo.TabIndex = 8;
             // 
             // FormAccueil
             // 

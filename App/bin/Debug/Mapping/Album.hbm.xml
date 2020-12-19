@@ -9,15 +9,15 @@ namespace="Domain">
   </id>
   <property name="Nom" column="nom" not-null="true"/>
   <property name="Serie" column="serie" />
-  <!--<property name="Auteurs" column="auteurs" not-null="true"/>-->
+  <property name="Auteur" column="auteurs" not-null="true"/>
   <property name="Categorie" column="categorie" not-null="true"/>
   <property name="Genre" column="genre" not-null="true"/>
-  <property name="Editeur" column="editeur" not-null="true"/>
+  <property name="Editeur" column="editeur" not-null="false"/>
   <property name="Couverture" column="couverture" />
 
 <!-- Mapping des associations de la classe -->
  <!-- Plusieurs albums dans le marché  -->
-  <many-to-one name ="Marche" class ="Marche" column="action_id"/> 
+  <many-to-one name ="Action" class ="Action" column="action_id"/> 
   
 </class>
 </hibernate-mapping>

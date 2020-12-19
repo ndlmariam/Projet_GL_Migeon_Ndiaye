@@ -51,6 +51,7 @@ namespace App
                     if (verificationad == true)
                     {
                         Personne administrateur = _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "Admin");
+                        FormAdmin.InstanceFormAdmin.Administrateur = administrateur;
                         FormAdmin formadmin =  FormAdmin.InstanceFormAdmin;
                         formadmin.ShowDialog();
                     }
@@ -59,6 +60,7 @@ namespace App
                 {
                     Personne administrateur = new Administrateur(tbPseudo.Text, "Admin", tbLoginCrea.Text, tbMdpCrea.Text);
                     _personnerepo.Save(administrateur);
+                    FormAdmin.InstanceFormAdmin.Administrateur = administrateur;
                     FormAdmin formadmin = FormAdmin.InstanceFormAdmin;
                     formadmin.ShowDialog();
                 }
@@ -71,8 +73,8 @@ namespace App
                         if (verificationus == true)
                         {
                             Personne utilisateur = _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "User");
-                            FormUtil.InstanceFormUtil.Utilisateur = utilisateur;
-                            FormUtil.InstanceFormUtil.ShowDialog();
+                            FormUtil.InstanceFormUtil.Utilisateur = (Utilisateur) utilisateur;
+                        if (utilisateur != null) { FormUtil.InstanceFormUtil.ShowDialog(); }
                         }
                     }
                     if (rbUserCrea.Checked == true)
@@ -80,15 +82,16 @@ namespace App
                         Personne utilisateur = new Utilisateur(tbPseudo.Text, "User", tbLoginCrea.Text, tbMdpCrea.Text);
                         _personnerepo.Save(utilisateur);
 
-                        FormUtil.InstanceFormUtil.Utilisateur = utilisateur;
-                        FormUtil.InstanceFormUtil.ShowDialog();
+                    FormUtil.InstanceFormUtil.Utilisateur = (Utilisateur)utilisateur;
+                     FormUtil.InstanceFormUtil.ShowDialog(); 
+                }
 
 
-                    }
+            }
 
                 }
             
-        }
+        
 
        
 

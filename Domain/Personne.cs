@@ -13,11 +13,8 @@ namespace Domain
         public virtual string Type { get; set; }
         public virtual string Login { get; set; }
         public virtual string Mdp { get; set; }
-        public virtual IList <Marche> Ajouts { get; set; }
-        public virtual IList<Marche> Suppression { get; set; }
-        public virtual IList<Marche> Voeux { get; set; }
-        public virtual IList<Marche> Achats { get; set; }
-       
+      
+        
 
     }
 }

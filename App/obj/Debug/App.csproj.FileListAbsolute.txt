@@ -72,7 +72,6 @@ C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\App\bin\Debug\MySql.Data.dll
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Mapping\Album.hbm.xml
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Mapping\Personne.hbm.xml
-C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Mapping\Marche.hbm.xml
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\App\bin\Debug\hibernate.cfg.xml
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\App\bin\Debug\App.exe.config
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\App\bin\Debug\App.exe
@@ -99,35 +98,34 @@ C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.csproj.GenerateResource.Cache
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.exe
 C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.pdb
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\MySql.Data.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Mapping\Album.hbm.xml
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Mapping\Personne.hbm.xml
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Mapping\Marche.hbm.xml
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\hibernate.cfg.xml
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\App.exe.config
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\App.exe
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\App.pdb
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\DAL.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Domain.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\NHibernate.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Remotion.Linq.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Remotion.Linq.EagerFetching.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Antlr3.Runtime.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Iesi.Collections.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\DAL.pdb
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Domain.pdb
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\NHibernate.xml
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Remotion.Linq.xml
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Remotion.Linq.EagerFetching.xml
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Antlr3.Runtime.xml
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Iesi.Collections.xml
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.csprojAssemblyReference.cache
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.FormAccueil.resources
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.FormAdmin.resources
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.FormUtil.resources
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.Properties.Resources.resources
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.csproj.GenerateResource.cache
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.csproj.CoreCompileInputs.cache
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.csproj.CopyComplete
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.exe
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.pdb
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT ProjetGL_BD\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Mapping\Action.hbm.xml
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\App.exe.config
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.exe
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.pdb
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\MySql.Data.dll
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Mapping\Album.hbm.xml
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Mapping\Personne.hbm.xml
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Mapping\Action.hbm.xml
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\hibernate.cfg.xml
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\App.exe
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\App.pdb
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\DAL.dll
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Domain.dll
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\NHibernate.dll
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Remotion.Linq.dll
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Remotion.Linq.EagerFetching.dll
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Antlr3.Runtime.dll
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Iesi.Collections.dll
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\DAL.pdb
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Domain.pdb
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\NHibernate.xml
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Remotion.Linq.xml
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Remotion.Linq.EagerFetching.xml
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Antlr3.Runtime.xml
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\bin\Debug\Iesi.Collections.xml
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.csprojResolveAssemblyReference.cache
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.FormAccueil.resources
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.FormAdmin.resources
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.FormUtil.resources
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.Properties.Resources.resources
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT TEMPORAIRE\Projet_GL_Migeon_Ndiaye\App\obj\Debug\App.csproj.GenerateResource.Cache

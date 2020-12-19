@@ -60,9 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAlbumRepository.cs" />
-    <Compile Include="IMarcheRepository.cs" />
+    <Compile Include="IActionRepository.cs" />
     <Compile Include="IPersonneRepository.cs" />
-    <Compile Include="MarcheRepository.cs" />
+    <Compile Include="ActionRepository.cs" />
     <Compile Include="AlbumRepository.cs" />
     <Compile Include="PersonneRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

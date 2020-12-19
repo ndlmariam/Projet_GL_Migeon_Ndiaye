@@ -21,6 +21,8 @@ namespace DAL
         bool CompareMdp(string login, string mdp);
         void Save(Personne personne);
        Personne TrouverPersonne(string login, string mdp, string type);
+       void GetWishes(Utilisateur user);
+     
     }
 }
 

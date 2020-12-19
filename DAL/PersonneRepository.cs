@@ -8,7 +8,11 @@ using Domain;
 namespace DAL
 {
     public class PersonneRepository : Repository, IPersonneRepository
-    {
+    {   public PersonneRepository() { }
+        private IAlbumRepository _albrepo;
+        public PersonneRepository(IAlbumRepository albumrepository) {
+            _albrepo = albumrepository;
+        }
         public List<Personne> GetAll()
         {
             return Session.Query<Personne>().ToList();
@@ -60,6 +64,21 @@ namespace DAL
 
             
             return p;
+        }
+       public void GetWishes(Utilisateur user)
+        {
+           /* string requete = "select a from Action a where Nom = ? and Personne.ID = ?";
+            var result = Session.CreateQuery(requete).SetString(0, "AjoutSouhait").SetInt32(1, user.ID).Enumerable<Domain.Action>();
+            foreach (Domain.Action  row in result)
+            {
+
+                int idaction = row.idAction;
+                Album album = _albrepo.GetAlbumByActionID(idaction);
+                user.ListSouhaits.Add(album);
+
+
+
+            }*/
         }
     }
 }

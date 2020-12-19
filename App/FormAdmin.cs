@@ -1,4 +1,5 @@
 ﻿using DAL;
+using Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,13 @@ namespace App
     public partial class FormAdmin : Form
     {
         private bool disparition;
-        private static string applidatapath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        private static string applipath = Path.Combine(applidatapath, "CircuitBD.Net");
+        private static string apppath =Environment.CurrentDirectory;
+        private static string applipath = Path.Combine(apppath, "CircuitBD.Net");
         Label placeholder;
-
+        Album NouvelAlbum;
+        public Personne Administrateur { get; set; }
+        private IActionRepository _actionrepo;
+        private IAlbumRepository _albumrepo;
         // technique du singleton pour avoir une seule instance de notre form
         private static FormAdmin instanceformadmin = null;
         public static FormAdmin InstanceFormAdmin
@@ -27,14 +31,17 @@ namespace App
             {
                 if (instanceformadmin == null)
                 {
-                    IMarcheRepository RepositoryMarche = new MarcheRepository();
-                    instanceformadmin = new FormAdmin(RepositoryMarche);
+                    //IMPORTANT : INSTANCIATION DES REPOSITORY
+                    IAlbumRepository AlbumRepository = new AlbumRepository();
+                    IPersonneRepository PersonneRepository = new PersonneRepository();
+                    IActionRepository ActionRepository = new ActionRepository();
+                    instanceformadmin = new FormAdmin(ActionRepository,PersonneRepository,AlbumRepository);
                 }
                 return instanceformadmin;
             }
 
         }
-        private FormAdmin(IMarcheRepository MarcheRepository)
+        private FormAdmin(IActionRepository ActionRepository,IPersonneRepository PersonneRepository, IAlbumRepository AlbumRepository)
         {
             InitializeComponent();
             if(!Directory.Exists(applipath))
@@ -42,7 +49,8 @@ namespace App
                 Directory.CreateDirectory(applipath);
             }
             disparition = false;
-
+            _actionrepo = ActionRepository;
+            _albumrepo = AlbumRepository;
         }
 
        
@@ -57,12 +65,14 @@ namespace App
         {
             placeholder.Visible = false;
             disparition = true;
+            NouvelAlbum.Categorie = tbCategorie.Text;
         }
 
         private void tbGenre_TextChanged(object sender, EventArgs e)
         {
             placeholder.Visible = false;
             disparition = true;
+            NouvelAlbum.Genre = tbGenre.Text;
         }
 
         private void btnParcourir_Click(object sender, EventArgs e)
@@ -70,13 +80,17 @@ namespace App
             OpenFileDialog parcourir = new OpenFileDialog();
             parcourir.DefaultExt = "jpg";
             parcourir.ShowDialog();
-            string couverturespath = Path.Combine(applidatapath, "CircuitBD.Net", "Couvertures");
+            string couverturespath = Path.Combine(apppath, "CircuitBD.Net", "Couvertures");
             if (!Directory.Exists(couverturespath))
             {
                 Directory.CreateDirectory(couverturespath);
             }
             string fileName = Path.GetFileName(parcourir.FileName);
             File.Copy(parcourir.FileName, Path.Combine(couverturespath, fileName));
+
+           // string cheminacces = Path.Combine(couverturespath, fileName);
+            NouvelAlbum.Couverture = fileName;
+
         }
 
         private void PlaceHolder_MouseHover(object sender, EventArgs e)
@@ -92,5 +106,58 @@ namespace App
                 instanceformadmin.Close();
             }
         }
+
+        private void btnAjout_Click(object sender, EventArgs e)
+        {
+            gbAjoutAlbum.Visible = true;
+            gbMarchéAdmin.Visible = false;
+            NouvelAlbum = new Album();
+          
+        }
+
+        private void pbMarché_Click(object sender, EventArgs e)
+        {
+            gbMarchéAdmin.Visible = true;
+        }
+
+        private void btnValider_Click(object sender, EventArgs e)
+        {
+            // _marcherepo.AjouterAlbum()
+            _albumrepo.Save(NouvelAlbum);
+            gbMarchéAdmin.Visible = true;
+            RefreshDgv();
+        }
+
+        private void RefreshDgv()
+        {
+            dgvMarché.DataSource = null;
+
+            List<Album> AlbumsDuMarché = _actionrepo.GetAll();
+            dgvMarché.DataSource = AlbumsDuMarché;
+
+        }
+
+        private void FormAdmin_Load(object sender, EventArgs e)
+        {
+            lblNom.Text = Administrateur.Nom;
+            RefreshDgv();
+        }
+
+        private void tbTitre_TextChanged(object sender, EventArgs e)
+        {
+            NouvelAlbum.Nom = tbTitre.Text;
+        }
+
+        private void tbAuteur_TextChanged(object sender, EventArgs e)
+        {
+            NouvelAlbum.Auteur = tbAuteur.Text;
+        }
+
+        private void tbSerie_TextChanged(object sender, EventArgs e)
+        {
+            NouvelAlbum.Serie = tbSerie.Text;
+        }
+
+        
     }
 }
