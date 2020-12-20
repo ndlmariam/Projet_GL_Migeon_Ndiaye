@@ -39,7 +39,7 @@ namespace App
                 {
                     //IMPORTANT : INSTANCIATION DES REPOSITORY
                     IAlbumRepository AlbumRepository = new AlbumRepository();
-                    IPersonneRepository PersonneRepository = new PersonneRepository(AlbumRepository);
+                    IPersonneRepository PersonneRepository = new PersonneRepository();
                     IActionRepository ActionRepository = new ActionRepository();
                     instanceformutil = new FormUtil(ActionRepository, AlbumRepository, PersonneRepository);
                 }
@@ -111,6 +111,7 @@ namespace App
             gbMarché.Visible = true;
             gbHeader.Text = "MarchéBD";
             NumeroAlbum = 0;
+            pbPanier.Visible = true;
             RefreshViews();
         }
 
@@ -378,6 +379,25 @@ namespace App
          
 
 
+        }
+
+        private void pbPanier_Click(object sender, EventArgs e)
+        {
+            RefreshViews();
+            RecupererSouhaitUser();
+           if ( MessageBox.Show( "Voulez-vous acheter l'ensemble de votre liste de souhaits ?", "Acheter", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+            { foreach (Album souhait in Utilisateur.ListSouhaits)
+                {
+                    Domain.Action Achat = new Domain.Action("Achat", Utilisateur,souhait);
+                    _actionrepo.SaveAction(Achat);
+                    Utilisateur.ListSouhaits.Remove(souhait);
+                    Domain.Action ActionASupprimer = _actionrepo.GetActionByNameAndAlbum(souhait, "AjouterSouhait");
+                    _actionrepo.DeleteAction(ActionASupprimer);
+                    Utilisateur.ActionsUser.Remove(ActionASupprimer);
+                    _persrepo.Save(Utilisateur);
+                }
+            }
+            RefreshViews();
         }
     }
 

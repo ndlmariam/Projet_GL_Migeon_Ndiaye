@@ -133,7 +133,7 @@ namespace App
         {
             dgvMarché.DataSource = null;
 
-            List<Album> AlbumsDuMarché = _actionrepo.GetAll();
+            List<Album> AlbumsDuMarché = _albumrepo.GetAll();
             dgvMarché.DataSource = AlbumsDuMarché;
 
         }

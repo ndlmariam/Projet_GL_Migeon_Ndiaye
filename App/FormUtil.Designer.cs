@@ -46,7 +46,6 @@
             this.lblMarché = new System.Windows.Forms.Label();
             this.gbSouhaits = new System.Windows.Forms.GroupBox();
             this.gbListeSouhaits = new System.Windows.Forms.GroupBox();
-            this.btnAcheter1 = new System.Windows.Forms.Button();
             this.pbCoeur4 = new System.Windows.Forms.PictureBox();
             this.pbCoeur3 = new System.Windows.Forms.PictureBox();
             this.pbCoeur2 = new System.Windows.Forms.PictureBox();
@@ -76,7 +75,6 @@
             this.tbResumé = new System.Windows.Forms.TextBox();
             this.btnFermerPopUp = new System.Windows.Forms.Button();
             this.btnAjoutSouhaits = new System.Windows.Forms.Button();
-            this.btnAjoutPanier = new System.Windows.Forms.Button();
             this.pbCouvertureDetail = new System.Windows.Forms.PictureBox();
             this.lblTitreDetail = new System.Windows.Forms.Label();
             this.gbListeAlbums = new System.Windows.Forms.GroupBox();
@@ -138,7 +136,7 @@
             this.gbHeader.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gbHeader.Location = new System.Drawing.Point(0, 0);
             this.gbHeader.Name = "gbHeader";
-            this.gbHeader.Size = new System.Drawing.Size(737, 66);
+            this.gbHeader.Size = new System.Drawing.Size(736, 66);
             this.gbHeader.TabIndex = 0;
             this.gbHeader.TabStop = false;
             this.gbHeader.Text = "Mes albums";
@@ -173,6 +171,7 @@
             this.pbPanier.TabIndex = 3;
             this.pbPanier.TabStop = false;
             this.pbPanier.Visible = false;
+            this.pbPanier.Click += new System.EventHandler(this.pbPanier_Click);
             // 
             // pbMarché
             // 
@@ -312,6 +311,7 @@
             // 
             // gbSouhaits
             // 
+            this.gbSouhaits.Controls.Add(this.gbMarché);
             this.gbSouhaits.Controls.Add(this.gbListeSouhaits);
             this.gbSouhaits.Controls.Add(this.lblAlbumsSouhaits);
             this.gbSouhaits.Controls.Add(this.lblHistoriqueVoeux);
@@ -326,7 +326,6 @@
             // gbListeSouhaits
             // 
             this.gbListeSouhaits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gbListeSouhaits.Controls.Add(this.btnAcheter1);
             this.gbListeSouhaits.Controls.Add(this.pbCoeur4);
             this.gbListeSouhaits.Controls.Add(this.pbCoeur3);
             this.gbListeSouhaits.Controls.Add(this.pbCoeur2);
@@ -346,16 +345,6 @@
             this.gbListeSouhaits.Size = new System.Drawing.Size(250, 292);
             this.gbListeSouhaits.TabIndex = 14;
             this.gbListeSouhaits.TabStop = false;
-            // 
-            // btnAcheter1
-            // 
-            this.btnAcheter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAcheter1.Location = new System.Drawing.Point(6, 98);
-            this.btnAcheter1.Name = "btnAcheter1";
-            this.btnAcheter1.Size = new System.Drawing.Size(112, 21);
-            this.btnAcheter1.TabIndex = 13;
-            this.btnAcheter1.Text = "Acheter";
-            this.btnAcheter1.UseVisualStyleBackColor = false;
             // 
             // pbCoeur4
             // 
@@ -542,7 +531,7 @@
             this.gbMarché.Controls.Add(this.lblBarreRecherche);
             this.gbMarché.Controls.Add(this.tbBarreRecherche);
             this.gbMarché.Controls.Add(this.pbinfo);
-            this.gbMarché.Location = new System.Drawing.Point(64, 72);
+            this.gbMarché.Location = new System.Drawing.Point(6, 0);
             this.gbMarché.Name = "gbMarché";
             this.gbMarché.Size = new System.Drawing.Size(666, 384);
             this.gbMarché.TabIndex = 6;
@@ -559,7 +548,6 @@
             this.gbInfosAlbum.Controls.Add(this.tbResumé);
             this.gbInfosAlbum.Controls.Add(this.btnFermerPopUp);
             this.gbInfosAlbum.Controls.Add(this.btnAjoutSouhaits);
-            this.gbInfosAlbum.Controls.Add(this.btnAjoutPanier);
             this.gbInfosAlbum.Controls.Add(this.pbCouvertureDetail);
             this.gbInfosAlbum.Controls.Add(this.lblTitreDetail);
             this.gbInfosAlbum.Location = new System.Drawing.Point(310, 19);
@@ -643,23 +631,13 @@
             // btnAjoutSouhaits
             // 
             this.btnAjoutSouhaits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAjoutSouhaits.Location = new System.Drawing.Point(164, 253);
+            this.btnAjoutSouhaits.Location = new System.Drawing.Point(268, 255);
             this.btnAjoutSouhaits.Name = "btnAjoutSouhaits";
             this.btnAjoutSouhaits.Size = new System.Drawing.Size(75, 51);
             this.btnAjoutSouhaits.TabIndex = 3;
             this.btnAjoutSouhaits.Text = "Ajouter à mes souhaits";
             this.btnAjoutSouhaits.UseVisualStyleBackColor = false;
             this.btnAjoutSouhaits.Click += new System.EventHandler(this.btnAjoutSouhaits_Click);
-            // 
-            // btnAjoutPanier
-            // 
-            this.btnAjoutPanier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAjoutPanier.Location = new System.Drawing.Point(245, 253);
-            this.btnAjoutPanier.Name = "btnAjoutPanier";
-            this.btnAjoutPanier.Size = new System.Drawing.Size(75, 51);
-            this.btnAjoutPanier.TabIndex = 2;
-            this.btnAjoutPanier.Text = "Ajouter au panier";
-            this.btnAjoutPanier.UseVisualStyleBackColor = false;
             // 
             // pbCouvertureDetail
             // 
@@ -819,8 +797,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(224)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(737, 455);
-            this.Controls.Add(this.gbMarché);
+            this.ClientSize = new System.Drawing.Size(736, 455);
             this.Controls.Add(this.gbSouhaits);
             this.Controls.Add(this.Menu);
             this.Controls.Add(this.gbAlbums);
@@ -912,7 +889,6 @@
         private System.Windows.Forms.PictureBox pbCouvertureDetail;
         private System.Windows.Forms.Label lblTitreDetail;
         private System.Windows.Forms.Button btnAjoutSouhaits;
-        private System.Windows.Forms.Button btnAjoutPanier;
         private System.Windows.Forms.Label lblEditeur;
         private System.Windows.Forms.Label lblCategorie;
         private System.Windows.Forms.Label lblGenre;
@@ -939,6 +915,5 @@
         private System.Windows.Forms.PictureBox pbCoeur4;
         private System.Windows.Forms.PictureBox pbCoeur3;
         private System.Windows.Forms.PictureBox pbCoeur2;
-        private System.Windows.Forms.Button btnAcheter1;
     }
 }

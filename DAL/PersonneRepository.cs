@@ -8,15 +8,11 @@ using Domain;
 namespace DAL
 {
     public class PersonneRepository : Repository, IPersonneRepository
-    {   public PersonneRepository() { }
-        private IAlbumRepository _albrepo;
-        public PersonneRepository(IAlbumRepository albumrepository) {
-            _albrepo = albumrepository;
-        }
-        public List<Personne> GetAll()
+    {   
+       /* public List<Personne> GetAll()
         {
             return Session.Query<Personne>().ToList();
-        }
+        }*/
 
         public void Save(Personne personne)
         {
