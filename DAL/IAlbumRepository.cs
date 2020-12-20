@@ -20,7 +20,10 @@ namespace DAL
         /// </summary>
       
         void Save(Album album);
+        void Delete(Album album);
        Album GetAlbumByActionID(int actionid);
+        Album GetAlbumByTitle(string title);
+        
     }
 }
 

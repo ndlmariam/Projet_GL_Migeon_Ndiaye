@@ -315,7 +315,6 @@
             this.btnValider.TabIndex = 11;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = false;
-            this.btnValider.UseWaitCursor = true;
             this.btnValider.Visible = false;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 

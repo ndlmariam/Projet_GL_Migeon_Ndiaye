@@ -42,24 +42,6 @@ namespace DAL
             return false;
         }
 
-        public bool PresentBDD(string login)
-        {
-            string requete = "select Count(Login),Count(Mdp) from Personne pers where pers.Login = ?";
-            var result = Session.CreateQuery(requete).SetString(0, login).Enumerable<object[]>();
-            foreach (object[] row in result)
-            {
-
-                int nblogin = int.Parse(row[0].ToString());
-                if (nblogin > 0 )
-                {
-                    return true;
-                }
-                else { return false; }
-
-            }
-            return false;
-        }
-
         public Personne TrouverPersonne(string login, string mdp,string type)
         {
             Personne p;
@@ -83,21 +65,38 @@ namespace DAL
             
             return p;
         }
-        
-       public void GetWishes(Utilisateur user)
+        public bool PresentBDD(string login)
         {
-           /* string requete = "select a from Action a where Nom = ? and Personne.ID = ?";
-            var result = Session.CreateQuery(requete).SetString(0, "AjoutSouhait").SetInt32(1, user.ID).Enumerable<Domain.Action>();
-            foreach (Domain.Action  row in result)
+            string requete = "select Count(Login),Count(Mdp) from Personne pers where pers.Login = ?";
+            var result = Session.CreateQuery(requete).SetString(0, login).Enumerable<object[]>();
+            foreach (object[] row in result)
             {
 
-                int idaction = row.idAction;
-                Album album = _albrepo.GetAlbumByActionID(idaction);
-                user.ListSouhaits.Add(album);
+                int nblogin = int.Parse(row[0].ToString());
+                if (nblogin > 0)
+                {
+                    return true;
+                }
+                else { return false; }
 
-
-
-            }*/
+            }
+            return false;
         }
+        /*  public  IList<Domain.Action> GetWishes(Utilisateur user)
+            { // listes des actions de l'utilisateur qui correspondent à un ajout de voeux
+                string requete = "select a from Action a where Nom = ? and Personne.ID = ?";
+               IList <Domain.Action> Voeux = Session.CreateQuery(requete).SetString(0, "AjoutSouhait").SetInt32(1, user.ID).List<Domain.Action>();
+                /* foreach (Domain.Action row in result)
+                 {
+
+                     int idaction = row.idAction;
+                     Album album = _albrepo.GetAlbumByActionID(idaction);
+                     user.ListSouhaits.Add(album);
+
+
+
+                 }
+                return Voeux;
+            }*/
     }
 }

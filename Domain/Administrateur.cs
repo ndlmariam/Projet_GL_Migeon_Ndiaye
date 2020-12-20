@@ -22,9 +22,9 @@ namespace Domain
             Suppression = new List<Action>();
         }
 
-        public virtual void AjouterAuMarche(Action marche, Album alb)
+       /* public virtual void AjouterAuMarche(Action marche, Album alb)
         {
             marche.ListAlbums.Add(alb);
-        }
+        }*/
     }
 }

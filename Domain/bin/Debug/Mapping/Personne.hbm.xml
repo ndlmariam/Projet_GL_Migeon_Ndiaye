@@ -17,6 +17,7 @@ namespace="Domain">
     
   
 <!-- Mapping des associations de la classe -->
+ 
   
   <!-- Une personne peut faire plusieurs actions sur le marché -->
   <subclass name ="Utilisateur" discriminator-value="User">
@@ -27,6 +28,10 @@ namespace="Domain">
   <bag name ="Voeux" inverse="true" lazy ="true">
     <key column ="personne_id"/>
     <one-to-many class ="Action"/>
+    </bag>
+    <bag name ="ListAlbums" inverse="true" lazy ="true">
+      <key column ="personne_id"/>
+      <one-to-many class ="Album"/>
     </bag>
 </subclass>
 <subclass name ="Administrateur" discriminator-value="Admin">

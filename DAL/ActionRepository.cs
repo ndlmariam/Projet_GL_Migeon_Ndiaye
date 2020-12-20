@@ -14,11 +14,11 @@ namespace DAL
             return Session.Query<Album>().ToList();
         }
 
-        /* public void Save(Marche marche)
+         public void SaveAction(Domain.Action action)
          {
-             Session.SaveOrUpdate(marche);
+             Session.SaveOrUpdate(action);
              Session.Flush();
-         }*/
+         }
        /* List<Album> GetWishes(Utilisateur user)
         {
 

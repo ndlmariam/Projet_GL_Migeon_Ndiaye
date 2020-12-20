@@ -16,7 +16,8 @@ namespace Domain
         public virtual string Genre { get; set; }
         public virtual string Auteur { get; set; }
         public virtual string Editeur { get; set; }
-        public virtual Action Action { get; set; }
+        public virtual IList <Action> Actions { get; set; }
+        public virtual Utilisateur User { get; set; }
         //public virtual IList <string> Auteurs { get; set; }
 
         public Album() { }
@@ -29,16 +30,6 @@ namespace Domain
             Genre = genre;
             Editeur = editeur;
            // Auteurs = auteurs;
-        }
-
-        public Album(string nom, string serie, string couverture, string cate, string genre, string editeur)
-        {
-            Nom = nom;
-            Serie = serie;
-            Couverture = couverture;
-            Categorie = cate;
-            Genre = genre;
-            Editeur = editeur;
         }
 
     }

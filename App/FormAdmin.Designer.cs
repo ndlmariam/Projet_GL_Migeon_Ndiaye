@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.gbAjoutAlbum = new System.Windows.Forms.GroupBox();
-            this.gbMarchéAdmin = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnSupprimer = new System.Windows.Forms.Button();
-            this.btnAjout = new System.Windows.Forms.Button();
-            this.dgvMarché = new System.Windows.Forms.DataGridView();
             this.btnValider = new System.Windows.Forms.Button();
             this.btnParcourir = new System.Windows.Forms.Button();
             this.lblCouverture = new System.Windows.Forms.Label();
@@ -51,16 +45,26 @@
             this.tbTitre = new System.Windows.Forms.TextBox();
             this.lblTitre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.gbMarchéAdmin = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSupprimer = new System.Windows.Forms.Button();
+            this.btnAjout = new System.Windows.Forms.Button();
+            this.dgvMarché = new System.Windows.Forms.DataGridView();
             this.gbHeaderAdmin = new System.Windows.Forms.GroupBox();
             this.lblNom = new System.Windows.Forms.Label();
             this.pbDeco = new System.Windows.Forms.PictureBox();
             this.pbMarché = new System.Windows.Forms.PictureBox();
+            this.gbSuppression = new System.Windows.Forms.GroupBox();
+            this.tbSupression = new System.Windows.Forms.TextBox();
+            this.btnSupressionSure = new System.Windows.Forms.Button();
             this.gbAjoutAlbum.SuspendLayout();
             this.gbMarchéAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarché)).BeginInit();
             this.gbHeaderAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDeco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMarché)).BeginInit();
+            this.gbSuppression.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbAjoutAlbum
@@ -89,74 +93,6 @@
             this.gbAjoutAlbum.TabStop = false;
             this.gbAjoutAlbum.Text = "Informations";
             this.gbAjoutAlbum.MouseHover += new System.EventHandler(this.gbAjoutAlbum_MouseHover);
-            // 
-            // gbMarchéAdmin
-            // 
-            this.gbMarchéAdmin.Controls.Add(this.label3);
-            this.gbMarchéAdmin.Controls.Add(this.label2);
-            this.gbMarchéAdmin.Controls.Add(this.btnSupprimer);
-            this.gbMarchéAdmin.Controls.Add(this.btnAjout);
-            this.gbMarchéAdmin.Controls.Add(this.dgvMarché);
-            this.gbMarchéAdmin.Location = new System.Drawing.Point(9, 72);
-            this.gbMarchéAdmin.Name = "gbMarchéAdmin";
-            this.gbMarchéAdmin.Size = new System.Drawing.Size(730, 384);
-            this.gbMarchéAdmin.TabIndex = 16;
-            this.gbMarchéAdmin.TabStop = false;
-            this.gbMarchéAdmin.Text = "Bienvenu(e) sur MarchéBD, notre marché";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(580, 153);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 17);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "SUPPRIMER un album ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(580, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 17);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "AJOUTER un album ";
-            // 
-            // btnSupprimer
-            // 
-            this.btnSupprimer.BackColor = System.Drawing.Color.MistyRose;
-            this.btnSupprimer.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimer.ForeColor = System.Drawing.Color.Crimson;
-            this.btnSupprimer.Location = new System.Drawing.Point(609, 173);
-            this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(75, 61);
-            this.btnSupprimer.TabIndex = 7;
-            this.btnSupprimer.Text = "🚮";
-            this.btnSupprimer.UseVisualStyleBackColor = false;
-            // 
-            // btnAjout
-            // 
-            this.btnAjout.BackColor = System.Drawing.Color.LightCyan;
-            this.btnAjout.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjout.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.btnAjout.Location = new System.Drawing.Point(609, 49);
-            this.btnAjout.Name = "btnAjout";
-            this.btnAjout.Size = new System.Drawing.Size(75, 61);
-            this.btnAjout.TabIndex = 6;
-            this.btnAjout.Text = "+";
-            this.btnAjout.UseVisualStyleBackColor = false;
-            this.btnAjout.Click += new System.EventHandler(this.btnAjout_Click);
-            // 
-            // dgvMarché
-            // 
-            this.dgvMarché.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvMarché.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarché.Location = new System.Drawing.Point(0, 35);
-            this.dgvMarché.Name = "dgvMarché";
-            this.dgvMarché.Size = new System.Drawing.Size(538, 320);
-            this.dgvMarché.TabIndex = 5;
             // 
             // btnValider
             // 
@@ -318,6 +254,76 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Veuillez entrer les caracéristiques de l\'album";
             // 
+            // gbMarchéAdmin
+            // 
+            this.gbMarchéAdmin.Controls.Add(this.gbSuppression);
+            this.gbMarchéAdmin.Controls.Add(this.label3);
+            this.gbMarchéAdmin.Controls.Add(this.label2);
+            this.gbMarchéAdmin.Controls.Add(this.btnSupprimer);
+            this.gbMarchéAdmin.Controls.Add(this.btnAjout);
+            this.gbMarchéAdmin.Controls.Add(this.dgvMarché);
+            this.gbMarchéAdmin.Location = new System.Drawing.Point(9, 72);
+            this.gbMarchéAdmin.Name = "gbMarchéAdmin";
+            this.gbMarchéAdmin.Size = new System.Drawing.Size(730, 384);
+            this.gbMarchéAdmin.TabIndex = 16;
+            this.gbMarchéAdmin.TabStop = false;
+            this.gbMarchéAdmin.Text = "Bienvenu(e) sur MarchéBD, notre marché";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(580, 153);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(151, 17);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "SUPPRIMER un album ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(580, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(135, 17);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "AJOUTER un album ";
+            // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.BackColor = System.Drawing.Color.MistyRose;
+            this.btnSupprimer.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupprimer.ForeColor = System.Drawing.Color.Crimson;
+            this.btnSupprimer.Location = new System.Drawing.Point(609, 173);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(75, 61);
+            this.btnSupprimer.TabIndex = 7;
+            this.btnSupprimer.Text = "🚮";
+            this.btnSupprimer.UseVisualStyleBackColor = false;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            // 
+            // btnAjout
+            // 
+            this.btnAjout.BackColor = System.Drawing.Color.LightCyan;
+            this.btnAjout.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjout.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.btnAjout.Location = new System.Drawing.Point(609, 49);
+            this.btnAjout.Name = "btnAjout";
+            this.btnAjout.Size = new System.Drawing.Size(75, 61);
+            this.btnAjout.TabIndex = 6;
+            this.btnAjout.Text = "+";
+            this.btnAjout.UseVisualStyleBackColor = false;
+            this.btnAjout.Click += new System.EventHandler(this.btnAjout_Click);
+            // 
+            // dgvMarché
+            // 
+            this.dgvMarché.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvMarché.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMarché.Location = new System.Drawing.Point(0, 35);
+            this.dgvMarché.Name = "dgvMarché";
+            this.dgvMarché.Size = new System.Drawing.Size(538, 320);
+            this.dgvMarché.TabIndex = 5;
+            // 
             // gbHeaderAdmin
             // 
             this.gbHeaderAdmin.BackColor = System.Drawing.Color.Navy;
@@ -365,6 +371,40 @@
             this.pbMarché.TabStop = false;
             this.pbMarché.Click += new System.EventHandler(this.pbMarché_Click);
             // 
+            // gbSuppression
+            // 
+            this.gbSuppression.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.gbSuppression.Controls.Add(this.btnSupressionSure);
+            this.gbSuppression.Controls.Add(this.tbSupression);
+            this.gbSuppression.Font = new System.Drawing.Font("MV Boli", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbSuppression.Location = new System.Drawing.Point(544, 127);
+            this.gbSuppression.Name = "gbSuppression";
+            this.gbSuppression.Size = new System.Drawing.Size(183, 244);
+            this.gbSuppression.TabIndex = 10;
+            this.gbSuppression.TabStop = false;
+            this.gbSuppression.Text = "Entrer le titre de la BD à supprimer";
+            this.gbSuppression.Visible = false;
+            // 
+            // tbSupression
+            // 
+            this.tbSupression.Location = new System.Drawing.Point(17, 88);
+            this.tbSupression.Name = "tbSupression";
+            this.tbSupression.Size = new System.Drawing.Size(142, 32);
+            this.tbSupression.TabIndex = 0;
+            this.tbSupression.TextChanged += new System.EventHandler(this.tbSupression_TextChanged);
+            // 
+            // btnSupressionSure
+            // 
+            this.btnSupressionSure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSupressionSure.Location = new System.Drawing.Point(17, 140);
+            this.btnSupressionSure.Name = "btnSupressionSure";
+            this.btnSupressionSure.Size = new System.Drawing.Size(142, 40);
+            this.btnSupressionSure.TabIndex = 1;
+            this.btnSupressionSure.Text = "Suppression";
+            this.btnSupressionSure.UseVisualStyleBackColor = false;
+            this.btnSupressionSure.Visible = false;
+            this.btnSupressionSure.Click += new System.EventHandler(this.btnSupressionSure_Click);
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,6 +429,8 @@
             this.gbHeaderAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDeco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMarché)).EndInit();
+            this.gbSuppression.ResumeLayout(false);
+            this.gbSuppression.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -422,5 +464,8 @@
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Button btnAjout;
         private System.Windows.Forms.DataGridView dgvMarché;
+        private System.Windows.Forms.GroupBox gbSuppression;
+        private System.Windows.Forms.Button btnSupressionSure;
+        private System.Windows.Forms.TextBox tbSupression;
     }
 }

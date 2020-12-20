@@ -19,6 +19,13 @@ namespace DAL
             Session.SaveOrUpdate(album);
             Session.Flush();
         }
+        public void Delete(Album album)
+        {
+            Session.Delete(album);
+            Session.Flush();
+        }
+
+
       public Album GetAlbumByActionID(int actionid)
         {
             Album album = new Album();
@@ -32,6 +39,18 @@ namespace DAL
             }
             return album;
         }
+        public Album GetAlbumByTitle(string title)
+        {
+            Album album = new Album();
+            string requete = "select alb from Album alb where alb.Nom = ? ";
+          var result = Session.CreateQuery(requete).SetString(0, title).Enumerable<Album>();
+            foreach (Album row in result)
+            {
+                album = row;
 
+
+            }
+            return album;
+        }
     }
 }

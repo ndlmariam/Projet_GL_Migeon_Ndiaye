@@ -8,6 +8,7 @@ namespace Domain
 {
     public class Utilisateur : Personne
     {
+      
         public virtual IList<Album> ListAlbums { get; set; }
         public virtual IList<Album> ListSouhaits { get; set; }
         public virtual IList<Album> Panier { get; set; }
@@ -15,7 +16,9 @@ namespace Domain
         public virtual IList<Action> Achats { get; set; }
 
 
-        public Utilisateur() { ListSouhaits = new List<Album>(); }
+        public Utilisateur() {
+            Voeux = new List<Action>();
+        ListSouhaits = new List<Album>(); }
         
         public Utilisateur(string nom, string type, string login, string mdp)
         {
@@ -42,15 +45,6 @@ namespace Domain
         public virtual void AjouterPanier(Album alb)
         {
             Panier.Add(alb);
-        }
-        public virtual void SupprimerPanier(Album alb)
-        {
-            Panier.Add(alb);
-        }
-
-        public virtual void SupprimerSouhait(Album alb)
-        {
-            ListSouhaits.Remove(alb);
         }
     }
 

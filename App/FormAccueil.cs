@@ -43,6 +43,7 @@ namespace App
 
         private void btnValider_Click(object sender, EventArgs e)
         {
+            btnValider.UseWaitCursor = true;
             if (rbAdminConnex.Checked == true || rbAdminCrea.Checked == true)
             {
                 if (rbAdminConnex.Checked == true)
@@ -52,20 +53,24 @@ namespace App
                     {
                         Personne administrateur = _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "Admin");
                         FormAdmin.InstanceFormAdmin.Administrateur = administrateur;
-                        FormAdmin formadmin =  FormAdmin.InstanceFormAdmin;
+                        FormAdmin formadmin = FormAdmin.InstanceFormAdmin;
                         formadmin.ShowDialog();
                     }
                     else
                     {
-                        MessageBox.Show("Mot de passe ou login erroné veuillez réessayer");
+                        if (verificationad == false)
+                        {
+                            MessageBox.Show("Mot de passe ou login erroné veuillez réessayer");
+                        }
                     }
+
                 }
                 if (rbAdminCrea.Checked == true)
                 {
-                    //vérification de le l'existance ou non d'un profil similaire
+                    //vérification de  l'existance ou non d'un profil similaire
 
                     bool verif = _personnerepo.PresentBDD(tbLoginCrea.Text);
-                    if (verif) { MessageBox.Show("Veuillez choisir un autre login, celui-ci est déjà utilisé"); }
+                    if (verif == true && rbAdminCrea.Checked == true) { MessageBox.Show("Veuillez choisir un autre login, celui-ci est déjà utilisé"); }
                     else
                     {
                         Personne administrateur = new Administrateur(tbPseudo.Text, "Admin", tbLoginCrea.Text, tbMdpCrea.Text);
@@ -74,29 +79,33 @@ namespace App
                         FormAdmin formadmin = FormAdmin.InstanceFormAdmin;
                         formadmin.ShowDialog();
                     }
-                   
                 }
                 }
                 if (rbUserConnex.Checked == true || rbUserCrea.Checked == true)
                 {
-                    if (rbUserConnex.Checked == true)
+                if (rbUserConnex.Checked == true)
+                {
+                    bool verificationus = _personnerepo.CompareMdp(tbLoginConnex.Text, tbMdpConnex.Text);
+                    if (verificationus == true)
                     {
-                        bool verificationus = _personnerepo.CompareMdp(tbLoginConnex.Text, tbMdpConnex.Text);
-                        if (verificationus == true)
-                        {
-                            Personne utilisateur = _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "User");
-                            FormUtil.InstanceFormUtil.Utilisateur = (Utilisateur) utilisateur;
+                        Personne utilisateur = _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "User");
+                        FormUtil.InstanceFormUtil.Utilisateur = (Utilisateur)utilisateur;
                         if (utilisateur != null) { FormUtil.InstanceFormUtil.ShowDialog(); }
-                        }
+                    }
                     else
                     {
-                        MessageBox.Show("Mot de passe ou login erroné veuillez réessayer");
+                        if (verificationus == false)
+                        {
+                            MessageBox.Show("Mot de passe ou login erroné veuillez réessayer");
+
+                        }
                     }
+                }
                 }
                     if (rbUserCrea.Checked == true)
                     {
                     bool verif = _personnerepo.PresentBDD(tbLoginCrea.Text);
-                    if (verif) { MessageBox.Show("Veuillez choisir un autre login, celui-ci est déjà utilisé"); }
+                    if (verif == true && rbUserCrea.Checked == true) { MessageBox.Show("Veuillez choisir un autre login, celui-ci est déjà utilisé"); }
                     else
                     {
                         Personne utilisateur = new Utilisateur(tbPseudo.Text, "User", tbLoginCrea.Text, tbMdpCrea.Text);
@@ -105,14 +114,17 @@ namespace App
                         FormUtil.InstanceFormUtil.Utilisateur = (Utilisateur)utilisateur;
                         FormUtil.InstanceFormUtil.ShowDialog();
                     }
-                }
+                    }
 
 
             }
 
-                }
+                
             
         
+
+       
+
         private void btnConnexion_Click(object sender, EventArgs e)
         {
             // fait apparaître la group box correspondante

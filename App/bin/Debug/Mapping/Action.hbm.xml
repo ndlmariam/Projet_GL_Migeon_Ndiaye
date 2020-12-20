@@ -12,11 +12,9 @@ namespace="Domain">
 
 
 <!-- Mapping des associations de la classe -->
-  <!-- Le marché contient plusieurs albums  -->
-  <bag name ="ListAlbums" inverse="true" lazy ="true">
-    <key column ="action_id"/>
-    <one-to-many class ="Album"/>
-  </bag>
+  <!-- Une action concerne un seul album -->
+  <many-to-one name ="Album" class ="Album" column="album_id"/>
+  
   <!-- Plusieurs actions possibles sur le marché pour une personne -->
   <many-to-one name ="Personne" class="Personne" column="personne_id"/>
 

@@ -112,6 +112,7 @@ namespace App
             gbAjoutAlbum.Visible = true;
             gbMarchéAdmin.Visible = false;
             NouvelAlbum = new Album();
+            NouvelAlbum.User = null;
           
         }
 
@@ -158,6 +159,30 @@ namespace App
             NouvelAlbum.Serie = tbSerie.Text;
         }
 
-        
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+           if( MessageBox.Show("Etes-Vous sur de vouloir supprimer un album ? Il sera définitivement supprimé de marchéBD et de la collection de tous les utilisateurs le possèdant", "Attention", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) ==DialogResult.OK )
+            {
+                gbSuppression.Visible = true;
+              
+            }
+           
+        }
+
+        private void tbSupression_TextChanged(object sender, EventArgs e)
+        {
+            btnSupressionSure.Visible = true;
+
+        }
+
+        private void btnSupressionSure_Click(object sender, EventArgs e)
+        {
+            gbSuppression.Visible = false;
+            Album AlbumASuprimmer = _albumrepo.GetAlbumByTitle(tbSupression.Text);
+            Domain.Action Suppression = new Domain.Action("Supression", Administrateur, AlbumASuprimmer);
+            _actionrepo.SaveAction(Suppression);
+            _albumrepo.Delete(AlbumASuprimmer);
+            RefreshDgv();
+        }
     }
 }

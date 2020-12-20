@@ -16,9 +16,14 @@ namespace="Domain">
   <property name="Couverture" column="couverture" />
 
 <!-- Mapping des associations de la classe -->
- <!-- Plusieurs albums dans le marché  -->
-  <many-to-one name ="Action" class ="Action" column="action_id"/> 
-  
+
+  <!-- Un album peut faire l'objet de plusieurs actions  -->
+  <bag name ="Actions" inverse="true" lazy ="true">
+    <key column ="album_id"/>
+    <one-to-many class ="Action"/>
+  </bag>
+  <!-- Un album appartient à une personne  -->
+  <many-to-one name ="User" class="Utilisateur" column="personne_id"/>
 </class>
 </hibernate-mapping>
 

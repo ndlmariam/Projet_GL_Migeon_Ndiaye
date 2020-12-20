@@ -22,7 +22,7 @@ namespace DAL
         bool PresentBDD(string login);
         void Save(Personne personne);
        Personne TrouverPersonne(string login, string mdp, string type);
-       void GetWishes(Utilisateur user);
+      //  IList<Domain.Action>  GetWishes(Utilisateur user);
      
     }
 }

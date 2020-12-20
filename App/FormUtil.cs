@@ -18,6 +18,7 @@ namespace App
         private bool ClickedOnce; // booléen utile pour l'appartition ou disparition du menu
         private bool NextNecessary; // booléen utile pour le carroussel d'albums du marché
         private int NumeroAlbum; //  utile pour le carroussel d'albums du marché
+        private static string cheminacces = Path.Combine(Environment.CurrentDirectory, "CircuitBD.Net", "Couvertures");
         private IActionRepository _actionrepo;
         private IPersonneRepository _persrepo;
         private IAlbumRepository _albrepo;
@@ -82,12 +83,6 @@ namespace App
             gbMarché.Visible = false;
             gbSouhaits.Visible = false;
             gbAlbums.Visible = true;
-            lblMarché.BackColor = Color.DarkSlateBlue;
-            lblMarché.ForeColor = Color.White;
-            lblSouhaits.BackColor = Color.DarkSlateBlue;
-            lblSouhaits.ForeColor = Color.White;
-            lblAlbums.BackColor = Color.LightSteelBlue;
-            lblAlbums.ForeColor = Color.Black;
             gbHeader.Text = "Mes Albums";
         }
 
@@ -97,29 +92,12 @@ namespace App
             gbMarché.Visible = false;
             gbSouhaits.Visible = true;
             gbHeader.Text = "Mes Souhaits";
-            lblMarché.BackColor = Color.DarkSlateBlue;
-            lblMarché.ForeColor = Color.White;
-            lblAlbums.BackColor = Color.DarkSlateBlue;
-            lblAlbums.ForeColor = Color.White;
-            lblSouhaits.BackColor = Color.LightSteelBlue;
-            lblSouhaits.ForeColor = Color.Black;
-            pbSouhaits.BorderStyle = BorderStyle.Fixed3D;
-            pbMarché.BorderStyle = BorderStyle.None;
-         //   pbAlbums.BorderStyle = BorderStyle.Fixed3D;
         }
         private void pbMarché_Click(object sender, EventArgs e)
         {
             gbSouhaits.Visible = true;
             gbMarché.Visible = true;
             gbHeader.Text = "MarchéBD";
-            lblAlbums.BackColor = Color.DarkSlateBlue;
-            lblAlbums.ForeColor = Color.White;
-            lblSouhaits.BackColor = Color.DarkSlateBlue;
-            lblSouhaits.ForeColor = Color.White;
-            lblMarché.BackColor = Color.LightSteelBlue;
-            lblMarché.ForeColor = Color.Black;
-            pbSouhaits.BorderStyle = BorderStyle.None;
-            pbMarché.BorderStyle = BorderStyle.Fixed3D;
             NumeroAlbum = 0;
             RefreshViews();
         }
@@ -145,16 +123,19 @@ namespace App
         }
         private void RefreshViews()
         {
-            RefreshCarrouselMarché();
 
+            RefreshCarrouselMarché();
+      
 
         }
+
+        // INTERACTIONS INTERFACE MARCHE
         private void RefreshCarrouselMarché ()
         {
             //récupère la liste de tous les albums du marché
             List<Album> AlbumsDuMarché = _actionrepo.GetAll();
           
-          string cheminacces = Path.Combine(Environment.CurrentDirectory, "CircuitBD.Net", "Couvertures");
+          
             while (NumeroAlbum < AlbumsDuMarché.Count && NextNecessary == false)
 
             {
@@ -237,39 +218,37 @@ namespace App
             RefreshViews();
         }
 
-        private void pbAlbum1_Click(object sender, EventArgs e)
+        private void lblTitre_Click(object sender, EventArgs e)
         {
-            //modifier en fonction de la picturebox et du titre
-            FormDescription formd = new FormDescription(pbAlbum1,lblTitre1.Text);
-            formd.ShowDialog();
+            gbInfosAlbum.Visible = true;
+            string titrealbum = ((Label)sender).Text;
+           Album SelectedAlbum = _albrepo.GetAlbumByTitle(titrealbum);
+            if(SelectedAlbum.Couverture != "")
+            {
+                pbCouvertureDetail.Image = Image.FromFile(Path.Combine(cheminacces, SelectedAlbum.Couverture));
+            }
+            lblTitreDetail.Text = SelectedAlbum.Nom;
+            lblSerie.Text = SelectedAlbum.Serie;
+            lblAuteur.Text = SelectedAlbum.Auteur;
+            lblCategorie.Text = SelectedAlbum.Categorie;
+            lblEditeur.Text = SelectedAlbum.Editeur;
+            lblGenre.Text = SelectedAlbum.Genre;
         }
-        /* foreach (Album a in AlbumsDuMarché)
-{
-if (a.Couverture != "")
-{
-pbAlbum1.Image = Image.FromFile(a.Couverture);
-}*/
 
+        private void btnFermerPopUp_Click(object sender, EventArgs e)
+        {
+            gbInfosAlbum.Visible = false;
+        }
 
+        private void btnAjoutSouhaits_Click(object sender, EventArgs e)
+        {
 
-        //dgvMarché.Rows.Add(a.Nom);
-
+        }
     }
 
     }
 
-    /*dgvMarché.DataSource = null;
-
-    List<Album> AlbumsDuMarché = _actionrepo.GetAll();
-    dgvMarché.DataSource = AlbumsDuMarché;*/
-    // Affichage de la liste de souhaits
-    /*  _persrepo.GetWishes(Utilisateur);
-      dgvSouhaits.Rows.Clear();
-      foreach (Album souhait in Utilisateur.ListSouhaits)
-      {
-
-          dgvSouhaits.Rows.Add(souhait.Couverture, souhait.Nom);
-      }*/
+    
 
 
 

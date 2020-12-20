@@ -13,17 +13,9 @@ namespace DAL
         /// Retourner tous les marches
         /// </summary>
         /// <returns></returns>
-     List<Album> GetAll();
+         List<Album> GetAll();
 
-        /// <summary>
-        /// Sauvegarder un marche
-        /// </summary>
-        /// <param name="marche">Le marche </param>
-    //  void Save(Marche marche);
-      //  List<Album> GetWishes(Utilisateur user);
-       /* List<Album> GetShopping(Utilisateur user);
-        void AddComics(Administrateur Admin,Album comics);
-        void DeleteComics(Administrateur Admin, Album comics);*/
+        void SaveAction(Domain.Action action);
 
     }
 }
