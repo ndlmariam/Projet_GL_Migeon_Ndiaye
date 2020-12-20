@@ -112,7 +112,7 @@ namespace App
             gbAjoutAlbum.Visible = true;
             gbMarchéAdmin.Visible = false;
             NouvelAlbum = new Album();
-            NouvelAlbum.User = null;
+          
           
         }
 

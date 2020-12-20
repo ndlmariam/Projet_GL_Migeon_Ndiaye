@@ -9,16 +9,19 @@ namespace Domain
     public class Utilisateur : Personne
     {
       
-        public virtual IList<Album> ListAlbums { get; set; }
-        public virtual IList<Album> ListSouhaits { get; set; }
-        public virtual IList<Album> Panier { get; set; }
-        public virtual IList<Action> Voeux { get; set; }
-        public virtual IList<Action> Achats { get; set; }
+        public virtual List<Album> ListAlbums { get; set; }
+        public virtual List<Album> ListSouhaits { get; set; }
+        public virtual List<Album> Panier { get; set; }
+        public virtual List<Action> Voeux { get; set; }
+        public virtual List<Action> Achats { get; set; }
+        public virtual IList<Action> ActionsUser { get; set; }
+
 
 
         public Utilisateur() {
             Voeux = new List<Action>();
-        ListSouhaits = new List<Album>(); }
+        ListSouhaits = new List<Album>();
+            ActionsUser = new List<Action>(); }
         
         public Utilisateur(string nom, string type, string login, string mdp)
         {

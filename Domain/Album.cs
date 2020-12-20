@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Domain
 {
     public class Album
-    {
+    { public virtual bool selected { get; set; }
        public virtual int idAlbum { get; set; }
         public virtual string Nom { get; set; }
         public virtual string Serie { get; set; }
@@ -17,7 +17,7 @@ namespace Domain
         public virtual string Auteur { get; set; }
         public virtual string Editeur { get; set; }
         public virtual IList <Action> Actions { get; set; }
-        public virtual Utilisateur User { get; set; }
+        public virtual IList <Utilisateur> Users { get; set; }
         //public virtual IList <string> Auteurs { get; set; }
 
         public Album() { }

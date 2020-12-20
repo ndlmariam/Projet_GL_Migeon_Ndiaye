@@ -14,8 +14,11 @@ namespace DAL
         /// </summary>
         /// <returns></returns>
          List<Album> GetAll();
+  
 
         void SaveAction(Domain.Action action);
+        Domain.Action GetActionByNameAndAlbum(Album alb, String nameofaction);
+        void DeleteAction(Domain.Action action);
 
     }
 }

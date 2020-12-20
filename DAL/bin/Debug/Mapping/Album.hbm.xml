@@ -22,8 +22,12 @@ namespace="Domain">
     <key column ="album_id"/>
     <one-to-many class ="Action"/>
   </bag>
-  <!-- Un album appartient à une personne  -->
-  <many-to-one name ="User" class="Utilisateur" column="personne_id"/>
+  <!-- Un album appartient à plusieurs personnes 
+  <bag name ="Users" inverse="true" lazy ="true" table ="action">
+    <key column ="album_id"/>
+    <many-to-many class="Utilisateur" column="personne_id"/>
+  </bag>-->
+
 </class>
 </hibernate-mapping>
 

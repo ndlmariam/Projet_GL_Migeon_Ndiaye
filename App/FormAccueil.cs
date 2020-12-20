@@ -111,7 +111,7 @@ namespace App
                         Personne utilisateur = new Utilisateur(tbPseudo.Text, "User", tbLoginCrea.Text, tbMdpCrea.Text);
                         _personnerepo.Save(utilisateur);
 
-                        FormUtil.InstanceFormUtil.Utilisateur = (Utilisateur)utilisateur;
+                    FormUtil.InstanceFormUtil.Utilisateur = (Utilisateur)utilisateur;
                         FormUtil.InstanceFormUtil.ShowDialog();
                     }
                     }
