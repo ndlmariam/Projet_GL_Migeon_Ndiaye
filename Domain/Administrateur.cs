@@ -9,8 +9,8 @@ namespace Domain
    public class Administrateur : Personne
     {
 
-        public virtual IList<Action> Ajouts { get; set; }
-        public virtual IList<Action> Suppression { get; set; }
+        
+        public virtual IList<Action> AdminActions { get; set; }
         public Administrateur() { }
         public Administrateur(string nom, string type, string login, string mdp)
         {
@@ -18,13 +18,10 @@ namespace Domain
             Type = type;
             Login = login;
             Mdp = mdp;
-            Ajouts = new List<Action>();
-            Suppression = new List<Action>();
+            AdminActions = new List<Action>();
+           
         }
 
-       /* public virtual void AjouterAuMarche(Action marche, Album alb)
-        {
-            marche.ListAlbums.Add(alb);
-        }*/
+      
     }
 }

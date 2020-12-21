@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : Dim 20 déc. 2020 à 10:33
+-- Généré le : lun. 21 déc. 2020 à 13:40
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.6
 
@@ -40,10 +40,7 @@ CREATE TABLE `action` (
 --
 
 INSERT INTO `action` (`action_id`, `action_nom`, `personne_id`, `album_id`, `date`) VALUES
-(1, 'AjoutSouhait', 1, 2, '2020-12-18'),
-(2, 'Supression', 7, 8, '2020-12-19'),
-(3, 'Supression', 7, 8, '2020-12-19'),
-(4, 'Supression', 7, 8, '2020-12-19');
+(13, 'AjouterSouhait', NULL, 5, '2020-12-20');
 
 -- --------------------------------------------------------
 
@@ -59,18 +56,18 @@ CREATE TABLE `album` (
   `categorie` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `genre` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `editeur` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `couverture` varchar(800) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `personne_id` int(11) DEFAULT NULL
+  `couverture` varchar(800) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Déchargement des données de la table `album`
 --
 
-INSERT INTO `album` (`album_id`, `nom`, `serie`, `auteurs`, `categorie`, `genre`, `editeur`, `couverture`, `personne_id`) VALUES
-(1, 'Tintin au Tibet', 'Les Aventures de Tintin', 'Hergé', 'BD', 'Aventure', 'Casterman', 'Tintin au Tibet.jpg', 1),
-(2, 'Folle à lier', 'Harley Quinn', 'Jimmy Palmiotti (Scénario) / \r\n\r\nAmanda Conner (Scénario) / \r\n\r\nChad Hardin (Dessin)', 'BD', 'Super-héro', 'Urban Comics', 'Folle à lier.jpg', NULL),
-(5, 'La ferme abandonnée', 'Sylvain et Sylvette', 'Jean-Louis Pesch', 'BD', 'Humour', NULL, 'La ferme abandonnée.jpg', NULL);
+INSERT INTO `album` (`album_id`, `nom`, `serie`, `auteurs`, `categorie`, `genre`, `editeur`, `couverture`) VALUES
+(1, 'Tintin au Tibet', 'Les Aventures de Tintin', 'Hergé', 'BD', 'Aventure', 'Casterman', 'Tintin au Tibet.jpg'),
+(2, 'Folle à lier', 'Harley Quinn', 'Jimmy Palmiotti (Scénario) / \r\n\r\nAmanda Conner (Scénario) / \r\n\r\nChad Hardin (Dessin)', 'BD', 'Super-héro', 'Urban Comics', 'Folle à lier.jpg'),
+(5, 'La ferme abandonnée', 'Sylvain et Sylvette', 'Jean-Louis Pesch', 'BD', 'Humour', NULL, 'La ferme abandonnée.jpg'),
+(9, 'tst', 'sets', 'ets', 'sts', 'st', NULL, 'nuage.jpg');
 
 -- --------------------------------------------------------
 
@@ -124,13 +121,13 @@ ALTER TABLE `personne`
 -- AUTO_INCREMENT pour la table `action`
 --
 ALTER TABLE `action`
-  MODIFY `action_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `action_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT pour la table `album`
 --
 ALTER TABLE `album`
-  MODIFY `album_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `album_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `personne`
