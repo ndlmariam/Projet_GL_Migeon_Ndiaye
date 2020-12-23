@@ -1,30 +1,12 @@
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\obj\Debug\DALTests.csprojAssemblyReference.cache
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\obj\Debug\DALTests.csproj.CoreCompileInputs.cache
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\MySql.Data.dll
 C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Antlr3.Runtime.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\DAL.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Domain.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Iesi.Collections.dll
 C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\NHibernate.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Remotion.Linq.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Remotion.Linq.EagerFetching.dll
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\DAL.pdb
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Domain.pdb
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Antlr3.Runtime.xml
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Iesi.Collections.xml
 C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\NHibernate.xml
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Remotion.Linq.xml
-C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Remotion.Linq.EagerFetching.xml
+C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\obj\Debug\DALTests.csproj.CoreCompileInputs.cache
 C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\obj\Debug\DALTests.csproj.CopyComplete
 C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\obj\Debug\DALTests.dll
 C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\obj\Debug\DALTests.pdb
-C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT\Projet_GL_Migeon_Ndiaye\DALTests\obj\Debug\DALTests.dll
-C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\GIT\Projet_GL_Migeon_Ndiaye\DALTests\obj\Debug\DALTests.pdb
