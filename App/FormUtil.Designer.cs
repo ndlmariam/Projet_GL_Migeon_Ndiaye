@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUtil));
             this.gbHeader = new System.Windows.Forms.GroupBox();
             this.lblNom = new System.Windows.Forms.Label();
             this.pbDeco = new System.Windows.Forms.PictureBox();
@@ -40,17 +41,6 @@
             this.lblSouhaits = new System.Windows.Forms.Label();
             this.lblMarché = new System.Windows.Forms.Label();
             this.gbSouhaits = new System.Windows.Forms.GroupBox();
-            this.gbInfosAlbum = new System.Windows.Forms.GroupBox();
-            this.lblEditeur = new System.Windows.Forms.Label();
-            this.lblCategorie = new System.Windows.Forms.Label();
-            this.lblGenre = new System.Windows.Forms.Label();
-            this.lblAuteur = new System.Windows.Forms.Label();
-            this.lblSerie = new System.Windows.Forms.Label();
-            this.tbResumé = new System.Windows.Forms.TextBox();
-            this.btnFermerPopUp = new System.Windows.Forms.Button();
-            this.btnAjoutSouhaits = new System.Windows.Forms.Button();
-            this.pbCouvertureDetail = new System.Windows.Forms.PictureBox();
-            this.lblTitreDetail = new System.Windows.Forms.Label();
             this.gbListeSouhaits = new System.Windows.Forms.GroupBox();
             this.pbCoeur4 = new System.Windows.Forms.PictureBox();
             this.pbCoeur3 = new System.Windows.Forms.PictureBox();
@@ -71,23 +61,55 @@
             this.Serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Titre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gbInfosAlbum = new System.Windows.Forms.GroupBox();
+            this.lblEditeur = new System.Windows.Forms.Label();
+            this.lblCategorie = new System.Windows.Forms.Label();
+            this.lblGenre = new System.Windows.Forms.Label();
+            this.lblAuteur = new System.Windows.Forms.Label();
+            this.lblSerie = new System.Windows.Forms.Label();
+            this.tbResumé = new System.Windows.Forms.TextBox();
+            this.btnFermerPopUp = new System.Windows.Forms.Button();
+            this.btnAjoutSouhaits = new System.Windows.Forms.Button();
+            this.pbCouvertureDetail = new System.Windows.Forms.PictureBox();
+            this.lblTitreDetail = new System.Windows.Forms.Label();
             this.gbMarché = new System.Windows.Forms.GroupBox();
-            this.pbinfo = new System.Windows.Forms.PictureBox();
-            this.tbBarreRecherche = new System.Windows.Forms.TextBox();
-            this.lblBarreRecherche = new System.Windows.Forms.Label();
-            this.gbListeAlbums = new System.Windows.Forms.GroupBox();
-            this.pbAlbum1 = new System.Windows.Forms.PictureBox();
-            this.lblTitre1 = new System.Windows.Forms.Label();
-            this.pbAlbum2 = new System.Windows.Forms.PictureBox();
-            this.lblTitre2 = new System.Windows.Forms.Label();
-            this.pbAlbum3 = new System.Windows.Forms.PictureBox();
-            this.lblTitre3 = new System.Windows.Forms.Label();
-            this.pbAlbum4 = new System.Windows.Forms.PictureBox();
-            this.lblTitre4 = new System.Windows.Forms.Label();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.lblAjoutManuel = new System.Windows.Forms.Label();
-            this.btnAjoutManuel = new System.Windows.Forms.Button();
             this.pbInfo1 = new System.Windows.Forms.PictureBox();
+            this.btnAjoutManuel = new System.Windows.Forms.Button();
+            this.lblAjoutManuel = new System.Windows.Forms.Label();
+            this.gbListeAlbums = new System.Windows.Forms.GroupBox();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.lblTitre4 = new System.Windows.Forms.Label();
+            this.pbAlbum4 = new System.Windows.Forms.PictureBox();
+            this.lblTitre3 = new System.Windows.Forms.Label();
+            this.pbAlbum3 = new System.Windows.Forms.PictureBox();
+            this.lblTitre2 = new System.Windows.Forms.Label();
+            this.pbAlbum2 = new System.Windows.Forms.PictureBox();
+            this.lblTitre1 = new System.Windows.Forms.Label();
+            this.pbAlbum1 = new System.Windows.Forms.PictureBox();
+            this.lblBarreRecherche = new System.Windows.Forms.Label();
+            this.tbBarreRecherche = new System.Windows.Forms.TextBox();
+            this.pbinfo = new System.Windows.Forms.PictureBox();
+            this.tbResume = new System.Windows.Forms.TextBox();
+            this.lblResume = new System.Windows.Forms.Label();
+            this.tbEditeur = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnValider = new System.Windows.Forms.Button();
+            this.btnParcourir = new System.Windows.Forms.Button();
+            this.lblCouverture = new System.Windows.Forms.Label();
+            this.plholdGenre = new System.Windows.Forms.Label();
+            this.tbGenre = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.plholdCat = new System.Windows.Forms.Label();
+            this.tbCategorie = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbSerie = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbAuteur = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbTitre = new System.Windows.Forms.TextBox();
+            this.lblTitre = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbExplications = new System.Windows.Forms.TextBox();
             this.gbHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDeco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPanier)).BeginInit();
@@ -96,8 +118,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbSouhaits)).BeginInit();
             this.Menu.SuspendLayout();
             this.gbSouhaits.SuspendLayout();
-            this.gbInfosAlbum.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCouvertureDetail)).BeginInit();
             this.gbListeSouhaits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoeur4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoeur3)).BeginInit();
@@ -108,14 +128,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbSouhait2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSouhait1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSouhaits)).BeginInit();
+            this.gbInfosAlbum.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCouvertureDetail)).BeginInit();
             this.gbMarché.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).BeginInit();
-            this.gbListeAlbums.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo1)).BeginInit();
+            this.gbListeAlbums.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).BeginInit();
             this.SuspendLayout();
             // 
             // gbHeader
@@ -223,7 +245,7 @@
             this.Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Menu.Location = new System.Drawing.Point(0, 66);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(58, 389);
+            this.Menu.Size = new System.Drawing.Size(58, 400);
             this.Menu.TabIndex = 7;
             this.Menu.TabStop = false;
             // 
@@ -257,132 +279,12 @@
             this.gbSouhaits.Controls.Add(this.lblAlbumsSouhaits);
             this.gbSouhaits.Controls.Add(this.lblHistoriqueVoeux);
             this.gbSouhaits.Controls.Add(this.dgvSouhaits);
-            this.gbSouhaits.Location = new System.Drawing.Point(70, 72);
+            this.gbSouhaits.Location = new System.Drawing.Point(63, 72);
             this.gbSouhaits.Name = "gbSouhaits";
-            this.gbSouhaits.Size = new System.Drawing.Size(666, 384);
+            this.gbSouhaits.Size = new System.Drawing.Size(672, 397);
             this.gbSouhaits.TabIndex = 8;
             this.gbSouhaits.TabStop = false;
             this.gbSouhaits.Text = "Mes Souhaits";
-            // 
-            // gbInfosAlbum
-            // 
-            this.gbInfosAlbum.Controls.Add(this.lblEditeur);
-            this.gbInfosAlbum.Controls.Add(this.lblCategorie);
-            this.gbInfosAlbum.Controls.Add(this.lblGenre);
-            this.gbInfosAlbum.Controls.Add(this.lblAuteur);
-            this.gbInfosAlbum.Controls.Add(this.lblSerie);
-            this.gbInfosAlbum.Controls.Add(this.tbResumé);
-            this.gbInfosAlbum.Controls.Add(this.btnFermerPopUp);
-            this.gbInfosAlbum.Controls.Add(this.btnAjoutSouhaits);
-            this.gbInfosAlbum.Controls.Add(this.pbCouvertureDetail);
-            this.gbInfosAlbum.Controls.Add(this.lblTitreDetail);
-            this.gbInfosAlbum.Location = new System.Drawing.Point(314, 11);
-            this.gbInfosAlbum.Name = "gbInfosAlbum";
-            this.gbInfosAlbum.Size = new System.Drawing.Size(350, 353);
-            this.gbInfosAlbum.TabIndex = 11;
-            this.gbInfosAlbum.TabStop = false;
-            this.gbInfosAlbum.Visible = false;
-            // 
-            // lblEditeur
-            // 
-            this.lblEditeur.AutoSize = true;
-            this.lblEditeur.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditeur.Location = new System.Drawing.Point(5, 255);
-            this.lblEditeur.Name = "lblEditeur";
-            this.lblEditeur.Size = new System.Drawing.Size(55, 19);
-            this.lblEditeur.TabIndex = 10;
-            this.lblEditeur.Text = "Editeur";
-            // 
-            // lblCategorie
-            // 
-            this.lblCategorie.AutoSize = true;
-            this.lblCategorie.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategorie.Location = new System.Drawing.Point(1, 236);
-            this.lblCategorie.Name = "lblCategorie";
-            this.lblCategorie.Size = new System.Drawing.Size(69, 19);
-            this.lblCategorie.TabIndex = 9;
-            this.lblCategorie.Text = "Catégorie";
-            // 
-            // lblGenre
-            // 
-            this.lblGenre.AutoSize = true;
-            this.lblGenre.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenre.Location = new System.Drawing.Point(67, 236);
-            this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(47, 19);
-            this.lblGenre.TabIndex = 8;
-            this.lblGenre.Text = "Genre";
-            // 
-            // lblAuteur
-            // 
-            this.lblAuteur.AutoSize = true;
-            this.lblAuteur.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuteur.Location = new System.Drawing.Point(10, 277);
-            this.lblAuteur.Name = "lblAuteur";
-            this.lblAuteur.Size = new System.Drawing.Size(52, 19);
-            this.lblAuteur.TabIndex = 7;
-            this.lblAuteur.Text = "Auteur";
-            // 
-            // lblSerie
-            // 
-            this.lblSerie.AutoSize = true;
-            this.lblSerie.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSerie.Location = new System.Drawing.Point(160, 0);
-            this.lblSerie.Name = "lblSerie";
-            this.lblSerie.Size = new System.Drawing.Size(40, 19);
-            this.lblSerie.TabIndex = 6;
-            this.lblSerie.Text = "Série";
-            // 
-            // tbResumé
-            // 
-            this.tbResumé.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tbResumé.Location = new System.Drawing.Point(164, 56);
-            this.tbResumé.Multiline = true;
-            this.tbResumé.Name = "tbResumé";
-            this.tbResumé.ReadOnly = true;
-            this.tbResumé.Size = new System.Drawing.Size(179, 178);
-            this.tbResumé.TabIndex = 5;
-            // 
-            // btnFermerPopUp
-            // 
-            this.btnFermerPopUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnFermerPopUp.Location = new System.Drawing.Point(0, 4);
-            this.btnFermerPopUp.Name = "btnFermerPopUp";
-            this.btnFermerPopUp.Size = new System.Drawing.Size(75, 39);
-            this.btnFermerPopUp.TabIndex = 4;
-            this.btnFermerPopUp.Text = "Fermer la fenêtre";
-            this.btnFermerPopUp.UseVisualStyleBackColor = false;
-            this.btnFermerPopUp.Click += new System.EventHandler(this.btnFermerPopUp_Click);
-            // 
-            // btnAjoutSouhaits
-            // 
-            this.btnAjoutSouhaits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAjoutSouhaits.Location = new System.Drawing.Point(268, 255);
-            this.btnAjoutSouhaits.Name = "btnAjoutSouhaits";
-            this.btnAjoutSouhaits.Size = new System.Drawing.Size(75, 51);
-            this.btnAjoutSouhaits.TabIndex = 3;
-            this.btnAjoutSouhaits.Text = "Ajouter à mes souhaits";
-            this.btnAjoutSouhaits.UseVisualStyleBackColor = false;
-            this.btnAjoutSouhaits.Click += new System.EventHandler(this.btnAjoutSouhaits_Click);
-            // 
-            // pbCouvertureDetail
-            // 
-            this.pbCouvertureDetail.Location = new System.Drawing.Point(9, 56);
-            this.pbCouvertureDetail.Name = "pbCouvertureDetail";
-            this.pbCouvertureDetail.Size = new System.Drawing.Size(135, 172);
-            this.pbCouvertureDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCouvertureDetail.TabIndex = 1;
-            this.pbCouvertureDetail.TabStop = false;
-            // 
-            // lblTitreDetail
-            // 
-            this.lblTitreDetail.AutoSize = true;
-            this.lblTitreDetail.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitreDetail.Location = new System.Drawing.Point(160, 20);
-            this.lblTitreDetail.Name = "lblTitreDetail";
-            this.lblTitreDetail.Size = new System.Drawing.Size(131, 23);
-            this.lblTitreDetail.TabIndex = 0;
-            this.lblTitreDetail.Text = "Titre de l\'Album";
             // 
             // gbListeSouhaits
             // 
@@ -585,6 +487,126 @@
             this.Date.HeaderText = "Date d\'ajout";
             this.Date.Name = "Date";
             // 
+            // gbInfosAlbum
+            // 
+            this.gbInfosAlbum.Controls.Add(this.lblEditeur);
+            this.gbInfosAlbum.Controls.Add(this.lblCategorie);
+            this.gbInfosAlbum.Controls.Add(this.lblGenre);
+            this.gbInfosAlbum.Controls.Add(this.lblAuteur);
+            this.gbInfosAlbum.Controls.Add(this.lblSerie);
+            this.gbInfosAlbum.Controls.Add(this.tbResumé);
+            this.gbInfosAlbum.Controls.Add(this.btnFermerPopUp);
+            this.gbInfosAlbum.Controls.Add(this.btnAjoutSouhaits);
+            this.gbInfosAlbum.Controls.Add(this.pbCouvertureDetail);
+            this.gbInfosAlbum.Controls.Add(this.lblTitreDetail);
+            this.gbInfosAlbum.Location = new System.Drawing.Point(314, 11);
+            this.gbInfosAlbum.Name = "gbInfosAlbum";
+            this.gbInfosAlbum.Size = new System.Drawing.Size(350, 353);
+            this.gbInfosAlbum.TabIndex = 11;
+            this.gbInfosAlbum.TabStop = false;
+            this.gbInfosAlbum.Visible = false;
+            // 
+            // lblEditeur
+            // 
+            this.lblEditeur.AutoSize = true;
+            this.lblEditeur.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditeur.Location = new System.Drawing.Point(5, 255);
+            this.lblEditeur.Name = "lblEditeur";
+            this.lblEditeur.Size = new System.Drawing.Size(55, 19);
+            this.lblEditeur.TabIndex = 10;
+            this.lblEditeur.Text = "Editeur";
+            // 
+            // lblCategorie
+            // 
+            this.lblCategorie.AutoSize = true;
+            this.lblCategorie.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategorie.Location = new System.Drawing.Point(1, 236);
+            this.lblCategorie.Name = "lblCategorie";
+            this.lblCategorie.Size = new System.Drawing.Size(69, 19);
+            this.lblCategorie.TabIndex = 9;
+            this.lblCategorie.Text = "Catégorie";
+            // 
+            // lblGenre
+            // 
+            this.lblGenre.AutoSize = true;
+            this.lblGenre.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenre.Location = new System.Drawing.Point(67, 236);
+            this.lblGenre.Name = "lblGenre";
+            this.lblGenre.Size = new System.Drawing.Size(47, 19);
+            this.lblGenre.TabIndex = 8;
+            this.lblGenre.Text = "Genre";
+            // 
+            // lblAuteur
+            // 
+            this.lblAuteur.AutoSize = true;
+            this.lblAuteur.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAuteur.Location = new System.Drawing.Point(10, 277);
+            this.lblAuteur.Name = "lblAuteur";
+            this.lblAuteur.Size = new System.Drawing.Size(52, 19);
+            this.lblAuteur.TabIndex = 7;
+            this.lblAuteur.Text = "Auteur";
+            // 
+            // lblSerie
+            // 
+            this.lblSerie.AutoSize = true;
+            this.lblSerie.Font = new System.Drawing.Font("Ink Free", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSerie.Location = new System.Drawing.Point(160, 0);
+            this.lblSerie.Name = "lblSerie";
+            this.lblSerie.Size = new System.Drawing.Size(40, 19);
+            this.lblSerie.TabIndex = 6;
+            this.lblSerie.Text = "Série";
+            // 
+            // tbResumé
+            // 
+            this.tbResumé.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tbResumé.Location = new System.Drawing.Point(164, 56);
+            this.tbResumé.Multiline = true;
+            this.tbResumé.Name = "tbResumé";
+            this.tbResumé.ReadOnly = true;
+            this.tbResumé.Size = new System.Drawing.Size(179, 178);
+            this.tbResumé.TabIndex = 5;
+            // 
+            // btnFermerPopUp
+            // 
+            this.btnFermerPopUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnFermerPopUp.Location = new System.Drawing.Point(0, 4);
+            this.btnFermerPopUp.Name = "btnFermerPopUp";
+            this.btnFermerPopUp.Size = new System.Drawing.Size(75, 39);
+            this.btnFermerPopUp.TabIndex = 4;
+            this.btnFermerPopUp.Text = "Fermer la fenêtre";
+            this.btnFermerPopUp.UseVisualStyleBackColor = false;
+            this.btnFermerPopUp.Click += new System.EventHandler(this.btnFermerPopUp_Click);
+            // 
+            // btnAjoutSouhaits
+            // 
+            this.btnAjoutSouhaits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAjoutSouhaits.Location = new System.Drawing.Point(268, 255);
+            this.btnAjoutSouhaits.Name = "btnAjoutSouhaits";
+            this.btnAjoutSouhaits.Size = new System.Drawing.Size(75, 51);
+            this.btnAjoutSouhaits.TabIndex = 3;
+            this.btnAjoutSouhaits.Text = "Ajouter à mes souhaits";
+            this.btnAjoutSouhaits.UseVisualStyleBackColor = false;
+            this.btnAjoutSouhaits.Click += new System.EventHandler(this.btnAjoutSouhaits_Click);
+            // 
+            // pbCouvertureDetail
+            // 
+            this.pbCouvertureDetail.Location = new System.Drawing.Point(9, 56);
+            this.pbCouvertureDetail.Name = "pbCouvertureDetail";
+            this.pbCouvertureDetail.Size = new System.Drawing.Size(135, 172);
+            this.pbCouvertureDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCouvertureDetail.TabIndex = 1;
+            this.pbCouvertureDetail.TabStop = false;
+            // 
+            // lblTitreDetail
+            // 
+            this.lblTitreDetail.AutoSize = true;
+            this.lblTitreDetail.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitreDetail.Location = new System.Drawing.Point(160, 20);
+            this.lblTitreDetail.Name = "lblTitreDetail";
+            this.lblTitreDetail.Size = new System.Drawing.Size(131, 23);
+            this.lblTitreDetail.TabIndex = 0;
+            this.lblTitreDetail.Text = "Titre de l\'Album";
+            // 
             // gbMarché
             // 
             this.gbMarché.Controls.Add(this.gbInfosAlbum);
@@ -595,39 +617,46 @@
             this.gbMarché.Controls.Add(this.lblBarreRecherche);
             this.gbMarché.Controls.Add(this.tbBarreRecherche);
             this.gbMarché.Controls.Add(this.pbinfo);
-            this.gbMarché.Location = new System.Drawing.Point(71, 71);
+            this.gbMarché.Location = new System.Drawing.Point(62, 70);
             this.gbMarché.Name = "gbMarché";
-            this.gbMarché.Size = new System.Drawing.Size(666, 384);
+            this.gbMarché.Size = new System.Drawing.Size(676, 384);
             this.gbMarché.TabIndex = 6;
             this.gbMarché.TabStop = false;
             this.gbMarché.Text = "Bienvenu(e) sur MarchéBD, notre marché";
             // 
-            // pbinfo
+            // pbInfo1
             // 
-            this.pbinfo.Image = global::App.Properties.Resources.infobullemarché;
-            this.pbinfo.Location = new System.Drawing.Point(342, 35);
-            this.pbinfo.Name = "pbinfo";
-            this.pbinfo.Size = new System.Drawing.Size(314, 252);
-            this.pbinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbinfo.TabIndex = 6;
-            this.pbinfo.TabStop = false;
+            this.pbInfo1.Image = global::App.Properties.Resources.infobullealbum;
+            this.pbInfo1.Location = new System.Drawing.Point(318, 11);
+            this.pbInfo1.Name = "pbInfo1";
+            this.pbInfo1.Size = new System.Drawing.Size(338, 275);
+            this.pbInfo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbInfo1.TabIndex = 13;
+            this.pbInfo1.TabStop = false;
+            this.pbInfo1.Visible = false;
             // 
-            // tbBarreRecherche
+            // btnAjoutManuel
             // 
-            this.tbBarreRecherche.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.tbBarreRecherche.Location = new System.Drawing.Point(39, 54);
-            this.tbBarreRecherche.Name = "tbBarreRecherche";
-            this.tbBarreRecherche.Size = new System.Drawing.Size(217, 20);
-            this.tbBarreRecherche.TabIndex = 7;
+            this.btnAjoutManuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnAjoutManuel.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjoutManuel.Location = new System.Drawing.Point(233, 35);
+            this.btnAjoutManuel.Name = "btnAjoutManuel";
+            this.btnAjoutManuel.Size = new System.Drawing.Size(75, 38);
+            this.btnAjoutManuel.TabIndex = 12;
+            this.btnAjoutManuel.Text = "+";
+            this.btnAjoutManuel.UseVisualStyleBackColor = false;
+            this.btnAjoutManuel.Visible = false;
+            this.btnAjoutManuel.Click += new System.EventHandler(this.btnAjoutManuel_Click);
             // 
-            // lblBarreRecherche
+            // lblAjoutManuel
             // 
-            this.lblBarreRecherche.AutoSize = true;
-            this.lblBarreRecherche.Location = new System.Drawing.Point(47, 35);
-            this.lblBarreRecherche.Name = "lblBarreRecherche";
-            this.lblBarreRecherche.Size = new System.Drawing.Size(198, 13);
-            this.lblBarreRecherche.TabIndex = 9;
-            this.lblBarreRecherche.Text = "Rechercher parmi les albums disponibles";
+            this.lblAjoutManuel.AutoSize = true;
+            this.lblAjoutManuel.Location = new System.Drawing.Point(5, 35);
+            this.lblAjoutManuel.Name = "lblAjoutManuel";
+            this.lblAjoutManuel.Size = new System.Drawing.Size(228, 13);
+            this.lblAjoutManuel.TabIndex = 11;
+            this.lblAjoutManuel.Text = "Ajouter manuellement un album à ma collection";
+            this.lblAjoutManuel.Visible = false;
             // 
             // gbListeAlbums
             // 
@@ -648,82 +677,6 @@
             this.gbListeAlbums.TabIndex = 10;
             this.gbListeAlbums.TabStop = false;
             // 
-            // pbAlbum1
-            // 
-            this.pbAlbum1.Location = new System.Drawing.Point(6, 0);
-            this.pbAlbum1.Name = "pbAlbum1";
-            this.pbAlbum1.Size = new System.Drawing.Size(112, 119);
-            this.pbAlbum1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAlbum1.TabIndex = 0;
-            this.pbAlbum1.TabStop = false;
-            // 
-            // lblTitre1
-            // 
-            this.lblTitre1.AutoSize = true;
-            this.lblTitre1.Location = new System.Drawing.Point(7, 126);
-            this.lblTitre1.Name = "lblTitre1";
-            this.lblTitre1.Size = new System.Drawing.Size(64, 13);
-            this.lblTitre1.TabIndex = 1;
-            this.lblTitre1.Text = "TitreSuivant";
-            this.lblTitre1.Click += new System.EventHandler(this.lblTitre_Click);
-            // 
-            // pbAlbum2
-            // 
-            this.pbAlbum2.Location = new System.Drawing.Point(127, 0);
-            this.pbAlbum2.Name = "pbAlbum2";
-            this.pbAlbum2.Size = new System.Drawing.Size(112, 119);
-            this.pbAlbum2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAlbum2.TabIndex = 2;
-            this.pbAlbum2.TabStop = false;
-            // 
-            // lblTitre2
-            // 
-            this.lblTitre2.AutoSize = true;
-            this.lblTitre2.Location = new System.Drawing.Point(133, 126);
-            this.lblTitre2.Name = "lblTitre2";
-            this.lblTitre2.Size = new System.Drawing.Size(64, 13);
-            this.lblTitre2.TabIndex = 3;
-            this.lblTitre2.Text = "TitreSuivant";
-            this.lblTitre2.Click += new System.EventHandler(this.lblTitre_Click);
-            // 
-            // pbAlbum3
-            // 
-            this.pbAlbum3.Location = new System.Drawing.Point(6, 145);
-            this.pbAlbum3.Name = "pbAlbum3";
-            this.pbAlbum3.Size = new System.Drawing.Size(112, 121);
-            this.pbAlbum3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAlbum3.TabIndex = 4;
-            this.pbAlbum3.TabStop = false;
-            // 
-            // lblTitre3
-            // 
-            this.lblTitre3.AutoSize = true;
-            this.lblTitre3.Location = new System.Drawing.Point(8, 269);
-            this.lblTitre3.Name = "lblTitre3";
-            this.lblTitre3.Size = new System.Drawing.Size(64, 13);
-            this.lblTitre3.TabIndex = 5;
-            this.lblTitre3.Text = "TitreSuivant";
-            this.lblTitre3.Click += new System.EventHandler(this.lblTitre_Click);
-            // 
-            // pbAlbum4
-            // 
-            this.pbAlbum4.Location = new System.Drawing.Point(127, 145);
-            this.pbAlbum4.Name = "pbAlbum4";
-            this.pbAlbum4.Size = new System.Drawing.Size(112, 121);
-            this.pbAlbum4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAlbum4.TabIndex = 6;
-            this.pbAlbum4.TabStop = false;
-            // 
-            // lblTitre4
-            // 
-            this.lblTitre4.AutoSize = true;
-            this.lblTitre4.Location = new System.Drawing.Point(124, 269);
-            this.lblTitre4.Name = "lblTitre4";
-            this.lblTitre4.Size = new System.Drawing.Size(64, 13);
-            this.lblTitre4.TabIndex = 7;
-            this.lblTitre4.Text = "TitreSuivant";
-            this.lblTitre4.Click += new System.EventHandler(this.lblTitre_Click);
-            // 
             // btnNext
             // 
             this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -736,49 +689,350 @@
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // lblAjoutManuel
+            // lblTitre4
             // 
-            this.lblAjoutManuel.AutoSize = true;
-            this.lblAjoutManuel.Location = new System.Drawing.Point(5, 35);
-            this.lblAjoutManuel.Name = "lblAjoutManuel";
-            this.lblAjoutManuel.Size = new System.Drawing.Size(228, 13);
-            this.lblAjoutManuel.TabIndex = 11;
-            this.lblAjoutManuel.Text = "Ajouter manuellement un album à ma collection";
-            this.lblAjoutManuel.Visible = false;
+            this.lblTitre4.AutoSize = true;
+            this.lblTitre4.Location = new System.Drawing.Point(124, 269);
+            this.lblTitre4.Name = "lblTitre4";
+            this.lblTitre4.Size = new System.Drawing.Size(64, 13);
+            this.lblTitre4.TabIndex = 7;
+            this.lblTitre4.Text = "TitreSuivant";
+            this.lblTitre4.Click += new System.EventHandler(this.lblTitre_Click);
             // 
-            // btnAjoutManuel
+            // pbAlbum4
             // 
-            this.btnAjoutManuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnAjoutManuel.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjoutManuel.Location = new System.Drawing.Point(233, 35);
-            this.btnAjoutManuel.Name = "btnAjoutManuel";
-            this.btnAjoutManuel.Size = new System.Drawing.Size(75, 38);
-            this.btnAjoutManuel.TabIndex = 12;
-            this.btnAjoutManuel.Text = "+";
-            this.btnAjoutManuel.UseVisualStyleBackColor = false;
-            this.btnAjoutManuel.Visible = false;
+            this.pbAlbum4.Location = new System.Drawing.Point(127, 145);
+            this.pbAlbum4.Name = "pbAlbum4";
+            this.pbAlbum4.Size = new System.Drawing.Size(112, 121);
+            this.pbAlbum4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAlbum4.TabIndex = 6;
+            this.pbAlbum4.TabStop = false;
             // 
-            // pbInfo1
+            // lblTitre3
             // 
-            this.pbInfo1.Image = global::App.Properties.Resources.infobullealbum;
-            this.pbInfo1.Location = new System.Drawing.Point(318, 11);
-            this.pbInfo1.Name = "pbInfo1";
-            this.pbInfo1.Size = new System.Drawing.Size(338, 275);
-            this.pbInfo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbInfo1.TabIndex = 13;
-            this.pbInfo1.TabStop = false;
-            this.pbInfo1.Visible = false;
+            this.lblTitre3.AutoSize = true;
+            this.lblTitre3.Location = new System.Drawing.Point(8, 269);
+            this.lblTitre3.Name = "lblTitre3";
+            this.lblTitre3.Size = new System.Drawing.Size(64, 13);
+            this.lblTitre3.TabIndex = 5;
+            this.lblTitre3.Text = "TitreSuivant";
+            this.lblTitre3.Click += new System.EventHandler(this.lblTitre_Click);
+            // 
+            // pbAlbum3
+            // 
+            this.pbAlbum3.Location = new System.Drawing.Point(6, 145);
+            this.pbAlbum3.Name = "pbAlbum3";
+            this.pbAlbum3.Size = new System.Drawing.Size(112, 121);
+            this.pbAlbum3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAlbum3.TabIndex = 4;
+            this.pbAlbum3.TabStop = false;
+            // 
+            // lblTitre2
+            // 
+            this.lblTitre2.AutoSize = true;
+            this.lblTitre2.Location = new System.Drawing.Point(133, 126);
+            this.lblTitre2.Name = "lblTitre2";
+            this.lblTitre2.Size = new System.Drawing.Size(64, 13);
+            this.lblTitre2.TabIndex = 3;
+            this.lblTitre2.Text = "TitreSuivant";
+            this.lblTitre2.Click += new System.EventHandler(this.lblTitre_Click);
+            // 
+            // pbAlbum2
+            // 
+            this.pbAlbum2.Location = new System.Drawing.Point(127, 0);
+            this.pbAlbum2.Name = "pbAlbum2";
+            this.pbAlbum2.Size = new System.Drawing.Size(112, 119);
+            this.pbAlbum2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAlbum2.TabIndex = 2;
+            this.pbAlbum2.TabStop = false;
+            // 
+            // lblTitre1
+            // 
+            this.lblTitre1.AutoSize = true;
+            this.lblTitre1.Location = new System.Drawing.Point(7, 126);
+            this.lblTitre1.Name = "lblTitre1";
+            this.lblTitre1.Size = new System.Drawing.Size(64, 13);
+            this.lblTitre1.TabIndex = 1;
+            this.lblTitre1.Text = "TitreSuivant";
+            this.lblTitre1.Click += new System.EventHandler(this.lblTitre_Click);
+            // 
+            // pbAlbum1
+            // 
+            this.pbAlbum1.Location = new System.Drawing.Point(6, 0);
+            this.pbAlbum1.Name = "pbAlbum1";
+            this.pbAlbum1.Size = new System.Drawing.Size(112, 119);
+            this.pbAlbum1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAlbum1.TabIndex = 0;
+            this.pbAlbum1.TabStop = false;
+            // 
+            // lblBarreRecherche
+            // 
+            this.lblBarreRecherche.AutoSize = true;
+            this.lblBarreRecherche.Location = new System.Drawing.Point(47, 35);
+            this.lblBarreRecherche.Name = "lblBarreRecherche";
+            this.lblBarreRecherche.Size = new System.Drawing.Size(198, 13);
+            this.lblBarreRecherche.TabIndex = 9;
+            this.lblBarreRecherche.Text = "Rechercher parmi les albums disponibles";
+            // 
+            // tbBarreRecherche
+            // 
+            this.tbBarreRecherche.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbBarreRecherche.Location = new System.Drawing.Point(39, 54);
+            this.tbBarreRecherche.Name = "tbBarreRecherche";
+            this.tbBarreRecherche.Size = new System.Drawing.Size(217, 20);
+            this.tbBarreRecherche.TabIndex = 7;
+            // 
+            // pbinfo
+            // 
+            this.pbinfo.Image = global::App.Properties.Resources.infobullemarché;
+            this.pbinfo.Location = new System.Drawing.Point(342, 35);
+            this.pbinfo.Name = "pbinfo";
+            this.pbinfo.Size = new System.Drawing.Size(314, 252);
+            this.pbinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbinfo.TabIndex = 6;
+            this.pbinfo.TabStop = false;
+            // 
+            // tbResume
+            // 
+            this.tbResume.Location = new System.Drawing.Point(405, 220);
+            this.tbResume.Multiline = true;
+            this.tbResume.Name = "tbResume";
+            this.tbResume.Size = new System.Drawing.Size(218, 181);
+            this.tbResume.TabIndex = 20;
+            this.tbResume.TextChanged += new System.EventHandler(this.tbResume_TextChanged);
+            // 
+            // lblResume
+            // 
+            this.lblResume.AutoSize = true;
+            this.lblResume.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResume.Location = new System.Drawing.Point(414, 177);
+            this.lblResume.Name = "lblResume";
+            this.lblResume.Size = new System.Drawing.Size(67, 21);
+            this.lblResume.TabIndex = 19;
+            this.lblResume.Text = "Résumé";
+            // 
+            // tbEditeur
+            // 
+            this.tbEditeur.Location = new System.Drawing.Point(271, 309);
+            this.tbEditeur.Name = "tbEditeur";
+            this.tbEditeur.Size = new System.Drawing.Size(100, 20);
+            this.tbEditeur.TabIndex = 18;
+            this.tbEditeur.TextChanged += new System.EventHandler(this.tbEditeur_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(187, 306);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 21);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Editeur";
+            // 
+            // btnValider
+            // 
+            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnValider.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.btnValider.Location = new System.Drawing.Point(418, 429);
+            this.btnValider.Name = "btnValider";
+            this.btnValider.Size = new System.Drawing.Size(86, 34);
+            this.btnValider.TabIndex = 15;
+            this.btnValider.Text = "Valider";
+            this.btnValider.UseVisualStyleBackColor = false;
+            this.btnValider.Visible = false;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
+            // 
+            // btnParcourir
+            // 
+            this.btnParcourir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnParcourir.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnParcourir.Location = new System.Drawing.Point(274, 432);
+            this.btnParcourir.Name = "btnParcourir";
+            this.btnParcourir.Size = new System.Drawing.Size(97, 30);
+            this.btnParcourir.TabIndex = 14;
+            this.btnParcourir.Text = "Parcourir ";
+            this.btnParcourir.UseVisualStyleBackColor = false;
+            this.btnParcourir.Click += new System.EventHandler(this.btnParcourir_Click);
+            // 
+            // lblCouverture
+            // 
+            this.lblCouverture.AutoSize = true;
+            this.lblCouverture.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCouverture.Location = new System.Drawing.Point(178, 433);
+            this.lblCouverture.Name = "lblCouverture";
+            this.lblCouverture.Size = new System.Drawing.Size(92, 21);
+            this.lblCouverture.TabIndex = 13;
+            this.lblCouverture.Text = "Couverture";
+            // 
+            // plholdGenre
+            // 
+            this.plholdGenre.AutoSize = true;
+            this.plholdGenre.BackColor = System.Drawing.Color.White;
+            this.plholdGenre.Font = new System.Drawing.Font("MV Boli", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.plholdGenre.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.plholdGenre.Location = new System.Drawing.Point(275, 398);
+            this.plholdGenre.Name = "plholdGenre";
+            this.plholdGenre.Size = new System.Drawing.Size(94, 16);
+            this.plholdGenre.TabIndex = 12;
+            this.plholdGenre.Text = "fantasy,polar,etc";
+            this.plholdGenre.MouseHover += new System.EventHandler(this.PlaceHolder_MouseHover);
+            // 
+            // tbGenre
+            // 
+            this.tbGenre.Location = new System.Drawing.Point(271, 397);
+            this.tbGenre.Name = "tbGenre";
+            this.tbGenre.Size = new System.Drawing.Size(100, 20);
+            this.tbGenre.TabIndex = 11;
+            this.tbGenre.TextChanged += new System.EventHandler(this.tbGenre_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(187, 393);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 21);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Genre";
+            // 
+            // plholdCat
+            // 
+            this.plholdCat.AutoSize = true;
+            this.plholdCat.BackColor = System.Drawing.Color.White;
+            this.plholdCat.Font = new System.Drawing.Font("MV Boli", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.plholdCat.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.plholdCat.Location = new System.Drawing.Point(279, 354);
+            this.plholdCat.Name = "plholdCat";
+            this.plholdCat.Size = new System.Drawing.Size(78, 16);
+            this.plholdCat.TabIndex = 9;
+            this.plholdCat.Text = "BD,Manga,etc";
+            this.plholdCat.MouseHover += new System.EventHandler(this.PlaceHolder_MouseHover);
+            // 
+            // tbCategorie
+            // 
+            this.tbCategorie.Location = new System.Drawing.Point(271, 352);
+            this.tbCategorie.Name = "tbCategorie";
+            this.tbCategorie.Size = new System.Drawing.Size(100, 20);
+            this.tbCategorie.TabIndex = 8;
+            this.tbCategorie.TextChanged += new System.EventHandler(this.tbCategorie_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(178, 352);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 21);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Catégorie";
+            // 
+            // tbSerie
+            // 
+            this.tbSerie.Location = new System.Drawing.Point(271, 260);
+            this.tbSerie.Name = "tbSerie";
+            this.tbSerie.Size = new System.Drawing.Size(100, 20);
+            this.tbSerie.TabIndex = 6;
+            this.tbSerie.TextChanged += new System.EventHandler(this.tbSerie_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(187, 260);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 21);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Série";
+            // 
+            // tbAuteur
+            // 
+            this.tbAuteur.Location = new System.Drawing.Point(271, 220);
+            this.tbAuteur.Name = "tbAuteur";
+            this.tbAuteur.Size = new System.Drawing.Size(100, 20);
+            this.tbAuteur.TabIndex = 4;
+            this.tbAuteur.TextChanged += new System.EventHandler(this.tbAuteur_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(178, 217);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 21);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Auteur(s)";
+            // 
+            // tbTitre
+            // 
+            this.tbTitre.Location = new System.Drawing.Point(271, 180);
+            this.tbTitre.Name = "tbTitre";
+            this.tbTitre.Size = new System.Drawing.Size(100, 20);
+            this.tbTitre.TabIndex = 2;
+            this.tbTitre.TextChanged += new System.EventHandler(this.tbTitre_TextChanged);
+            // 
+            // lblTitre
+            // 
+            this.lblTitre.AutoSize = true;
+            this.lblTitre.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitre.Location = new System.Drawing.Point(178, 180);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(47, 21);
+            this.lblTitre.TabIndex = 1;
+            this.lblTitre.Text = "Titre";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(203, 155);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(317, 17);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Veuillez entrer les caracéristiques de l\'album";
+            // 
+            // tbExplications
+            // 
+            this.tbExplications.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tbExplications.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbExplications.Location = new System.Drawing.Point(64, 72);
+            this.tbExplications.Multiline = true;
+            this.tbExplications.Name = "tbExplications";
+            this.tbExplications.ReadOnly = true;
+            this.tbExplications.Size = new System.Drawing.Size(672, 76);
+            this.tbExplications.TabIndex = 21;
+            this.tbExplications.Text = resources.GetString("tbExplications.Text");
             // 
             // FormUtil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(224)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(738, 455);
+            this.ClientSize = new System.Drawing.Size(738, 466);
             this.Controls.Add(this.gbMarché);
             this.Controls.Add(this.gbSouhaits);
+            this.Controls.Add(this.lblResume);
+            this.Controls.Add(this.tbResume);
+            this.Controls.Add(this.tbEditeur);
+            this.Controls.Add(this.btnValider);
             this.Controls.Add(this.Menu);
+            this.Controls.Add(this.btnParcourir);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.plholdGenre);
+            this.Controls.Add(this.lblCouverture);
             this.Controls.Add(this.gbHeader);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblTitre);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tbTitre);
+            this.Controls.Add(this.plholdCat);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.tbAuteur);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.tbSerie);
+            this.Controls.Add(this.tbCategorie);
+            this.Controls.Add(this.tbGenre);
+            this.Controls.Add(this.tbExplications);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormUtil";
@@ -797,9 +1051,6 @@
             this.Menu.PerformLayout();
             this.gbSouhaits.ResumeLayout(false);
             this.gbSouhaits.PerformLayout();
-            this.gbInfosAlbum.ResumeLayout(false);
-            this.gbInfosAlbum.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCouvertureDetail)).EndInit();
             this.gbListeSouhaits.ResumeLayout(false);
             this.gbListeSouhaits.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoeur4)).EndInit();
@@ -811,17 +1062,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbSouhait2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSouhait1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSouhaits)).EndInit();
+            this.gbInfosAlbum.ResumeLayout(false);
+            this.gbInfosAlbum.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCouvertureDetail)).EndInit();
             this.gbMarché.ResumeLayout(false);
             this.gbMarché.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInfo1)).EndInit();
             this.gbListeAlbums.ResumeLayout(false);
             this.gbListeAlbums.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlbum4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbInfo1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -887,5 +1142,26 @@
         private System.Windows.Forms.Label lblBarreRecherche;
         private System.Windows.Forms.TextBox tbBarreRecherche;
         private System.Windows.Forms.PictureBox pbinfo;
+        private System.Windows.Forms.TextBox tbResume;
+        private System.Windows.Forms.Label lblResume;
+        private System.Windows.Forms.TextBox tbEditeur;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnValider;
+        private System.Windows.Forms.Button btnParcourir;
+        private System.Windows.Forms.Label lblCouverture;
+        private System.Windows.Forms.Label plholdGenre;
+        private System.Windows.Forms.TextBox tbGenre;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label plholdCat;
+        private System.Windows.Forms.TextBox tbCategorie;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tbSerie;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbAuteur;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tbTitre;
+        private System.Windows.Forms.Label lblTitre;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tbExplications;
     }
 }

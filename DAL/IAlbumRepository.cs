@@ -14,11 +14,12 @@ namespace DAL
         /// </summary>
        
         List<Album> GetAll();
+        List<Album> GetByNameOfAction(string action);
 
         /// <summary>
         /// Sauvegarder un album
         /// </summary>
-      
+
         void Save(Album album);
         void Delete(Album album);
        Album GetAlbumByActionID(int actionid);

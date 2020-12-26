@@ -22,8 +22,10 @@ namespace App
         private int NumeroAlbumSouhait; //  utile pour le carroussel d'albums du marché
         private static string cheminacces = Path.Combine(Environment.CurrentDirectory, "CircuitBD.Net", "Couvertures");
         private Album SelectedAlbum;
+        private Album NouvelAlbum;
+        Label placeholder;
         public Utilisateur Utilisateur { get; set; }
-
+      
 
         private IActionRepository _actionrepo;
         private IPersonneRepository _persrepo;
@@ -61,6 +63,9 @@ namespace App
         // événements du form
         private void FormUtil_Load(object sender, EventArgs e)
         {
+            btnValider.BackColor = Color.PowderBlue;
+            NouvelAlbum = new Album();
+            SelectedAlbum = new Album();
             gbListeAlbums.BackColor = Color.PaleVioletRed;
             gbSouhaits.Visible = true;
             gbMarché.Visible = true;
@@ -162,15 +167,159 @@ namespace App
                 instanceformutil.Close();
             }
         }
-        // événement mousehover
+        // événements mousehover
         private void gb_MouseHover(object sender, EventArgs e)
         {
             Menu.Visible = false;
         }
-        // Evénement en lien avec l'affichage des données
-        // A FAIRE form pour pouvoir ajouter un album à sa collection
+        private void PlaceHolder_MouseHover(object sender, EventArgs e)
+        {
+            placeholder = ((Label)sender);
+            placeholder.Visible = false;
+        }
+
+       
+        // INTERACTIONS INTERFACES ALBUM
         private void btnAjoutManuel_Click(object sender, EventArgs e)
         {
+            btnValider.Visible = false;
+            btnValider.BackColor = Color.PowderBlue;
+            gbMarché.Visible = false;
+            gbSouhaits.Visible = false;
+        }
+        private void ApparitionBoutonValider ()
+        {
+           
+           
+                if (String.IsNullOrEmpty(tbTitre.Text) == false)
+                {
+              
+                if (String.IsNullOrEmpty(tbAuteur.Text) == false)
+                    {
+                        if (String.IsNullOrEmpty(tbCategorie.Text) == false)
+                        {
+                            if (String.IsNullOrEmpty(tbSerie.Text) == false)
+                            {
+                                if (String.IsNullOrEmpty(tbGenre.Text) == false)
+                                {
+                                    if (String.IsNullOrEmpty(tbResume.Text) == false)
+                                    {
+                                   
+                                        if (String.IsNullOrEmpty(tbEditeur.Text) == false)
+                                        {
+                                            btnValider.Visible = true;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            
+            }
+        private void btnValider_Click(object sender, EventArgs e)
+        {
+
+          List <Album> AlbumsBase =  _albrepo.GetAll();
+            if (AlbumsBase.Contains(NouvelAlbum) == false)
+            {
+                _albrepo.Save(NouvelAlbum);
+
+            }
+            Domain.Action Achat = new Domain.Action("Achat", Utilisateur, NouvelAlbum);
+            _actionrepo.SaveAction(Achat);
+            Utilisateur.ActionsUser.Add(Achat);
+            RecupererAchatUser();
+            RefreshCollection();
+            btnValider.BackColor = Color.PeachPuff;
+            tbTitre.Text = "";
+            tbAuteur.Text = "";
+            tbSerie.Text = "";
+            tbEditeur.Text = "";
+            tbCategorie.Text = "";
+            tbGenre.Text = "";
+            tbResume.Text = "";
+        }
+        private void tbTitre_TextChanged(object sender, EventArgs e)
+        {
+            NouvelAlbum.Nom = tbTitre.Text;
+            ApparitionBoutonValider();
+        }
+
+        private void tbAuteur_TextChanged(object sender, EventArgs e)
+        {
+            NouvelAlbum.Auteur = tbAuteur.Text;
+            ApparitionBoutonValider();
+        }
+
+        private void tbSerie_TextChanged(object sender, EventArgs e)
+        {
+            NouvelAlbum.Serie = tbSerie.Text; ApparitionBoutonValider();
+        }
+        private void tbEditeur_TextChanged(object sender, EventArgs e)
+        {
+            NouvelAlbum.Editeur = tbEditeur.Text;
+            ApparitionBoutonValider();
+        }
+
+        private void tbResume_TextChanged(object sender, EventArgs e)
+        {
+            NouvelAlbum.Resume = tbResume.Text;
+            ApparitionBoutonValider();
+        }
+        private void tbCategorie_TextChanged(object sender, EventArgs e)
+        {
+            placeholder.Visible = false;
+
+            NouvelAlbum.Categorie = tbCategorie.Text;
+            ApparitionBoutonValider();
+        }
+
+        private void tbGenre_TextChanged(object sender, EventArgs e)
+        {
+            placeholder.Visible = false;
+
+            NouvelAlbum.Genre = tbGenre.Text;
+            ApparitionBoutonValider();
+        }
+        private void btnParcourir_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog parcourir = new OpenFileDialog();
+            parcourir.DefaultExt = "jpg";
+            parcourir.ShowDialog();
+            string couverturespath = Path.Combine(Environment.CurrentDirectory, "CircuitBD.Net", "Couvertures");
+            if (!Directory.Exists(couverturespath))
+            {
+                Directory.CreateDirectory(couverturespath);
+            }
+            string fileName = Path.GetFileName(parcourir.FileName);
+            File.Copy(parcourir.FileName, Path.Combine(couverturespath, fileName));
+
+            // string cheminacces = Path.Combine(couverturespath, fileName);
+            NouvelAlbum.Couverture = fileName;
+
+        }
+        // INTERACTIONS INTERFACES SOUHAIT et MARCHE
+        private void RefreshCollection()
+        {
+            //Carrousel de mes albums
+            RefreshCarrousel(Utilisateur.ListAlbums, NextNecessary, NumeroAlbum, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);
+        }
+        private void RefreshViews()
+        {
+
+
+            //récupère la liste de tous les albums du marché
+            List<Album> AlbumsDuMarché = _albrepo.GetByNameOfAction("AjoutMarché");
+            //Carrousel du marché
+            RefreshCarrousel(AlbumsDuMarché, NextNecessary, NumeroAlbum, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);
+
+            dgvSouhaits.Rows.Clear();
+
+            RecupererSouhaitUser();
+            //Carrousel des souhaits
+            RefreshCarrousel(Utilisateur.ListSouhaits, NextNecessarySouhait, NumeroAlbumSouhait, pbSouhait1, pbSouhait2, pbSouhait3, pbSouhait4, lblTitreSouhait1, lblTitreSouhait2, lblTitreSouhait3, lblTitreSouhait4);
 
         }
         private void RecupererSouhaitUser()
@@ -202,55 +351,6 @@ namespace App
 
 
         }
-        private void RecupererAchatUser()
-        {
-            Utilisateur.ListAlbums = null;
-            Utilisateur.ListAlbums = new List<Album>();
-            Utilisateur.Achats = null;
-            Utilisateur.Achats = new List<Domain.Action>();
-            foreach (Domain.Action a in Utilisateur.ActionsUser)
-            {
-                if (a.Nom == "Achat")
-                {
-                
-                    if (Utilisateur.Achats.Contains(a) == false)
-                    {
-                        Utilisateur.Achats.Add(a);
-                    }
-                }
-            }
-            foreach (Domain.Action a in Utilisateur.Achats)
-            {
-                
-                if (Utilisateur.ListAlbums.Contains(a.Album) == false)
-                {
-                    Utilisateur.ListAlbums.Add(a.Album);
-                }
-            }
-        }
-        private void RefreshCollection ()
-        {
-            //Carrousel du marché
-            RefreshCarrousel(Utilisateur.ListAlbums, NextNecessary, NumeroAlbum, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);
-        }
-        private void RefreshViews()
-        {
-
-
-            //récupère la liste de tous les albums du marché
-            List<Album> AlbumsDuMarché = _albrepo.GetAll();
-            //Carrousel du marché
-            RefreshCarrousel(AlbumsDuMarché, NextNecessary, NumeroAlbum, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);
-
-            dgvSouhaits.Rows.Clear();
-
-            RecupererSouhaitUser();
-            //Carrousel des souhaits
-            RefreshCarrousel(Utilisateur.ListSouhaits, NextNecessarySouhait, NumeroAlbumSouhait, pbSouhait1, pbSouhait2, pbSouhait3, pbSouhait4, lblTitreSouhait1, lblTitreSouhait2, lblTitreSouhait3, lblTitreSouhait4);
-
-        }
-        // INTERACTIONS INTERFACE SOUHAIT
-
         private void btnNextSouhait_Click(object sender, EventArgs e)
         {
             NextNecessarySouhait = false;
@@ -264,7 +364,32 @@ namespace App
             lblTitreSouhait4.Text = "";
             RefreshViews();
         }
-        // INTERACTIONS INTERFACE MARCHE
+        private void RecupererAchatUser()
+        {
+            Utilisateur.ListAlbums = null;
+            Utilisateur.ListAlbums = new List<Album>();
+            Utilisateur.Achats = null;
+            Utilisateur.Achats = new List<Domain.Action>();
+            foreach (Domain.Action a in Utilisateur.ActionsUser)
+            {
+                if (a.Nom == "Achat")
+                {
+
+                    if (Utilisateur.Achats.Contains(a) == false)
+                    {
+                        Utilisateur.Achats.Add(a);
+                    }
+                }
+            }
+            foreach (Domain.Action a in Utilisateur.Achats)
+            {
+
+                if (Utilisateur.ListAlbums.Contains(a.Album) == false)
+                {
+                    Utilisateur.ListAlbums.Add(a.Album);
+                }
+            }
+        }
         private void RefreshCarrousel(List<Album> AlbumsDuMarché, bool NextNecessary, int NumeroAlbum, PictureBox pbAlbum1, PictureBox pbAlbum2, PictureBox pbAlbum3, PictureBox pbAlbum4, Label lblTitre1, Label lblTitre2, Label lblTitre3, Label lblTitre4)
         {
             
@@ -378,6 +503,7 @@ namespace App
             lblCategorie.Text = SelectedAlbum.Categorie;
             lblEditeur.Text = SelectedAlbum.Editeur;
             lblGenre.Text = SelectedAlbum.Genre;
+             tbResumé.Text = SelectedAlbum.Resume;
             if (SelectedAlbum.selected == false)
             {
                 btnAjoutSouhaits.BackColor = Color.Salmon;

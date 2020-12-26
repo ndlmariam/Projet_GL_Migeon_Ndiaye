@@ -135,4 +135,7 @@
   <metadata name="Date.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="tbExplications.Text" xml:space="preserve">
+    <value>Bienvenu(e) dans votre gestionnaire de BD. Vous pouvez déclarer ci dessous les albums appartenant à votre collection. Si vous souhaitez consulter la liste des albums que vous possédez rendez-vous dans l'onglet Albums du menu déroulant !</value>
+  </data>
 </root>

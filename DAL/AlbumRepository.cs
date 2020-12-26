@@ -13,7 +13,19 @@ namespace DAL
         {
             return Session.Query<Album>().ToList();
         }
+     public List<Album> GetByNameOfAction(string action)
+        {
+           List <Album> Listalbumparaction = new List <Album>();
+            string requete = "select a from Action a where a.Nom = ?";
+            var result = Session.CreateQuery(requete).SetString(0, action).Enumerable<Domain.Action>();
+            foreach (Domain.Action row in result)
+            {
+                Listalbumparaction.Add(row.Album);
 
+
+            }
+            return Listalbumparaction;
+        }
         public void Save(Album album)
         {
             Session.SaveOrUpdate(album);
