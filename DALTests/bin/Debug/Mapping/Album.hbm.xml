@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+assembly="Domain"
+namespace="Domain">
+<class name="Album" table="album">
+  <!-- Mapping des propriétés de la classe -->
+  <id name="idAlbum" column="album_id" type="int" >
+    <generator class="native"></generator>
+  </id>
+  <property name="Nom" column="nom" not-null="true"/>
+  <property name="Serie" column="serie" />
+  <property name="Auteur" column="auteurs" not-null="true"/>
+  <property name="Categorie" column="categorie" not-null="true"/>
+  <property name="Genre" column="genre" not-null="true"/>
+  <property name="Editeur" column="editeur" not-null="false"/>
+  <property name="Couverture" column="couverture" />
+  <property name="Resume" column="resume" />
+
+<!-- Mapping des associations de la classe -->
+
+  <!-- Un album peut faire l'objet de plusieurs actions  -->
+  <bag name ="Actions" inverse="true" lazy ="true">
+    <key column ="album_id"/>
+    <one-to-many class ="Action"/>
+  </bag>
+ 
+
+</class>
+</hibernate-mapping>
+
+

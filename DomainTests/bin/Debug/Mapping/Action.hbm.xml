@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+assembly="Domain"
+namespace="Domain">
+<class name="Action" table="action">
+  <!-- Mapping des propriétés de la classe -->
+  <id name="idAction" column="action_id" type="int" >
+    <generator class="native"></generator>
+  </id>
+  <property name="Nom" column="action_nom" not-null="true"/>
+  <property name="Date" column="date" not-null="true"/>
+
+
+<!-- Mapping des associations de la classe -->
+  <!-- Une action concerne un seul album -->
+  <many-to-one name ="Album" class ="Album" column="album_id"/>
+  
+  <!-- Plusieurs actions possibles sur le marché pour une personne -->
+  <many-to-one name ="Personne" class="Personne" column="personne_id"/>
+
+</class>
+</hibernate-mapping>
+

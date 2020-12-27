@@ -24,6 +24,7 @@ namespace DAL
         void Delete(Album album);
        Album GetAlbumByActionID(int actionid);
         Album GetAlbumByTitle(string title);
+        List<Album> GetAlbumByTitleRecherche(string title);
         
     }
 }

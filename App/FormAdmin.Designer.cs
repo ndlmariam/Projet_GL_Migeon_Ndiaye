@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gbAjoutAlbum = new System.Windows.Forms.GroupBox();
+            this.tbEditeur = new System.Windows.Forms.TextBox();
+            this.lblEditeur = new System.Windows.Forms.Label();
             this.btnValider = new System.Windows.Forms.Button();
             this.btnParcourir = new System.Windows.Forms.Button();
             this.lblCouverture = new System.Windows.Forms.Label();
@@ -45,6 +47,8 @@
             this.tbTitre = new System.Windows.Forms.TextBox();
             this.lblTitre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tbResume = new System.Windows.Forms.TextBox();
+            this.lblResume = new System.Windows.Forms.Label();
             this.gbMarchéAdmin = new System.Windows.Forms.GroupBox();
             this.gbSuppression = new System.Windows.Forms.GroupBox();
             this.btnSupressionSure = new System.Windows.Forms.Button();
@@ -58,10 +62,6 @@
             this.lblNom = new System.Windows.Forms.Label();
             this.pbDeco = new System.Windows.Forms.PictureBox();
             this.pbMarché = new System.Windows.Forms.PictureBox();
-            this.lblEditeur = new System.Windows.Forms.Label();
-            this.tbEditeur = new System.Windows.Forms.TextBox();
-            this.lblResume = new System.Windows.Forms.Label();
-            this.tbResume = new System.Windows.Forms.TextBox();
             this.gbAjoutAlbum.SuspendLayout();
             this.gbMarchéAdmin.SuspendLayout();
             this.gbSuppression.SuspendLayout();
@@ -101,6 +101,24 @@
             this.gbAjoutAlbum.TabStop = false;
             this.gbAjoutAlbum.Text = "Informations";
             this.gbAjoutAlbum.MouseHover += new System.EventHandler(this.gbAjoutAlbum_MouseHover);
+            // 
+            // tbEditeur
+            // 
+            this.tbEditeur.Location = new System.Drawing.Point(127, 200);
+            this.tbEditeur.Name = "tbEditeur";
+            this.tbEditeur.Size = new System.Drawing.Size(100, 28);
+            this.tbEditeur.TabIndex = 18;
+            this.tbEditeur.TextChanged += new System.EventHandler(this.tbEditeur_TextChanged);
+            // 
+            // lblEditeur
+            // 
+            this.lblEditeur.AutoSize = true;
+            this.lblEditeur.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditeur.Location = new System.Drawing.Point(41, 202);
+            this.lblEditeur.Name = "lblEditeur";
+            this.lblEditeur.Size = new System.Drawing.Size(65, 21);
+            this.lblEditeur.TabIndex = 17;
+            this.lblEditeur.Text = "Editeur";
             // 
             // btnValider
             // 
@@ -263,6 +281,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Veuillez entrer les caracéristiques de l\'album";
             // 
+            // tbResume
+            // 
+            this.tbResume.Location = new System.Drawing.Point(284, 124);
+            this.tbResume.Multiline = true;
+            this.tbResume.Name = "tbResume";
+            this.tbResume.Size = new System.Drawing.Size(218, 181);
+            this.tbResume.TabIndex = 20;
+            this.tbResume.TextChanged += new System.EventHandler(this.tbResume_TextChanged);
+            // 
+            // lblResume
+            // 
+            this.lblResume.AutoSize = true;
+            this.lblResume.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResume.Location = new System.Drawing.Point(280, 89);
+            this.lblResume.Name = "lblResume";
+            this.lblResume.Size = new System.Drawing.Size(67, 21);
+            this.lblResume.TabIndex = 19;
+            this.lblResume.Text = "Résumé";
+            // 
             // gbMarchéAdmin
             // 
             this.gbMarchéAdmin.Controls.Add(this.gbSuppression);
@@ -271,20 +308,21 @@
             this.gbMarchéAdmin.Controls.Add(this.btnSupprimer);
             this.gbMarchéAdmin.Controls.Add(this.btnAjout);
             this.gbMarchéAdmin.Controls.Add(this.dgvMarché);
+            this.gbMarchéAdmin.Font = new System.Drawing.Font("Calibri", 11F);
             this.gbMarchéAdmin.Location = new System.Drawing.Point(9, 72);
             this.gbMarchéAdmin.Name = "gbMarchéAdmin";
             this.gbMarchéAdmin.Size = new System.Drawing.Size(730, 384);
             this.gbMarchéAdmin.TabIndex = 16;
             this.gbMarchéAdmin.TabStop = false;
-            this.gbMarchéAdmin.Text = "Bienvenu(e) sur MarchéBD, notre marché";
+            this.gbMarchéAdmin.Text = "Bienvenu(e) sur MarchéBD, voici l\'ensemble des albums du marché.";
             // 
             // gbSuppression
             // 
             this.gbSuppression.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.gbSuppression.Controls.Add(this.btnSupressionSure);
             this.gbSuppression.Controls.Add(this.tbSupression);
-            this.gbSuppression.Font = new System.Drawing.Font("MV Boli", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbSuppression.Location = new System.Drawing.Point(544, 127);
+            this.gbSuppression.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbSuppression.Location = new System.Drawing.Point(544, 124);
             this.gbSuppression.Name = "gbSuppression";
             this.gbSuppression.Size = new System.Drawing.Size(183, 244);
             this.gbSuppression.TabIndex = 10;
@@ -308,27 +346,27 @@
             // 
             this.tbSupression.Location = new System.Drawing.Point(17, 88);
             this.tbSupression.Name = "tbSupression";
-            this.tbSupression.Size = new System.Drawing.Size(142, 32);
+            this.tbSupression.Size = new System.Drawing.Size(142, 27);
             this.tbSupression.TabIndex = 0;
             this.tbSupression.TextChanged += new System.EventHandler(this.tbSupression_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(580, 153);
+            this.label3.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(572, 153);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 17);
+            this.label3.Size = new System.Drawing.Size(162, 23);
             this.label3.TabIndex = 9;
             this.label3.Text = "SUPPRIMER un album ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(580, 24);
+            this.label2.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(570, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 17);
+            this.label2.Size = new System.Drawing.Size(148, 23);
             this.label2.TabIndex = 8;
             this.label2.Text = "AJOUTER un album ";
             // 
@@ -350,9 +388,9 @@
             this.btnAjout.BackColor = System.Drawing.Color.LightCyan;
             this.btnAjout.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAjout.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.btnAjout.Location = new System.Drawing.Point(609, 49);
+            this.btnAjout.Location = new System.Drawing.Point(609, 50);
             this.btnAjout.Name = "btnAjout";
-            this.btnAjout.Size = new System.Drawing.Size(75, 61);
+            this.btnAjout.Size = new System.Drawing.Size(50, 49);
             this.btnAjout.TabIndex = 6;
             this.btnAjout.Text = "+";
             this.btnAjout.UseVisualStyleBackColor = false;
@@ -369,7 +407,7 @@
             // 
             // gbHeaderAdmin
             // 
-            this.gbHeaderAdmin.BackColor = System.Drawing.Color.Navy;
+            this.gbHeaderAdmin.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.gbHeaderAdmin.Controls.Add(this.lblNom);
             this.gbHeaderAdmin.Controls.Add(this.pbDeco);
             this.gbHeaderAdmin.Controls.Add(this.pbMarché);
@@ -386,18 +424,19 @@
             // lblNom
             // 
             this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(585, 26);
+            this.lblNom.Font = new System.Drawing.Font("Impact", 13F);
+            this.lblNom.Location = new System.Drawing.Point(573, 26);
             this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(62, 20);
+            this.lblNom.Size = new System.Drawing.Size(69, 22);
             this.lblNom.TabIndex = 5;
             this.lblNom.Text = "Inconnu";
             // 
             // pbDeco
             // 
             this.pbDeco.Image = global::App.Properties.Resources.déconnexion;
-            this.pbDeco.Location = new System.Drawing.Point(679, 16);
+            this.pbDeco.Location = new System.Drawing.Point(679, 21);
             this.pbDeco.Name = "pbDeco";
-            this.pbDeco.Size = new System.Drawing.Size(57, 44);
+            this.pbDeco.Size = new System.Drawing.Size(45, 34);
             this.pbDeco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDeco.TabIndex = 4;
             this.pbDeco.TabStop = false;
@@ -413,43 +452,6 @@
             this.pbMarché.TabIndex = 2;
             this.pbMarché.TabStop = false;
             this.pbMarché.Click += new System.EventHandler(this.pbMarché_Click);
-            // 
-            // lblEditeur
-            // 
-            this.lblEditeur.AutoSize = true;
-            this.lblEditeur.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditeur.Location = new System.Drawing.Point(41, 202);
-            this.lblEditeur.Name = "lblEditeur";
-            this.lblEditeur.Size = new System.Drawing.Size(65, 21);
-            this.lblEditeur.TabIndex = 17;
-            this.lblEditeur.Text = "Editeur";
-            // 
-            // tbEditeur
-            // 
-            this.tbEditeur.Location = new System.Drawing.Point(127, 200);
-            this.tbEditeur.Name = "tbEditeur";
-            this.tbEditeur.Size = new System.Drawing.Size(100, 28);
-            this.tbEditeur.TabIndex = 18;
-            this.tbEditeur.TextChanged += new System.EventHandler(this.tbEditeur_TextChanged);
-            // 
-            // lblResume
-            // 
-            this.lblResume.AutoSize = true;
-            this.lblResume.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResume.Location = new System.Drawing.Point(280, 89);
-            this.lblResume.Name = "lblResume";
-            this.lblResume.Size = new System.Drawing.Size(67, 21);
-            this.lblResume.TabIndex = 19;
-            this.lblResume.Text = "Résumé";
-            // 
-            // tbResume
-            // 
-            this.tbResume.Location = new System.Drawing.Point(284, 124);
-            this.tbResume.Multiline = true;
-            this.tbResume.Name = "tbResume";
-            this.tbResume.Size = new System.Drawing.Size(218, 181);
-            this.tbResume.TabIndex = 20;
-            this.tbResume.TextChanged += new System.EventHandler(this.tbResume_TextChanged);
             // 
             // FormAdmin
             // 

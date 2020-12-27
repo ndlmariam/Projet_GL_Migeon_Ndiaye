@@ -64,5 +64,21 @@ namespace DAL
             }
             return album;
         }
+
+        public List<Album> GetAlbumByTitleRecherche(string title)
+        {
+            List<Album> albums = new List<Album>();
+            string requete = "select alb from Album alb where alb.Nom LIKE %?% ";
+         //   var result = Session.CreateQuery(requete).SetString(0, title).Enumerable<Album>();
+            var result = Session.CreateQuery(requete).SetParameter(0, title).Enumerable<Album>();
+
+            foreach (Album row in result)
+            {
+                albums.Add(row);
+
+
+            }
+            return albums;
+        }
     }
 }

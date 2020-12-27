@@ -9,10 +9,10 @@ namespace DAL
 {
     public class PersonneRepository : Repository, IPersonneRepository
     {   
-       /* public List<Personne> GetAll()
+        public List<Personne> GetAll()
         {
             return Session.Query<Personne>().ToList();
-        }*/
+        }
 
         public void Save(Personne personne)
         {
