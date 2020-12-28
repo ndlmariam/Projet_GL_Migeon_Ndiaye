@@ -23,17 +23,14 @@ namespace DomainTests
 
         }
 
-      /*  [TestMethod]
-        public void TestAlbum_AjouterAuMarche()
+        [TestMethod]
+
+        public void TestAdmin_Creation()
         {
-            //ajouter album et tester si le dernier album ajouter à la liste est présent dans la liste
-            Album _album = new Album("AlbumTest", "LesTests", "pasdecover", "Lacate", "Fantastique", "Moi");
-            Domain.Action _action = new Domain.Action("MarcheTest");
-            _admin.AjouterAuMarche(_action, _album);
-            int taille = _action.ListAlbums.Count;
-            //vérifier toutes les caractéristiques
-            Assert.AreEqual(_action.ListAlbums[taille - 1].Nom, _album.Nom);
-        }*/
+            var personne = new Administrateur("Jean", "Admin", "jp", "pj");
+            Assert.AreEqual(personne.Nom, "Jean");
+
+        }
 
     }
 }

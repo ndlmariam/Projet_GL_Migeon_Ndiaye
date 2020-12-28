@@ -24,75 +24,21 @@ namespace DomainTests
         public void Initialize()
         {
             _utilisateur = new Utilisateur(_nom, _type, _login, _mdp);
-            Album _album = new Album("AlbumNom", "Blabla", "cover", "Lacategorie", "Fantastique", "MoietToi");
+           /* Album _album = new Album("AlbumNom", "Blabla", "cover", "Lacategorie", "Fantastique", "MoietToi");
             ListSouhaits.Add(_album);
             Album _album2 = new Album("PanierNom", "PanierBlabla", "Paniercover", "PanierLacategorie", "Fantastique", "PanierMoietToi");
-            Panier.Add(_album2);
+            Panier.Add(_album2);*/
 
-        }
-/*
-        [TestMethod]
-        public void TestAlbum_AjouterSouhait()
-        {
-            //ajouter album et tester si le dernier album ajouter à la liste est présent dans la liste
-            Album _album = new Album("AlbumTest", "LesTests", "pasdecover", "Lacate", "Fantastique", "Moi");
-            _utilisateur.AjouterSouhait(_album);
-            int taille = ListSouhaits.Count;
-            //vérifier toutes les caractéristiques
-            Assert.AreEqual(ListSouhaits[taille - 1].Nom, _album.Nom);
         }
 
         [TestMethod]
-        public void TestAlbum_AjouterAlbums()
-        {
-            //ajouter album et tester si le dernier album ajouter à la liste est présent dans la liste
-            Album _album = new Album("AlbumTest", "LesTests", "pasdecover", "Lacate", "Fantastique", "Moi");
-            _utilisateur.AjouterAlbums(_album);
-            int taille = ListAlbums.Count;
-            //vérifier toutes les caractéristiques
-            Assert.AreEqual(ListAlbums[taille - 1].Nom, _album.Nom);
-        }
 
-        [TestMethod]
-        public void TestAlbum_AjouterPanier()
+        public void TestAdmin_Creation()
         {
-            //ajouter album et tester si le dernier album ajouter à la liste est présent dans la liste
-            Album _album = new Album("AlbumTest", "LesTests", "pasdecover", "Lacate", "Fantastique", "Moi");
-            _utilisateur.AjouterPanier(_album);
-            int taille = Panier.Count;
-            //vérifier toutes les caractéristiques
-            Assert.AreEqual(Panier[taille - 1].Nom, _album.Nom);
-        }
+            var personne = new Utilisateur("Jeanne", "User", "jeh", "motdp");
+            Assert.AreEqual(personne.Login, "jeh");
 
-        [TestMethod]
-        public void TestAlbum_SupprimerPanier()
-        {
-            //supprimer album et tester si il n'est plus présent dans la liste
-            Album _album = new Album("PanierNom", "PanierBlabla", "Paniercover", "PanierLacategorie", "Fantastique", "PanierMoietToi");
-            _utilisateur.SupprimerPanier(_album);
-            bool supprimer = true;
-            foreach (Album alb in Panier)
-            {
-                if (alb == _album) { supprimer = false; }
-                //if (_album.IsEqual(alb)) { supprimer = false; }
-            }
-            Assert.IsTrue(supprimer);
         }
-
-        [TestMethod]
-        public void TestAlbum_SupprimerSouhait()
-        {
-            //supprimer album et tester si il n'est plus présent dans la liste
-            Album _album = new Album("AlbumNom", "Blabla", "cover", "Lacategorie", "Fantastique", "MoietToi");
-            _utilisateur.SupprimerSouhait(_album);
-            bool supprimer = true;
-            foreach (Album alb in ListSouhaits)
-            {
-                if (alb == _album) { supprimer = false; }
-                //if (_album.IsEqual(alb)) { supprimer = false; }
-            }
-            Assert.IsTrue(supprimer);
-        }*/
 
     }
 }

@@ -20,6 +20,8 @@ namespace App
         private static string applipath = Path.Combine(apppath, "CircuitBD.Net");
         Label placeholder;
         Album NouvelAlbum;
+        protected static int NumberCouverture; // pour éviter que deux images soient nommées pareilles
+
         public Personne Administrateur { get; set; }
         private IActionRepository _actionrepo;
         private IAlbumRepository _albumrepo;
@@ -51,9 +53,11 @@ namespace App
             disparition = false;
             _actionrepo = ActionRepository;
             _albumrepo = AlbumRepository;
+            NumberCouverture = _albumrepo.GetAll().Count;
+
         }
 
-       
+
 
         private void gbAjoutAlbum_MouseHover(object sender, EventArgs e)
         {
@@ -79,6 +83,7 @@ namespace App
 
         private void btnParcourir_Click(object sender, EventArgs e)
         {
+            NumberCouverture += 1; // on incrémente dès qu'un utilisateur clique sur parcourir
             OpenFileDialog parcourir = new OpenFileDialog();
             parcourir.DefaultExt = "jpg";
             parcourir.ShowDialog();
@@ -88,10 +93,13 @@ namespace App
                 Directory.CreateDirectory(couverturespath);
             }
             string fileName = Path.GetFileName(parcourir.FileName);
-          File.Copy(parcourir.FileName, Path.Combine(couverturespath, fileName));
+            fileName = fileName + NumberCouverture;
+            File.Copy(parcourir.FileName, Path.Combine(couverturespath, fileName));
 
            // string cheminacces = Path.Combine(couverturespath, fileName);
             NouvelAlbum.Couverture = fileName;
+            btnParcourir.Text = "Modifier";
+            btnParcourir.BackColor = Color.Moccasin;
 
         }
 
@@ -111,6 +119,15 @@ namespace App
 
         private void btnAjout_Click(object sender, EventArgs e)
         {
+            tbAuteur.Text = "";
+            tbTitre.Text = "";
+            tbCategorie.Text = "";
+            tbSerie.Text = "";
+            tbGenre.Text = "";
+            tbResume.Text = "";
+            tbEditeur.Text = "";
+            plholdCat.Visible = true;
+            plholdGenre.Visible = true;
             btnValider.Visible = false;
             gbAjoutAlbum.Visible = true;
             gbMarchéAdmin.Visible = false;
@@ -127,11 +144,15 @@ namespace App
 
         private void btnValider_Click(object sender, EventArgs e)
         {
+            btnParcourir.Text = "Parcourir";
+            btnParcourir.BackColor = Color.SpringGreen;
             Domain.Action AjoutMarché = new Domain.Action("AjoutMarché", Administrateur, NouvelAlbum);
             _albumrepo.Save(NouvelAlbum);
             _actionrepo.SaveAction(AjoutMarché);
             gbMarchéAdmin.Visible = true;
             RefreshDgv();
+
+            
         }
 
         private void RefreshDgv()
@@ -163,7 +184,8 @@ namespace App
                    
                 }
             }
-            List<Album> AlbumsDuMarché = _albumrepo.GetByNameOfAction("AjoutMarché");
+            // List<Album> AlbumsDuMarché = _albumrepo.GetByNameOfAction("AjoutMarché");
+            List<Album> AlbumsDuMarché = _albumrepo.GetAll();
             dgvMarché.DataSource = AlbumsDuMarché;
 
         }
@@ -198,7 +220,6 @@ namespace App
                 gbSuppression.Visible = true;
               
             }
-           
         }
 
         private void tbSupression_TextChanged(object sender, EventArgs e)
@@ -215,9 +236,7 @@ namespace App
             _actionrepo.SaveAction(Suppression);
             _albumrepo.Delete(AlbumASuprimmer);
             Domain.Action ActionASupprimer =_actionrepo.GetActionByNameAndAlbum( AlbumASuprimmer, "AjoutMarché");
-            
-          
-                _actionrepo.DeleteAction(ActionASupprimer);
+             _actionrepo.DeleteAction(ActionASupprimer);
             
             RefreshDgv();
         }

@@ -24,5 +24,14 @@ namespace DomainTests
         {
             _album = new Album(_nom, _serie, _couverture, _categorie, _genre, _editeur);
         }
+
+        [TestMethod]
+
+        public void TestAdmin_Creation()
+        {
+            var album = new Album("L'étoile mystérieuse", "Les Aventures de Tintin", "", "BD", "Aventure", "Casterman");
+            Assert.AreEqual(album.Nom, "L'étoile mystérieuse");
+
+        }
     }
 }

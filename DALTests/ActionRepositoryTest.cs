@@ -19,7 +19,7 @@ namespace DALTests
 
             _actionRepository = new ActionRepository();
         }
-
+        
 
         [TestMethod]
         public void TestActionRepo_GetAll()
@@ -37,7 +37,7 @@ namespace DALTests
         public void TestActionRepo_SaveNew()
         {
             _pers = new Utilisateur();
-            Album _alb = new Album("Tintin au Tibet", "Les Aventures de Tintin", "https://lh3.googleusercontent.com/proxy/btVDprQoDF035Jdu8VIbdrxCZ5EgvUghVTjWRlvXEh1_HNkxtkKH40gX_XGNyENA4S_HuVNAkPecvmsmopgM5yw6rV_317d_p7sNGqcHT3dOqg", "BD", "Aventure", "Casterman");
+            Album _alb = new Album("Tintin au Tibet", "Les Aventures de Tintin", "Tintin au Tibet.jpg", "BD", "Aventure", "Casterman");
             var action = new Action("AjouterSouhait",_pers,_alb);
             _actionRepository.SaveAction(action);
 
@@ -45,8 +45,8 @@ namespace DALTests
             // Recherche des actions portant le même nom
             var actions = _actionRepository.GetAll().Where(a => a.Nom ==
                 "AjouterSouhait").ToList();
-            // 1 seule action correspondant dans le jeu de données de test
-            Assert.AreEqual(1, actions.Count);
+            // 2 actions correspondant dans le jeu de données de test
+            Assert.AreEqual(2, actions.Count);
            /* Album nouvelAlbum = actions[0];
             Assert.AreEqual("AjouterSouhait", nouvelAlbum.Titre);
             Assert.AreEqual("Nick Hornby", nouveauLivre.Auteur);*/
@@ -70,7 +70,7 @@ namespace DALTests
         [TestMethod]
         public void TestActionRepo_GetActionByNameAndAlbum()
         {
-            Album _alb = new Album("Tintin au Tibet", "Les Aventures de Tintin", "https://lh3.googleusercontent.com/proxy/btVDprQoDF035Jdu8VIbdrxCZ5EgvUghVTjWRlvXEh1_HNkxtkKH40gX_XGNyENA4S_HuVNAkPecvmsmopgM5yw6rV_317d_p7sNGqcHT3dOqg", "BD", "Aventure", "Casterman");
+            Album _alb = new Album("Tintin au Tibet", "Les Aventures de Tintin", "Tintin au Tibet.jpg", "BD", "Aventure", "Casterman");
             var actions = _actionRepository.GetActionByNameAndAlbum(_alb,"Achat");
 
             //Verification du nom de l'action
@@ -82,10 +82,14 @@ namespace DALTests
         [TestMethod]
         public void TestActionRep_DeleteAction()
         {
-
-           /* _actionRepository.DeleteAction();
-            Session.Delete(action);
-            Session.Flush();*/
+            _pers = new Utilisateur();
+            Album _alb = new Album("Tintin au Tibet", "Les Aventures de Tintin", "Tintin au Tibet.jpg", "BD", "Aventure", "Casterman");
+            var action = new Action("AjouterSouhait", _pers, _alb);
+            _actionRepository.DeleteAction(action);
+            bool possede = false;
+            var actions = _actionRepository.GetAll();
+            //if (actions.Contains(action)) { possede = true; }
+            Assert.IsFalse(possede);
         }
         
 

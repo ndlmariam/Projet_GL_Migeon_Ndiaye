@@ -17,13 +17,16 @@ namespace App
     {
         private bool ClickedOnce; // booléen utile pour l'appartition ou disparition du menu
         private bool NextNecessary; // booléen utile pour le carroussel d'albums du marché
+        private bool PreviousNecessary; // booléen utile pour le carroussel d'albums du marché
         private int NumeroAlbum; //  utile pour le carroussel d'albums du marché
         private bool NextNecessarySouhait; // booléen utile pour le carroussel d'albums du marché
+        private bool PreviousNecessarySouhait; // booléen utile pour le carroussel d'albums du marché
         private int NumeroAlbumSouhait; //  utile pour le carroussel d'albums du marché
         private static string cheminacces = Path.Combine(Environment.CurrentDirectory, "CircuitBD.Net", "Couvertures");
         private Album SelectedAlbum;
         private Album NouvelAlbum;
         Label placeholder;
+        protected static int NumberCouverture; // pour éviter que deux images soient nommées pareilles
         public Utilisateur Utilisateur { get; set; }
       
 
@@ -55,7 +58,7 @@ namespace App
             _actionrepo = Actionrepository;
             _albrepo = Albumrepository;
             _persrepo = Personnerepository;
-
+            NumberCouverture = _albrepo.GetAll().Count;
 
 
         }
@@ -325,6 +328,7 @@ namespace App
         }
         private void btnParcourir_Click(object sender, EventArgs e)
         {
+            NumberCouverture += 1; // on incrémente dès qu'un utilisateur clique sur parcourir
             OpenFileDialog parcourir = new OpenFileDialog();
             parcourir.DefaultExt = "jpg";
             parcourir.ShowDialog();
@@ -335,7 +339,7 @@ namespace App
             }
             string fileName = Path.GetFileName(parcourir.FileName);
             //problème quand il y a deux images nommées de la même manière
-            //fileName = tbTitre.Text;
+            fileName = tbTitre.Text + NumberCouverture;
             File.Copy(parcourir.FileName, Path.Combine(couverturespath, fileName));
 
             // string cheminacces = Path.Combine(couverturespath, fileName);
@@ -348,7 +352,7 @@ namespace App
         private void RefreshCollection()
         {
             //Carrousel de mes albums
-            RefreshCarrousel(Utilisateur.ListAlbums, NextNecessary, NumeroAlbum, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);
+            RefreshCarrousel(Utilisateur.ListAlbums, NextNecessary, PreviousNecessary, NumeroAlbum, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);
         }
         private void RefreshViews()
         {
@@ -361,9 +365,10 @@ namespace App
             lblTitre3.Text = "";
             lblTitre4.Text = "";
             //récupère la liste de tous les albums du marché
-            List<Album> AlbumsDuMarché = _albrepo.GetByNameOfAction("AjoutMarché");
+            //List<Album> AlbumsDuMarché = _albrepo.GetByNameOfAction("AjoutMarché");
+            List<Album> AlbumsDuMarché = _albrepo.GetAll();
             //Carrousel du marché sans filtre de recherche
-            RefreshCarrousel(AlbumsDuMarché, NextNecessary, NumeroAlbum, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);
+            RefreshCarrousel(AlbumsDuMarché, NextNecessary,PreviousNecessary, NumeroAlbum, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);
 
             dgvSouhaits.Rows.Clear();
             pbSouhait1.Image = null;
@@ -377,7 +382,7 @@ namespace App
 
             RecupererSouhaitUser();
             //Carrousel des souhaits
-            RefreshCarrousel(Utilisateur.ListSouhaits, NextNecessarySouhait, NumeroAlbumSouhait, pbSouhait1, pbSouhait2, pbSouhait3, pbSouhait4, lblTitreSouhait1, lblTitreSouhait2, lblTitreSouhait3, lblTitreSouhait4);
+            RefreshCarrousel(Utilisateur.ListSouhaits, NextNecessarySouhait,PreviousNecessarySouhait, NumeroAlbumSouhait, pbSouhait1, pbSouhait2, pbSouhait3, pbSouhait4, lblTitreSouhait1, lblTitreSouhait2, lblTitreSouhait3, lblTitreSouhait4);
 
         }
         private void RecupererSouhaitUser()
@@ -411,20 +416,20 @@ namespace App
         }
         private void btnNextSouhait_Click(object sender, EventArgs e)
         {
-            NextNecessarySouhait = false;
-            pbSouhait1.Image = null;
-            pbSouhait2.Image = null;
-            pbSouhait3.Image = null;
-            pbSouhait4.Image = null;
-            lblTitreSouhait1.Text = "";
-            lblTitreSouhait2.Text = "";
-            lblTitreSouhait3.Text = "";
-            lblTitreSouhait4.Text = "";
+            if (NumeroAlbumSouhait * 2 < _albrepo.GetAll().Count)
+            {
+                NextNecessarySouhait = false;
+                pbSouhait1.Image = null;
+                pbSouhait2.Image = null;
+                pbSouhait3.Image = null;
+                pbSouhait4.Image = null;
+                lblTitreSouhait1.Text = "";
+                lblTitreSouhait2.Text = "";
+                lblTitreSouhait3.Text = "";
+                lblTitreSouhait4.Text = "";
 
-            NumeroAlbumSouhait = NumeroAlbumSouhait + 4; RefreshViews(); 
-
-
-            RefreshViews();
+                NumeroAlbumSouhait = NumeroAlbumSouhait + 4; RefreshViews();
+            }
         }
         private void RecupererAchatUser()
         {
@@ -452,7 +457,7 @@ namespace App
                 }
             }
         }
-        private void RefreshCarrousel(List<Album> AlbumsDuMarché, bool NextNecessary, int NumeroAlbum, PictureBox pbAlbum1, PictureBox pbAlbum2, PictureBox pbAlbum3, PictureBox pbAlbum4, Label lblTitre1, Label lblTitre2, Label lblTitre3, Label lblTitre4)
+        private void RefreshCarrousel(List<Album> AlbumsDuMarché, bool NextNecessary, bool PreviousNecessary, int NumeroAlbum, PictureBox pbAlbum1, PictureBox pbAlbum2, PictureBox pbAlbum3, PictureBox pbAlbum4, Label lblTitre1, Label lblTitre2, Label lblTitre3, Label lblTitre4)
         {
             
 
@@ -519,29 +524,33 @@ namespace App
 
                 }
 
-                NextNecessary = true; 
+               NextNecessary = true; 
+               if (NumeroAlbum > 0) { PreviousNecessary = true; }
                
 
             }
         }
         private void btnNext_Click(object sender, EventArgs e)
         {
-           
-            NextNecessary = false;
-            pbAlbum1.Image = null;
-            pbAlbum2.Image = null;
-            pbAlbum3.Image = null;
-            pbAlbum4.Image = null;
-            lblTitre1.Text = "";
-            lblTitre2.Text = "";
-            lblTitre3.Text = "";
-            lblTitre4.Text = "";
-            if (btnAjoutManuel.Visible == true)
+            if (NumeroAlbum*2 < _albrepo.GetAll().Count)
             {
-                NumeroAlbum = NumeroAlbum + 4; RefreshCollection();
+                NextNecessary = false;
+                pbAlbum1.Image = null;
+                pbAlbum2.Image = null;
+                pbAlbum3.Image = null;
+                pbAlbum4.Image = null;
+                lblTitre1.Text = "";
+                lblTitre2.Text = "";
+                lblTitre3.Text = "";
+                lblTitre4.Text = "";
+                if (btnAjoutManuel.Visible == true)
+                {
+                    NumeroAlbum = NumeroAlbum + 4; RefreshCollection();
+                }
+                else
+                { NumeroAlbum = NumeroAlbum + 4; RefreshViews(); }
             }
-            else
-            { NumeroAlbum = NumeroAlbum + 4; RefreshViews();  }
+           
 
 
         }
@@ -591,6 +600,11 @@ namespace App
 
                 RefreshViews();
             }
+            else
+            {
+                MessageBox.Show("L'album " + SelectedAlbum.Nom + " est déjà dans vos souhaits.");
+            }
+            
 
         }
 
@@ -648,6 +662,8 @@ namespace App
                     Utilisateur.ActionsUser.Remove(ActionASupprimer);
                 }
                 _persrepo.Save(Utilisateur);
+                btnAjoutSouhaits.BackColor = Color.LightSalmon;
+                SelectedAlbum.selected = false;
             }
 
            
@@ -702,12 +718,55 @@ namespace App
             lblTitre4.Text = "";
             string recherche = tbBarreRecherche.Text;
             AlbumRepository albumRepository = new AlbumRepository();
-            List<Album> albumsrecherche = albumRepository.GetAlbumByTitleRecherche(recherche);
+            List<Album> albumsrecherche = albumRepository.GetAlbumByRecherche(recherche);
 
-            RefreshCarrousel(albumsrecherche, NextNecessary, NumeroAlbum, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);
+            RefreshCarrousel(albumsrecherche, NextNecessary, PreviousNecessary,NumeroAlbum, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);
             
         }
 
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            
+
+            if (NumeroAlbum - 4 >= 0)
+            {
+                PreviousNecessary = false;
+                pbAlbum1.Image = null;
+                pbAlbum2.Image = null;
+                pbAlbum3.Image = null;
+                pbAlbum4.Image = null;
+                lblTitre1.Text = "";
+                lblTitre2.Text = "";
+                lblTitre3.Text = "";
+                lblTitre4.Text = "";
+
+                if (btnAjoutManuel.Visible == true)
+                {
+                    NumeroAlbum = NumeroAlbum - 4; RefreshCollection();
+                }
+                else
+                { NumeroAlbum = NumeroAlbum - 4; RefreshViews(); }
+            }
+            
+
+        }
+
+        private void btnPerviousSouhaits_Click(object sender, EventArgs e)
+        {
+            if (NumeroAlbumSouhait - 4 >= 0)
+            {
+                PreviousNecessarySouhait = false;
+                pbAlbum1.Image = null;
+                pbAlbum2.Image = null;
+                pbAlbum3.Image = null;
+                pbAlbum4.Image = null;
+                lblTitre1.Text = "";
+                lblTitre2.Text = "";
+                lblTitre3.Text = "";
+                lblTitre4.Text = "";
+                NumeroAlbumSouhait = NumeroAlbumSouhait - 4; RefreshViews(); 
+            }
+        }
     }
 
 }

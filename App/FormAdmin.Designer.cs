@@ -93,7 +93,7 @@
             this.gbAjoutAlbum.Controls.Add(this.label1);
             this.gbAjoutAlbum.Controls.Add(this.tbResume);
             this.gbAjoutAlbum.Controls.Add(this.lblResume);
-            this.gbAjoutAlbum.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbAjoutAlbum.Font = new System.Drawing.Font("Calibri", 11F);
             this.gbAjoutAlbum.Location = new System.Drawing.Point(12, 72);
             this.gbAjoutAlbum.Name = "gbAjoutAlbum";
             this.gbAjoutAlbum.Size = new System.Drawing.Size(724, 378);
@@ -104,19 +104,19 @@
             // 
             // tbEditeur
             // 
-            this.tbEditeur.Location = new System.Drawing.Point(127, 200);
+            this.tbEditeur.Location = new System.Drawing.Point(168, 203);
             this.tbEditeur.Name = "tbEditeur";
-            this.tbEditeur.Size = new System.Drawing.Size(100, 28);
+            this.tbEditeur.Size = new System.Drawing.Size(100, 25);
             this.tbEditeur.TabIndex = 18;
             this.tbEditeur.TextChanged += new System.EventHandler(this.tbEditeur_TextChanged);
             // 
             // lblEditeur
             // 
             this.lblEditeur.AutoSize = true;
-            this.lblEditeur.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditeur.Location = new System.Drawing.Point(41, 202);
+            this.lblEditeur.Font = new System.Drawing.Font("Calibri", 11F);
+            this.lblEditeur.Location = new System.Drawing.Point(41, 206);
             this.lblEditeur.Name = "lblEditeur";
-            this.lblEditeur.Size = new System.Drawing.Size(65, 21);
+            this.lblEditeur.Size = new System.Drawing.Size(53, 18);
             this.lblEditeur.TabIndex = 17;
             this.lblEditeur.Text = "Editeur";
             // 
@@ -124,7 +124,7 @@
             // 
             this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnValider.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.btnValider.Location = new System.Drawing.Point(293, 314);
+            this.btnValider.Location = new System.Drawing.Point(401, 311);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(86, 34);
             this.btnValider.TabIndex = 15;
@@ -135,9 +135,9 @@
             // 
             // btnParcourir
             // 
-            this.btnParcourir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnParcourir.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnParcourir.Location = new System.Drawing.Point(127, 320);
+            this.btnParcourir.BackColor = System.Drawing.Color.LightGreen;
+            this.btnParcourir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnParcourir.Location = new System.Drawing.Point(168, 320);
             this.btnParcourir.Name = "btnParcourir";
             this.btnParcourir.Size = new System.Drawing.Size(97, 30);
             this.btnParcourir.TabIndex = 14;
@@ -148,10 +148,10 @@
             // lblCouverture
             // 
             this.lblCouverture.AutoSize = true;
-            this.lblCouverture.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCouverture.Location = new System.Drawing.Point(21, 320);
+            this.lblCouverture.Font = new System.Drawing.Font("Calibri", 11F);
+            this.lblCouverture.Location = new System.Drawing.Point(41, 326);
             this.lblCouverture.Name = "lblCouverture";
-            this.lblCouverture.Size = new System.Drawing.Size(92, 21);
+            this.lblCouverture.Size = new System.Drawing.Size(78, 18);
             this.lblCouverture.TabIndex = 13;
             this.lblCouverture.Text = "Couverture";
             // 
@@ -161,7 +161,7 @@
             this.plholdGenre.BackColor = System.Drawing.Color.White;
             this.plholdGenre.Font = new System.Drawing.Font("MV Boli", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plholdGenre.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.plholdGenre.Location = new System.Drawing.Point(130, 284);
+            this.plholdGenre.Location = new System.Drawing.Point(171, 280);
             this.plholdGenre.Name = "plholdGenre";
             this.plholdGenre.Size = new System.Drawing.Size(94, 16);
             this.plholdGenre.TabIndex = 12;
@@ -170,19 +170,19 @@
             // 
             // tbGenre
             // 
-            this.tbGenre.Location = new System.Drawing.Point(127, 279);
+            this.tbGenre.Location = new System.Drawing.Point(168, 276);
             this.tbGenre.Name = "tbGenre";
-            this.tbGenre.Size = new System.Drawing.Size(100, 28);
+            this.tbGenre.Size = new System.Drawing.Size(100, 25);
             this.tbGenre.TabIndex = 11;
             this.tbGenre.TextChanged += new System.EventHandler(this.tbGenre_TextChanged);
             // 
             // lblGenre
             // 
             this.lblGenre.AutoSize = true;
-            this.lblGenre.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenre.Location = new System.Drawing.Point(41, 279);
+            this.lblGenre.Font = new System.Drawing.Font("Calibri", 11F);
+            this.lblGenre.Location = new System.Drawing.Point(44, 286);
             this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(53, 21);
+            this.lblGenre.Size = new System.Drawing.Size(46, 18);
             this.lblGenre.TabIndex = 10;
             this.lblGenre.Text = "Genre";
             // 
@@ -192,7 +192,7 @@
             this.plholdCat.BackColor = System.Drawing.Color.White;
             this.plholdCat.Font = new System.Drawing.Font("MV Boli", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plholdCat.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.plholdCat.Location = new System.Drawing.Point(136, 247);
+            this.plholdCat.Location = new System.Drawing.Point(178, 248);
             this.plholdCat.Name = "plholdCat";
             this.plholdCat.Size = new System.Drawing.Size(78, 16);
             this.plholdCat.TabIndex = 9;
@@ -201,89 +201,89 @@
             // 
             // tbCategorie
             // 
-            this.tbCategorie.Location = new System.Drawing.Point(127, 241);
+            this.tbCategorie.Location = new System.Drawing.Point(168, 243);
             this.tbCategorie.Name = "tbCategorie";
-            this.tbCategorie.Size = new System.Drawing.Size(100, 28);
+            this.tbCategorie.Size = new System.Drawing.Size(100, 25);
             this.tbCategorie.TabIndex = 8;
             this.tbCategorie.TextChanged += new System.EventHandler(this.tbCategorie_TextChanged);
             // 
             // lblCategorie
             // 
             this.lblCategorie.AutoSize = true;
-            this.lblCategorie.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategorie.Location = new System.Drawing.Point(34, 246);
+            this.lblCategorie.Font = new System.Drawing.Font("Calibri", 11F);
+            this.lblCategorie.Location = new System.Drawing.Point(41, 246);
             this.lblCategorie.Name = "lblCategorie";
-            this.lblCategorie.Size = new System.Drawing.Size(79, 21);
+            this.lblCategorie.Size = new System.Drawing.Size(68, 18);
             this.lblCategorie.TabIndex = 7;
             this.lblCategorie.Text = "Catégorie";
             // 
             // tbSerie
             // 
-            this.tbSerie.Location = new System.Drawing.Point(127, 166);
+            this.tbSerie.Location = new System.Drawing.Point(168, 165);
             this.tbSerie.Name = "tbSerie";
-            this.tbSerie.Size = new System.Drawing.Size(100, 28);
+            this.tbSerie.Size = new System.Drawing.Size(100, 25);
             this.tbSerie.TabIndex = 6;
             this.tbSerie.TextChanged += new System.EventHandler(this.tbSerie_TextChanged);
             // 
             // lblSerie
             // 
             this.lblSerie.AutoSize = true;
-            this.lblSerie.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSerie.Font = new System.Drawing.Font("Calibri", 11F);
             this.lblSerie.Location = new System.Drawing.Point(41, 168);
             this.lblSerie.Name = "lblSerie";
-            this.lblSerie.Size = new System.Drawing.Size(47, 21);
+            this.lblSerie.Size = new System.Drawing.Size(40, 18);
             this.lblSerie.TabIndex = 5;
             this.lblSerie.Text = "Série";
             // 
             // tbAuteur
             // 
-            this.tbAuteur.Location = new System.Drawing.Point(127, 127);
+            this.tbAuteur.Location = new System.Drawing.Point(168, 127);
             this.tbAuteur.Name = "tbAuteur";
-            this.tbAuteur.Size = new System.Drawing.Size(100, 28);
+            this.tbAuteur.Size = new System.Drawing.Size(100, 25);
             this.tbAuteur.TabIndex = 4;
             this.tbAuteur.TextChanged += new System.EventHandler(this.tbAuteur_TextChanged);
             // 
             // lblAuteur
             // 
             this.lblAuteur.AutoSize = true;
-            this.lblAuteur.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuteur.Location = new System.Drawing.Point(34, 127);
+            this.lblAuteur.Font = new System.Drawing.Font("Calibri", 11F);
+            this.lblAuteur.Location = new System.Drawing.Point(42, 130);
             this.lblAuteur.Name = "lblAuteur";
-            this.lblAuteur.Size = new System.Drawing.Size(87, 21);
+            this.lblAuteur.Size = new System.Drawing.Size(67, 18);
             this.lblAuteur.TabIndex = 3;
             this.lblAuteur.Text = "Auteur(s)";
             // 
             // tbTitre
             // 
-            this.tbTitre.Location = new System.Drawing.Point(127, 89);
+            this.tbTitre.Location = new System.Drawing.Point(168, 89);
             this.tbTitre.Name = "tbTitre";
-            this.tbTitre.Size = new System.Drawing.Size(100, 28);
+            this.tbTitre.Size = new System.Drawing.Size(100, 25);
             this.tbTitre.TabIndex = 2;
             this.tbTitre.TextChanged += new System.EventHandler(this.tbTitre_TextChanged);
             // 
             // lblTitre
             // 
             this.lblTitre.AutoSize = true;
-            this.lblTitre.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitre.Location = new System.Drawing.Point(34, 89);
+            this.lblTitre.Font = new System.Drawing.Font("Calibri", 11F);
+            this.lblTitre.Location = new System.Drawing.Point(44, 92);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(47, 21);
+            this.lblTitre.Size = new System.Drawing.Size(37, 18);
             this.lblTitre.TabIndex = 1;
             this.lblTitre.Text = "Titre";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(30, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(393, 21);
+            this.label1.Size = new System.Drawing.Size(303, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Veuillez entrer les caracéristiques de l\'album";
             // 
             // tbResume
             // 
-            this.tbResume.Location = new System.Drawing.Point(284, 124);
+            this.tbResume.Location = new System.Drawing.Point(334, 119);
             this.tbResume.Multiline = true;
             this.tbResume.Name = "tbResume";
             this.tbResume.Size = new System.Drawing.Size(218, 181);
@@ -293,10 +293,10 @@
             // lblResume
             // 
             this.lblResume.AutoSize = true;
-            this.lblResume.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResume.Location = new System.Drawing.Point(280, 89);
+            this.lblResume.Font = new System.Drawing.Font("Calibri", 11F);
+            this.lblResume.Location = new System.Drawing.Point(335, 92);
             this.lblResume.Name = "lblResume";
-            this.lblResume.Size = new System.Drawing.Size(67, 21);
+            this.lblResume.Size = new System.Drawing.Size(58, 18);
             this.lblResume.TabIndex = 19;
             this.lblResume.Text = "Résumé";
             // 
@@ -309,7 +309,7 @@
             this.gbMarchéAdmin.Controls.Add(this.btnAjout);
             this.gbMarchéAdmin.Controls.Add(this.dgvMarché);
             this.gbMarchéAdmin.Font = new System.Drawing.Font("Calibri", 11F);
-            this.gbMarchéAdmin.Location = new System.Drawing.Point(9, 72);
+            this.gbMarchéAdmin.Location = new System.Drawing.Point(0, 72);
             this.gbMarchéAdmin.Name = "gbMarchéAdmin";
             this.gbMarchéAdmin.Size = new System.Drawing.Size(730, 384);
             this.gbMarchéAdmin.TabIndex = 16;
@@ -322,7 +322,7 @@
             this.gbSuppression.Controls.Add(this.btnSupressionSure);
             this.gbSuppression.Controls.Add(this.tbSupression);
             this.gbSuppression.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbSuppression.Location = new System.Drawing.Point(544, 124);
+            this.gbSuppression.Location = new System.Drawing.Point(547, 127);
             this.gbSuppression.Name = "gbSuppression";
             this.gbSuppression.Size = new System.Drawing.Size(183, 244);
             this.gbSuppression.TabIndex = 10;
@@ -375,7 +375,7 @@
             this.btnSupprimer.BackColor = System.Drawing.Color.MistyRose;
             this.btnSupprimer.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupprimer.ForeColor = System.Drawing.Color.Crimson;
-            this.btnSupprimer.Location = new System.Drawing.Point(609, 173);
+            this.btnSupprimer.Location = new System.Drawing.Point(609, 177);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(75, 61);
             this.btnSupprimer.TabIndex = 7;

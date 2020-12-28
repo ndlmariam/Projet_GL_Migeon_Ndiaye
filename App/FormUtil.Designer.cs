@@ -41,6 +41,26 @@
             this.lblSouhaits = new System.Windows.Forms.Label();
             this.lblMarché = new System.Windows.Forms.Label();
             this.gbSouhaits = new System.Windows.Forms.GroupBox();
+            this.gbListeSouhaits = new System.Windows.Forms.GroupBox();
+            this.pbCoeur4 = new System.Windows.Forms.PictureBox();
+            this.pbCoeur3 = new System.Windows.Forms.PictureBox();
+            this.pbCoeur2 = new System.Windows.Forms.PictureBox();
+            this.pbCoeur1 = new System.Windows.Forms.PictureBox();
+            this.btnNextSouhaits = new System.Windows.Forms.Button();
+            this.lblTitreSouhait4 = new System.Windows.Forms.Label();
+            this.pbSouhait4 = new System.Windows.Forms.PictureBox();
+            this.lblTitreSouhait3 = new System.Windows.Forms.Label();
+            this.pbSouhait3 = new System.Windows.Forms.PictureBox();
+            this.lblTitreSouhait2 = new System.Windows.Forms.Label();
+            this.pbSouhait2 = new System.Windows.Forms.PictureBox();
+            this.lblTitreSouhait1 = new System.Windows.Forms.Label();
+            this.pbSouhait1 = new System.Windows.Forms.PictureBox();
+            this.lblAlbumsSouhaits = new System.Windows.Forms.Label();
+            this.lblHistoriqueVoeux = new System.Windows.Forms.Label();
+            this.dgvSouhaits = new System.Windows.Forms.DataGridView();
+            this.Serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbMarché = new System.Windows.Forms.GroupBox();
             this.btnAjoutManuel = new System.Windows.Forms.Button();
             this.lblAjoutManuel = new System.Windows.Forms.Label();
@@ -70,26 +90,6 @@
             this.lblBarreRecherche = new System.Windows.Forms.Label();
             this.tbBarreRecherche = new System.Windows.Forms.TextBox();
             this.pbinfo = new System.Windows.Forms.PictureBox();
-            this.gbListeSouhaits = new System.Windows.Forms.GroupBox();
-            this.pbCoeur4 = new System.Windows.Forms.PictureBox();
-            this.pbCoeur3 = new System.Windows.Forms.PictureBox();
-            this.pbCoeur2 = new System.Windows.Forms.PictureBox();
-            this.pbCoeur1 = new System.Windows.Forms.PictureBox();
-            this.btnNextSouhaits = new System.Windows.Forms.Button();
-            this.lblTitreSouhait4 = new System.Windows.Forms.Label();
-            this.pbSouhait4 = new System.Windows.Forms.PictureBox();
-            this.lblTitreSouhait3 = new System.Windows.Forms.Label();
-            this.pbSouhait3 = new System.Windows.Forms.PictureBox();
-            this.lblTitreSouhait2 = new System.Windows.Forms.Label();
-            this.pbSouhait2 = new System.Windows.Forms.PictureBox();
-            this.lblTitreSouhait1 = new System.Windows.Forms.Label();
-            this.pbSouhait1 = new System.Windows.Forms.PictureBox();
-            this.lblAlbumsSouhaits = new System.Windows.Forms.Label();
-            this.lblHistoriqueVoeux = new System.Windows.Forms.Label();
-            this.dgvSouhaits = new System.Windows.Forms.DataGridView();
-            this.Serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Titre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbResume = new System.Windows.Forms.TextBox();
             this.lblResume = new System.Windows.Forms.Label();
             this.tbEditeur = new System.Windows.Forms.TextBox();
@@ -111,6 +111,8 @@
             this.lblTitre = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tbExplications = new System.Windows.Forms.TextBox();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnPerviousSouhaits = new System.Windows.Forms.Button();
             this.gbHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDeco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPanier)).BeginInit();
@@ -119,16 +121,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbSouhaits)).BeginInit();
             this.Menu.SuspendLayout();
             this.gbSouhaits.SuspendLayout();
-            this.gbMarché.SuspendLayout();
-            this.gbInfosAlbum.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCouvertureDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbInfo1)).BeginInit();
-            this.gbListeAlbums.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).BeginInit();
             this.gbListeSouhaits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoeur4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoeur3)).BeginInit();
@@ -139,6 +131,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbSouhait2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSouhait1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSouhaits)).BeginInit();
+            this.gbMarché.SuspendLayout();
+            this.gbInfosAlbum.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCouvertureDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInfo1)).BeginInit();
+            this.gbListeAlbums.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).BeginInit();
             this.SuspendLayout();
             // 
             // gbHeader
@@ -230,7 +232,7 @@
             this.lblAlbums.AutoSize = true;
             this.lblAlbums.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblAlbums.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblAlbums.Location = new System.Drawing.Point(-1, 16);
+            this.lblAlbums.Location = new System.Drawing.Point(2, 16);
             this.lblAlbums.Name = "lblAlbums";
             this.lblAlbums.Size = new System.Drawing.Size(63, 23);
             this.lblAlbums.TabIndex = 6;
@@ -246,7 +248,7 @@
             this.Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Menu.Location = new System.Drawing.Point(0, 66);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(64, 400);
+            this.Menu.Size = new System.Drawing.Size(69, 400);
             this.Menu.TabIndex = 7;
             this.Menu.TabStop = false;
             // 
@@ -281,13 +283,219 @@
             this.gbSouhaits.Controls.Add(this.lblAlbumsSouhaits);
             this.gbSouhaits.Controls.Add(this.lblHistoriqueVoeux);
             this.gbSouhaits.Controls.Add(this.dgvSouhaits);
-            this.gbSouhaits.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbSouhaits.Location = new System.Drawing.Point(67, 67);
+            this.gbSouhaits.Font = new System.Drawing.Font("Calibri", 10F);
+            this.gbSouhaits.Location = new System.Drawing.Point(71, 67);
             this.gbSouhaits.Name = "gbSouhaits";
             this.gbSouhaits.Size = new System.Drawing.Size(672, 397);
             this.gbSouhaits.TabIndex = 8;
             this.gbSouhaits.TabStop = false;
             this.gbSouhaits.Text = "Mes Souhaits";
+            // 
+            // gbListeSouhaits
+            // 
+            this.gbListeSouhaits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gbListeSouhaits.Controls.Add(this.btnPerviousSouhaits);
+            this.gbListeSouhaits.Controls.Add(this.pbCoeur4);
+            this.gbListeSouhaits.Controls.Add(this.pbCoeur3);
+            this.gbListeSouhaits.Controls.Add(this.pbCoeur2);
+            this.gbListeSouhaits.Controls.Add(this.pbCoeur1);
+            this.gbListeSouhaits.Controls.Add(this.btnNextSouhaits);
+            this.gbListeSouhaits.Controls.Add(this.lblTitreSouhait4);
+            this.gbListeSouhaits.Controls.Add(this.pbSouhait4);
+            this.gbListeSouhaits.Controls.Add(this.lblTitreSouhait3);
+            this.gbListeSouhaits.Controls.Add(this.pbSouhait3);
+            this.gbListeSouhaits.Controls.Add(this.lblTitreSouhait2);
+            this.gbListeSouhaits.Controls.Add(this.pbSouhait2);
+            this.gbListeSouhaits.Controls.Add(this.lblTitreSouhait1);
+            this.gbListeSouhaits.Controls.Add(this.pbSouhait1);
+            this.gbListeSouhaits.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.gbListeSouhaits.Location = new System.Drawing.Point(32, 62);
+            this.gbListeSouhaits.Name = "gbListeSouhaits";
+            this.gbListeSouhaits.Size = new System.Drawing.Size(250, 309);
+            this.gbListeSouhaits.TabIndex = 14;
+            this.gbListeSouhaits.TabStop = false;
+            // 
+            // pbCoeur4
+            // 
+            this.pbCoeur4.BackColor = System.Drawing.Color.Transparent;
+            this.pbCoeur4.Image = global::App.Properties.Resources.Coeur;
+            this.pbCoeur4.Location = new System.Drawing.Point(210, 237);
+            this.pbCoeur4.Name = "pbCoeur4";
+            this.pbCoeur4.Size = new System.Drawing.Size(29, 25);
+            this.pbCoeur4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoeur4.TabIndex = 12;
+            this.pbCoeur4.TabStop = false;
+            this.pbCoeur4.Click += new System.EventHandler(this.pbCoeur_Click);
+            // 
+            // pbCoeur3
+            // 
+            this.pbCoeur3.BackColor = System.Drawing.Color.Transparent;
+            this.pbCoeur3.Image = global::App.Properties.Resources.Coeur;
+            this.pbCoeur3.Location = new System.Drawing.Point(89, 237);
+            this.pbCoeur3.Name = "pbCoeur3";
+            this.pbCoeur3.Size = new System.Drawing.Size(29, 25);
+            this.pbCoeur3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoeur3.TabIndex = 11;
+            this.pbCoeur3.TabStop = false;
+            this.pbCoeur3.Click += new System.EventHandler(this.pbCoeur_Click);
+            // 
+            // pbCoeur2
+            // 
+            this.pbCoeur2.BackColor = System.Drawing.Color.Transparent;
+            this.pbCoeur2.Image = global::App.Properties.Resources.Coeur;
+            this.pbCoeur2.Location = new System.Drawing.Point(210, 91);
+            this.pbCoeur2.Name = "pbCoeur2";
+            this.pbCoeur2.Size = new System.Drawing.Size(29, 25);
+            this.pbCoeur2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoeur2.TabIndex = 10;
+            this.pbCoeur2.TabStop = false;
+            this.pbCoeur2.Click += new System.EventHandler(this.pbCoeur_Click);
+            // 
+            // pbCoeur1
+            // 
+            this.pbCoeur1.BackColor = System.Drawing.Color.Transparent;
+            this.pbCoeur1.Image = global::App.Properties.Resources.Coeur;
+            this.pbCoeur1.Location = new System.Drawing.Point(89, 91);
+            this.pbCoeur1.Name = "pbCoeur1";
+            this.pbCoeur1.Size = new System.Drawing.Size(29, 25);
+            this.pbCoeur1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCoeur1.TabIndex = 9;
+            this.pbCoeur1.TabStop = false;
+            this.pbCoeur1.Click += new System.EventHandler(this.pbCoeur_Click);
+            // 
+            // btnNextSouhaits
+            // 
+            this.btnNextSouhaits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnNextSouhaits.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextSouhaits.Location = new System.Drawing.Point(194, 287);
+            this.btnNextSouhaits.Name = "btnNextSouhaits";
+            this.btnNextSouhaits.Size = new System.Drawing.Size(56, 23);
+            this.btnNextSouhaits.TabIndex = 8;
+            this.btnNextSouhaits.Text = "Next >";
+            this.btnNextSouhaits.UseVisualStyleBackColor = false;
+            this.btnNextSouhaits.Click += new System.EventHandler(this.btnNextSouhait_Click);
+            // 
+            // lblTitreSouhait4
+            // 
+            this.lblTitreSouhait4.AutoSize = true;
+            this.lblTitreSouhait4.Font = new System.Drawing.Font("Calibri", 8F);
+            this.lblTitreSouhait4.Location = new System.Drawing.Point(124, 269);
+            this.lblTitreSouhait4.Name = "lblTitreSouhait4";
+            this.lblTitreSouhait4.Size = new System.Drawing.Size(64, 13);
+            this.lblTitreSouhait4.TabIndex = 7;
+            this.lblTitreSouhait4.Text = "TitreSuivant";
+            // 
+            // pbSouhait4
+            // 
+            this.pbSouhait4.Location = new System.Drawing.Point(127, 145);
+            this.pbSouhait4.Name = "pbSouhait4";
+            this.pbSouhait4.Size = new System.Drawing.Size(112, 121);
+            this.pbSouhait4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSouhait4.TabIndex = 6;
+            this.pbSouhait4.TabStop = false;
+            // 
+            // lblTitreSouhait3
+            // 
+            this.lblTitreSouhait3.AutoSize = true;
+            this.lblTitreSouhait3.Font = new System.Drawing.Font("Calibri", 8F);
+            this.lblTitreSouhait3.Location = new System.Drawing.Point(8, 269);
+            this.lblTitreSouhait3.Name = "lblTitreSouhait3";
+            this.lblTitreSouhait3.Size = new System.Drawing.Size(64, 13);
+            this.lblTitreSouhait3.TabIndex = 5;
+            this.lblTitreSouhait3.Text = "TitreSuivant";
+            // 
+            // pbSouhait3
+            // 
+            this.pbSouhait3.Location = new System.Drawing.Point(6, 145);
+            this.pbSouhait3.Name = "pbSouhait3";
+            this.pbSouhait3.Size = new System.Drawing.Size(112, 121);
+            this.pbSouhait3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSouhait3.TabIndex = 4;
+            this.pbSouhait3.TabStop = false;
+            // 
+            // lblTitreSouhait2
+            // 
+            this.lblTitreSouhait2.AutoSize = true;
+            this.lblTitreSouhait2.Font = new System.Drawing.Font("Calibri", 8F);
+            this.lblTitreSouhait2.Location = new System.Drawing.Point(133, 126);
+            this.lblTitreSouhait2.Name = "lblTitreSouhait2";
+            this.lblTitreSouhait2.Size = new System.Drawing.Size(64, 13);
+            this.lblTitreSouhait2.TabIndex = 3;
+            this.lblTitreSouhait2.Text = "TitreSuivant";
+            // 
+            // pbSouhait2
+            // 
+            this.pbSouhait2.Location = new System.Drawing.Point(127, 0);
+            this.pbSouhait2.Name = "pbSouhait2";
+            this.pbSouhait2.Size = new System.Drawing.Size(112, 119);
+            this.pbSouhait2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSouhait2.TabIndex = 2;
+            this.pbSouhait2.TabStop = false;
+            // 
+            // lblTitreSouhait1
+            // 
+            this.lblTitreSouhait1.AutoSize = true;
+            this.lblTitreSouhait1.Font = new System.Drawing.Font("Calibri", 8F);
+            this.lblTitreSouhait1.Location = new System.Drawing.Point(7, 126);
+            this.lblTitreSouhait1.Name = "lblTitreSouhait1";
+            this.lblTitreSouhait1.Size = new System.Drawing.Size(64, 13);
+            this.lblTitreSouhait1.TabIndex = 1;
+            this.lblTitreSouhait1.Text = "TitreSuivant";
+            // 
+            // pbSouhait1
+            // 
+            this.pbSouhait1.Location = new System.Drawing.Point(6, 0);
+            this.pbSouhait1.Name = "pbSouhait1";
+            this.pbSouhait1.Size = new System.Drawing.Size(112, 119);
+            this.pbSouhait1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSouhait1.TabIndex = 0;
+            this.pbSouhait1.TabStop = false;
+            // 
+            // lblAlbumsSouhaits
+            // 
+            this.lblAlbumsSouhaits.AutoSize = true;
+            this.lblAlbumsSouhaits.Location = new System.Drawing.Point(91, 35);
+            this.lblAlbumsSouhaits.Name = "lblAlbumsSouhaits";
+            this.lblAlbumsSouhaits.Size = new System.Drawing.Size(126, 17);
+            this.lblAlbumsSouhaits.TabIndex = 13;
+            this.lblAlbumsSouhaits.Text = "Liste de mes souhaits";
+            // 
+            // lblHistoriqueVoeux
+            // 
+            this.lblHistoriqueVoeux.AutoSize = true;
+            this.lblHistoriqueVoeux.Location = new System.Drawing.Point(446, 10);
+            this.lblHistoriqueVoeux.Name = "lblHistoriqueVoeux";
+            this.lblHistoriqueVoeux.Size = new System.Drawing.Size(145, 17);
+            this.lblHistoriqueVoeux.TabIndex = 12;
+            this.lblHistoriqueVoeux.Text = "Historique de mes voeux";
+            // 
+            // dgvSouhaits
+            // 
+            this.dgvSouhaits.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.dgvSouhaits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSouhaits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Serie,
+            this.Titre,
+            this.Date});
+            this.dgvSouhaits.Location = new System.Drawing.Point(330, 35);
+            this.dgvSouhaits.Name = "dgvSouhaits";
+            this.dgvSouhaits.Size = new System.Drawing.Size(342, 319);
+            this.dgvSouhaits.TabIndex = 5;
+            // 
+            // Serie
+            // 
+            this.Serie.HeaderText = "Serie";
+            this.Serie.Name = "Serie";
+            // 
+            // Titre
+            // 
+            this.Titre.HeaderText = "Titre de l\'album";
+            this.Titre.Name = "Titre";
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date d\'ajout";
+            this.Date.Name = "Date";
             // 
             // gbMarché
             // 
@@ -301,7 +509,7 @@
             this.gbMarché.Controls.Add(this.tbBarreRecherche);
             this.gbMarché.Controls.Add(this.pbinfo);
             this.gbMarché.Font = new System.Drawing.Font("Calibri", 10F);
-            this.gbMarché.Location = new System.Drawing.Point(63, 66);
+            this.gbMarché.Location = new System.Drawing.Point(68, 67);
             this.gbMarché.Name = "gbMarché";
             this.gbMarché.Size = new System.Drawing.Size(676, 400);
             this.gbMarché.TabIndex = 6;
@@ -324,10 +532,10 @@
             // lblAjoutManuel
             // 
             this.lblAjoutManuel.AutoSize = true;
-            this.lblAjoutManuel.Font = new System.Drawing.Font("Calibri", 10F);
-            this.lblAjoutManuel.Location = new System.Drawing.Point(4, 31);
+            this.lblAjoutManuel.Font = new System.Drawing.Font("Calibri", 9F);
+            this.lblAjoutManuel.Location = new System.Drawing.Point(2, 32);
             this.lblAjoutManuel.Name = "lblAjoutManuel";
-            this.lblAjoutManuel.Size = new System.Drawing.Size(278, 17);
+            this.lblAjoutManuel.Size = new System.Drawing.Size(271, 14);
             this.lblAjoutManuel.TabIndex = 17;
             this.lblAjoutManuel.Text = "Ajouter manuellement un album à ma collection";
             this.lblAjoutManuel.Visible = false;
@@ -336,7 +544,7 @@
             // 
             this.btnValideRecherche.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnValideRecherche.Font = new System.Drawing.Font("Impact", 9F);
-            this.btnValideRecherche.Location = new System.Drawing.Point(248, 48);
+            this.btnValideRecherche.Location = new System.Drawing.Point(248, 44);
             this.btnValideRecherche.Name = "btnValideRecherche";
             this.btnValideRecherche.Size = new System.Drawing.Size(32, 26);
             this.btnValideRecherche.TabIndex = 16;
@@ -438,7 +646,7 @@
             // 
             // btnAjoutSouhaits
             // 
-            this.btnAjoutSouhaits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAjoutSouhaits.BackColor = System.Drawing.Color.LightSalmon;
             this.btnAjoutSouhaits.Font = new System.Drawing.Font("Calibri", 8F);
             this.btnAjoutSouhaits.Location = new System.Drawing.Point(201, 280);
             this.btnAjoutSouhaits.Name = "btnAjoutSouhaits";
@@ -481,6 +689,7 @@
             // gbListeAlbums
             // 
             this.gbListeAlbums.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gbListeAlbums.Controls.Add(this.btnPrevious);
             this.gbListeAlbums.Controls.Add(this.btnNext);
             this.gbListeAlbums.Controls.Add(this.lblTitre4);
             this.gbListeAlbums.Controls.Add(this.pbAlbum4);
@@ -501,7 +710,7 @@
             // 
             this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnNext.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(194, 282);
+            this.btnNext.Location = new System.Drawing.Point(194, 296);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(56, 23);
             this.btnNext.TabIndex = 8;
@@ -592,16 +801,17 @@
             // lblBarreRecherche
             // 
             this.lblBarreRecherche.AutoSize = true;
-            this.lblBarreRecherche.Location = new System.Drawing.Point(27, 33);
+            this.lblBarreRecherche.Font = new System.Drawing.Font("Calibri", 9F);
+            this.lblBarreRecherche.Location = new System.Drawing.Point(12, 26);
             this.lblBarreRecherche.Name = "lblBarreRecherche";
-            this.lblBarreRecherche.Size = new System.Drawing.Size(234, 17);
+            this.lblBarreRecherche.Size = new System.Drawing.Size(402, 14);
             this.lblBarreRecherche.TabIndex = 9;
-            this.lblBarreRecherche.Text = "Rechercher parmi les albums disponibles";
+            this.lblBarreRecherche.Text = "Vous pouvez rechercher un album avec un mot clé (auteur, titre, genre ...).";
             // 
             // tbBarreRecherche
             // 
             this.tbBarreRecherche.BackColor = System.Drawing.Color.White;
-            this.tbBarreRecherche.Location = new System.Drawing.Point(25, 50);
+            this.tbBarreRecherche.Location = new System.Drawing.Point(19, 46);
             this.tbBarreRecherche.Name = "tbBarreRecherche";
             this.tbBarreRecherche.Size = new System.Drawing.Size(217, 24);
             this.tbBarreRecherche.TabIndex = 7;
@@ -615,211 +825,6 @@
             this.pbinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbinfo.TabIndex = 6;
             this.pbinfo.TabStop = false;
-            // 
-            // gbListeSouhaits
-            // 
-            this.gbListeSouhaits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gbListeSouhaits.Controls.Add(this.pbCoeur4);
-            this.gbListeSouhaits.Controls.Add(this.pbCoeur3);
-            this.gbListeSouhaits.Controls.Add(this.pbCoeur2);
-            this.gbListeSouhaits.Controls.Add(this.pbCoeur1);
-            this.gbListeSouhaits.Controls.Add(this.btnNextSouhaits);
-            this.gbListeSouhaits.Controls.Add(this.lblTitreSouhait4);
-            this.gbListeSouhaits.Controls.Add(this.pbSouhait4);
-            this.gbListeSouhaits.Controls.Add(this.lblTitreSouhait3);
-            this.gbListeSouhaits.Controls.Add(this.pbSouhait3);
-            this.gbListeSouhaits.Controls.Add(this.lblTitreSouhait2);
-            this.gbListeSouhaits.Controls.Add(this.pbSouhait2);
-            this.gbListeSouhaits.Controls.Add(this.lblTitreSouhait1);
-            this.gbListeSouhaits.Controls.Add(this.pbSouhait1);
-            this.gbListeSouhaits.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.gbListeSouhaits.Location = new System.Drawing.Point(32, 62);
-            this.gbListeSouhaits.Name = "gbListeSouhaits";
-            this.gbListeSouhaits.Size = new System.Drawing.Size(250, 309);
-            this.gbListeSouhaits.TabIndex = 14;
-            this.gbListeSouhaits.TabStop = false;
-            // 
-            // pbCoeur4
-            // 
-            this.pbCoeur4.BackColor = System.Drawing.Color.Transparent;
-            this.pbCoeur4.Image = global::App.Properties.Resources.Coeur;
-            this.pbCoeur4.Location = new System.Drawing.Point(210, 223);
-            this.pbCoeur4.Name = "pbCoeur4";
-            this.pbCoeur4.Size = new System.Drawing.Size(29, 25);
-            this.pbCoeur4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoeur4.TabIndex = 12;
-            this.pbCoeur4.TabStop = false;
-            this.pbCoeur4.Click += new System.EventHandler(this.pbCoeur_Click);
-            // 
-            // pbCoeur3
-            // 
-            this.pbCoeur3.BackColor = System.Drawing.Color.Transparent;
-            this.pbCoeur3.Image = global::App.Properties.Resources.Coeur;
-            this.pbCoeur3.Location = new System.Drawing.Point(85, 222);
-            this.pbCoeur3.Name = "pbCoeur3";
-            this.pbCoeur3.Size = new System.Drawing.Size(29, 25);
-            this.pbCoeur3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoeur3.TabIndex = 11;
-            this.pbCoeur3.TabStop = false;
-            this.pbCoeur3.Click += new System.EventHandler(this.pbCoeur_Click);
-            // 
-            // pbCoeur2
-            // 
-            this.pbCoeur2.BackColor = System.Drawing.Color.Transparent;
-            this.pbCoeur2.Image = global::App.Properties.Resources.Coeur;
-            this.pbCoeur2.Location = new System.Drawing.Point(203, 76);
-            this.pbCoeur2.Name = "pbCoeur2";
-            this.pbCoeur2.Size = new System.Drawing.Size(29, 25);
-            this.pbCoeur2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoeur2.TabIndex = 10;
-            this.pbCoeur2.TabStop = false;
-            this.pbCoeur2.Click += new System.EventHandler(this.pbCoeur_Click);
-            // 
-            // pbCoeur1
-            // 
-            this.pbCoeur1.BackColor = System.Drawing.Color.Transparent;
-            this.pbCoeur1.Image = global::App.Properties.Resources.Coeur;
-            this.pbCoeur1.Location = new System.Drawing.Point(89, 76);
-            this.pbCoeur1.Name = "pbCoeur1";
-            this.pbCoeur1.Size = new System.Drawing.Size(29, 25);
-            this.pbCoeur1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoeur1.TabIndex = 9;
-            this.pbCoeur1.TabStop = false;
-            this.pbCoeur1.Click += new System.EventHandler(this.pbCoeur_Click);
-            // 
-            // btnNextSouhaits
-            // 
-            this.btnNextSouhaits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnNextSouhaits.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextSouhaits.Location = new System.Drawing.Point(194, 287);
-            this.btnNextSouhaits.Name = "btnNextSouhaits";
-            this.btnNextSouhaits.Size = new System.Drawing.Size(56, 23);
-            this.btnNextSouhaits.TabIndex = 8;
-            this.btnNextSouhaits.Text = "Next >";
-            this.btnNextSouhaits.UseVisualStyleBackColor = false;
-            this.btnNextSouhaits.Click += new System.EventHandler(this.btnNextSouhait_Click);
-            // 
-            // lblTitreSouhait4
-            // 
-            this.lblTitreSouhait4.AutoSize = true;
-            this.lblTitreSouhait4.Font = new System.Drawing.Font("Calibri", 8F);
-            this.lblTitreSouhait4.Location = new System.Drawing.Point(124, 269);
-            this.lblTitreSouhait4.Name = "lblTitreSouhait4";
-            this.lblTitreSouhait4.Size = new System.Drawing.Size(64, 13);
-            this.lblTitreSouhait4.TabIndex = 7;
-            this.lblTitreSouhait4.Text = "TitreSuivant";
-            // 
-            // pbSouhait4
-            // 
-            this.pbSouhait4.Location = new System.Drawing.Point(127, 145);
-            this.pbSouhait4.Name = "pbSouhait4";
-            this.pbSouhait4.Size = new System.Drawing.Size(112, 121);
-            this.pbSouhait4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbSouhait4.TabIndex = 6;
-            this.pbSouhait4.TabStop = false;
-            // 
-            // lblTitreSouhait3
-            // 
-            this.lblTitreSouhait3.AutoSize = true;
-            this.lblTitreSouhait3.Font = new System.Drawing.Font("Calibri", 8F);
-            this.lblTitreSouhait3.Location = new System.Drawing.Point(8, 269);
-            this.lblTitreSouhait3.Name = "lblTitreSouhait3";
-            this.lblTitreSouhait3.Size = new System.Drawing.Size(64, 13);
-            this.lblTitreSouhait3.TabIndex = 5;
-            this.lblTitreSouhait3.Text = "TitreSuivant";
-            // 
-            // pbSouhait3
-            // 
-            this.pbSouhait3.Location = new System.Drawing.Point(6, 145);
-            this.pbSouhait3.Name = "pbSouhait3";
-            this.pbSouhait3.Size = new System.Drawing.Size(112, 121);
-            this.pbSouhait3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbSouhait3.TabIndex = 4;
-            this.pbSouhait3.TabStop = false;
-            // 
-            // lblTitreSouhait2
-            // 
-            this.lblTitreSouhait2.AutoSize = true;
-            this.lblTitreSouhait2.Font = new System.Drawing.Font("Calibri", 8F);
-            this.lblTitreSouhait2.Location = new System.Drawing.Point(133, 126);
-            this.lblTitreSouhait2.Name = "lblTitreSouhait2";
-            this.lblTitreSouhait2.Size = new System.Drawing.Size(64, 13);
-            this.lblTitreSouhait2.TabIndex = 3;
-            this.lblTitreSouhait2.Text = "TitreSuivant";
-            // 
-            // pbSouhait2
-            // 
-            this.pbSouhait2.Location = new System.Drawing.Point(127, 0);
-            this.pbSouhait2.Name = "pbSouhait2";
-            this.pbSouhait2.Size = new System.Drawing.Size(112, 119);
-            this.pbSouhait2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbSouhait2.TabIndex = 2;
-            this.pbSouhait2.TabStop = false;
-            // 
-            // lblTitreSouhait1
-            // 
-            this.lblTitreSouhait1.AutoSize = true;
-            this.lblTitreSouhait1.Font = new System.Drawing.Font("Calibri", 8F);
-            this.lblTitreSouhait1.Location = new System.Drawing.Point(7, 126);
-            this.lblTitreSouhait1.Name = "lblTitreSouhait1";
-            this.lblTitreSouhait1.Size = new System.Drawing.Size(64, 13);
-            this.lblTitreSouhait1.TabIndex = 1;
-            this.lblTitreSouhait1.Text = "TitreSuivant";
-            // 
-            // pbSouhait1
-            // 
-            this.pbSouhait1.Location = new System.Drawing.Point(6, 0);
-            this.pbSouhait1.Name = "pbSouhait1";
-            this.pbSouhait1.Size = new System.Drawing.Size(112, 119);
-            this.pbSouhait1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbSouhait1.TabIndex = 0;
-            this.pbSouhait1.TabStop = false;
-            // 
-            // lblAlbumsSouhaits
-            // 
-            this.lblAlbumsSouhaits.AutoSize = true;
-            this.lblAlbumsSouhaits.Location = new System.Drawing.Point(91, 35);
-            this.lblAlbumsSouhaits.Name = "lblAlbumsSouhaits";
-            this.lblAlbumsSouhaits.Size = new System.Drawing.Size(127, 14);
-            this.lblAlbumsSouhaits.TabIndex = 13;
-            this.lblAlbumsSouhaits.Text = "Liste de mes souhaits";
-            // 
-            // lblHistoriqueVoeux
-            // 
-            this.lblHistoriqueVoeux.AutoSize = true;
-            this.lblHistoriqueVoeux.Location = new System.Drawing.Point(446, 10);
-            this.lblHistoriqueVoeux.Name = "lblHistoriqueVoeux";
-            this.lblHistoriqueVoeux.Size = new System.Drawing.Size(142, 14);
-            this.lblHistoriqueVoeux.TabIndex = 12;
-            this.lblHistoriqueVoeux.Text = "Historique de mes voeux";
-            // 
-            // dgvSouhaits
-            // 
-            this.dgvSouhaits.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.dgvSouhaits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSouhaits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Serie,
-            this.Titre,
-            this.Date});
-            this.dgvSouhaits.Location = new System.Drawing.Point(330, 35);
-            this.dgvSouhaits.Name = "dgvSouhaits";
-            this.dgvSouhaits.Size = new System.Drawing.Size(342, 319);
-            this.dgvSouhaits.TabIndex = 5;
-            // 
-            // Serie
-            // 
-            this.Serie.HeaderText = "Serie";
-            this.Serie.Name = "Serie";
-            // 
-            // Titre
-            // 
-            this.Titre.HeaderText = "Titre de l\'album";
-            this.Titre.Name = "Titre";
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date d\'ajout";
-            this.Date.Name = "Date";
             // 
             // tbResume
             // 
@@ -1033,6 +1038,30 @@
             this.tbExplications.TabIndex = 21;
             this.tbExplications.Text = resources.GetString("tbExplications.Text");
             // 
+            // btnPrevious
+            // 
+            this.btnPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPrevious.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.Location = new System.Drawing.Point(0, 296);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(75, 23);
+            this.btnPrevious.TabIndex = 9;
+            this.btnPrevious.Text = "< Previous";
+            this.btnPrevious.UseVisualStyleBackColor = false;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // btnPerviousSouhaits
+            // 
+            this.btnPerviousSouhaits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnPerviousSouhaits.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerviousSouhaits.Location = new System.Drawing.Point(-2, 287);
+            this.btnPerviousSouhaits.Name = "btnPerviousSouhaits";
+            this.btnPerviousSouhaits.Size = new System.Drawing.Size(75, 23);
+            this.btnPerviousSouhaits.TabIndex = 15;
+            this.btnPerviousSouhaits.Text = "< Previous";
+            this.btnPerviousSouhaits.UseVisualStyleBackColor = false;
+            this.btnPerviousSouhaits.Click += new System.EventHandler(this.btnPerviousSouhaits_Click);
+            // 
             // FormUtil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1082,6 +1111,17 @@
             this.Menu.PerformLayout();
             this.gbSouhaits.ResumeLayout(false);
             this.gbSouhaits.PerformLayout();
+            this.gbListeSouhaits.ResumeLayout(false);
+            this.gbListeSouhaits.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoeur4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoeur3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoeur2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoeur1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSouhait4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSouhait3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSouhait2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSouhait1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSouhaits)).EndInit();
             this.gbMarché.ResumeLayout(false);
             this.gbMarché.PerformLayout();
             this.gbInfosAlbum.ResumeLayout(false);
@@ -1095,17 +1135,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAlbum2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlbum1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).EndInit();
-            this.gbListeSouhaits.ResumeLayout(false);
-            this.gbListeSouhaits.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoeur4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoeur3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoeur2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoeur1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSouhait4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSouhait3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSouhait2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSouhait1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSouhaits)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1195,5 +1224,7 @@
         private System.Windows.Forms.Button btnValideRecherche;
         private System.Windows.Forms.Button btnAjoutManuel;
         private System.Windows.Forms.Label lblAjoutManuel;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button btnPerviousSouhaits;
     }
 }
