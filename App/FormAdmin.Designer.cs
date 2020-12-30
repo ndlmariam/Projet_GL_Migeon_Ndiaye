@@ -398,11 +398,11 @@
             // 
             // dgvMarché
             // 
-            this.dgvMarché.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvMarché.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvMarché.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarché.Location = new System.Drawing.Point(0, 35);
+            this.dgvMarché.Location = new System.Drawing.Point(6, 35);
             this.dgvMarché.Name = "dgvMarché";
-            this.dgvMarché.Size = new System.Drawing.Size(538, 320);
+            this.dgvMarché.Size = new System.Drawing.Size(532, 320);
             this.dgvMarché.TabIndex = 5;
             // 
             // gbHeaderAdmin

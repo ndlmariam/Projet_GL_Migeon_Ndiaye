@@ -22,7 +22,7 @@ namespace Domain
        
 
         public Album() { }
-        public Album(string nom, string serie, string couverture, string cate, string genre, string editeur, List<string> auteurs)
+        public Album(string nom, string serie, string couverture, string cate, string genre, string editeur, /*List<string>*/ string auteur)
         {
             Nom = nom;
             Serie = serie;
@@ -30,7 +30,7 @@ namespace Domain
             Categorie = cate;
             Genre = genre;
             Editeur = editeur;
-           // Auteurs = auteurs;
+            Auteur = auteur;
         }
 
         //Pour le test sans les auteurs pour l'instant

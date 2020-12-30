@@ -2,6 +2,7 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
 assembly="Domain"
 namespace="Domain">
+  
 <class name="Album" table="album">
   <!-- Mapping des propriétés de la classe -->
   <id name="idAlbum" column="album_id" type="int" >
@@ -17,7 +18,6 @@ namespace="Domain">
   <property name="Resume" column="resume" />
 
 <!-- Mapping des associations de la classe -->
-
   <!-- Un album peut faire l'objet de plusieurs actions  -->
   <bag name ="Actions" inverse="true" lazy ="true">
     <key column ="album_id"/>

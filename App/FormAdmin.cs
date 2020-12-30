@@ -113,6 +113,7 @@ namespace App
 
             if (MessageBox.Show("Etes vous sûr de vouloir vous déconnecter ?", "Déconnexion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                lblNom.Text = "";
                 instanceformadmin.Close();
             }
         }
@@ -184,8 +185,17 @@ namespace App
                    
                 }
             }
-            // List<Album> AlbumsDuMarché = _albumrepo.GetByNameOfAction("AjoutMarché");
-            List<Album> AlbumsDuMarché = _albumrepo.GetAll();
+            List<Album> AlbumsAjoutésMarché = _albumrepo.GetByNameOfAction("AjoutMarché"); // le problème c'est qu'il peut y avoir des actions de suppression associées à ces albums
+            List<Album> AlbumsDeLaBase = _albumrepo.GetAll();
+            List<Album> AlbumsDuMarché = new List<Album>();
+            //si l'album est supprimé il ne sera plus présent dans la base
+            for (int i = 0; i < AlbumsAjoutésMarché.Count; i++)
+            {
+                if (AlbumsDeLaBase.Contains(AlbumsAjoutésMarché[i]))
+                {
+                    AlbumsDuMarché.Add(AlbumsAjoutésMarché[i]);
+                }
+            }
             dgvMarché.DataSource = AlbumsDuMarché;
 
         }
@@ -232,13 +242,21 @@ namespace App
         {
             gbSuppression.Visible = false;
             Album AlbumASuprimmer = _albumrepo.GetAlbumByTitle(tbSupression.Text);
-            Domain.Action Suppression = new Domain.Action("Supression", Administrateur, AlbumASuprimmer);
-            _actionrepo.SaveAction(Suppression);
-            _albumrepo.Delete(AlbumASuprimmer);
-            Domain.Action ActionASupprimer =_actionrepo.GetActionByNameAndAlbum( AlbumASuprimmer, "AjoutMarché");
-             _actionrepo.DeleteAction(ActionASupprimer);
+            if (AlbumASuprimmer.Nom == null)
+            {
+                MessageBox.Show("Le titre que vous avez entré ne correspond a aucun album du marché. Veuillez réassayer.");
+            }
+            else
+            {
+                Domain.Action Suppression = new Domain.Action("Supression", Administrateur, AlbumASuprimmer);
+                _actionrepo.SaveAction(Suppression);
+                _albumrepo.Delete(AlbumASuprimmer);
+                Domain.Action ActionASupprimer = _actionrepo.GetActionByNameAndAlbum(AlbumASuprimmer, "AjoutMarché");
+                _actionrepo.DeleteAction(ActionASupprimer);
+
+                RefreshDgv();
+            }
             
-            RefreshDgv();
         }
 
         private void tbEditeur_TextChanged(object sender, EventArgs e)

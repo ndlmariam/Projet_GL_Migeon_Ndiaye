@@ -24,10 +24,10 @@ namespace DALTests
         public void TestAlbumRepo_GetAll()
         {
             var albums = _albumRepository.GetAll();
-            // 3 albums dans le jeu de données de test
-            Assert.AreEqual(3, albums.Count);
+            // 4 albums dans le jeu de données de test
+            Assert.AreEqual(4, albums.Count);
             var actual = albums.Select(album => album.Nom).ToList();
-            var expected = new List<string> { "Tintin au Tibet", "Folle à lier", "La ferme abandonnée" };
+            var expected = new List<string> { "Tintin au Tibet","Folle à lier", "L'étoile mystérieuse", "La ferme abandonnée" };
             CollectionAssert.AreEquivalent(actual, expected);
         }
 
@@ -35,18 +35,18 @@ namespace DALTests
          [TestMethod]
          public void TestAlbumRepo_SaveNew()
          {
-            Album _alb = new Album("L'étoile mystérieuse", "Les Aventures de Tintin", "", "BD", "Aventure", "Casterman");
+            Album _alb = new Album("A l'aube d'une grande aventure", "One Piece", "", "Manga", "Aventure", "Shueisha", "Eiichiro Oda");
              _albumRepository.Save(_alb);
 
              TestRepository.ClearSession();
              // Recherche des albums portant le même titre
              var albums = _albumRepository.GetAll().Where(a => a.Nom ==
-                 "L'étoile mystérieuse").ToList();
+                 "A l'aube d'une grande aventure").ToList();
              // 1 seul album correspondant dans le jeu de données de test
              Assert.AreEqual(1, albums.Count);
-             Album nouvelAlbum = albums[0];
-             Assert.AreEqual("L'étoile mystérieuse", nouvelAlbum.Nom);
-             Assert.AreEqual("Casterman", nouvelAlbum.Editeur);
+            /* Album nouvelAlbum = albums[0];
+             Assert.AreEqual("A l'aube d'une grande aventure", nouvelAlbum.Nom);
+             Assert.AreEqual("Shueisha", nouvelAlbum.Editeur);*/
          }
 
          [TestMethod]
@@ -64,21 +64,21 @@ namespace DALTests
         [TestMethod]
         public void TestAlbumRepo_GetAlbumByActionID()
         {
-            Album album = _albumRepository.GetAlbumByActionID(2);
+            Album album = _albumRepository.GetAlbumByActionID(3);
             Assert.AreEqual("La ferme abandonnée", album.Nom);
         }
         public void testAlbumRepo_GetAlbumByTitle()
         {
-            Album album = _albumRepository.GetAlbumByTitle("Folle à lier");
-            Assert.AreEqual(album.Editeur, "Urban Comics");
+            Album album = _albumRepository.GetAlbumByTitle("Tintin au Tibet");
+            Assert.AreEqual(album.Editeur, "Casterman");
         }
 
         [TestMethod]
         public void TestAlbumRepo_GetAlbumByRecherche()
         {
-            List<Album> albums = _albumRepository.GetAlbumByRecherche("Tintin");
-            //Un seul album avec Tintin
-            Assert.AreEqual(1, albums.Count);
+            List<Album> albums = _albumRepository.GetAlbumByRecherche("Hergé");
+            //2 albums avec Hergé
+            Assert.AreEqual(2, albums.Count);
         }
 
         [TestMethod]

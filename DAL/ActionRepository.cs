@@ -9,9 +9,9 @@ namespace DAL
 {
     public class ActionRepository : Repository, IActionRepository
     {
-        public List<Album> GetAll()
+        public List<Domain.Action> GetAll()
         {
-            return Session.Query<Album>().ToList();
+            return Session.Query<Domain.Action>().ToList();
         }
 
          public void SaveAction(Domain.Action action)

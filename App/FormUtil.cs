@@ -25,7 +25,7 @@ namespace App
         private static string cheminacces = Path.Combine(Environment.CurrentDirectory, "CircuitBD.Net", "Couvertures");
         private Album SelectedAlbum;
         private Album NouvelAlbum;
-        Label placeholder;
+        Label placeholder { get; set; }
         protected static int NumberCouverture; // pour éviter que deux images soient nommées pareilles
         public Utilisateur Utilisateur { get; set; }
       
@@ -135,7 +135,7 @@ namespace App
             pbinfo.Visible = false;
 
             gbHeader.Text = "Mes Albums";
-            gbMarché.Text = "Mes Albums";
+            gbMarché.Text = "Voici la liste de vos albums ! Vous pouvez en ajouter des nouveaux en parcourant le marché mais s'ils ne sont pas présents, vous pouvez aussi en ajouter manuellement !";
             NumeroAlbum = 0;
             lblAlbums.BackColor = Color.Lavender;
             lblAlbums.ForeColor = Color.Black;
@@ -144,9 +144,9 @@ namespace App
             lblMarché.BackColor = Color.DarkSlateBlue;
             lblMarché.ForeColor = Color.White;
            
-
         }
 
+      
         private void pbSouhaits_Click(object sender, EventArgs e)
 
         {
@@ -174,7 +174,7 @@ namespace App
             gbSouhaits.Visible = false;
             gbMarché.Visible = true;
             gbHeader.Text = "MarchéBD";
-            gbMarché.Text = "Bienvenu(e) sur MarchéBD, notre marché";
+            gbMarché.Text = "Bienvenu(e) sur MarchéBD ! Vous pouvez retrouver un grand nombre d'albums que vous connaissez. En cliquant simplement sur le titre, obtenez les informations sur l'album mais ajoutez le aussi à vos souhaits ! ";
             NumeroAlbum = 0;
             lblBarreRecherche.Visible = true;
             tbBarreRecherche.Visible = true;
@@ -204,6 +204,7 @@ namespace App
 
             if (MessageBox.Show("Etes vous sûr de vouloir vous déconnecter ?", "Déconnexion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                lblNom.Text = "";
                 instanceformutil.Close();
             }
         }
@@ -212,16 +213,38 @@ namespace App
         {
             Menu.Visible = false;
         }
+
         private void PlaceHolder_MouseHover(object sender, EventArgs e)
         {
             placeholder = ((Label)sender);
             placeholder.Visible = false;
         }
 
-       
+        private void titre_MouseHover(object sender, EventArgs e)
+        {
+            placeholder = ((Label)sender);
+            placeholder.ForeColor = Color.Crimson;
+            placeholder.Font = new Font(FontFamily.GenericSansSerif, 8, FontStyle.Bold) ;
+
+        }
+        private void titre_MouseLeave(object sender, EventArgs e)
+        {
+            placeholder = ((Label)sender);
+            placeholder.ForeColor = Color.Black;
+            placeholder.Font = new Font(FontFamily.GenericSansSerif, 8, FontStyle.Regular);
+        }
+
         // INTERACTIONS INTERFACES ALBUM
         private void btnAjoutManuel_Click(object sender, EventArgs e)
         {
+            tbTitre.Text = "";
+            tbAuteur.Text = "";
+            tbSerie.Text = "";
+            tbEditeur.Text = "";
+            tbCategorie.Text = "";
+            tbGenre.Text = "";
+            tbResume.Text = "";
+
             btnValider.Visible = false;
             btnValider.BackColor = Color.PowderBlue;
             gbMarché.Visible = false;
@@ -276,13 +299,42 @@ namespace App
             RecupererAchatUser();
             RefreshCollection();
             btnValider.BackColor = Color.PeachPuff;
-            /*tbTitre.Text = "";
-            tbAuteur.Text = "";
-            tbSerie.Text = "";
-            tbEditeur.Text = "";
-            tbCategorie.Text = "";
-            tbGenre.Text = "";
-            tbResume.Text = "";*/
+
+            btnFermerPopUp.PerformClick();
+            pbAlbum1.Image = null;
+            pbAlbum2.Image = null;
+            pbAlbum3.Image = null;
+            pbAlbum4.Image = null;
+            lblTitre1.Text = "";
+            lblTitre2.Text = "";
+            lblTitre3.Text = "";
+            lblTitre4.Text = "";
+            RecupererAchatUser();
+
+            RefreshCollection();
+            gbListeAlbums.BackColor = Color.Thistle;
+
+            gbSouhaits.Visible = false;
+            gbMarché.Visible = true;
+            gbInfosAlbum.Visible = false;
+
+            lblBarreRecherche.Visible = false;
+            tbBarreRecherche.Visible = false;
+            btnValideRecherche.Visible = false;
+            lblAjoutManuel.Visible = true;
+            btnAjoutManuel.Visible = true;
+            pbInfo1.Visible = true;
+            pbinfo.Visible = false;
+
+            gbHeader.Text = "Mes Albums";
+            gbMarché.Text = "Mes Albums";
+            NumeroAlbum = 0;
+            lblAlbums.BackColor = Color.Lavender;
+            lblAlbums.ForeColor = Color.Black;
+            lblSouhaits.BackColor = Color.DarkSlateBlue;
+            lblSouhaits.ForeColor = Color.White;
+            lblMarché.BackColor = Color.DarkSlateBlue;
+            lblMarché.ForeColor = Color.White;
         }
         private void tbTitre_TextChanged(object sender, EventArgs e)
         {
@@ -353,6 +405,7 @@ namespace App
         {
             //Carrousel de mes albums
             RefreshCarrousel(Utilisateur.ListAlbums, NextNecessary, PreviousNecessary, NumeroAlbum, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);
+            
         }
         private void RefreshViews()
         {
@@ -365,8 +418,17 @@ namespace App
             lblTitre3.Text = "";
             lblTitre4.Text = "";
             //récupère la liste de tous les albums du marché
-            //List<Album> AlbumsDuMarché = _albrepo.GetByNameOfAction("AjoutMarché");
-            List<Album> AlbumsDuMarché = _albrepo.GetAll();
+            List<Album> AlbumsAjoutésMarché = _albrepo.GetByNameOfAction("AjoutMarché"); // le problème c'est qu'il peut y avoir des actions de suppression associées à ces albums
+            List<Album> AlbumsDeLaBase = _albrepo.GetAll();
+            List<Album> AlbumsDuMarché = new List<Album>();
+            //si l'album est supprimé il ne sera plus présent dans la base
+            for(int i=0; i < AlbumsAjoutésMarché.Count; i++)
+            {
+                if (AlbumsDeLaBase.Contains(AlbumsAjoutésMarché[i]))
+                {
+                    AlbumsDuMarché.Add(AlbumsAjoutésMarché[i]);
+                }
+            }
             //Carrousel du marché sans filtre de recherche
             RefreshCarrousel(AlbumsDuMarché, NextNecessary,PreviousNecessary, NumeroAlbum, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);
 
@@ -379,6 +441,8 @@ namespace App
             lblTitreSouhait2.Text = "";
             lblTitreSouhait3.Text = "";
             lblTitreSouhait4.Text = "";
+
+            
 
             RecupererSouhaitUser();
             //Carrousel des souhaits
@@ -416,7 +480,8 @@ namespace App
         }
         private void btnNextSouhait_Click(object sender, EventArgs e)
         {
-            if (NumeroAlbumSouhait * 2 < _albrepo.GetAll().Count)
+            List<Album> Albums = Utilisateur.ListSouhaits;
+            if (NumeroAlbumSouhait +4 < Albums.Count)
             {
                 NextNecessarySouhait = false;
                 pbSouhait1.Image = null;
@@ -523,16 +588,93 @@ namespace App
                     }
 
                 }
+                NextNecessary = true;
 
-               NextNecessary = true; 
-               if (NumeroAlbum > 0) { PreviousNecessary = true; }
-               
+                if (NumeroAlbum > 0)
+                {
+                    PreviousNecessary = true;
+                }
+                couleurBtn(AlbumsDuMarché);
 
+                }
+        }
+
+        private void couleurBtn(List<Album> Albums)
+        {
+            if (gbMarché.Visible == true)
+            {
+                if(NumeroAlbum+4< Albums.Count)
+                {
+                    btnNext.Enabled = true;
+                    btnNext.BackColor = Color.LemonChiffon;
+                }
+                else
+                {
+                    btnNext.Enabled = false;
+                    btnNext.BackColor = Color.LightGray;
+                }
+                if (NumeroAlbum > 0)
+                {
+                    btnPrevious.Enabled = true;
+                    btnPrevious.BackColor = Color.LemonChiffon;
+                }
+                else
+                {
+                    btnPrevious.Enabled = false;
+                    btnPrevious.BackColor = Color.LightGray;
+                }
+                
             }
+            else
+            {
+                if (NumeroAlbumSouhait + 4 < Albums.Count)
+                {
+                    btnNextSouhaits.Enabled = true;
+                    btnNextSouhaits.BackColor = Color.LightPink;
+                }
+                else
+                {
+                    btnNextSouhaits.Enabled = false;
+                    btnNextSouhaits.BackColor = Color.LightGray;
+                }
+                if (NumeroAlbumSouhait > 0)
+                {
+                    btnPerviousSouhaits.Enabled = true;
+                    btnPerviousSouhaits.BackColor = Color.LightPink;
+                }
+                else
+                {
+                    btnPerviousSouhaits.Enabled = false;
+                    btnPerviousSouhaits.BackColor = Color.LightGray;
+                }
+            }
+            
         }
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (NumeroAlbum*2 < _albrepo.GetAll().Count)
+            List<Album> Albums = new List<Album>();
+            if (lblAlbums.ForeColor == Color.Black)
+            {
+                Albums = Utilisateur.ListAlbums;
+            }
+            else
+            {
+                List<Album> AlbumsAjoutésMarché = _albrepo.GetByNameOfAction("AjoutMarché"); // le problème c'est qu'il peut y avoir des actions de suppression associées à ces albums
+                List<Album> AlbumsDeLaBase = _albrepo.GetAll();
+                //si l'album est supprimé il ne sera plus présent dans la base
+                for (int i = 0; i < AlbumsAjoutésMarché.Count; i++)
+                {
+                    if (AlbumsDeLaBase.Contains(AlbumsAjoutésMarché[i]))
+                    {
+                        Albums.Add(AlbumsAjoutésMarché[i]);
+                    }
+                }
+                
+            }
+            
+
+            
+            if (NumeroAlbum+4 < Albums.Count)
             {
                 NextNecessary = false;
                 pbAlbum1.Image = null;
@@ -674,7 +816,7 @@ namespace App
         {
             RefreshViews();
             RecupererSouhaitUser();
-            if (MessageBox.Show("Voulez-vous acheter l'ensemble de votre liste de souhaits ?", "Acheter", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Voulez-vous ajouter l'ensemble de votre liste de souhaits dans votre liste d'albums ?", "Acheter", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 foreach (Album souhait in Utilisateur.ListSouhaits)
                 {
@@ -721,7 +863,9 @@ namespace App
             List<Album> albumsrecherche = albumRepository.GetAlbumByRecherche(recherche);
 
             RefreshCarrousel(albumsrecherche, NextNecessary, PreviousNecessary,NumeroAlbum, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);
-            
+            gbInfosAlbum.Visible = false;
+            NumeroAlbum = 0;
+            NumeroAlbumSouhait = 0;
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -767,6 +911,8 @@ namespace App
                 NumeroAlbumSouhait = NumeroAlbumSouhait - 4; RefreshViews(); 
             }
         }
+
+        
     }
 
 }

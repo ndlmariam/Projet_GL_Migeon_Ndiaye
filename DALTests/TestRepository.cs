@@ -36,24 +36,37 @@ namespace DALTests
         {
             ResetSchema();
 
+             Execute(
+                  "insert into album values(1, 'Tintin au Tibet', 'Les Aventures de Tintin', 'Hergé', 'BD', 'Aventure', 'Casterman', 'Tintin au Tibet.jpg', ''); " +
+                  "insert into album values(2, 'Folle à lier', 'Harley Quinn', 'Jimmy Palmiotti, Amanda Conner, Chad Hardin', 'BD', 'Super-héro', 'Urban Comics', 'Folle à lier.jpg', '');" +
+                  "insert into album values (3, 'La ferme abandonnée', 'Sylvain et Sylvette', 'Jean-Louis Pesch', 'BD', 'Humour', NULL, 'La ferme abandonnée.jpg', '');"+
+                "insert into album values(4, 'L''étoile mystérieuse', 'Les Aventures de Tintin', 'Hergé', 'BD', 'Aventure', 'Casterman', 'L''étoile mystérieuse3', 'On entend à la radio qu une météorite s est écrasée dans l océan Arctique.');"
+                  );
+              Execute(
+                  "insert into personne values(1, 'User', 'Agathe', 'agathe', 'mdp');" +
+                  "insert into personne values(2, 'Admin', 'AgAdmin', 'agathe', 'admin');" +
+                  "insert into personne values(3, 'User', 'marm210', 'marm', 'mdp');"+
+                  "insert into personne values(4, 'User', 'pol', 'poly', 'mdp');"
+                  );
             Execute(
-                "insert into album values(1, 'Tintin au Tibet', 'Les Aventures de Tintin', 'Hergé', 'BD', 'Aventure', 'Casterman', 'Tintin au Tibet.jpg', ''); " +
-               /* "insert into album values(2, 'Folle à lier', 'Harley Quinn', 'Jimmy Palmiotti (Scénario) / \r\n\r\nAmanda Conner (Scénario) / \r\n\r\nChad Hardin (Dessin)', 'BD', 'Super-héro', 'Urban Comics', 'Folle à lier.jpg', '');" +*/
-                "insert into album values (5, 'La ferme abandonnée', 'Sylvain et Sylvette', 'Jean-Louis Pesch', 'BD', 'Humour', NULL, 'La ferme abandonnée.jpg', '');" 
-                );
-            Execute(
-                "insert into personne values(1, 'Agathe', 'User', 'agathe', 'mdp');" +
-                "insert into personne values(7, 'AgAdmin', 'Admin', 'agathe', 'admin');" +
-                "insert into personne values(10, 'marm210', 'User', 'marm', 'mdp');"
-                ) ;
-            Execute(
-                "insert into action values(1, 'AjoutMarché', '2020-12-01', 5, 7);" +
-                "insert into action values(2, 'AjoutMarché', '2020-12-02', 2,7 );" +
-                "insert into action values(3, 'AjoutMarché', '2020-12-02'10, 1,7);" +
-                "insert into action values(4, 'AjouterSouhait','2020-12-02' 1, 10 );" +
-                "insert into action values(5, 'Achat','2020-12-02', 1, 10 );"
+                  "insert into action values(1, 'AjoutMarché', '2020-12-01', 1, 2);" +
+                  "insert into action values(2, 'AjoutMarché', '2020-12-02', 2, 2 );" +
+                  "insert into action values(3, 'AjoutMarché', '2020-12-02', 3, 2);" +
+                  "insert into action values(4, 'AjoutMarché', '2020-12-02', 4, 2);" +
+                  "insert into action values(5, 'AjouterSouhait','2020-12-02', 1, 3 );" +
+                  "insert into action values(6, 'AjouterSouhait', '2020-12-02', 2, 3); " +
+                  "insert into action values(7, 'AjouterSouhait', '2020-12-02', 3, 3); " 
+                  /*"insert into action values(9, 'Achat', '2020-12-02', 1, 3); " +
+                  "insert into action values(10, 'Achat', '2020-12-02', 2, 3); " +
+                  "insert into action values(11, 'Achat','2020-12-02', 1, 1 );"*/
 
-                ) ;
+                  ) ;
+           /* Execute(
+                "insert into action values(1, 'AjoutMarché', 2, 1, '2020-12-01');" +
+                "insert into action values(2, 'AjoutMarché', 2, 2, '2020-12-02');" +
+                "insert into action values(3, 'AjoutMarché', 2, 3, '2020-12-17');"
+
+                ) ;*/
 
 
         }
