@@ -8,6 +8,7 @@ namespace Domain
 {
     public class Album
     { public virtual bool selected { get; set; }
+        public virtual bool posseder { get; set; }
        public virtual int idAlbum { get; set; }
         public virtual string Nom { get; set; }
         public virtual string Serie { get; set; }

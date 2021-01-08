@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUtil));
             this.gbHeader = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNom = new System.Windows.Forms.Label();
             this.pbDeco = new System.Windows.Forms.PictureBox();
             this.pbPanier = new System.Windows.Forms.PictureBox();
@@ -67,6 +68,7 @@
             this.lblAjoutManuel = new System.Windows.Forms.Label();
             this.btnValideRecherche = new System.Windows.Forms.Button();
             this.gbInfosAlbum = new System.Windows.Forms.GroupBox();
+            this.btnAppartenance = new System.Windows.Forms.Button();
             this.lblEditeur = new System.Windows.Forms.Label();
             this.lblCategorie = new System.Windows.Forms.Label();
             this.lblGenre = new System.Windows.Forms.Label();
@@ -114,6 +116,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tbExplications = new System.Windows.Forms.TextBox();
             this.gbHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDeco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPanier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMarché)).BeginInit();
@@ -146,6 +149,7 @@
             // gbHeader
             // 
             this.gbHeader.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.gbHeader.Controls.Add(this.pictureBox1);
             this.gbHeader.Controls.Add(this.lblNom);
             this.gbHeader.Controls.Add(this.pbDeco);
             this.gbHeader.Controls.Add(this.pbPanier);
@@ -161,6 +165,17 @@
             this.gbHeader.TabIndex = 0;
             this.gbHeader.TabStop = false;
             this.gbHeader.Text = "Mes albums";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::App.Properties.Resources.Albums;
+            this.pictureBox1.Location = new System.Drawing.Point(312, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.Album_Click);
             // 
             // lblNom
             // 
@@ -569,6 +584,7 @@
             // 
             // gbInfosAlbum
             // 
+            this.gbInfosAlbum.Controls.Add(this.btnAppartenance);
             this.gbInfosAlbum.Controls.Add(this.lblEditeur);
             this.gbInfosAlbum.Controls.Add(this.lblCategorie);
             this.gbInfosAlbum.Controls.Add(this.lblGenre);
@@ -585,6 +601,18 @@
             this.gbInfosAlbum.TabIndex = 11;
             this.gbInfosAlbum.TabStop = false;
             this.gbInfosAlbum.Visible = false;
+            // 
+            // btnAppartenance
+            // 
+            this.btnAppartenance.BackColor = System.Drawing.Color.Gold;
+            this.btnAppartenance.Font = new System.Drawing.Font("Calibri", 8F);
+            this.btnAppartenance.Location = new System.Drawing.Point(115, 308);
+            this.btnAppartenance.Name = "btnAppartenance";
+            this.btnAppartenance.Size = new System.Drawing.Size(81, 42);
+            this.btnAppartenance.TabIndex = 11;
+            this.btnAppartenance.Text = "Je l\'ai !";
+            this.btnAppartenance.UseVisualStyleBackColor = false;
+            this.btnAppartenance.Click += new System.EventHandler(this.btnAppartenance_Click);
             // 
             // lblEditeur
             // 
@@ -1112,6 +1140,7 @@
             this.Click += new System.EventHandler(this.FormUtil_Click);
             this.gbHeader.ResumeLayout(false);
             this.gbHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDeco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPanier)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMarché)).EndInit();
@@ -1236,5 +1265,7 @@
         private System.Windows.Forms.Label lblAjoutManuel;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnPerviousSouhaits;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnAppartenance;
     }
 }

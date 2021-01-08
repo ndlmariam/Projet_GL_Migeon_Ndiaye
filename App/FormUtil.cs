@@ -720,14 +720,59 @@ namespace App
             lblEditeur.Text = SelectedAlbum.Editeur;
             lblGenre.Text = SelectedAlbum.Genre;
              tbResumé.Text = SelectedAlbum.Resume;
-            if (SelectedAlbum.selected == false)
+
+            RecupererAchatUser();
+            if (Utilisateur.ListAlbums.Contains(SelectedAlbum))
             {
+                SelectedAlbum.posseder = true;
+                btnAppartenance.BackColor = Color.LightGray;
+            }
+            else
+            {
+                btnAppartenance.BackColor = Color.Gold;
+            }
+            RecupererSouhaitUser();
+            if (Utilisateur.ListSouhaits.Contains(SelectedAlbum))
+            {
+                SelectedAlbum.selected = true;
+                btnAjoutSouhaits.BackColor = Color.LightGray;
+            }
+            else
+            {
+
                 btnAjoutSouhaits.BackColor = Color.Salmon;
             }
+      
 
         }
+
+        private void btnAppartenance_Click(object sender, EventArgs e)
+        {
+         
+            if (SelectedAlbum.posseder == false)
+            {
+                MessageBox.Show("L'album " + SelectedAlbum.Nom + " a bien été ajouté à la liste des albums que vous possédez !");
+                SelectedAlbum.posseder = true;
+                btnAppartenance.BackColor = Color.LightGray;
+                Domain.Action Achat = new Domain.Action("Achat", Utilisateur, SelectedAlbum);
+                Domain.Action ActionASupprimer = _actionrepo.GetActionByNameAndAlbum(SelectedAlbum, "AjouterSouhait");
+                _actionrepo.DeleteAction(ActionASupprimer);
+                Utilisateur.ActionsUser.Remove(ActionASupprimer);
+                _actionrepo.SaveAction(Achat);
+                Utilisateur.ActionsUser.Add(Achat);
+                _persrepo.Save(Utilisateur);
+
+                RefreshViews();
+            }
+            else
+            {
+                MessageBox.Show("L'album " + SelectedAlbum.Nom + " est déjà dans vos albums.");
+
+            }
+            }
         private void btnAjoutSouhaits_Click(object sender, EventArgs e)
         {
+           
             if (SelectedAlbum.selected == false)
             {
                 MessageBox.Show("L'album " + SelectedAlbum.Nom + " a bien été ajouté à vos souhaits !");
