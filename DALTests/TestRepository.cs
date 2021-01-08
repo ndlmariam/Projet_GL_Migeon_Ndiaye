@@ -56,17 +56,10 @@ namespace DALTests
                   "insert into action values(5, 'AjouterSouhait','2020-12-02', 1, 3 );" +
                   "insert into action values(6, 'AjouterSouhait', '2020-12-02', 2, 3); " +
                   "insert into action values(7, 'AjouterSouhait', '2020-12-02', 3, 3); " 
-                  /*"insert into action values(9, 'Achat', '2020-12-02', 1, 3); " +
-                  "insert into action values(10, 'Achat', '2020-12-02', 2, 3); " +
-                  "insert into action values(11, 'Achat','2020-12-02', 1, 1 );"*/
+                 
 
                   ) ;
-           /* Execute(
-                "insert into action values(1, 'AjoutMarché', 2, 1, '2020-12-01');" +
-                "insert into action values(2, 'AjoutMarché', 2, 2, '2020-12-02');" +
-                "insert into action values(3, 'AjoutMarché', 2, 3, '2020-12-17');"
-
-                ) ;*/
+         
 
 
         }

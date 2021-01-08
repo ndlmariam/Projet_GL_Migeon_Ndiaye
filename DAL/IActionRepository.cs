@@ -9,8 +9,7 @@ namespace DAL
 {
     public interface IActionRepository
     {
-       
-        // List<Album> GetAll();
+
   
 
         void SaveAction(Domain.Action action);

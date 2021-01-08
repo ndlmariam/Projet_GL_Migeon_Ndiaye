@@ -42,3 +42,11 @@ C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\Domain\obj\Debu
 C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\Domain\obj\Debug\Domain.dll
 C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\Domain\obj\Debug\Domain.pdb
+C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\Domain\bin\Debug\Mapping\Album.hbm.xml
+C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\Domain\bin\Debug\Mapping\Personne.hbm.xml
+C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\Domain\bin\Debug\Mapping\Action.hbm.xml
+C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\Domain\bin\Debug\Domain.dll
+C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\Domain\bin\Debug\Domain.pdb
+C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\Domain\obj\Debug\Domain.dll
+C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\Domain\obj\Debug\Domain.pdb

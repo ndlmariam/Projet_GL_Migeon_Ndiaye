@@ -96,7 +96,6 @@ namespace App
             fileName = fileName + NumberCouverture;
             File.Copy(parcourir.FileName, Path.Combine(couverturespath, fileName));
 
-           // string cheminacces = Path.Combine(couverturespath, fileName);
             NouvelAlbum.Couverture = fileName;
             btnParcourir.Text = "Modifier";
             btnParcourir.BackColor = Color.Moccasin;

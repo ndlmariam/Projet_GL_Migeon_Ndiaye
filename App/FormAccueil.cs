@@ -46,15 +46,28 @@ namespace App
             btnValider.UseWaitCursor = true;
             if (rbAdminConnex.Checked == true || rbAdminCrea.Checked == true)
             {
+
+
                 if (rbAdminConnex.Checked == true)
                 {
                     bool verificationad = _personnerepo.CompareMdp(tbLoginConnex.Text, tbMdpConnex.Text);
                     if (verificationad == true)
                     {
                         Personne administrateur = _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "Admin");
-                        FormAdmin.InstanceFormAdmin.Administrateur = administrateur;
-                        FormAdmin formadmin = FormAdmin.InstanceFormAdmin;
-                        formadmin.ShowDialog();
+                        if (administrateur is Administrateur)
+                        {
+                            if (administrateur != null)
+                            {
+                                FormAdmin.InstanceFormAdmin.Administrateur = administrateur;
+                                FormAdmin formadmin = FormAdmin.InstanceFormAdmin;
+                                formadmin.ShowDialog();
+                            }
+                        }
+                        else
+                        {
+
+                            MessageBox.Show("La selection de votre statut (utilisateur ou administrateur) n'est pas cohérente avec vos identifiants");
+                        }
                     }
                     else
                     {
@@ -68,8 +81,8 @@ namespace App
                 if (rbAdminCrea.Checked == true)
                 {
                     //vérification de  l'existance ou non d'un profil similaire
-
                     bool verif = _personnerepo.PresentBDD(tbLoginCrea.Text);
+
                     if (verif == true && rbAdminCrea.Checked == true) { MessageBox.Show("Veuillez choisir un autre login, celui-ci est déjà utilisé"); }
                     else
                     {
@@ -80,17 +93,27 @@ namespace App
                         formadmin.ShowDialog();
                     }
                 }
-                }
-                if (rbUserConnex.Checked == true || rbUserCrea.Checked == true)
-                {
+            }
+            if (rbUserConnex.Checked == true || rbUserCrea.Checked == true)
+            {
                 if (rbUserConnex.Checked == true)
                 {
                     bool verificationus = _personnerepo.CompareMdp(tbLoginConnex.Text, tbMdpConnex.Text);
                     if (verificationus == true)
                     {
                         Personne utilisateur = _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "User");
-                        FormUtil.InstanceFormUtil.Utilisateur = (Utilisateur)utilisateur;
-                        if (utilisateur != null) { FormUtil.InstanceFormUtil.ShowDialog(); }
+                        if (utilisateur is Utilisateur)
+                        {
+                            if (utilisateur != null)
+                            {
+                                FormUtil.InstanceFormUtil.Utilisateur = (Utilisateur)utilisateur;
+                                FormUtil.InstanceFormUtil.ShowDialog();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("La selection de votre statut (utilisateur ou administrateur) n'est pas cohérente avec vos identifiants");
+                        }
                     }
                     else
                     {
@@ -100,10 +123,10 @@ namespace App
 
                         }
                     }
+                    }
                 }
-                }
-                    if (rbUserCrea.Checked == true)
-                    {
+                if (rbUserCrea.Checked == true)
+                {
                     bool verif = _personnerepo.PresentBDD(tbLoginCrea.Text);
                     if (verif == true && rbUserCrea.Checked == true) { MessageBox.Show("Veuillez choisir un autre login, celui-ci est déjà utilisé"); }
                     else
@@ -111,13 +134,14 @@ namespace App
                         Personne utilisateur = new Utilisateur(tbPseudo.Text, "User", tbLoginCrea.Text, tbMdpCrea.Text);
                         _personnerepo.Save(utilisateur);
 
-                    FormUtil.InstanceFormUtil.Utilisateur = (Utilisateur)utilisateur;
+                        FormUtil.InstanceFormUtil.Utilisateur = (Utilisateur)utilisateur;
                         FormUtil.InstanceFormUtil.ShowDialog();
                     }
-                    }
+                }
 
 
             }
+        
 
                 
             
