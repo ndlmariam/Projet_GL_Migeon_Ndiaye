@@ -50,3 +50,6 @@ C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\Domain\bin\Debug\Domain.pdb
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\Domain\obj\Debug\Domain.dll
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\Domain\obj\Debug\Domain.pdb
+C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\Domain\bin\Debug\Mapping\Album.hbm.xml
+C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\Domain\bin\Debug\Mapping\Personne.hbm.xml
+C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\Domain\bin\Debug\Mapping\Action.hbm.xml

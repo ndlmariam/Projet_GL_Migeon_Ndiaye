@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUtil));
             this.gbHeader = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbAlbum = new System.Windows.Forms.PictureBox();
             this.lblNom = new System.Windows.Forms.Label();
             this.pbDeco = new System.Windows.Forms.PictureBox();
             this.pbPanier = new System.Windows.Forms.PictureBox();
@@ -115,8 +115,12 @@
             this.lblTitre = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tbExplications = new System.Windows.Forms.TextBox();
+            this.pbPanier1 = new System.Windows.Forms.PictureBox();
+            this.pbPanier3 = new System.Windows.Forms.PictureBox();
+            this.pbPanier2 = new System.Windows.Forms.PictureBox();
+            this.pbPanier4 = new System.Windows.Forms.PictureBox();
             this.gbHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDeco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPanier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMarché)).BeginInit();
@@ -144,12 +148,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAlbum2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlbum1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPanier1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPanier3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPanier2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPanier4)).BeginInit();
             this.SuspendLayout();
             // 
             // gbHeader
             // 
             this.gbHeader.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.gbHeader.Controls.Add(this.pictureBox1);
+            this.gbHeader.Controls.Add(this.pbAlbum);
             this.gbHeader.Controls.Add(this.lblNom);
             this.gbHeader.Controls.Add(this.pbDeco);
             this.gbHeader.Controls.Add(this.pbPanier);
@@ -161,21 +169,21 @@
             this.gbHeader.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gbHeader.Location = new System.Drawing.Point(0, 0);
             this.gbHeader.Name = "gbHeader";
-            this.gbHeader.Size = new System.Drawing.Size(738, 66);
+            this.gbHeader.Size = new System.Drawing.Size(757, 66);
             this.gbHeader.TabIndex = 0;
             this.gbHeader.TabStop = false;
             this.gbHeader.Text = "Mes albums";
             // 
-            // pictureBox1
+            // pbAlbum
             // 
-            this.pictureBox1.Image = global::App.Properties.Resources.Albums;
-            this.pictureBox1.Location = new System.Drawing.Point(312, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.Album_Click);
+            this.pbAlbum.Image = global::App.Properties.Resources.Albums;
+            this.pbAlbum.Location = new System.Drawing.Point(312, 16);
+            this.pbAlbum.Name = "pbAlbum";
+            this.pbAlbum.Size = new System.Drawing.Size(53, 44);
+            this.pbAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAlbum.TabIndex = 6;
+            this.pbAlbum.TabStop = false;
+            this.pbAlbum.Click += new System.EventHandler(this.Album_Click);
             // 
             // lblNom
             // 
@@ -247,7 +255,7 @@
             this.lblAlbums.AutoSize = true;
             this.lblAlbums.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblAlbums.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblAlbums.Location = new System.Drawing.Point(2, 16);
+            this.lblAlbums.Location = new System.Drawing.Point(3, 16);
             this.lblAlbums.Name = "lblAlbums";
             this.lblAlbums.Size = new System.Drawing.Size(63, 23);
             this.lblAlbums.TabIndex = 6;
@@ -263,7 +271,7 @@
             this.Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Menu.Location = new System.Drawing.Point(0, 66);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(69, 427);
+            this.Menu.Size = new System.Drawing.Size(69, 445);
             this.Menu.TabIndex = 7;
             this.Menu.TabStop = false;
             // 
@@ -272,7 +280,7 @@
             this.lblSouhaits.AutoSize = true;
             this.lblSouhaits.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSouhaits.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSouhaits.Location = new System.Drawing.Point(1, 66);
+            this.lblSouhaits.Location = new System.Drawing.Point(2, 66);
             this.lblSouhaits.Name = "lblSouhaits";
             this.lblSouhaits.Size = new System.Drawing.Size(64, 23);
             this.lblSouhaits.TabIndex = 8;
@@ -287,9 +295,9 @@
             this.lblMarché.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblMarché.Location = new System.Drawing.Point(3, 41);
             this.lblMarché.Name = "lblMarché";
-            this.lblMarché.Size = new System.Drawing.Size(59, 23);
+            this.lblMarché.Size = new System.Drawing.Size(64, 23);
             this.lblMarché.TabIndex = 7;
-            this.lblMarché.Text = "Marché";
+            this.lblMarché.Text = "Marché ";
             this.lblMarché.Click += new System.EventHandler(this.pbMarché_Click);
             // 
             // gbSouhaits
@@ -299,7 +307,7 @@
             this.gbSouhaits.Controls.Add(this.lblHistoriqueVoeux);
             this.gbSouhaits.Controls.Add(this.dgvSouhaits);
             this.gbSouhaits.Font = new System.Drawing.Font("Calibri", 10F);
-            this.gbSouhaits.Location = new System.Drawing.Point(70, 68);
+            this.gbSouhaits.Location = new System.Drawing.Point(75, 72);
             this.gbSouhaits.Name = "gbSouhaits";
             this.gbSouhaits.Size = new System.Drawing.Size(672, 426);
             this.gbSouhaits.TabIndex = 8;
@@ -310,7 +318,11 @@
             // 
             // gbListeSouhaits
             // 
-            this.gbListeSouhaits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gbListeSouhaits.BackColor = System.Drawing.Color.OldLace;
+            this.gbListeSouhaits.Controls.Add(this.pbPanier4);
+            this.gbListeSouhaits.Controls.Add(this.pbPanier2);
+            this.gbListeSouhaits.Controls.Add(this.pbPanier3);
+            this.gbListeSouhaits.Controls.Add(this.pbPanier1);
             this.gbListeSouhaits.Controls.Add(this.btnPerviousSouhaits);
             this.gbListeSouhaits.Controls.Add(this.pbCoeur4);
             this.gbListeSouhaits.Controls.Add(this.pbCoeur3);
@@ -326,9 +338,9 @@
             this.gbListeSouhaits.Controls.Add(this.lblTitreSouhait1);
             this.gbListeSouhaits.Controls.Add(this.pbSouhait1);
             this.gbListeSouhaits.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.gbListeSouhaits.Location = new System.Drawing.Point(32, 103);
+            this.gbListeSouhaits.Location = new System.Drawing.Point(6, 103);
             this.gbListeSouhaits.Name = "gbListeSouhaits";
-            this.gbListeSouhaits.Size = new System.Drawing.Size(250, 309);
+            this.gbListeSouhaits.Size = new System.Drawing.Size(302, 309);
             this.gbListeSouhaits.TabIndex = 14;
             this.gbListeSouhaits.TabStop = false;
             // 
@@ -348,7 +360,7 @@
             // 
             this.pbCoeur4.BackColor = System.Drawing.Color.Transparent;
             this.pbCoeur4.Image = global::App.Properties.Resources.Coeur;
-            this.pbCoeur4.Location = new System.Drawing.Point(210, 237);
+            this.pbCoeur4.Location = new System.Drawing.Point(272, 241);
             this.pbCoeur4.Name = "pbCoeur4";
             this.pbCoeur4.Size = new System.Drawing.Size(29, 25);
             this.pbCoeur4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -360,7 +372,7 @@
             // 
             this.pbCoeur3.BackColor = System.Drawing.Color.Transparent;
             this.pbCoeur3.Image = global::App.Properties.Resources.Coeur;
-            this.pbCoeur3.Location = new System.Drawing.Point(89, 237);
+            this.pbCoeur3.Location = new System.Drawing.Point(117, 241);
             this.pbCoeur3.Name = "pbCoeur3";
             this.pbCoeur3.Size = new System.Drawing.Size(29, 25);
             this.pbCoeur3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -372,7 +384,7 @@
             // 
             this.pbCoeur2.BackColor = System.Drawing.Color.Transparent;
             this.pbCoeur2.Image = global::App.Properties.Resources.Coeur;
-            this.pbCoeur2.Location = new System.Drawing.Point(210, 91);
+            this.pbCoeur2.Location = new System.Drawing.Point(272, 94);
             this.pbCoeur2.Name = "pbCoeur2";
             this.pbCoeur2.Size = new System.Drawing.Size(29, 25);
             this.pbCoeur2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -384,7 +396,7 @@
             // 
             this.pbCoeur1.BackColor = System.Drawing.Color.Transparent;
             this.pbCoeur1.Image = global::App.Properties.Resources.Coeur;
-            this.pbCoeur1.Location = new System.Drawing.Point(89, 91);
+            this.pbCoeur1.Location = new System.Drawing.Point(117, 94);
             this.pbCoeur1.Name = "pbCoeur1";
             this.pbCoeur1.Size = new System.Drawing.Size(29, 25);
             this.pbCoeur1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -396,7 +408,7 @@
             // 
             this.btnNextSouhaits.BackColor = System.Drawing.Color.LightPink;
             this.btnNextSouhaits.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextSouhaits.Location = new System.Drawing.Point(194, 287);
+            this.btnNextSouhaits.Location = new System.Drawing.Point(246, 285);
             this.btnNextSouhaits.Name = "btnNextSouhaits";
             this.btnNextSouhaits.Size = new System.Drawing.Size(56, 23);
             this.btnNextSouhaits.TabIndex = 8;
@@ -408,7 +420,7 @@
             // 
             this.lblTitreSouhait4.AutoSize = true;
             this.lblTitreSouhait4.Font = new System.Drawing.Font("Calibri", 8F);
-            this.lblTitreSouhait4.Location = new System.Drawing.Point(124, 269);
+            this.lblTitreSouhait4.Location = new System.Drawing.Point(157, 268);
             this.lblTitreSouhait4.Name = "lblTitreSouhait4";
             this.lblTitreSouhait4.Size = new System.Drawing.Size(64, 13);
             this.lblTitreSouhait4.TabIndex = 7;
@@ -416,7 +428,7 @@
             // 
             // pbSouhait4
             // 
-            this.pbSouhait4.Location = new System.Drawing.Point(127, 145);
+            this.pbSouhait4.Location = new System.Drawing.Point(160, 145);
             this.pbSouhait4.Name = "pbSouhait4";
             this.pbSouhait4.Size = new System.Drawing.Size(112, 121);
             this.pbSouhait4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -427,7 +439,7 @@
             // 
             this.lblTitreSouhait3.AutoSize = true;
             this.lblTitreSouhait3.Font = new System.Drawing.Font("Calibri", 8F);
-            this.lblTitreSouhait3.Location = new System.Drawing.Point(8, 269);
+            this.lblTitreSouhait3.Location = new System.Drawing.Point(5, 269);
             this.lblTitreSouhait3.Name = "lblTitreSouhait3";
             this.lblTitreSouhait3.Size = new System.Drawing.Size(64, 13);
             this.lblTitreSouhait3.TabIndex = 5;
@@ -435,7 +447,7 @@
             // 
             // pbSouhait3
             // 
-            this.pbSouhait3.Location = new System.Drawing.Point(6, 145);
+            this.pbSouhait3.Location = new System.Drawing.Point(5, 145);
             this.pbSouhait3.Name = "pbSouhait3";
             this.pbSouhait3.Size = new System.Drawing.Size(112, 121);
             this.pbSouhait3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -446,7 +458,7 @@
             // 
             this.lblTitreSouhait2.AutoSize = true;
             this.lblTitreSouhait2.Font = new System.Drawing.Font("Calibri", 8F);
-            this.lblTitreSouhait2.Location = new System.Drawing.Point(133, 126);
+            this.lblTitreSouhait2.Location = new System.Drawing.Point(157, 122);
             this.lblTitreSouhait2.Name = "lblTitreSouhait2";
             this.lblTitreSouhait2.Size = new System.Drawing.Size(64, 13);
             this.lblTitreSouhait2.TabIndex = 3;
@@ -454,7 +466,7 @@
             // 
             // pbSouhait2
             // 
-            this.pbSouhait2.Location = new System.Drawing.Point(127, 0);
+            this.pbSouhait2.Location = new System.Drawing.Point(160, 0);
             this.pbSouhait2.Name = "pbSouhait2";
             this.pbSouhait2.Size = new System.Drawing.Size(112, 119);
             this.pbSouhait2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -465,7 +477,7 @@
             // 
             this.lblTitreSouhait1.AutoSize = true;
             this.lblTitreSouhait1.Font = new System.Drawing.Font("Calibri", 8F);
-            this.lblTitreSouhait1.Location = new System.Drawing.Point(7, 126);
+            this.lblTitreSouhait1.Location = new System.Drawing.Point(5, 122);
             this.lblTitreSouhait1.Name = "lblTitreSouhait1";
             this.lblTitreSouhait1.Size = new System.Drawing.Size(64, 13);
             this.lblTitreSouhait1.TabIndex = 1;
@@ -473,7 +485,7 @@
             // 
             // pbSouhait1
             // 
-            this.pbSouhait1.Location = new System.Drawing.Point(6, 0);
+            this.pbSouhait1.Location = new System.Drawing.Point(5, 0);
             this.pbSouhait1.Name = "pbSouhait1";
             this.pbSouhait1.Size = new System.Drawing.Size(112, 119);
             this.pbSouhait1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -500,7 +512,7 @@
             // 
             // dgvSouhaits
             // 
-            this.dgvSouhaits.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.dgvSouhaits.BackgroundColor = System.Drawing.Color.OldLace;
             this.dgvSouhaits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSouhaits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Serie,
@@ -538,9 +550,9 @@
             this.gbMarché.Controls.Add(this.tbBarreRecherche);
             this.gbMarché.Controls.Add(this.pbinfo);
             this.gbMarché.Font = new System.Drawing.Font("Calibri", 10F);
-            this.gbMarché.Location = new System.Drawing.Point(69, 66);
+            this.gbMarché.Location = new System.Drawing.Point(74, 72);
             this.gbMarché.Name = "gbMarché";
-            this.gbMarché.Size = new System.Drawing.Size(667, 422);
+            this.gbMarché.Size = new System.Drawing.Size(669, 426);
             this.gbMarché.TabIndex = 6;
             this.gbMarché.TabStop = false;
             this.gbMarché.Text = resources.GetString("gbMarché.Text");
@@ -584,6 +596,7 @@
             // 
             // gbInfosAlbum
             // 
+            this.gbInfosAlbum.BackColor = System.Drawing.Color.Lavender;
             this.gbInfosAlbum.Controls.Add(this.btnAppartenance);
             this.gbInfosAlbum.Controls.Add(this.lblEditeur);
             this.gbInfosAlbum.Controls.Add(this.lblCategorie);
@@ -595,9 +608,9 @@
             this.gbInfosAlbum.Controls.Add(this.btnAjoutSouhaits);
             this.gbInfosAlbum.Controls.Add(this.pbCouvertureDetail);
             this.gbInfosAlbum.Controls.Add(this.lblTitreDetail);
-            this.gbInfosAlbum.Location = new System.Drawing.Point(315, 66);
+            this.gbInfosAlbum.Location = new System.Drawing.Point(316, 70);
             this.gbInfosAlbum.Name = "gbInfosAlbum";
-            this.gbInfosAlbum.Size = new System.Drawing.Size(350, 358);
+            this.gbInfosAlbum.Size = new System.Drawing.Size(350, 356);
             this.gbInfosAlbum.TabIndex = 11;
             this.gbInfosAlbum.TabStop = false;
             this.gbInfosAlbum.Visible = false;
@@ -606,9 +619,9 @@
             // 
             this.btnAppartenance.BackColor = System.Drawing.Color.Gold;
             this.btnAppartenance.Font = new System.Drawing.Font("Calibri", 8F);
-            this.btnAppartenance.Location = new System.Drawing.Point(115, 308);
+            this.btnAppartenance.Location = new System.Drawing.Point(210, 309);
             this.btnAppartenance.Name = "btnAppartenance";
-            this.btnAppartenance.Size = new System.Drawing.Size(81, 42);
+            this.btnAppartenance.Size = new System.Drawing.Size(65, 35);
             this.btnAppartenance.TabIndex = 11;
             this.btnAppartenance.Text = "Je l\'ai !";
             this.btnAppartenance.UseVisualStyleBackColor = false;
@@ -618,7 +631,7 @@
             // 
             this.lblEditeur.AutoSize = true;
             this.lblEditeur.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Italic);
-            this.lblEditeur.Location = new System.Drawing.Point(8, 284);
+            this.lblEditeur.Location = new System.Drawing.Point(8, 286);
             this.lblEditeur.Name = "lblEditeur";
             this.lblEditeur.Size = new System.Drawing.Size(49, 17);
             this.lblEditeur.TabIndex = 10;
@@ -628,7 +641,7 @@
             // 
             this.lblCategorie.AutoSize = true;
             this.lblCategorie.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold);
-            this.lblCategorie.Location = new System.Drawing.Point(8, 49);
+            this.lblCategorie.Location = new System.Drawing.Point(8, 26);
             this.lblCategorie.Name = "lblCategorie";
             this.lblCategorie.Size = new System.Drawing.Size(68, 18);
             this.lblCategorie.TabIndex = 9;
@@ -638,7 +651,7 @@
             // 
             this.lblGenre.AutoSize = true;
             this.lblGenre.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold);
-            this.lblGenre.Location = new System.Drawing.Point(7, 68);
+            this.lblGenre.Location = new System.Drawing.Point(7, 49);
             this.lblGenre.Name = "lblGenre";
             this.lblGenre.Size = new System.Drawing.Size(47, 18);
             this.lblGenre.TabIndex = 8;
@@ -648,7 +661,7 @@
             // 
             this.lblAuteur.AutoSize = true;
             this.lblAuteur.Font = new System.Drawing.Font("Calibri", 10F);
-            this.lblAuteur.Location = new System.Drawing.Point(9, 269);
+            this.lblAuteur.Location = new System.Drawing.Point(9, 267);
             this.lblAuteur.Name = "lblAuteur";
             this.lblAuteur.Size = new System.Drawing.Size(47, 17);
             this.lblAuteur.TabIndex = 7;
@@ -658,7 +671,7 @@
             // 
             this.lblSerie.AutoSize = true;
             this.lblSerie.Font = new System.Drawing.Font("Ink Free", 11F, System.Drawing.FontStyle.Bold);
-            this.lblSerie.Location = new System.Drawing.Point(171, 34);
+            this.lblSerie.Location = new System.Drawing.Point(171, 26);
             this.lblSerie.Name = "lblSerie";
             this.lblSerie.Size = new System.Drawing.Size(45, 19);
             this.lblSerie.TabIndex = 6;
@@ -667,22 +680,23 @@
             // tbResumé
             // 
             this.tbResumé.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.tbResumé.Location = new System.Drawing.Point(168, 90);
+            this.tbResumé.Location = new System.Drawing.Point(168, 85);
             this.tbResumé.Multiline = true;
             this.tbResumé.Name = "tbResumé";
             this.tbResumé.ReadOnly = true;
-            this.tbResumé.Size = new System.Drawing.Size(179, 178);
+            this.tbResumé.Size = new System.Drawing.Size(179, 174);
             this.tbResumé.TabIndex = 5;
             // 
             // btnFermerPopUp
             // 
-            this.btnFermerPopUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnFermerPopUp.Font = new System.Drawing.Font("Calibri", 8F);
-            this.btnFermerPopUp.Location = new System.Drawing.Point(284, 307);
+            this.btnFermerPopUp.BackColor = System.Drawing.Color.Red;
+            this.btnFermerPopUp.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFermerPopUp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFermerPopUp.Location = new System.Drawing.Point(323, -1);
             this.btnFermerPopUp.Name = "btnFermerPopUp";
-            this.btnFermerPopUp.Size = new System.Drawing.Size(66, 42);
+            this.btnFermerPopUp.Size = new System.Drawing.Size(27, 23);
             this.btnFermerPopUp.TabIndex = 4;
-            this.btnFermerPopUp.Text = "Fermer la fenêtre";
+            this.btnFermerPopUp.Text = "X";
             this.btnFermerPopUp.UseVisualStyleBackColor = false;
             this.btnFermerPopUp.Click += new System.EventHandler(this.btnFermerPopUp_Click);
             // 
@@ -690,17 +704,17 @@
             // 
             this.btnAjoutSouhaits.BackColor = System.Drawing.Color.LightSalmon;
             this.btnAjoutSouhaits.Font = new System.Drawing.Font("Calibri", 8F);
-            this.btnAjoutSouhaits.Location = new System.Drawing.Point(201, 307);
+            this.btnAjoutSouhaits.Location = new System.Drawing.Point(280, 309);
             this.btnAjoutSouhaits.Name = "btnAjoutSouhaits";
-            this.btnAjoutSouhaits.Size = new System.Drawing.Size(81, 42);
+            this.btnAjoutSouhaits.Size = new System.Drawing.Size(67, 35);
             this.btnAjoutSouhaits.TabIndex = 3;
-            this.btnAjoutSouhaits.Text = "Ajouter aux souhaits";
+            this.btnAjoutSouhaits.Text = "Je le veux !";
             this.btnAjoutSouhaits.UseVisualStyleBackColor = false;
             this.btnAjoutSouhaits.Click += new System.EventHandler(this.btnAjoutSouhaits_Click);
             // 
             // pbCouvertureDetail
             // 
-            this.pbCouvertureDetail.Location = new System.Drawing.Point(9, 95);
+            this.pbCouvertureDetail.Location = new System.Drawing.Point(9, 87);
             this.pbCouvertureDetail.Name = "pbCouvertureDetail";
             this.pbCouvertureDetail.Size = new System.Drawing.Size(135, 172);
             this.pbCouvertureDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -711,7 +725,7 @@
             // 
             this.lblTitreDetail.AutoSize = true;
             this.lblTitreDetail.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitreDetail.Location = new System.Drawing.Point(168, 60);
+            this.lblTitreDetail.Location = new System.Drawing.Point(168, 50);
             this.lblTitreDetail.Name = "lblTitreDetail";
             this.lblTitreDetail.Size = new System.Drawing.Size(131, 23);
             this.lblTitreDetail.TabIndex = 0;
@@ -864,7 +878,7 @@
             // 
             this.lblBarreRecherche.AutoSize = true;
             this.lblBarreRecherche.Font = new System.Drawing.Font("Calibri", 9F);
-            this.lblBarreRecherche.Location = new System.Drawing.Point(9, 51);
+            this.lblBarreRecherche.Location = new System.Drawing.Point(9, 50);
             this.lblBarreRecherche.Name = "lblBarreRecherche";
             this.lblBarreRecherche.Size = new System.Drawing.Size(405, 14);
             this.lblBarreRecherche.TabIndex = 9;
@@ -1080,10 +1094,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Raleway", 9.749999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(203, 155);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(322, 15);
+            this.label8.Size = new System.Drawing.Size(319, 16);
             this.label8.TabIndex = 0;
             this.label8.Text = "Veuillez entrer les caracéristiques de l\'album";
             // 
@@ -1100,12 +1114,56 @@
             this.tbExplications.TabIndex = 21;
             this.tbExplications.Text = resources.GetString("tbExplications.Text");
             // 
+            // pbPanier1
+            // 
+            this.pbPanier1.Image = global::App.Properties.Resources.panier;
+            this.pbPanier1.Location = new System.Drawing.Point(117, 67);
+            this.pbPanier1.Name = "pbPanier1";
+            this.pbPanier1.Size = new System.Drawing.Size(29, 26);
+            this.pbPanier1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPanier1.TabIndex = 17;
+            this.pbPanier1.TabStop = false;
+            this.pbPanier1.Click += new System.EventHandler(this.btnAppartenance_Click);
+            // 
+            // pbPanier3
+            // 
+            this.pbPanier3.Image = global::App.Properties.Resources.panier;
+            this.pbPanier3.Location = new System.Drawing.Point(117, 214);
+            this.pbPanier3.Name = "pbPanier3";
+            this.pbPanier3.Size = new System.Drawing.Size(29, 26);
+            this.pbPanier3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPanier3.TabIndex = 18;
+            this.pbPanier3.TabStop = false;
+            this.pbPanier3.Click += new System.EventHandler(this.btnAppartenance_Click);
+            // 
+            // pbPanier2
+            // 
+            this.pbPanier2.Image = global::App.Properties.Resources.panier;
+            this.pbPanier2.Location = new System.Drawing.Point(272, 67);
+            this.pbPanier2.Name = "pbPanier2";
+            this.pbPanier2.Size = new System.Drawing.Size(29, 26);
+            this.pbPanier2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPanier2.TabIndex = 19;
+            this.pbPanier2.TabStop = false;
+            this.pbPanier2.Click += new System.EventHandler(this.btnAppartenance_Click);
+            // 
+            // pbPanier4
+            // 
+            this.pbPanier4.Image = global::App.Properties.Resources.panier;
+            this.pbPanier4.Location = new System.Drawing.Point(272, 212);
+            this.pbPanier4.Name = "pbPanier4";
+            this.pbPanier4.Size = new System.Drawing.Size(29, 26);
+            this.pbPanier4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPanier4.TabIndex = 20;
+            this.pbPanier4.TabStop = false;
+            this.pbPanier4.Click += new System.EventHandler(this.btnAppartenance_Click);
+            // 
             // FormUtil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(224)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(738, 493);
+            this.ClientSize = new System.Drawing.Size(757, 511);
             this.Controls.Add(this.gbMarché);
             this.Controls.Add(this.gbSouhaits);
             this.Controls.Add(this.lblResume);
@@ -1140,7 +1198,7 @@
             this.Click += new System.EventHandler(this.FormUtil_Click);
             this.gbHeader.ResumeLayout(false);
             this.gbHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlbum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDeco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPanier)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMarché)).EndInit();
@@ -1174,6 +1232,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAlbum2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlbum1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbinfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPanier1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPanier3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPanier2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPanier4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1265,7 +1327,11 @@
         private System.Windows.Forms.Label lblAjoutManuel;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnPerviousSouhaits;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbAlbum;
         private System.Windows.Forms.Button btnAppartenance;
+        private System.Windows.Forms.PictureBox pbPanier4;
+        private System.Windows.Forms.PictureBox pbPanier2;
+        private System.Windows.Forms.PictureBox pbPanier3;
+        private System.Windows.Forms.PictureBox pbPanier1;
     }
 }

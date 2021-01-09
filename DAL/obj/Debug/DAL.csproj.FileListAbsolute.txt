@@ -150,3 +150,6 @@ C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DAL\bin\Debug\Remotion.Linq.E
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DAL\obj\Debug\DAL.dll
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DAL\obj\Debug\DAL.pdb
+C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DAL\bin\Debug\Mapping\Album.hbm.xml
+C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DAL\bin\Debug\Mapping\Personne.hbm.xml
+C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DAL\bin\Debug\Mapping\Action.hbm.xml
