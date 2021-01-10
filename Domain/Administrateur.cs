@@ -11,7 +11,7 @@ namespace Domain
 
         
         public virtual IList<Action> AdminActions { get; set; }
-        public Administrateur() { }
+        public Administrateur() { this.Type = "Admin"; }
         public Administrateur(string nom, string type, string login, string mdp)
         {
             Nom = nom;

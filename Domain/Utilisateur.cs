@@ -20,9 +20,10 @@ namespace Domain
 
         public Utilisateur() {
             Voeux = new List<Action>();
-        ListSouhaits = new List<Album>();
+            ListSouhaits = new List<Album>();
             ActionsUser = new List<Action>();
             ListAlbums = new List<Domain.Album>();
+            this.Type = "User";
         }
         
         public Utilisateur(string nom, string type, string login, string mdp)

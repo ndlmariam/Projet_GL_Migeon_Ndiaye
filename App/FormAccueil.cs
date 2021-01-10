@@ -26,6 +26,7 @@ namespace App
             CocheStatut = false;
             _personnerepo = personnerepository;
             AffichageRefresh();
+           
 
         }
 
@@ -43,39 +44,25 @@ namespace App
 
         private void btnValider_Click(object sender, EventArgs e)
         {
+            List<Personne> pers = _personnerepo.GetAll();
             btnValider.UseWaitCursor = true;
             if (rbAdminConnex.Checked == true || rbAdminCrea.Checked == true)
             {
-
-
                 if (rbAdminConnex.Checked == true)
                 {
-                    bool verificationad = _personnerepo.CompareMdp(tbLoginConnex.Text, tbMdpConnex.Text);
-                    if (verificationad == true)
+                    bool verificationad = false;
+                    for (int i=0; i < pers.Count; i++)
                     {
-                        Personne administrateur = _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "Admin");
-                        if (administrateur is Administrateur)
-                        {
-                            if (administrateur != null)
-                            {
-                                FormAdmin.InstanceFormAdmin.Administrateur = administrateur;
-                                FormAdmin formadmin = FormAdmin.InstanceFormAdmin;
-                                formadmin.ShowDialog();
-                            }
-                        }
-                        else
-                        {
-
-                            MessageBox.Show("La selection de votre statut (utilisateur ou administrateur) n'est pas cohérente avec vos identifiants");
-                        }
+                        if (pers[i].Login== tbLoginConnex.Text && pers[i].Mdp== tbMdpConnex.Text && pers[i].Type == "Admin") { verificationad = true; }
                     }
-                    else
+                    
+                    if (verificationad)
                     {
-                        if (verificationad == false)
-                        {
-                            MessageBox.Show("Mot de passe ou login erroné veuillez réessayer");
-                        }
+                        FormAdmin.InstanceFormAdmin.Administrateur =(Administrateur) _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "Admin");
+                        FormAdmin formadmin = FormAdmin.InstanceFormAdmin;
+                        formadmin.ShowDialog();
                     }
+                    else { MessageBox.Show("Login / mot de passe erroné ou mauvais statut sélectionné"); }
 
                 }
                 if (rbAdminCrea.Checked == true)
@@ -98,32 +85,21 @@ namespace App
             {
                 if (rbUserConnex.Checked == true)
                 {
-                    bool verificationus = _personnerepo.CompareMdp(tbLoginConnex.Text, tbMdpConnex.Text);
-                    if (verificationus == true)
+                    bool verificationus = false;
+                    for (int i = 0; i < pers.Count; i++)
                     {
-                        Personne utilisateur = _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "User");
-                        if (utilisateur is Utilisateur)
-                        {
-                            if (utilisateur != null)
-                            {
-                                FormUtil.InstanceFormUtil.Utilisateur = (Utilisateur)utilisateur;
-                                FormUtil.InstanceFormUtil.ShowDialog();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("La selection de votre statut (utilisateur ou administrateur) n'est pas cohérente avec vos identifiants");
-                        }
+                        if (pers[i].Login == tbLoginConnex.Text && pers[i].Mdp == tbMdpConnex.Text && pers[i].Type == "User") { verificationus = true; }
                     }
-                    else
-                    {
-                        if (verificationus == false)
-                        {
-                            MessageBox.Show("Mot de passe ou login erroné veuillez réessayer");
 
-                        }
+                    if (verificationus)
+                    {
+                        FormUtil.InstanceFormUtil.Utilisateur =(Utilisateur) _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "User");
+                        FormUtil.InstanceFormUtil.ShowDialog();
                     }
-                    }
+                    else{ MessageBox.Show("Login / mot de passe erroné ou mauvais statut sélectionné");}
+
+                }
+
                 }
                 if (rbUserCrea.Checked == true)
                 {
@@ -138,17 +114,19 @@ namespace App
                         FormUtil.InstanceFormUtil.ShowDialog();
                     }
                 }
-
+            rbAdminConnex.Checked = false;
+            rbAdminCrea.Checked = false;
+            rbUserConnex.Checked = false;
+            rbUserCrea.Checked = false;
+            tbLoginConnex.Text = null;
+            tbLoginCrea.Text = null;
+            tbPseudo.Text = null;
+            tbMdpConnex.Text = null;
+            tbMdpCrea.Text = null;
+            btnValider.Visible=false;
 
             }
-        
-
-                
-            
-        
-
        
-
         private void btnConnexion_Click(object sender, EventArgs e)
         {
             // fait apparaître la group box correspondante
@@ -195,26 +173,44 @@ namespace App
 
         private void tbLoginCrea_TextChanged(object sender, EventArgs e)
         {
-            RempliLogin = true;
-            AffichageRefresh();
+            if (tbLoginCrea.Text != "")
+            {
+                RempliLogin = true;
+                AffichageRefresh();
+            }
+           
         }
 
         private void tbMdpCrea_TextChanged(object sender, EventArgs e)
         {
-            RempliMdp = true;
-            AffichageRefresh();
+            if (tbMdpCrea.Text != "")
+            {
+                RempliMdp = true;
+                AffichageRefresh();
+            }
+            
         }
 
         private void tbLoginConnex_TextChanged(object sender, EventArgs e)
         {
-            RempliLogin = true;
-            AffichageRefresh();
+            if (tbLoginConnex.Text != "")
+            {
+                RempliLogin = true;
+                AffichageRefresh();
+            }
+            else { RempliLogin = false; }
+            
         }
 
         private void tbMdpConnex_TextChanged(object sender, EventArgs e)
         {
-            RempliMdp = true;
-            AffichageRefresh();
+            if (tbMdpConnex.Text != "")
+            {
+                RempliMdp = true;
+                AffichageRefresh();
+            }
+            else { RempliMdp = false; }
+            
         }
 
       

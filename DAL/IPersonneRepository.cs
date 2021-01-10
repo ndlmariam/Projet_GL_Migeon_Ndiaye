@@ -11,7 +11,7 @@ namespace DAL
     {
         
         
-       // List<Personne> GetAll();
+        List<Personne> GetAll();
 
       
         bool CompareMdp(string login, string mdp);
