@@ -71,7 +71,6 @@ C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DomainTests\obj\Debug\DomainT
 C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DomainTests\bin\Debug\MySql.Data.dll
 C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DomainTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DomainTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
-C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DomainTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
 C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DomainTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DomainTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DomainTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll

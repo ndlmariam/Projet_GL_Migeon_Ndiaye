@@ -169,7 +169,7 @@
             this.gbHeader.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gbHeader.Location = new System.Drawing.Point(0, 0);
             this.gbHeader.Name = "gbHeader";
-            this.gbHeader.Size = new System.Drawing.Size(757, 66);
+            this.gbHeader.Size = new System.Drawing.Size(773, 66);
             this.gbHeader.TabIndex = 0;
             this.gbHeader.TabStop = false;
             this.gbHeader.Text = "Mes albums";
@@ -177,7 +177,7 @@
             // pbAlbum
             // 
             this.pbAlbum.Image = global::App.Properties.Resources.Albums;
-            this.pbAlbum.Location = new System.Drawing.Point(312, 16);
+            this.pbAlbum.Location = new System.Drawing.Point(355, 16);
             this.pbAlbum.Name = "pbAlbum";
             this.pbAlbum.Size = new System.Drawing.Size(53, 44);
             this.pbAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -189,7 +189,7 @@
             // 
             this.lblNom.AutoSize = true;
             this.lblNom.Font = new System.Drawing.Font("Impact", 13F);
-            this.lblNom.Location = new System.Drawing.Point(572, 26);
+            this.lblNom.Location = new System.Drawing.Point(615, 26);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(69, 22);
             this.lblNom.TabIndex = 5;
@@ -198,7 +198,7 @@
             // pbDeco
             // 
             this.pbDeco.Image = global::App.Properties.Resources.déconnexion;
-            this.pbDeco.Location = new System.Drawing.Point(687, 22);
+            this.pbDeco.Location = new System.Drawing.Point(730, 22);
             this.pbDeco.Name = "pbDeco";
             this.pbDeco.Size = new System.Drawing.Size(40, 34);
             this.pbDeco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -209,7 +209,7 @@
             // pbPanier
             // 
             this.pbPanier.Image = global::App.Properties.Resources.panier;
-            this.pbPanier.Location = new System.Drawing.Point(499, 16);
+            this.pbPanier.Location = new System.Drawing.Point(542, 16);
             this.pbPanier.Name = "pbPanier";
             this.pbPanier.Size = new System.Drawing.Size(63, 44);
             this.pbPanier.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -220,7 +220,7 @@
             // pbMarché
             // 
             this.pbMarché.Image = global::App.Properties.Resources.Marché;
-            this.pbMarché.Location = new System.Drawing.Point(371, 16);
+            this.pbMarché.Location = new System.Drawing.Point(414, 16);
             this.pbMarché.Name = "pbMarché";
             this.pbMarché.Size = new System.Drawing.Size(53, 44);
             this.pbMarché.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -242,7 +242,7 @@
             // pbSouhaits
             // 
             this.pbSouhaits.Image = global::App.Properties.Resources.souhaits;
-            this.pbSouhaits.Location = new System.Drawing.Point(430, 16);
+            this.pbSouhaits.Location = new System.Drawing.Point(473, 16);
             this.pbSouhaits.Name = "pbSouhaits";
             this.pbSouhaits.Size = new System.Drawing.Size(63, 44);
             this.pbSouhaits.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -271,7 +271,7 @@
             this.Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Menu.Location = new System.Drawing.Point(0, 66);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(69, 445);
+            this.Menu.Size = new System.Drawing.Size(69, 493);
             this.Menu.TabIndex = 7;
             this.Menu.TabStop = false;
             // 
@@ -562,8 +562,10 @@
             this.Serie,
             this.Titre,
             this.Date});
+            this.dgvSouhaits.Enabled = false;
             this.dgvSouhaits.Location = new System.Drawing.Point(314, 103);
             this.dgvSouhaits.Name = "dgvSouhaits";
+            this.dgvSouhaits.ReadOnly = true;
             this.dgvSouhaits.Size = new System.Drawing.Size(342, 319);
             this.dgvSouhaits.TabIndex = 5;
             // 
@@ -571,16 +573,19 @@
             // 
             this.Serie.HeaderText = "Serie";
             this.Serie.Name = "Serie";
+            this.Serie.ReadOnly = true;
             // 
             // Titre
             // 
             this.Titre.HeaderText = "Titre de l\'album";
             this.Titre.Name = "Titre";
+            this.Titre.ReadOnly = true;
             // 
             // Date
             // 
             this.Date.HeaderText = "Date d\'ajout";
             this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
             // 
             // gbMarché
             // 
@@ -594,9 +599,9 @@
             this.gbMarché.Controls.Add(this.tbBarreRecherche);
             this.gbMarché.Controls.Add(this.pbinfo);
             this.gbMarché.Font = new System.Drawing.Font("Calibri", 10F);
-            this.gbMarché.Location = new System.Drawing.Point(74, 72);
+            this.gbMarché.Location = new System.Drawing.Point(70, 72);
             this.gbMarché.Name = "gbMarché";
-            this.gbMarché.Size = new System.Drawing.Size(683, 426);
+            this.gbMarché.Size = new System.Drawing.Size(699, 475);
             this.gbMarché.TabIndex = 6;
             this.gbMarché.TabStop = false;
             this.gbMarché.Text = resources.GetString("gbMarché.Text");
@@ -605,9 +610,9 @@
             // 
             this.btnAjoutManuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAjoutManuel.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Bold);
-            this.btnAjoutManuel.Location = new System.Drawing.Point(278, 52);
+            this.btnAjoutManuel.Location = new System.Drawing.Point(290, 60);
             this.btnAjoutManuel.Name = "btnAjoutManuel";
-            this.btnAjoutManuel.Size = new System.Drawing.Size(38, 33);
+            this.btnAjoutManuel.Size = new System.Drawing.Size(30, 30);
             this.btnAjoutManuel.TabIndex = 18;
             this.btnAjoutManuel.Text = "+";
             this.btnAjoutManuel.UseVisualStyleBackColor = false;
@@ -617,10 +622,10 @@
             // lblAjoutManuel
             // 
             this.lblAjoutManuel.AutoSize = true;
-            this.lblAjoutManuel.Font = new System.Drawing.Font("Calibri", 9F);
-            this.lblAjoutManuel.Location = new System.Drawing.Point(3, 61);
+            this.lblAjoutManuel.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblAjoutManuel.Location = new System.Drawing.Point(6, 66);
             this.lblAjoutManuel.Name = "lblAjoutManuel";
-            this.lblAjoutManuel.Size = new System.Drawing.Size(271, 14);
+            this.lblAjoutManuel.Size = new System.Drawing.Size(278, 17);
             this.lblAjoutManuel.TabIndex = 17;
             this.lblAjoutManuel.Text = "Ajouter manuellement un album à ma collection";
             this.lblAjoutManuel.Visible = false;
@@ -629,7 +634,7 @@
             // 
             this.btnValideRecherche.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnValideRecherche.Font = new System.Drawing.Font("Impact", 9F);
-            this.btnValideRecherche.Location = new System.Drawing.Point(242, 64);
+            this.btnValideRecherche.Location = new System.Drawing.Point(230, 92);
             this.btnValideRecherche.Name = "btnValideRecherche";
             this.btnValideRecherche.Size = new System.Drawing.Size(32, 26);
             this.btnValideRecherche.TabIndex = 16;
@@ -652,9 +657,9 @@
             this.gbInfosAlbum.Controls.Add(this.btnAjoutSouhaits);
             this.gbInfosAlbum.Controls.Add(this.pbCouvertureDetail);
             this.gbInfosAlbum.Controls.Add(this.lblTitreDetail);
-            this.gbInfosAlbum.Location = new System.Drawing.Point(316, 70);
+            this.gbInfosAlbum.Location = new System.Drawing.Point(314, 113);
             this.gbInfosAlbum.Name = "gbInfosAlbum";
-            this.gbInfosAlbum.Size = new System.Drawing.Size(367, 356);
+            this.gbInfosAlbum.Size = new System.Drawing.Size(380, 356);
             this.gbInfosAlbum.TabIndex = 11;
             this.gbInfosAlbum.TabStop = false;
             this.gbInfosAlbum.Visible = false;
@@ -663,7 +668,7 @@
             // 
             this.btnAppartenance.BackColor = System.Drawing.Color.Gold;
             this.btnAppartenance.Font = new System.Drawing.Font("Calibri", 8F);
-            this.btnAppartenance.Location = new System.Drawing.Point(210, 309);
+            this.btnAppartenance.Location = new System.Drawing.Point(229, 309);
             this.btnAppartenance.Name = "btnAppartenance";
             this.btnAppartenance.Size = new System.Drawing.Size(65, 35);
             this.btnAppartenance.TabIndex = 11;
@@ -675,7 +680,7 @@
             // 
             this.lblEditeur.AutoSize = true;
             this.lblEditeur.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Italic);
-            this.lblEditeur.Location = new System.Drawing.Point(8, 286);
+            this.lblEditeur.Location = new System.Drawing.Point(8, 290);
             this.lblEditeur.Name = "lblEditeur";
             this.lblEditeur.Size = new System.Drawing.Size(49, 17);
             this.lblEditeur.TabIndex = 10;
@@ -705,7 +710,7 @@
             // 
             this.lblAuteur.AutoSize = true;
             this.lblAuteur.Font = new System.Drawing.Font("Calibri", 10F);
-            this.lblAuteur.Location = new System.Drawing.Point(9, 267);
+            this.lblAuteur.Location = new System.Drawing.Point(9, 271);
             this.lblAuteur.Name = "lblAuteur";
             this.lblAuteur.Size = new System.Drawing.Size(47, 17);
             this.lblAuteur.TabIndex = 7;
@@ -715,7 +720,7 @@
             // 
             this.lblSerie.AutoSize = true;
             this.lblSerie.Font = new System.Drawing.Font("Ink Free", 11F, System.Drawing.FontStyle.Bold);
-            this.lblSerie.Location = new System.Drawing.Point(171, 26);
+            this.lblSerie.Location = new System.Drawing.Point(154, 19);
             this.lblSerie.Name = "lblSerie";
             this.lblSerie.Size = new System.Drawing.Size(45, 19);
             this.lblSerie.TabIndex = 6;
@@ -724,11 +729,11 @@
             // tbResumé
             // 
             this.tbResumé.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.tbResumé.Location = new System.Drawing.Point(163, 85);
+            this.tbResumé.Location = new System.Drawing.Point(152, 75);
             this.tbResumé.Multiline = true;
             this.tbResumé.Name = "tbResumé";
             this.tbResumé.ReadOnly = true;
-            this.tbResumé.Size = new System.Drawing.Size(179, 174);
+            this.tbResumé.Size = new System.Drawing.Size(219, 184);
             this.tbResumé.TabIndex = 5;
             // 
             // btnFermerPopUp
@@ -736,7 +741,7 @@
             this.btnFermerPopUp.BackColor = System.Drawing.Color.Red;
             this.btnFermerPopUp.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFermerPopUp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnFermerPopUp.Location = new System.Drawing.Point(323, -1);
+            this.btnFermerPopUp.Location = new System.Drawing.Point(353, 0);
             this.btnFermerPopUp.Name = "btnFermerPopUp";
             this.btnFermerPopUp.Size = new System.Drawing.Size(27, 23);
             this.btnFermerPopUp.TabIndex = 4;
@@ -748,7 +753,7 @@
             // 
             this.btnAjoutSouhaits.BackColor = System.Drawing.Color.LightSalmon;
             this.btnAjoutSouhaits.Font = new System.Drawing.Font("Calibri", 8F);
-            this.btnAjoutSouhaits.Location = new System.Drawing.Point(280, 309);
+            this.btnAjoutSouhaits.Location = new System.Drawing.Point(304, 309);
             this.btnAjoutSouhaits.Name = "btnAjoutSouhaits";
             this.btnAjoutSouhaits.Size = new System.Drawing.Size(67, 35);
             this.btnAjoutSouhaits.TabIndex = 3;
@@ -758,7 +763,7 @@
             // 
             // pbCouvertureDetail
             // 
-            this.pbCouvertureDetail.Location = new System.Drawing.Point(9, 87);
+            this.pbCouvertureDetail.Location = new System.Drawing.Point(9, 80);
             this.pbCouvertureDetail.Name = "pbCouvertureDetail";
             this.pbCouvertureDetail.Size = new System.Drawing.Size(135, 172);
             this.pbCouvertureDetail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -769,7 +774,7 @@
             // 
             this.lblTitreDetail.AutoSize = true;
             this.lblTitreDetail.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitreDetail.Location = new System.Drawing.Point(158, 50);
+            this.lblTitreDetail.Location = new System.Drawing.Point(153, 41);
             this.lblTitreDetail.Name = "lblTitreDetail";
             this.lblTitreDetail.Size = new System.Drawing.Size(131, 23);
             this.lblTitreDetail.TabIndex = 0;
@@ -778,7 +783,7 @@
             // pbInfo1
             // 
             this.pbInfo1.Image = global::App.Properties.Resources.infobullealbum;
-            this.pbInfo1.Location = new System.Drawing.Point(318, 70);
+            this.pbInfo1.Location = new System.Drawing.Point(343, 147);
             this.pbInfo1.Name = "pbInfo1";
             this.pbInfo1.Size = new System.Drawing.Size(338, 275);
             this.pbInfo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -800,7 +805,7 @@
             this.gbListeAlbums.Controls.Add(this.lblTitre1);
             this.gbListeAlbums.Controls.Add(this.pbAlbum1);
             this.gbListeAlbums.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.gbListeAlbums.Location = new System.Drawing.Point(1, 92);
+            this.gbListeAlbums.Location = new System.Drawing.Point(5, 134);
             this.gbListeAlbums.Name = "gbListeAlbums";
             this.gbListeAlbums.Size = new System.Drawing.Size(302, 335);
             this.gbListeAlbums.TabIndex = 10;
@@ -921,17 +926,17 @@
             // lblBarreRecherche
             // 
             this.lblBarreRecherche.AutoSize = true;
-            this.lblBarreRecherche.Font = new System.Drawing.Font("Calibri", 9F);
-            this.lblBarreRecherche.Location = new System.Drawing.Point(9, 46);
+            this.lblBarreRecherche.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblBarreRecherche.Location = new System.Drawing.Point(-3, 66);
             this.lblBarreRecherche.Name = "lblBarreRecherche";
-            this.lblBarreRecherche.Size = new System.Drawing.Size(405, 14);
+            this.lblBarreRecherche.Size = new System.Drawing.Size(430, 17);
             this.lblBarreRecherche.TabIndex = 9;
             this.lblBarreRecherche.Text = "Vous pouvez rechercher un album avec un mot clé (auteur, titre, genre ...). ";
             // 
             // tbBarreRecherche
             // 
             this.tbBarreRecherche.BackColor = System.Drawing.Color.White;
-            this.tbBarreRecherche.Location = new System.Drawing.Point(25, 64);
+            this.tbBarreRecherche.Location = new System.Drawing.Point(7, 92);
             this.tbBarreRecherche.Name = "tbBarreRecherche";
             this.tbBarreRecherche.Size = new System.Drawing.Size(217, 24);
             this.tbBarreRecherche.TabIndex = 7;
@@ -939,7 +944,7 @@
             // pbinfo
             // 
             this.pbinfo.Image = global::App.Properties.Resources.infobullemarché;
-            this.pbinfo.Location = new System.Drawing.Point(342, 70);
+            this.pbinfo.Location = new System.Drawing.Point(342, 152);
             this.pbinfo.Name = "pbinfo";
             this.pbinfo.Size = new System.Drawing.Size(314, 252);
             this.pbinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1163,7 +1168,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(224)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(757, 511);
+            this.ClientSize = new System.Drawing.Size(773, 559);
             this.Controls.Add(this.gbMarché);
             this.Controls.Add(this.gbSouhaits);
             this.Controls.Add(this.lblResume);

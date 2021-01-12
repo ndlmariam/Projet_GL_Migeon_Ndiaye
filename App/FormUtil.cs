@@ -71,7 +71,7 @@ namespace App
             btnValider.BackColor = Color.PowderBlue;
             NouvelAlbum = new Album();
             SelectedAlbum = new Album();
-            gbListeAlbums.BackColor = Color.PaleVioletRed;
+           /* gbListeAlbums.BackColor = Color.PaleVioletRed;
             gbSouhaits.Visible = true;
             gbMarché.Visible = true;
             lblBarreRecherche.Visible = false;
@@ -81,19 +81,19 @@ namespace App
             btnAjoutManuel.Visible = true;
             pbInfo1.Visible = false;
             pbinfo.Visible = false;
-            gbHeader.Text = "Mes Albums";
+            gbHeader.Text = "Mes Albums";*/
             NumeroAlbum = 0;
             NumeroAlbumMarche = 0;
             NumeroAlbumSouhait = 0;
             lblNom.Text = Utilisateur.Nom;
-            gbSouhaits.Visible = false;
-            gbMarché.Visible = false;
+           // gbSouhaits.Visible = false;
+           // gbMarché.Visible = false;
             NextNecessaryAlbum = false;
             NextNecessaryMarche = false;
             NextNecessarySouhait = false;
             initialiseAffichageSouhait();
             initialiseAffichageMarche();
-
+            affichagesMarché();
         }
 
 
@@ -141,6 +141,7 @@ namespace App
             lblMarché.ForeColor = Color.White;
             RecupererAchatUser();
             RefreshCollection();
+           
 
         }
 
@@ -196,7 +197,7 @@ namespace App
             lblAlbums.ForeColor = Color.White;
             RefreshSouhaits();
         }
-        private void pbMarché_Click(object sender, EventArgs e)
+        private void affichagesMarché()
         {
             NumeroAlbumMarche = 0;
             gbListeAlbums.BackColor = Color.Honeydew;
@@ -204,7 +205,7 @@ namespace App
             gbMarché.Visible = true;
             gbInfosAlbum.Visible = false;
             gbHeader.Text = "MarchéBD";
-            gbMarché.Text = "Bienvenu(e) sur MarchéBD ! Vous pouvez retrouver un grand nombre d'albums que vous connaissez. En cliquant simplement sur le titre, obtenez les informations sur l'album mais ajoutez le aussi à vos souhaits ! ";
+            gbMarché.Text = "Bienvenu(e) sur MarchéBD ! Vous pouvez retrouver un grand nombre d'albums que vous connaissez. En cliquant simplement sur le titre, obtenez les informations sur l'album mais ajoutez le aussi à vos souhaits ou votre collection ! Pour les consulter sélectionnez simplement Album ou Souhaits. ";
             lblBarreRecherche.Visible = true;
             tbBarreRecherche.Visible = true;
             tbBarreRecherche.Text = "";
@@ -226,6 +227,10 @@ namespace App
             lblAlbums.BackColor = Color.DarkSlateBlue;
             lblAlbums.ForeColor = Color.White;
             RefreshViews();
+        }
+        private void pbMarché_Click(object sender, EventArgs e)
+        {
+            affichagesMarché();
         }
 
         private void pbDeco_Click(object sender, EventArgs e)
@@ -461,8 +466,8 @@ namespace App
         {
             initialiseAffichageMarche();
             //récupère la liste de tous les albums du marché
-            List<Album> AlbumsAjoutésMarché = _albrepo.GetByNameOfAction("AjoutMarché"); // le problème c'est qu'il peut y avoir des actions de suppression associées à ces albums
-            List<Album> AlbumsDeLaBase = _albrepo.GetAll();
+            /*List<Album> AlbumsAjoutésMarché = _albrepo.GetByNameOfAction("AjoutMarché"); // le problème c'est qu'il peut y avoir des actions de suppression associées à ces albums
+            List<Album> AlbumsDeLaBase = _albrepo.GetAll();*/
             List<Album> AlbumsDuMarché = new List<Album>();
 
             if (Recherche == true)
@@ -472,13 +477,15 @@ namespace App
             else
             {
                 //si l'album est supprimé il ne sera plus présent dans la base
-                for (int i = 0; i < AlbumsAjoutésMarché.Count; i++)
-                {
-                    if (AlbumsDeLaBase.Contains(AlbumsAjoutésMarché[i]))
-                    {
-                        AlbumsDuMarché.Add(AlbumsAjoutésMarché[i]);
-                    }
-                }
+                /* for (int i = 0; i < AlbumsAjoutésMarché.Count; i++)
+                 {
+                     if (AlbumsDeLaBase.Contains(AlbumsAjoutésMarché[i]))
+                     {
+                         AlbumsDuMarché.Add(AlbumsAjoutésMarché[i]);
+                     }
+                 }*/
+                AlbumsDuMarché = _albrepo.GetByNameOfAction("AjoutMarché");
+
             }
             //Carrousel du marché sans filtre de recherche
             RefreshCarrousel(AlbumsDuMarché, NextNecessaryMarche, PreviousNecessaryMarche, NumeroAlbumMarche, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);     
@@ -660,7 +667,7 @@ namespace App
             }
             else
             {
-                List<Album> AlbumsAjoutésMarché = _albrepo.GetByNameOfAction("AjoutMarché"); // le problème c'est qu'il peut y avoir des actions de suppression associées à ces albums
+                /*List<Album> AlbumsAjoutésMarché = _albrepo.GetByNameOfAction("AjoutMarché"); // le problème c'est qu'il peut y avoir des actions de suppression associées à ces albums
                 List<Album> AlbumsDeLaBase = _albrepo.GetAll();
                 //si l'album est supprimé il ne sera plus présent dans la base
                 for (int i = 0; i < AlbumsAjoutésMarché.Count; i++)
@@ -669,7 +676,8 @@ namespace App
                     {
                         Albums.Add(AlbumsAjoutésMarché[i]);
                     }
-                }
+                }*/
+                Albums= _albrepo.GetByNameOfAction("AjoutMarché");
                 if (NumeroAlbumMarche + 4 < Albums.Count)
                 {
                     NextNecessaryMarche = false;

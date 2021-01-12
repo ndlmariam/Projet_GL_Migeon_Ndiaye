@@ -20,7 +20,7 @@ namespace App
         private static string applipath = Path.Combine(apppath, "CircuitBD.Net");
         Label placeholder;
         Album NouvelAlbum;
-
+        private static string cheminacces = Path.Combine(Environment.CurrentDirectory, "CircuitBD.Net", "Couvertures");
         public Personne Administrateur { get; set; }
         private IActionRepository _actionrepo;
         private IAlbumRepository _albumrepo;
@@ -107,7 +107,7 @@ namespace App
                 numfile += 1;
                 allFiles = di.GetFiles(fileName);
             }
-            File.Copy(parcourir.FileName, Path.Combine(couverturespath, fileName));
+           // File.Copy(parcourir.FileName, Path.Combine(couverturespath, fileName));
             if (fileName != "")
             {
                 File.Copy(parcourir.FileName, Path.Combine(couverturespath, fileName));
@@ -200,18 +200,36 @@ namespace App
                    
                 }
             }
-            List<Album> AlbumsAjoutésMarché = _albumrepo.GetByNameOfAction("AjoutMarché"); // le problème c'est qu'il peut y avoir des actions de suppression associées à ces albums
-            List<Album> AlbumsDeLaBase = _albumrepo.GetAll();
-            List<Album> AlbumsDuMarché = new List<Album>();
-            //si l'album est supprimé il ne sera plus présent dans la base
-            for (int i = 0; i < AlbumsAjoutésMarché.Count; i++)
+            List<Album> AlbumsDuMarché = _albumrepo.GetByNameOfAction("AjoutMarché");
+            /* List<Album> AlbumsAjoutésMarché = _albumrepo.GetByNameOfAction("AjoutMarché"); // le problème c'est qu'il peut y avoir des actions de suppression associées à ces albums
+             List<Album> AlbumsDeLaBase = _albumrepo.GetAll();
+             List<Album> AlbumsDuMarché = new List<Album>();
+             //si l'album est supprimé il ne sera plus présent dans la base
+             for (int i = 0; i < AlbumsAjoutésMarché.Count; i++)
+             {
+                 if (AlbumsDeLaBase.Contains(AlbumsAjoutésMarché[i]))
+                 {
+                     AlbumsDuMarché.Add(AlbumsAjoutésMarché[i]);
+                 }
+             }*/
+            dgvMarché.Rows.Clear();
+            for (int i=0; i < AlbumsDuMarché.Count; i++)
             {
-                if (AlbumsDeLaBase.Contains(AlbumsAjoutésMarché[i]))
+                Album a = AlbumsDuMarché[i];
+                Image image;
+                if (a.Couverture != "" && a.Couverture != null)
                 {
-                    AlbumsDuMarché.Add(AlbumsAjoutésMarché[i]);
+                    image = Image.FromFile(Path.Combine(cheminacces, a.Couverture));
+                    dgvMarché.Rows.Add(image, a.Nom, a.Serie, a.Auteur, a.Editeur, a.Categorie, a.Genre, a.Resume);
                 }
+               
+                else
+                {
+                    dgvMarché.Rows.Add(null, a.Nom, a.Serie, a.Auteur, a.Editeur, a.Categorie, a.Genre, a.Resume);
+                }
+                
             }
-            dgvMarché.DataSource = AlbumsDuMarché;
+            
         }
 
         private void FormAdmin_Load(object sender, EventArgs e)
@@ -249,7 +267,7 @@ namespace App
            if( MessageBox.Show("Etes-Vous sur de vouloir supprimer un album ? Il sera définitivement supprimé de marchéBD", "Attention", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) ==DialogResult.OK )
             {
                 gbSuppression.Visible = true;
-              
+                tbSupression.Text = "";
             }
         }
 
@@ -269,12 +287,16 @@ namespace App
             }
             else
             {
-                Domain.Action Suppression = new Domain.Action("Supression", Administrateur, AlbumASuprimmer);
-                _actionrepo.SaveAction(Suppression);
-                _albumrepo.Delete(AlbumASuprimmer);
+              //  Domain.Action Suppression = new Domain.Action("Supression", Administrateur, AlbumASuprimmer);
+              //  _actionrepo.SaveAction(Suppression);
                 Domain.Action ActionASupprimer = _actionrepo.GetActionByNameAndAlbum(AlbumASuprimmer, "AjoutMarché");
-                _actionrepo.DeleteAction(ActionASupprimer);
-
+                if (ActionASupprimer.Nom != null)
+                {
+                    _actionrepo.DeleteAction(ActionASupprimer);
+                    _albumrepo.Delete(AlbumASuprimmer);
+                    MessageBox.Show("L'album "+AlbumASuprimmer.Nom + " a bien été supprimé du marché ! ");
+                }
+               
                 RefreshDgv();
             }
             

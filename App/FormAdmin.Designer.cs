@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbAjoutAlbum = new System.Windows.Forms.GroupBox();
             this.tbEditeur = new System.Windows.Forms.TextBox();
             this.lblEditeur = new System.Windows.Forms.Label();
@@ -54,10 +55,18 @@
             this.btnSupressionSure = new System.Windows.Forms.Button();
             this.tbSupression = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnSupprimer = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnAjout = new System.Windows.Forms.Button();
             this.dgvMarché = new System.Windows.Forms.DataGridView();
+            this.Couverture = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Titre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Série = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Auteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editeur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Catégorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Résumé = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbHeaderAdmin = new System.Windows.Forms.GroupBox();
             this.lblNom = new System.Windows.Forms.Label();
             this.pbDeco = new System.Windows.Forms.PictureBox();
@@ -304,14 +313,14 @@
             // 
             this.gbMarchéAdmin.Controls.Add(this.gbSuppression);
             this.gbMarchéAdmin.Controls.Add(this.label3);
-            this.gbMarchéAdmin.Controls.Add(this.label2);
             this.gbMarchéAdmin.Controls.Add(this.btnSupprimer);
+            this.gbMarchéAdmin.Controls.Add(this.label2);
             this.gbMarchéAdmin.Controls.Add(this.btnAjout);
             this.gbMarchéAdmin.Controls.Add(this.dgvMarché);
             this.gbMarchéAdmin.Font = new System.Drawing.Font("Calibri", 11F);
             this.gbMarchéAdmin.Location = new System.Drawing.Point(0, 72);
             this.gbMarchéAdmin.Name = "gbMarchéAdmin";
-            this.gbMarchéAdmin.Size = new System.Drawing.Size(730, 384);
+            this.gbMarchéAdmin.Size = new System.Drawing.Size(913, 475);
             this.gbMarchéAdmin.TabIndex = 16;
             this.gbMarchéAdmin.TabStop = false;
             this.gbMarchéAdmin.Text = "Bienvenu(e) sur MarchéBD, voici l\'ensemble des albums du marché.";
@@ -322,10 +331,10 @@
             this.gbSuppression.Controls.Add(this.btnSupressionSure);
             this.gbSuppression.Controls.Add(this.tbSupression);
             this.gbSuppression.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbSuppression.Location = new System.Drawing.Point(547, 127);
+            this.gbSuppression.Location = new System.Drawing.Point(730, 168);
             this.gbSuppression.Name = "gbSuppression";
             this.gbSuppression.Size = new System.Drawing.Size(183, 244);
-            this.gbSuppression.TabIndex = 10;
+            this.gbSuppression.TabIndex = 17;
             this.gbSuppression.TabStop = false;
             this.gbSuppression.Text = "Entrer le titre de la BD à supprimer";
             this.gbSuppression.Visible = false;
@@ -354,28 +363,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(572, 153);
+            this.label3.Location = new System.Drawing.Point(742, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 23);
-            this.label3.TabIndex = 9;
+            this.label3.TabIndex = 11;
             this.label3.Text = "SUPPRIMER un album ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(570, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 23);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "AJOUTER un album ";
             // 
             // btnSupprimer
             // 
             this.btnSupprimer.BackColor = System.Drawing.Color.MistyRose;
             this.btnSupprimer.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupprimer.ForeColor = System.Drawing.Color.Crimson;
-            this.btnSupprimer.Location = new System.Drawing.Point(609, 177);
+            this.btnSupprimer.Location = new System.Drawing.Point(786, 167);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(75, 61);
             this.btnSupprimer.TabIndex = 7;
@@ -383,12 +382,22 @@
             this.btnSupprimer.UseVisualStyleBackColor = false;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(755, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(148, 23);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "AJOUTER un album ";
+            // 
             // btnAjout
             // 
             this.btnAjout.BackColor = System.Drawing.Color.LightCyan;
             this.btnAjout.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAjout.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.btnAjout.Location = new System.Drawing.Point(609, 50);
+            this.btnAjout.Location = new System.Drawing.Point(799, 61);
             this.btnAjout.Name = "btnAjout";
             this.btnAjout.Size = new System.Drawing.Size(50, 49);
             this.btnAjout.TabIndex = 6;
@@ -398,12 +407,95 @@
             // 
             // dgvMarché
             // 
+            this.dgvMarché.AllowUserToAddRows = false;
             this.dgvMarché.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvMarché.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMarché.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Couverture,
+            this.Titre,
+            this.Série,
+            this.Auteur,
+            this.Editeur,
+            this.Catégorie,
+            this.Genre,
+            this.Résumé});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 11F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Moccasin;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMarché.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMarché.Location = new System.Drawing.Point(6, 35);
             this.dgvMarché.Name = "dgvMarché";
-            this.dgvMarché.Size = new System.Drawing.Size(532, 320);
+            this.dgvMarché.ReadOnly = true;
+            this.dgvMarché.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvMarché.RowTemplate.Height = 150;
+            this.dgvMarché.RowTemplate.ReadOnly = true;
+            this.dgvMarché.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvMarché.Size = new System.Drawing.Size(708, 434);
             this.dgvMarché.TabIndex = 5;
+            // 
+            // Couverture
+            // 
+            this.Couverture.FillWeight = 10F;
+            this.Couverture.HeaderText = "Couverture";
+            this.Couverture.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Couverture.Name = "Couverture";
+            this.Couverture.ReadOnly = true;
+            this.Couverture.Width = 85;
+            // 
+            // Titre
+            // 
+            this.Titre.HeaderText = "Titre";
+            this.Titre.Name = "Titre";
+            this.Titre.ReadOnly = true;
+            this.Titre.Width = 70;
+            // 
+            // Série
+            // 
+            this.Série.HeaderText = "Série";
+            this.Série.Name = "Série";
+            this.Série.ReadOnly = true;
+            this.Série.Width = 70;
+            // 
+            // Auteur
+            // 
+            this.Auteur.HeaderText = "Auteur";
+            this.Auteur.Name = "Auteur";
+            this.Auteur.ReadOnly = true;
+            this.Auteur.Width = 80;
+            // 
+            // Editeur
+            // 
+            this.Editeur.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Editeur.HeaderText = "Editeur";
+            this.Editeur.Name = "Editeur";
+            this.Editeur.ReadOnly = true;
+            this.Editeur.Width = 78;
+            // 
+            // Catégorie
+            // 
+            this.Catégorie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Catégorie.HeaderText = "Catégorie";
+            this.Catégorie.Name = "Catégorie";
+            this.Catégorie.ReadOnly = true;
+            this.Catégorie.Width = 93;
+            // 
+            // Genre
+            // 
+            this.Genre.HeaderText = "Genre";
+            this.Genre.Name = "Genre";
+            this.Genre.ReadOnly = true;
+            this.Genre.Width = 71;
+            // 
+            // Résumé
+            // 
+            this.Résumé.HeaderText = "Résumé";
+            this.Résumé.Name = "Résumé";
+            this.Résumé.ReadOnly = true;
+            this.Résumé.Width = 200;
             // 
             // gbHeaderAdmin
             // 
@@ -416,7 +508,7 @@
             this.gbHeaderAdmin.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gbHeaderAdmin.Location = new System.Drawing.Point(0, 0);
             this.gbHeaderAdmin.Name = "gbHeaderAdmin";
-            this.gbHeaderAdmin.Size = new System.Drawing.Size(739, 66);
+            this.gbHeaderAdmin.Size = new System.Drawing.Size(925, 66);
             this.gbHeaderAdmin.TabIndex = 1;
             this.gbHeaderAdmin.TabStop = false;
             this.gbHeaderAdmin.Text = "Espace Administrateur";
@@ -425,7 +517,7 @@
             // 
             this.lblNom.AutoSize = true;
             this.lblNom.Font = new System.Drawing.Font("Impact", 13F);
-            this.lblNom.Location = new System.Drawing.Point(573, 26);
+            this.lblNom.Location = new System.Drawing.Point(762, 26);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(69, 22);
             this.lblNom.TabIndex = 5;
@@ -434,7 +526,7 @@
             // pbDeco
             // 
             this.pbDeco.Image = global::App.Properties.Resources.déconnexion;
-            this.pbDeco.Location = new System.Drawing.Point(679, 21);
+            this.pbDeco.Location = new System.Drawing.Point(868, 21);
             this.pbDeco.Name = "pbDeco";
             this.pbDeco.Size = new System.Drawing.Size(45, 34);
             this.pbDeco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -445,7 +537,7 @@
             // pbMarché
             // 
             this.pbMarché.Image = global::App.Properties.Resources.Marché;
-            this.pbMarché.Location = new System.Drawing.Point(511, 15);
+            this.pbMarché.Location = new System.Drawing.Point(700, 15);
             this.pbMarché.Name = "pbMarché";
             this.pbMarché.Size = new System.Drawing.Size(53, 44);
             this.pbMarché.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -458,7 +550,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(224)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(739, 455);
+            this.ClientSize = new System.Drawing.Size(925, 559);
             this.Controls.Add(this.gbMarchéAdmin);
             this.Controls.Add(this.gbAjoutAlbum);
             this.Controls.Add(this.gbHeaderAdmin);
@@ -507,17 +599,25 @@
         private System.Windows.Forms.Label lblGenre;
         private System.Windows.Forms.Button btnValider;
         private System.Windows.Forms.GroupBox gbMarchéAdmin;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Button btnAjout;
         private System.Windows.Forms.DataGridView dgvMarché;
-        private System.Windows.Forms.GroupBox gbSuppression;
-        private System.Windows.Forms.Button btnSupressionSure;
-        private System.Windows.Forms.TextBox tbSupression;
         private System.Windows.Forms.TextBox tbResume;
         private System.Windows.Forms.Label lblResume;
         private System.Windows.Forms.TextBox tbEditeur;
         private System.Windows.Forms.Label lblEditeur;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox gbSuppression;
+        private System.Windows.Forms.Button btnSupressionSure;
+        private System.Windows.Forms.TextBox tbSupression;
+        private System.Windows.Forms.DataGridViewImageColumn Couverture;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Série;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Auteur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Editeur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Catégorie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Genre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Résumé;
     }
 }

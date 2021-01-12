@@ -15,7 +15,7 @@ namespace="Domain">
   <property name="Genre" column="genre" not-null="true"/>
   <property name="Editeur" column="editeur" not-null="false"/>
   <property name="Couverture" column="couverture" />
-  <property name="Resume" column="resume" />
+  <property name="Resume" column="resume" type="String" length="1000000"/>
 
 <!-- Mapping des associations de la classe -->
   <!-- Un album peut faire l'objet de plusieurs actions  -->

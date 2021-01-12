@@ -127,7 +127,7 @@
     <value>True</value>
   </metadata>
   <data name="gbMarché.Text" xml:space="preserve">
-    <value>Bienvenu(e) sur MarchéBD ! Vous pouvez retrouver un grand nombre d'albums que vous connaissez. En cliquant simplement sur le titre, obtenez les informations sur l'album mais ajoutez le aussi à vos souhaits ! </value>
+    <value>Bienvenu(e) sur MarchéBD ! Vous pouvez retrouver un grand nombre d'albums que vous connaissez. En cliquant simplement sur le titre, obtenez les informations sur l'album mais ajoutez le aussi à vos souhaits ou votre collection ! Pour ensuite les consulter sélectionnez simplement Album ou Souhaits.  </value>
   </data>
   <data name="tbExplications.Text" xml:space="preserve">
     <value>Bienvenu(e) dans votre gestionnaire de BD. Vous pouvez déclarer manuellement ci dessous les albums appartenant à votre collection. Vous pouvez aussi en ajouter rapidement à partir de la liste situer dans le marché. Si vous souhaitez consulter la liste des albums que vous possédez rendez-vous dans l'onglet Albums du menu déroulant !</value>
