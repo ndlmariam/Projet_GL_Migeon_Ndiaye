@@ -104,3 +104,5 @@ C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\obj\Debug\DALT
 C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\obj\Debug\DALTests.csproj.CopyComplete
 C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\obj\Debug\DALTests.dll
 C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DALTests\obj\Debug\DALTests.pdb
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\Fin\Projet_GL_Migeon_Ndiaye\DALTests\obj\Debug\DALTests.dll
+C:\Users\Agathe Sauvage\Documents\ordi thomson\Chère Alice\Cours\ENSC\2A\Génie Logiciel\Projet BDthèque\Fin\Projet_GL_Migeon_Ndiaye\DALTests\obj\Debug\DALTests.pdb

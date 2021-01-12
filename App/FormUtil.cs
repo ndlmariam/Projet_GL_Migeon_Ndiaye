@@ -102,7 +102,7 @@ namespace App
         {
             Menu.Visible = false;
         }
-        // évènements clicks de gestion des boutons
+        // événements clicks de gestion des boutons
         private void pbMenu_Click(object sender, EventArgs e)
         {
             if (ClickedOnce == false) { Menu.Visible = true; ClickedOnce = true; }
