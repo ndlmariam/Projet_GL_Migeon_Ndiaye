@@ -67,6 +67,7 @@ namespace DALTests
             Album album = _albumRepository.GetAlbumByActionID(3);
             Assert.AreEqual("La ferme abandonnée", album.Nom);
         }
+        [TestMethod]
         public void TestAlbumRepo_GetAlbumByTitle()
         {
             Album album = _albumRepository.GetAlbumByTitle("Tintin au Tibet");
