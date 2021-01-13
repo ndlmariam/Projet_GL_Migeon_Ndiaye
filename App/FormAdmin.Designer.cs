@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbAjoutAlbum = new System.Windows.Forms.GroupBox();
             this.tbEditeur = new System.Windows.Forms.TextBox();
             this.lblEditeur = new System.Windows.Forms.Label();
@@ -71,6 +71,7 @@
             this.lblNom = new System.Windows.Forms.Label();
             this.pbDeco = new System.Windows.Forms.PictureBox();
             this.pbMarché = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.gbAjoutAlbum.SuspendLayout();
             this.gbMarchéAdmin.SuspendLayout();
             this.gbSuppression.SuspendLayout();
@@ -125,9 +126,9 @@
             this.lblEditeur.Font = new System.Drawing.Font("Calibri", 11F);
             this.lblEditeur.Location = new System.Drawing.Point(41, 206);
             this.lblEditeur.Name = "lblEditeur";
-            this.lblEditeur.Size = new System.Drawing.Size(53, 18);
+            this.lblEditeur.Size = new System.Drawing.Size(63, 18);
             this.lblEditeur.TabIndex = 17;
-            this.lblEditeur.Text = "Editeur";
+            this.lblEditeur.Text = "Editeur *";
             // 
             // btnValider
             // 
@@ -191,9 +192,9 @@
             this.lblGenre.Font = new System.Drawing.Font("Calibri", 11F);
             this.lblGenre.Location = new System.Drawing.Point(44, 286);
             this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(46, 18);
+            this.lblGenre.Size = new System.Drawing.Size(56, 18);
             this.lblGenre.TabIndex = 10;
-            this.lblGenre.Text = "Genre";
+            this.lblGenre.Text = "Genre *";
             // 
             // plholdCat
             // 
@@ -222,9 +223,9 @@
             this.lblCategorie.Font = new System.Drawing.Font("Calibri", 11F);
             this.lblCategorie.Location = new System.Drawing.Point(41, 246);
             this.lblCategorie.Name = "lblCategorie";
-            this.lblCategorie.Size = new System.Drawing.Size(68, 18);
+            this.lblCategorie.Size = new System.Drawing.Size(78, 18);
             this.lblCategorie.TabIndex = 7;
-            this.lblCategorie.Text = "Catégorie";
+            this.lblCategorie.Text = "Catégorie *";
             // 
             // tbSerie
             // 
@@ -240,9 +241,9 @@
             this.lblSerie.Font = new System.Drawing.Font("Calibri", 11F);
             this.lblSerie.Location = new System.Drawing.Point(41, 168);
             this.lblSerie.Name = "lblSerie";
-            this.lblSerie.Size = new System.Drawing.Size(40, 18);
+            this.lblSerie.Size = new System.Drawing.Size(50, 18);
             this.lblSerie.TabIndex = 5;
-            this.lblSerie.Text = "Série";
+            this.lblSerie.Text = "Série *";
             // 
             // tbAuteur
             // 
@@ -258,9 +259,9 @@
             this.lblAuteur.Font = new System.Drawing.Font("Calibri", 11F);
             this.lblAuteur.Location = new System.Drawing.Point(42, 130);
             this.lblAuteur.Name = "lblAuteur";
-            this.lblAuteur.Size = new System.Drawing.Size(67, 18);
+            this.lblAuteur.Size = new System.Drawing.Size(77, 18);
             this.lblAuteur.TabIndex = 3;
-            this.lblAuteur.Text = "Auteur(s)";
+            this.lblAuteur.Text = "Auteur(s) *";
             // 
             // tbTitre
             // 
@@ -276,9 +277,9 @@
             this.lblTitre.Font = new System.Drawing.Font("Calibri", 11F);
             this.lblTitre.Location = new System.Drawing.Point(44, 92);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(37, 18);
+            this.lblTitre.Size = new System.Drawing.Size(47, 18);
             this.lblTitre.TabIndex = 1;
-            this.lblTitre.Text = "Titre";
+            this.lblTitre.Text = "Titre *";
             // 
             // label1
             // 
@@ -305,9 +306,9 @@
             this.lblResume.Font = new System.Drawing.Font("Calibri", 11F);
             this.lblResume.Location = new System.Drawing.Point(335, 92);
             this.lblResume.Name = "lblResume";
-            this.lblResume.Size = new System.Drawing.Size(58, 18);
+            this.lblResume.Size = new System.Drawing.Size(68, 18);
             this.lblResume.TabIndex = 19;
-            this.lblResume.Text = "Résumé";
+            this.lblResume.Text = "Résumé *";
             // 
             // gbMarchéAdmin
             // 
@@ -318,7 +319,7 @@
             this.gbMarchéAdmin.Controls.Add(this.btnAjout);
             this.gbMarchéAdmin.Controls.Add(this.dgvMarché);
             this.gbMarchéAdmin.Font = new System.Drawing.Font("Calibri", 11F);
-            this.gbMarchéAdmin.Location = new System.Drawing.Point(0, 72);
+            this.gbMarchéAdmin.Location = new System.Drawing.Point(12, 72);
             this.gbMarchéAdmin.Name = "gbMarchéAdmin";
             this.gbMarchéAdmin.Size = new System.Drawing.Size(913, 475);
             this.gbMarchéAdmin.TabIndex = 16;
@@ -419,14 +420,14 @@
             this.Catégorie,
             this.Genre,
             this.Résumé});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 11F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Moccasin;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMarché.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 11F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Moccasin;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMarché.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMarché.Location = new System.Drawing.Point(6, 35);
             this.dgvMarché.Name = "dgvMarché";
             this.dgvMarché.ReadOnly = true;
@@ -545,6 +546,16 @@
             this.pbMarché.TabStop = false;
             this.pbMarché.Click += new System.EventHandler(this.pbMarché_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 11F);
+            this.label4.Location = new System.Drawing.Point(56, 466);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(142, 18);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "* champs obligatoires";
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -552,6 +563,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(224)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(925, 559);
             this.Controls.Add(this.gbMarchéAdmin);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.gbAjoutAlbum);
             this.Controls.Add(this.gbHeaderAdmin);
             this.MaximizeBox = false;
@@ -572,6 +584,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbDeco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMarché)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -619,5 +632,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Catégorie;
         private System.Windows.Forms.DataGridViewTextBoxColumn Genre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Résumé;
+        private System.Windows.Forms.Label label4;
     }
 }

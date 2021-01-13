@@ -284,37 +284,20 @@ namespace App
             gbMarché.Visible = false;
             gbSouhaits.Visible = false;
         }
-        private void ApparitionBoutonValider ()
-        {
-           
-           
-                if (String.IsNullOrEmpty(tbTitre.Text) == false)
-                {
-              
-                if (String.IsNullOrEmpty(tbAuteur.Text) == false)
-                    {
-                        if (String.IsNullOrEmpty(tbCategorie.Text) == false)
-                        {
-                            if (String.IsNullOrEmpty(tbSerie.Text) == false)
-                            {
-                                if (String.IsNullOrEmpty(tbGenre.Text) == false)
-                                {
-                                    if (String.IsNullOrEmpty(tbResume.Text) == false)
-                                    {
-                                   
-                                        if (String.IsNullOrEmpty(tbEditeur.Text) == false)
-                                        {
-                                            btnValider.Visible = true;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
 
-                }
-            
-            }
+        private bool ChampRempli(string champ)
+        {
+            if (String.IsNullOrEmpty(champ) == false && champ != "") { return true; }
+            return false;
+        }
+
+            private void ApparitionBoutonValider ()
+        {
+            //Affichage du bouton de validation si tous les champs sont remplis
+            if (ChampRempli(tbTitre.Text) && ChampRempli(tbAuteur.Text) && ChampRempli(tbCategorie.Text) && ChampRempli(tbSerie.Text) && ChampRempli(tbGenre.Text) && ChampRempli(tbResume.Text) && ChampRempli(tbEditeur.Text)) { btnValider.Visible = true; }
+
+
+        }
         private void btnValider_Click(object sender, EventArgs e)
         {
             MessageBox.Show("L'album " + SelectedAlbum.Nom + " a bien été ajouté à votre liste d'albums !");
@@ -459,37 +442,19 @@ namespace App
         {
             RecupererAchatUser();
             //Carrousel de mes albums
-            RefreshCarrousel(Utilisateur.ListAlbums, NextNecessaryAlbum, PreviousNecessaryAlbum, NumeroAlbum, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);
-            
+            RefreshCarrousel(Utilisateur.ListAlbums, NextNecessaryAlbum, PreviousNecessaryAlbum, NumeroAlbum, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4); 
         }
+
         private void RefreshViews()
         {
             initialiseAffichageMarche();
-            //récupère la liste de tous les albums du marché
-            /*List<Album> AlbumsAjoutésMarché = _albrepo.GetByNameOfAction("AjoutMarché"); // le problème c'est qu'il peut y avoir des actions de suppression associées à ces albums
-            List<Album> AlbumsDeLaBase = _albrepo.GetAll();*/
             List<Album> AlbumsDuMarché = new List<Album>();
-
-            if (Recherche == true)
-            {
-                AlbumsDuMarché = RechercheAlbum();
-            }
-            else
-            {
-                //si l'album est supprimé il ne sera plus présent dans la base
-                /* for (int i = 0; i < AlbumsAjoutésMarché.Count; i++)
-                 {
-                     if (AlbumsDeLaBase.Contains(AlbumsAjoutésMarché[i]))
-                     {
-                         AlbumsDuMarché.Add(AlbumsAjoutésMarché[i]);
-                     }
-                 }*/
-                AlbumsDuMarché = _albrepo.GetByNameOfAction("AjoutMarché");
-
-            }
+            if (Recherche == true) { AlbumsDuMarché = RechercheAlbum(); }
+            else { AlbumsDuMarché = _albrepo.GetByNameOfAction("AjoutMarché");  }
             //Carrousel du marché sans filtre de recherche
             RefreshCarrousel(AlbumsDuMarché, NextNecessaryMarche, PreviousNecessaryMarche, NumeroAlbumMarche, pbAlbum1, pbAlbum2, pbAlbum3, pbAlbum4, lblTitre1, lblTitre2, lblTitre3, lblTitre4);     
         }
+
         private void RecupererSouhaitUser()
         {
             Utilisateur.ListSouhaits = null;
@@ -667,16 +632,6 @@ namespace App
             }
             else
             {
-                /*List<Album> AlbumsAjoutésMarché = _albrepo.GetByNameOfAction("AjoutMarché"); // le problème c'est qu'il peut y avoir des actions de suppression associées à ces albums
-                List<Album> AlbumsDeLaBase = _albrepo.GetAll();
-                //si l'album est supprimé il ne sera plus présent dans la base
-                for (int i = 0; i < AlbumsAjoutésMarché.Count; i++)
-                {
-                    if (AlbumsDeLaBase.Contains(AlbumsAjoutésMarché[i]))
-                    {
-                        Albums.Add(AlbumsAjoutésMarché[i]);
-                    }
-                }*/
                 Albums= _albrepo.GetByNameOfAction("AjoutMarché");
                 if (NumeroAlbumMarche + 4 < Albums.Count)
                 {

@@ -40,8 +40,9 @@ namespace App
                 }
                 return instanceformadmin;
             }
-
         }
+
+        //Initialisation du formulaire
         private FormAdmin(IActionRepository ActionRepository,IPersonneRepository PersonneRepository, IAlbumRepository AlbumRepository)
         {
             InitializeComponent();
@@ -50,13 +51,68 @@ namespace App
             _actionrepo = ActionRepository;
             _albumrepo = AlbumRepository;
         }
+        //Actualisation du formulaire
+        private void FormAdmin_Load(object sender, EventArgs e)
+        {
+            lblNom.Text = Administrateur.Nom;
+            RefreshDgv();
+        }
+        //Ajout d'album
+        private void btnAjout_Click(object sender, EventArgs e)
+        {
+            plholdCat.Visible = true;
+            plholdGenre.Visible = true;
+            btnValider.Visible = false;
+            gbAjoutAlbum.Visible = true;
+            gbMarchéAdmin.Visible = false;
+            NouvelAlbum = new Album();
+        }
 
-        
+        //Verifcation des champs remplis
+        private bool ChampRempli(string champ)
+        {
+            if (String.IsNullOrEmpty(champ) == false && champ != "") { return true; }
+            return false;
+        }
+        //Actualisation du datagridview des albums du marché
+        private void RefreshDgv()
+        {
+            dgvMarché.DataSource = null;
+            if (btnValider.Visible == false)
+            {
+              //Affichage du bouton de validation si tous les champs sont remplis
+              if(ChampRempli(tbTitre.Text) && ChampRempli(tbAuteur.Text) && ChampRempli(tbCategorie.Text) && ChampRempli(tbSerie.Text) && ChampRempli(tbGenre.Text) && ChampRempli(tbResume.Text) && ChampRempli(tbEditeur.Text)) { btnValider.Visible = true; }
+            }
+            List<Album> AlbumsDuMarché = _albumrepo.GetByNameOfAction("AjoutMarché");
+            dgvMarché.Rows.Clear();
+            for (int i = 0; i < AlbumsDuMarché.Count; i++)
+            {
+                Album a = AlbumsDuMarché[i];
+                Image image;
+                if (a.Couverture != "" && a.Couverture != null)
+                {
+                    image = Image.FromFile(Path.Combine(cheminacces, a.Couverture));
+                    dgvMarché.Rows.Add(image, a.Nom, a.Serie, a.Auteur, a.Editeur, a.Categorie, a.Genre, a.Resume);
+                }
+                else { dgvMarché.Rows.Add(null, a.Nom, a.Serie, a.Auteur, a.Editeur, a.Categorie, a.Genre, a.Resume); }
+            }
+        }
+
+        //Redirection vers l'accueil
+        private void pbMarché_Click(object sender, EventArgs e) { gbMarchéAdmin.Visible = true; }
+
+        //Disparition des explications textbox quand on survole
         private void gbAjoutAlbum_MouseHover(object sender, EventArgs e)
         {
             if (placeholder != null && disparition == false) { placeholder.Visible = true; }
         }
+        private void PlaceHolder_MouseHover(object sender, EventArgs e)
+        {
+            placeholder = ((Label)sender);
+            placeholder.Visible = false;
+        }
 
+        //Affectation des nouveaux attributs des albums quand textbox remplie
         private void tbCategorie_TextChanged(object sender, EventArgs e)
         {
             if (tbCategorie.Text != "")
@@ -79,6 +135,32 @@ namespace App
             }
         }
 
+        private void tbTitre_TextChanged(object sender, EventArgs e)
+        {
+            if (tbTitre.Text != "") { NouvelAlbum.Nom = tbTitre.Text; RefreshDgv(); }
+        }
+
+        private void tbAuteur_TextChanged(object sender, EventArgs e)
+        {
+            if (tbAuteur.Text != "") { NouvelAlbum.Auteur = tbAuteur.Text; RefreshDgv(); }
+        }
+
+        private void tbSerie_TextChanged(object sender, EventArgs e)
+        {
+            if (tbSerie.Text != "") { NouvelAlbum.Serie = tbSerie.Text; RefreshDgv(); }
+        }
+
+        private void tbEditeur_TextChanged(object sender, EventArgs e)
+        {
+            if (tbEditeur.Text != "") { NouvelAlbum.Editeur = tbEditeur.Text; RefreshDgv(); }
+        }
+
+        private void tbResume_TextChanged(object sender, EventArgs e)
+        {
+            if (tbResume.Text != "") { NouvelAlbum.Resume = tbResume.Text; RefreshDgv(); }
+        }
+
+        //Recherche d'une image chez l'utilisateur et ajout au bin debug
         private void btnParcourir_Click(object sender, EventArgs e)
         {
             OpenFileDialog parcourir = new OpenFileDialog();
@@ -104,13 +186,32 @@ namespace App
                 btnParcourir.BackColor = Color.Moccasin;
             }
         }
-
-        private void PlaceHolder_MouseHover(object sender, EventArgs e)
+        
+        //Ajout de l'album au marché et mise à 0 des paramètres
+        private void btnValider_Click(object sender, EventArgs e)
         {
-            placeholder = ((Label)sender);
-            placeholder.Visible = false;
+            if(tbAuteur.Text!="" && tbTitre.Text != "" && tbCategorie.Text != "" && tbSerie.Text != "" && tbGenre.Text != "" && tbResume.Text != "" && tbEditeur.Text != "")
+            {
+                btnParcourir.Text = "Parcourir";
+                btnParcourir.BackColor = Color.SpringGreen;
+                Domain.Action AjoutMarché = new Domain.Action("AjoutMarché", Administrateur, NouvelAlbum);
+                _albumrepo.Save(NouvelAlbum);
+                _actionrepo.SaveAction(AjoutMarché);
+                gbMarchéAdmin.Visible = true;
+                RefreshDgv();
+                tbAuteur.Text = "";
+                tbTitre.Text = "";
+                tbCategorie.Text = "";
+                tbSerie.Text = "";
+                tbGenre.Text = "";
+                tbResume.Text = "";
+                tbEditeur.Text = "";
+            }
+            else { MessageBox.Show("Veuillez remplir tous les champs avant de valider. "); }
+            
         }
 
+        //Deconnexion
         private void pbDeco_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Etes vous sûr de vouloir vous déconnecter ?", "Déconnexion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -120,123 +221,7 @@ namespace App
             }
         }
 
-        private void btnAjout_Click(object sender, EventArgs e)
-        {
-            plholdCat.Visible = true;
-            plholdGenre.Visible = true;
-            btnValider.Visible = false;
-            gbAjoutAlbum.Visible = true;
-            gbMarchéAdmin.Visible = false;
-            NouvelAlbum = new Album();
-        }
-
-        private void pbMarché_Click(object sender, EventArgs e)
-        {
-            gbMarchéAdmin.Visible = true;
-        }
-
-        private void btnValider_Click(object sender, EventArgs e)
-        {
-            btnParcourir.Text = "Parcourir";
-            btnParcourir.BackColor = Color.SpringGreen;
-            Domain.Action AjoutMarché = new Domain.Action("AjoutMarché", Administrateur, NouvelAlbum);
-            _albumrepo.Save(NouvelAlbum);
-            _actionrepo.SaveAction(AjoutMarché);
-            gbMarchéAdmin.Visible = true;
-            RefreshDgv();
-            tbAuteur.Text = "";
-            tbTitre.Text = "";
-            tbCategorie.Text = "";
-            tbSerie.Text = "";
-            tbGenre.Text = "";
-            tbResume.Text = "";
-            tbEditeur.Text = "";
-        }
-
-        private void RefreshDgv()
-        {
-            dgvMarché.DataSource = null;
-            if (btnValider.Visible == false)
-            {
-                if (String.IsNullOrEmpty(tbTitre.Text) == false)
-                {
-                    if (String.IsNullOrEmpty(tbAuteur.Text) == false)
-                    {
-                        if (String.IsNullOrEmpty(tbCategorie.Text) == false)
-                        {
-                            if (String.IsNullOrEmpty(tbSerie.Text) == false)
-                            {
-                                if (String.IsNullOrEmpty(tbGenre.Text) == false)
-                                {
-                                    if (String.IsNullOrEmpty(tbResume.Text) == false)
-                                    {
-                                        if (String.IsNullOrEmpty(tbEditeur.Text) == false)
-                                        {
-                                            btnValider.Visible = true;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                   
-                }
-            }
-            List<Album> AlbumsDuMarché = _albumrepo.GetByNameOfAction("AjoutMarché");
-            /* List<Album> AlbumsAjoutésMarché = _albumrepo.GetByNameOfAction("AjoutMarché"); // le problème c'est qu'il peut y avoir des actions de suppression associées à ces albums
-             List<Album> AlbumsDeLaBase = _albumrepo.GetAll();
-             List<Album> AlbumsDuMarché = new List<Album>();
-             //si l'album est supprimé il ne sera plus présent dans la base
-             for (int i = 0; i < AlbumsAjoutésMarché.Count; i++)
-             {
-                 if (AlbumsDeLaBase.Contains(AlbumsAjoutésMarché[i]))
-                 {
-                     AlbumsDuMarché.Add(AlbumsAjoutésMarché[i]);
-                 }
-             }*/
-            dgvMarché.Rows.Clear();
-            for (int i=0; i < AlbumsDuMarché.Count; i++)
-            {
-                Album a = AlbumsDuMarché[i];
-                Image image;
-                if (a.Couverture != "" && a.Couverture != null)
-                {
-                    image = Image.FromFile(Path.Combine(cheminacces, a.Couverture));
-                    dgvMarché.Rows.Add(image, a.Nom, a.Serie, a.Auteur, a.Editeur, a.Categorie, a.Genre, a.Resume);
-                }
-                else { dgvMarché.Rows.Add(null, a.Nom, a.Serie, a.Auteur, a.Editeur, a.Categorie, a.Genre, a.Resume); }
-            }
-        }
-
-        private void FormAdmin_Load(object sender, EventArgs e)
-        {
-            lblNom.Text = Administrateur.Nom;
-            RefreshDgv();
-        }
-
-        private void tbTitre_TextChanged(object sender, EventArgs e)
-        {
-            if (tbTitre.Text != "")
-            {
-                NouvelAlbum.Nom = tbTitre.Text;
-                RefreshDgv();
-            }
-        }
-
-        private void tbAuteur_TextChanged(object sender, EventArgs e)
-        {
-            if (tbAuteur.Text != "")
-            {
-                NouvelAlbum.Auteur = tbAuteur.Text;
-                RefreshDgv();
-            }
-        }
-
-        private void tbSerie_TextChanged(object sender, EventArgs e)
-        {
-            if (tbSerie.Text != "") { NouvelAlbum.Serie = tbSerie.Text; RefreshDgv(); }
-        }
-
+        //Suppression d'albums
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
            if( MessageBox.Show("Etes-Vous sur de vouloir supprimer un album ? Il sera définitivement supprimé de marchéBD", "Attention", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) ==DialogResult.OK )
@@ -246,10 +231,7 @@ namespace App
             }
         }
 
-        private void tbSupression_TextChanged(object sender, EventArgs e)
-        {
-            btnSupressionSure.Visible = true;
-        }
+        private void tbSupression_TextChanged(object sender, EventArgs e) { btnSupressionSure.Visible = true; }
 
         private void btnSupressionSure_Click(object sender, EventArgs e)
         {
@@ -258,8 +240,6 @@ namespace App
             if (AlbumASuprimmer.Nom == null) { MessageBox.Show("Le titre que vous avez entré ne correspond a aucun album du marché. Veuillez réassayer."); }
             else
             {
-              //  Domain.Action Suppression = new Domain.Action("Supression", Administrateur, AlbumASuprimmer);
-              //  _actionrepo.SaveAction(Suppression);
                 Domain.Action ActionASupprimer = _actionrepo.GetActionByNameAndAlbum(AlbumASuprimmer, "AjoutMarché");
                 if (ActionASupprimer.Nom != null)
                 {
@@ -267,24 +247,6 @@ namespace App
                     _albumrepo.Delete(AlbumASuprimmer);
                     MessageBox.Show("L'album "+AlbumASuprimmer.Nom + " a bien été supprimé du marché ! ");
                 }
-                RefreshDgv();
-            }
-        }
-
-        private void tbEditeur_TextChanged(object sender, EventArgs e)
-        {
-            if (tbEditeur.Text != "")
-            {
-                NouvelAlbum.Editeur = tbEditeur.Text;
-                RefreshDgv();
-            }
-        }
-
-        private void tbResume_TextChanged(object sender, EventArgs e)
-        {
-            if (tbResume.Text != "")
-            {
-                NouvelAlbum.Resume = tbResume.Text;
                 RefreshDgv();
             }
         }

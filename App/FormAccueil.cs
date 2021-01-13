@@ -30,6 +30,40 @@ namespace App
             AffichageRefresh();
         }
 
+        //Initialisation des champs
+        private void InitialiseChamps()
+        {
+            rbAdminConnex.Checked = false;
+            rbAdminCrea.Checked = false;
+            rbUserConnex.Checked = false;
+            rbUserCrea.Checked = false;
+            tbLoginConnex.Text = null;
+            tbLoginCrea.Text = null;
+            tbPseudo.Text = null;
+            tbMdpConnex.Text = null;
+            tbMdpCrea.Text = null;
+            btnValider.Visible = false;
+        }
+
+        //Affichage connexion
+        private void btnConnexion_Click(object sender, EventArgs e)
+        {
+            // fait apparaître la group box correspondante
+            gbCreation.Visible = false;
+            gbConnexion.Visible = true;
+            btnCreation.BackColor = Color.LightGray;
+            btnConnexion.BackColor = Color.PaleGreen;
+        }
+
+        //Affichage création
+        private void btnCreation_Click(object sender, EventArgs e)
+        {
+            gbConnexion.Visible = true;
+            gbCreation.Visible = true;
+            btnConnexion.BackColor = Color.LightGray;
+            btnCreation.BackColor = Color.PeachPuff;
+        }
+
         //Affichage ou non du bouton valider en fonction des champs remplis
         private void AffichageRefresh ()
         {
@@ -37,19 +71,7 @@ namespace App
             btnCreation.Click += btnCreation_Click;
             if (RempliLogin == true && RempliMdp == true && CocheStatut == true) { btnValider.Visible = true; }
         }
-
-        //Vérification du formulaire
-        private void btnValider_Click(object sender, EventArgs e)
-        {
-            List<Personne> pers = _personnerepo.GetAll();
-            btnValider.UseWaitCursor = true;
-            if (rbAdminConnex.Checked == true && !tbPseudo.Visible) { VerificationsIdType(pers, "Admin");}
-            if (rbAdminCrea.Checked == true && tbPseudo.Visible) { VerificationsProfilExistant(pers, "Admin"); }
-            if (rbUserConnex.Checked == true && !tbPseudo.Visible) {VerificationsIdType(pers, "User");}
-            if (rbUserCrea.Checked == true && tbPseudo.Visible) { VerificationsProfilExistant(pers, "User"); }
-            InitialiseChamps();
-        }
-
+        
         //Verification des identifiants et du type
         private void VerificationsIdType(List<Personne> pers, string type)
         {
@@ -103,37 +125,16 @@ namespace App
             }
         }
 
-        //Initialisation des champs
-        private void InitialiseChamps()
+        //Vérification du formulaire
+        private void btnValider_Click(object sender, EventArgs e)
         {
-            rbAdminConnex.Checked = false;
-            rbAdminCrea.Checked = false;
-            rbUserConnex.Checked = false;
-            rbUserCrea.Checked = false;
-            tbLoginConnex.Text = null;
-            tbLoginCrea.Text = null;
-            tbPseudo.Text = null;
-            tbMdpConnex.Text = null;
-            tbMdpCrea.Text = null;
-            btnValider.Visible = false;
-        }
-        //Affichage connexion
-        private void btnConnexion_Click(object sender, EventArgs e)
-        {
-            // fait apparaître la group box correspondante
-            gbCreation.Visible = false;
-            gbConnexion.Visible = true;
-            btnCreation.BackColor = Color.LightGray;
-            btnConnexion.BackColor = Color.PaleGreen;
-        }
-
-        //Affichage création
-        private void btnCreation_Click(object sender, EventArgs e)
-        {
-            gbConnexion.Visible = true;
-            gbCreation.Visible = true;
-            btnConnexion.BackColor = Color.LightGray;
-            btnCreation.BackColor = Color.PeachPuff;
+            List<Personne> pers = _personnerepo.GetAll();
+            btnValider.UseWaitCursor = true;
+            if (rbAdminConnex.Checked == true && !tbPseudo.Visible) { VerificationsIdType(pers, "Admin"); }
+            if (rbAdminCrea.Checked == true && tbPseudo.Visible) { VerificationsProfilExistant(pers, "Admin"); }
+            if (rbUserConnex.Checked == true && !tbPseudo.Visible) { VerificationsIdType(pers, "User"); }
+            if (rbUserCrea.Checked == true && tbPseudo.Visible) { VerificationsProfilExistant(pers, "User"); }
+            InitialiseChamps();
         }
 
         // Modification des statuts
@@ -179,7 +180,6 @@ namespace App
                 RempliMdp = true;
                 AffichageRefresh();
             }
-            
         }
 
         //Ecriture du login connexion
