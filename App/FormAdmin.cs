@@ -123,7 +123,6 @@ namespace App
                 RefreshDgv();
             }
         }
-
         private void tbGenre_TextChanged(object sender, EventArgs e)
         {
             if (tbGenre.Text != "")
@@ -134,27 +133,22 @@ namespace App
                 RefreshDgv();
             }
         }
-
         private void tbTitre_TextChanged(object sender, EventArgs e)
         {
             if (tbTitre.Text != "") { NouvelAlbum.Nom = tbTitre.Text; RefreshDgv(); }
         }
-
         private void tbAuteur_TextChanged(object sender, EventArgs e)
         {
             if (tbAuteur.Text != "") { NouvelAlbum.Auteur = tbAuteur.Text; RefreshDgv(); }
         }
-
         private void tbSerie_TextChanged(object sender, EventArgs e)
         {
             if (tbSerie.Text != "") { NouvelAlbum.Serie = tbSerie.Text; RefreshDgv(); }
         }
-
         private void tbEditeur_TextChanged(object sender, EventArgs e)
         {
             if (tbEditeur.Text != "") { NouvelAlbum.Editeur = tbEditeur.Text; RefreshDgv(); }
         }
-
         private void tbResume_TextChanged(object sender, EventArgs e)
         {
             if (tbResume.Text != "") { NouvelAlbum.Resume = tbResume.Text; RefreshDgv(); }

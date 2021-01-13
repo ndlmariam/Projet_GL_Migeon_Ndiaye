@@ -119,6 +119,7 @@
             this.lblTitre = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tbExplications = new System.Windows.Forms.TextBox();
+            this.lblChamp = new System.Windows.Forms.Label();
             this.gbHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlbum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDeco)).BeginInit();
@@ -307,9 +308,9 @@
             this.gbSouhaits.Controls.Add(this.lblHistoriqueVoeux);
             this.gbSouhaits.Controls.Add(this.dgvSouhaits);
             this.gbSouhaits.Font = new System.Drawing.Font("Calibri", 10F);
-            this.gbSouhaits.Location = new System.Drawing.Point(75, 72);
+            this.gbSouhaits.Location = new System.Drawing.Point(75, 73);
             this.gbSouhaits.Name = "gbSouhaits";
-            this.gbSouhaits.Size = new System.Drawing.Size(672, 426);
+            this.gbSouhaits.Size = new System.Drawing.Size(672, 475);
             this.gbSouhaits.TabIndex = 8;
             this.gbSouhaits.TabStop = false;
             this.gbSouhaits.Text = "Voici la liste de vos souhaits. En cliquant sur le panier vous pouvez les ajouter" +
@@ -599,7 +600,7 @@
             this.gbMarché.Controls.Add(this.tbBarreRecherche);
             this.gbMarché.Controls.Add(this.pbinfo);
             this.gbMarché.Font = new System.Drawing.Font("Calibri", 10F);
-            this.gbMarché.Location = new System.Drawing.Point(70, 72);
+            this.gbMarché.Location = new System.Drawing.Point(70, 67);
             this.gbMarché.Name = "gbMarché";
             this.gbMarché.Size = new System.Drawing.Size(699, 475);
             this.gbMarché.TabIndex = 6;
@@ -953,7 +954,7 @@
             // 
             // tbResume
             // 
-            this.tbResume.Location = new System.Drawing.Point(405, 220);
+            this.tbResume.Location = new System.Drawing.Point(414, 277);
             this.tbResume.Multiline = true;
             this.tbResume.Name = "tbResume";
             this.tbResume.Size = new System.Drawing.Size(218, 181);
@@ -964,15 +965,15 @@
             // 
             this.lblResume.AutoSize = true;
             this.lblResume.Font = new System.Drawing.Font("Calibri", 11F);
-            this.lblResume.Location = new System.Drawing.Point(402, 185);
+            this.lblResume.Location = new System.Drawing.Point(411, 245);
             this.lblResume.Name = "lblResume";
-            this.lblResume.Size = new System.Drawing.Size(58, 18);
+            this.lblResume.Size = new System.Drawing.Size(68, 18);
             this.lblResume.TabIndex = 19;
-            this.lblResume.Text = "Résumé";
+            this.lblResume.Text = "Résumé *";
             // 
             // tbEditeur
             // 
-            this.tbEditeur.Location = new System.Drawing.Point(271, 309);
+            this.tbEditeur.Location = new System.Drawing.Point(271, 328);
             this.tbEditeur.Name = "tbEditeur";
             this.tbEditeur.Size = new System.Drawing.Size(100, 20);
             this.tbEditeur.TabIndex = 18;
@@ -982,17 +983,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 11F);
-            this.label1.Location = new System.Drawing.Point(182, 309);
+            this.label1.Location = new System.Drawing.Point(172, 328);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 18);
+            this.label1.Size = new System.Drawing.Size(63, 18);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Editeur";
+            this.label1.Text = "Editeur *";
             // 
             // btnValider
             // 
             this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnValider.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.btnValider.Location = new System.Drawing.Point(418, 429);
+            this.btnValider.Location = new System.Drawing.Point(533, 503);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(86, 34);
             this.btnValider.TabIndex = 15;
@@ -1004,10 +1005,11 @@
             // btnParcourir
             // 
             this.btnParcourir.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnParcourir.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnParcourir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnParcourir.Location = new System.Drawing.Point(274, 432);
+            this.btnParcourir.Location = new System.Drawing.Point(271, 455);
             this.btnParcourir.Name = "btnParcourir";
-            this.btnParcourir.Size = new System.Drawing.Size(83, 22);
+            this.btnParcourir.Size = new System.Drawing.Size(92, 37);
             this.btnParcourir.TabIndex = 14;
             this.btnParcourir.Text = "Parcourir ";
             this.btnParcourir.UseVisualStyleBackColor = false;
@@ -1017,7 +1019,7 @@
             // 
             this.lblCouverture.AutoSize = true;
             this.lblCouverture.Font = new System.Drawing.Font("Calibri", 11F);
-            this.lblCouverture.Location = new System.Drawing.Point(182, 434);
+            this.lblCouverture.Location = new System.Drawing.Point(172, 464);
             this.lblCouverture.Name = "lblCouverture";
             this.lblCouverture.Size = new System.Drawing.Size(78, 18);
             this.lblCouverture.TabIndex = 13;
@@ -1029,7 +1031,7 @@
             this.plholdGenre.BackColor = System.Drawing.Color.White;
             this.plholdGenre.Font = new System.Drawing.Font("MV Boli", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plholdGenre.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.plholdGenre.Location = new System.Drawing.Point(273, 398);
+            this.plholdGenre.Location = new System.Drawing.Point(275, 415);
             this.plholdGenre.Name = "plholdGenre";
             this.plholdGenre.Size = new System.Drawing.Size(94, 16);
             this.plholdGenre.TabIndex = 12;
@@ -1038,7 +1040,7 @@
             // 
             // tbGenre
             // 
-            this.tbGenre.Location = new System.Drawing.Point(271, 397);
+            this.tbGenre.Location = new System.Drawing.Point(271, 414);
             this.tbGenre.Name = "tbGenre";
             this.tbGenre.Size = new System.Drawing.Size(100, 20);
             this.tbGenre.TabIndex = 11;
@@ -1048,11 +1050,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 11F);
-            this.label4.Location = new System.Drawing.Point(182, 398);
+            this.label4.Location = new System.Drawing.Point(172, 414);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 18);
+            this.label4.Size = new System.Drawing.Size(56, 18);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Genre";
+            this.label4.Text = "Genre *";
             // 
             // plholdCat
             // 
@@ -1060,7 +1062,7 @@
             this.plholdCat.BackColor = System.Drawing.Color.White;
             this.plholdCat.Font = new System.Drawing.Font("MV Boli", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plholdCat.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.plholdCat.Location = new System.Drawing.Point(277, 353);
+            this.plholdCat.Location = new System.Drawing.Point(285, 372);
             this.plholdCat.Name = "plholdCat";
             this.plholdCat.Size = new System.Drawing.Size(78, 16);
             this.plholdCat.TabIndex = 9;
@@ -1070,7 +1072,7 @@
             // tbCategorie
             // 
             this.tbCategorie.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.tbCategorie.Location = new System.Drawing.Point(271, 352);
+            this.tbCategorie.Location = new System.Drawing.Point(271, 370);
             this.tbCategorie.Name = "tbCategorie";
             this.tbCategorie.Size = new System.Drawing.Size(100, 20);
             this.tbCategorie.TabIndex = 8;
@@ -1080,15 +1082,15 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 11F);
-            this.label5.Location = new System.Drawing.Point(182, 351);
+            this.label5.Location = new System.Drawing.Point(172, 370);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 18);
+            this.label5.Size = new System.Drawing.Size(78, 18);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Catégorie";
+            this.label5.Text = "Catégorie *";
             // 
             // tbSerie
             // 
-            this.tbSerie.Location = new System.Drawing.Point(271, 260);
+            this.tbSerie.Location = new System.Drawing.Point(271, 285);
             this.tbSerie.Name = "tbSerie";
             this.tbSerie.Size = new System.Drawing.Size(100, 20);
             this.tbSerie.TabIndex = 6;
@@ -1098,15 +1100,15 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 11F);
-            this.label6.Location = new System.Drawing.Point(182, 260);
+            this.label6.Location = new System.Drawing.Point(172, 285);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 18);
+            this.label6.Size = new System.Drawing.Size(50, 18);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Série";
+            this.label6.Text = "Série *";
             // 
             // tbAuteur
             // 
-            this.tbAuteur.Location = new System.Drawing.Point(271, 220);
+            this.tbAuteur.Location = new System.Drawing.Point(271, 245);
             this.tbAuteur.Name = "tbAuteur";
             this.tbAuteur.Size = new System.Drawing.Size(100, 20);
             this.tbAuteur.TabIndex = 4;
@@ -1116,15 +1118,15 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 11F);
-            this.label7.Location = new System.Drawing.Point(182, 220);
+            this.label7.Location = new System.Drawing.Point(172, 245);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 18);
+            this.label7.Size = new System.Drawing.Size(77, 18);
             this.label7.TabIndex = 3;
-            this.label7.Text = "Auteur(s)";
+            this.label7.Text = "Auteur(s) *";
             // 
             // tbTitre
             // 
-            this.tbTitre.Location = new System.Drawing.Point(271, 180);
+            this.tbTitre.Location = new System.Drawing.Point(271, 202);
             this.tbTitre.Name = "tbTitre";
             this.tbTitre.Size = new System.Drawing.Size(100, 20);
             this.tbTitre.TabIndex = 2;
@@ -1134,17 +1136,17 @@
             // 
             this.lblTitre.AutoSize = true;
             this.lblTitre.Font = new System.Drawing.Font("Calibri", 11F);
-            this.lblTitre.Location = new System.Drawing.Point(182, 180);
+            this.lblTitre.Location = new System.Drawing.Point(172, 202);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(37, 18);
+            this.lblTitre.Size = new System.Drawing.Size(47, 18);
             this.lblTitre.TabIndex = 1;
-            this.lblTitre.Text = "Titre";
+            this.lblTitre.Text = "Titre *";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(203, 155);
+            this.label8.Location = new System.Drawing.Point(172, 167);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(319, 16);
             this.label8.TabIndex = 0;
@@ -1162,6 +1164,16 @@
             this.tbExplications.Size = new System.Drawing.Size(663, 76);
             this.tbExplications.TabIndex = 21;
             this.tbExplications.Text = resources.GetString("tbExplications.Text");
+            // 
+            // lblChamp
+            // 
+            this.lblChamp.AutoSize = true;
+            this.lblChamp.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChamp.Location = new System.Drawing.Point(121, 522);
+            this.lblChamp.Name = "lblChamp";
+            this.lblChamp.Size = new System.Drawing.Size(129, 15);
+            this.lblChamp.TabIndex = 23;
+            this.lblChamp.Text = "* champs obligatoires";
             // 
             // FormUtil
             // 
@@ -1194,6 +1206,7 @@
             this.Controls.Add(this.tbCategorie);
             this.Controls.Add(this.tbGenre);
             this.Controls.Add(this.tbExplications);
+            this.Controls.Add(this.lblChamp);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormUtil";
@@ -1338,5 +1351,6 @@
         private System.Windows.Forms.PictureBox pbPanier2;
         private System.Windows.Forms.PictureBox pbPanier3;
         private System.Windows.Forms.PictureBox pbPanier1;
+        private System.Windows.Forms.Label lblChamp;
     }
 }
