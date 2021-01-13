@@ -20,36 +20,31 @@ namespace DALTests
             _albumRepository = new AlbumRepository();
         }
 
+        //Test de récupération
         [TestMethod]
         public void TestAlbumRepo_GetAll()
         {
             var albums = _albumRepository.GetAll();
             // 18 albums dans le jeu de données de test
             Assert.AreEqual(18, albums.Count);
-           /* var actual = albums.Select(album => album.Nom).ToList();
-            var expected = new List<string> { "Tintin au Tibet","Folle à lier", "L'étoile mystérieuse", "La ferme abandonnée" };
-            CollectionAssert.AreEquivalent(actual, expected);*/
         }
 
-
-         [TestMethod]
+        //Test de sauvegarde d'un nouvel album
+        [TestMethod]
          public void TestAlbumRepo_SaveNew()
          {
             Album _alb = new Album("A l'aube d'une grande aventure", "One Piece", "", "Manga", "Aventure", "Shueisha", "Eiichiro Oda");
              _albumRepository.Save(_alb);
-
              TestRepository.ClearSession();
              // Recherche des albums portant le même titre
              var albums = _albumRepository.GetAll().Where(a => a.Nom ==
                  "A l'aube d'une grande aventure").ToList();
              // 1 seul album correspondant dans le jeu de données de test
              Assert.AreEqual(1, albums.Count);
-            /* Album nouvelAlbum = albums[0];
-             Assert.AreEqual("A l'aube d'une grande aventure", nouvelAlbum.Nom);
-             Assert.AreEqual("Shueisha", nouvelAlbum.Editeur);*/
          }
 
-         [TestMethod]
+        //Test de sauvegarde d'un album existant
+        [TestMethod]
          public void TestAlbumRepo_SaveExisting()
          {
              var album = _albumRepository.GetAll()[0];
@@ -61,12 +56,15 @@ namespace DALTests
              Assert.AreEqual("", album.Couverture);
          }
 
+        //Test de récupération d'un album par l'id d'une action
         [TestMethod]
         public void TestAlbumRepo_GetAlbumByActionID()
         {
             Album album = _albumRepository.GetAlbumByActionID(3);
             Assert.AreEqual("La ferme abandonnée", album.Nom);
         }
+
+        //Test de récupération d'un album par son titre
         [TestMethod]
         public void TestAlbumRepo_GetAlbumByTitle()
         {
@@ -74,6 +72,7 @@ namespace DALTests
             Assert.AreEqual(album.Editeur, "Casterman");
         }
 
+        //Test de récupération d'un album par un mot clé
         [TestMethod]
         public void TestAlbumRepo_GetAlbumByRecherche()
         {
@@ -82,10 +81,11 @@ namespace DALTests
             Assert.AreEqual(2, albums.Count);
         }
 
+        //Test de sauvegarde de suppression d'un album
         [TestMethod]
         public void TestAlbumRepo_DeleteAlbum()
         {
-            Album _alb = new Album("Tintin au Tibet", "Les Aventures de Tintin", "Tintin au Tibet.jpg", "BD", "Aventure", "Casterman");
+            Album _alb = new Album("Tintin au Tibet", "Les Aventures de Tintin", "Tintin au Tibet.jpg", "BD", "Aventure", "Casterman","Hergé");
             _albumRepository.Delete(_alb);
             bool possede = false;
             var albums = _albumRepository.GetAll();

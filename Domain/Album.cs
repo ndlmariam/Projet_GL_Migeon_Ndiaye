@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 namespace Domain
 {
     public class Album
-    { public virtual bool selected { get; set; }
+    {
+        public virtual bool selected { get; set; }
         public virtual bool posseder { get; set; }
-       public virtual int idAlbum { get; set; }
+        public virtual int idAlbum { get; set; }
         public virtual string Nom { get; set; }
         public virtual string Serie { get; set; }
         public virtual string Couverture { get; set; }
@@ -21,9 +22,8 @@ namespace Domain
         public virtual IList <Action> Actions { get; set; }
         public virtual IList <Utilisateur> Users { get; set; }
        
-
         public Album() { }
-        public Album(string nom, string serie, string couverture, string cate, string genre, string editeur, /*List<string>*/ string auteur)
+        public Album(string nom, string serie, string couverture, string cate, string genre, string editeur, string auteur)
         {
             Nom = nom;
             Serie = serie;
@@ -33,17 +33,5 @@ namespace Domain
             Editeur = editeur;
             Auteur = auteur;
         }
-
-        //Pour le test sans les auteurs pour l'instant
-        public Album(string nom, string serie, string couverture, string cate, string genre, string editeur)
-        {
-            Nom = nom;
-            Serie = serie;
-            Couverture = couverture;
-            Categorie = cate;
-            Genre = genre;
-            Editeur = editeur;
-        }
-
     }
 }

@@ -13,8 +13,5 @@ namespace Domain
         public virtual string Type { get; set; }
         public virtual string Login { get; set; }
         public virtual string Mdp { get; set; }
-      
-        
-
     }
 }

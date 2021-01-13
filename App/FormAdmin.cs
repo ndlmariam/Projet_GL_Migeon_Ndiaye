@@ -45,22 +45,16 @@ namespace App
         private FormAdmin(IActionRepository ActionRepository,IPersonneRepository PersonneRepository, IAlbumRepository AlbumRepository)
         {
             InitializeComponent();
-            if(!Directory.Exists(applipath))
-            {
-                Directory.CreateDirectory(applipath);
-            }
+            if(!Directory.Exists(applipath)) { Directory.CreateDirectory(applipath); }
             disparition = false;
             _actionrepo = ActionRepository;
             _albumrepo = AlbumRepository;
-
         }
 
-
-
+        
         private void gbAjoutAlbum_MouseHover(object sender, EventArgs e)
         {
             if (placeholder != null && disparition == false) { placeholder.Visible = true; }
-         
         }
 
         private void tbCategorie_TextChanged(object sender, EventArgs e)
@@ -72,7 +66,6 @@ namespace App
                 NouvelAlbum.Categorie = tbCategorie.Text;
                 RefreshDgv();
             }
-            
         }
 
         private void tbGenre_TextChanged(object sender, EventArgs e)
@@ -84,7 +77,6 @@ namespace App
                 NouvelAlbum.Genre = tbGenre.Text;
                 RefreshDgv();
             }
-            
         }
 
         private void btnParcourir_Click(object sender, EventArgs e)
@@ -93,10 +85,7 @@ namespace App
             parcourir.DefaultExt = "jpg";
             parcourir.ShowDialog();
             string couverturespath = Path.Combine(apppath, "CircuitBD.Net", "Couvertures");
-            if (!Directory.Exists(couverturespath))
-            {
-                Directory.CreateDirectory(couverturespath);
-            }
+            if (!Directory.Exists(couverturespath)) {  Directory.CreateDirectory(couverturespath); }
             string fileName = Path.GetFileName(parcourir.FileName);
             int numfile = 0;
             DirectoryInfo di = new DirectoryInfo(couverturespath);
@@ -107,7 +96,6 @@ namespace App
                 numfile += 1;
                 allFiles = di.GetFiles(fileName);
             }
-           // File.Copy(parcourir.FileName, Path.Combine(couverturespath, fileName));
             if (fileName != "")
             {
                 File.Copy(parcourir.FileName, Path.Combine(couverturespath, fileName));
@@ -115,7 +103,6 @@ namespace App
                 btnParcourir.Text = "Modifier";
                 btnParcourir.BackColor = Color.Moccasin;
             }
-
         }
 
         private void PlaceHolder_MouseHover(object sender, EventArgs e)
@@ -123,9 +110,9 @@ namespace App
             placeholder = ((Label)sender);
             placeholder.Visible = false;
         }
+
         private void pbDeco_Click(object sender, EventArgs e)
         {
-
             if (MessageBox.Show("Etes vous sûr de vouloir vous déconnecter ?", "Déconnexion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 lblNom.Text = "";
@@ -141,9 +128,6 @@ namespace App
             gbAjoutAlbum.Visible = true;
             gbMarchéAdmin.Visible = false;
             NouvelAlbum = new Album();
-            
-          
-          
         }
 
         private void pbMarché_Click(object sender, EventArgs e)
@@ -167,8 +151,6 @@ namespace App
             tbGenre.Text = "";
             tbResume.Text = "";
             tbEditeur.Text = "";
-
-
         }
 
         private void RefreshDgv()
@@ -222,14 +204,8 @@ namespace App
                     image = Image.FromFile(Path.Combine(cheminacces, a.Couverture));
                     dgvMarché.Rows.Add(image, a.Nom, a.Serie, a.Auteur, a.Editeur, a.Categorie, a.Genre, a.Resume);
                 }
-               
-                else
-                {
-                    dgvMarché.Rows.Add(null, a.Nom, a.Serie, a.Auteur, a.Editeur, a.Categorie, a.Genre, a.Resume);
-                }
-                
+                else { dgvMarché.Rows.Add(null, a.Nom, a.Serie, a.Auteur, a.Editeur, a.Categorie, a.Genre, a.Resume); }
             }
-            
         }
 
         private void FormAdmin_Load(object sender, EventArgs e)
@@ -245,7 +221,6 @@ namespace App
                 NouvelAlbum.Nom = tbTitre.Text;
                 RefreshDgv();
             }
-            
         }
 
         private void tbAuteur_TextChanged(object sender, EventArgs e)
@@ -274,17 +249,13 @@ namespace App
         private void tbSupression_TextChanged(object sender, EventArgs e)
         {
             btnSupressionSure.Visible = true;
-
         }
 
         private void btnSupressionSure_Click(object sender, EventArgs e)
         {
             gbSuppression.Visible = false;
             Album AlbumASuprimmer = _albumrepo.GetAlbumByTitle(tbSupression.Text);
-            if (AlbumASuprimmer.Nom == null)
-            {
-                MessageBox.Show("Le titre que vous avez entré ne correspond a aucun album du marché. Veuillez réassayer.");
-            }
+            if (AlbumASuprimmer.Nom == null) { MessageBox.Show("Le titre que vous avez entré ne correspond a aucun album du marché. Veuillez réassayer."); }
             else
             {
               //  Domain.Action Suppression = new Domain.Action("Supression", Administrateur, AlbumASuprimmer);
@@ -296,10 +267,8 @@ namespace App
                     _albumrepo.Delete(AlbumASuprimmer);
                     MessageBox.Show("L'album "+AlbumASuprimmer.Nom + " a bien été supprimé du marché ! ");
                 }
-               
                 RefreshDgv();
             }
-            
         }
 
         private void tbEditeur_TextChanged(object sender, EventArgs e)

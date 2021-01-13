@@ -8,8 +8,6 @@ namespace Domain
 {
    public class Administrateur : Personne
     {
-
-        
         public virtual IList<Action> AdminActions { get; set; }
         public Administrateur() { this.Type = "Admin"; }
         public Administrateur(string nom, string type, string login, string mdp)
@@ -19,9 +17,6 @@ namespace Domain
             Login = login;
             Mdp = mdp;
             AdminActions = new List<Action>();
-           
         }
-
-      
     }
 }

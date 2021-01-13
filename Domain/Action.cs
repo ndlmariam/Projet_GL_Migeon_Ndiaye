@@ -13,8 +13,6 @@ namespace Domain
         public virtual DateTime Date { get; set; }
         public virtual Personne Personne {get;set;}
         public virtual Album Album { get; set; }
-       
-       
 
         public Action() { }
         public Action(string nom,Personne pers,Album alb)
@@ -24,6 +22,5 @@ namespace Domain
             Personne = pers;
             Album = alb;
         }
-
     }
 }

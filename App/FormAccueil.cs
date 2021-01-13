@@ -14,10 +14,12 @@ namespace App
 {
     public partial class FormAccueil : Form
     {
-        bool RempliMdp;
-        bool RempliLogin;
-        bool CocheStatut;
+        bool RempliMdp; //booléen pour savoir si un mdp est rentré
+        bool RempliLogin; //booléen pour savoir si un login est rentré
+        bool CocheStatut; //vérifie qu'une checkbox du type a bien été sélectionnée
         IPersonneRepository _personnerepo;
+
+        //Initialisation
         public FormAccueil(IPersonneRepository personnerepository)
         {
             InitializeComponent();
@@ -26,94 +28,84 @@ namespace App
             CocheStatut = false;
             _personnerepo = personnerepository;
             AffichageRefresh();
-           
-
         }
 
-    
-
-      private void AffichageRefresh ()
+        //Affichage ou non du bouton valider en fonction des champs remplis
+        private void AffichageRefresh ()
         {
             btnConnexion.Click += btnConnexion_Click;
             btnCreation.Click += btnCreation_Click;
-            if (RempliLogin == true && RempliMdp == true && CocheStatut == true)
-            {
-                btnValider.Visible = true;
-            }
+            if (RempliLogin == true && RempliMdp == true && CocheStatut == true) { btnValider.Visible = true; }
         }
 
+        //Vérification du formulaire
         private void btnValider_Click(object sender, EventArgs e)
         {
             List<Personne> pers = _personnerepo.GetAll();
             btnValider.UseWaitCursor = true;
-            if (rbAdminConnex.Checked == true || rbAdminCrea.Checked == true)
+            if (rbAdminConnex.Checked == true && !tbPseudo.Visible) { VerificationsIdType(pers, "Admin");}
+            if (rbAdminCrea.Checked == true && tbPseudo.Visible) { VerificationsProfilExistant(pers, "Admin"); }
+            if (rbUserConnex.Checked == true && !tbPseudo.Visible) {VerificationsIdType(pers, "User");}
+            if (rbUserCrea.Checked == true && tbPseudo.Visible) { VerificationsProfilExistant(pers, "User"); }
+            InitialiseChamps();
+        }
+
+        //Verification des identifiants et du type
+        private void VerificationsIdType(List<Personne> pers, string type)
+        {
+            bool verificationad = false;
+            for (int i = 0; i < pers.Count; i++)
             {
-                if (rbAdminConnex.Checked == true)
-                {
-                    bool verificationad = false;
-                    for (int i=0; i < pers.Count; i++)
-                    {
-                        if (pers[i].Login== tbLoginConnex.Text && pers[i].Mdp== tbMdpConnex.Text && pers[i].Type == "Admin") { verificationad = true; }
-                    }
-                    
-                    if (verificationad)
-                    {
-                        FormAdmin.InstanceFormAdmin.Administrateur =(Administrateur) _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "Admin");
-                        FormAdmin formadmin = FormAdmin.InstanceFormAdmin;
-                        formadmin.ShowDialog();
-                    }
-                    else { MessageBox.Show("Login / mot de passe erroné ou mauvais statut sélectionné"); }
+                if (pers[i].Login == tbLoginConnex.Text && pers[i].Mdp == tbMdpConnex.Text && pers[i].Type == type) { verificationad = true; }
+            }
 
+            if (verificationad)
+            {
+                if (type == "Admin")
+                {
+                    FormAdmin.InstanceFormAdmin.Administrateur = (Administrateur)_personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "Admin");
+                    FormAdmin formadmin = FormAdmin.InstanceFormAdmin;
+                    formadmin.ShowDialog();
                 }
-                if (rbAdminCrea.Checked == true)
+                else
                 {
-                    //vérification de  l'existance ou non d'un profil similaire
-                    bool verif = _personnerepo.PresentBDD(tbLoginCrea.Text);
+                    FormUtil.InstanceFormUtil.Utilisateur = (Utilisateur)_personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "User");
+                    FormUtil.InstanceFormUtil.ShowDialog();
+                }
+                
+            }
+            else { MessageBox.Show("Soit votre login ou mot de passe est erroné, soit votre statut sélectionné n'est pas le bon."); }
 
-                    if (verif == true && rbAdminCrea.Checked == true) { MessageBox.Show("Veuillez choisir un autre login, celui-ci est déjà utilisé"); }
-                    else
-                    {
-                        Personne administrateur = new Administrateur(tbPseudo.Text, "Admin", tbLoginCrea.Text, tbMdpCrea.Text);
-                        _personnerepo.Save(administrateur);
-                        FormAdmin.InstanceFormAdmin.Administrateur = administrateur;
-                        FormAdmin formadmin = FormAdmin.InstanceFormAdmin;
-                        formadmin.ShowDialog();
-                    }
+        }
+
+        //vérification de  l'existance ou non d'un profil similaire
+        private void VerificationsProfilExistant(List<Personne> pers, string type)
+        {
+            bool verif = _personnerepo.PresentBDD(tbLoginCrea.Text);
+            if (verif == true) { MessageBox.Show("Veuillez choisir un autre login, celui-ci est déjà utilisé"); }
+            else
+            {
+                if (type == "Admin")
+                {
+                    Personne administrateur = new Administrateur(tbPseudo.Text, "Admin", tbLoginCrea.Text, tbMdpCrea.Text);
+                    _personnerepo.Save(administrateur);
+                    FormAdmin.InstanceFormAdmin.Administrateur = administrateur;
+                    FormAdmin formadmin = FormAdmin.InstanceFormAdmin;
+                    formadmin.ShowDialog();
+                }
+                else
+                {
+                    Personne utilisateur = new Utilisateur(tbPseudo.Text, "User", tbLoginCrea.Text, tbMdpCrea.Text);
+                    _personnerepo.Save(utilisateur);
+                    FormUtil.InstanceFormUtil.Utilisateur = (Utilisateur)utilisateur;
+                    FormUtil.InstanceFormUtil.ShowDialog();
                 }
             }
-            if (rbUserConnex.Checked == true || rbUserCrea.Checked == true)
-            {
-                if (rbUserConnex.Checked == true)
-                {
-                    bool verificationus = false;
-                    for (int i = 0; i < pers.Count; i++)
-                    {
-                        if (pers[i].Login == tbLoginConnex.Text && pers[i].Mdp == tbMdpConnex.Text && pers[i].Type == "User") { verificationus = true; }
-                    }
+        }
 
-                    if (verificationus)
-                    {
-                        FormUtil.InstanceFormUtil.Utilisateur =(Utilisateur) _personnerepo.TrouverPersonne(tbLoginConnex.Text, tbMdpConnex.Text, "User");
-                        FormUtil.InstanceFormUtil.ShowDialog();
-                    }
-                    else{ MessageBox.Show("Login / mot de passe erroné ou mauvais statut sélectionné");}
-
-                }
-
-                }
-                if (rbUserCrea.Checked == true)
-                {
-                    bool verif = _personnerepo.PresentBDD(tbLoginCrea.Text);
-                    if (verif == true && rbUserCrea.Checked == true) { MessageBox.Show("Veuillez choisir un autre login, celui-ci est déjà utilisé"); }
-                    else
-                    {
-                        Personne utilisateur = new Utilisateur(tbPseudo.Text, "User", tbLoginCrea.Text, tbMdpCrea.Text);
-                        _personnerepo.Save(utilisateur);
-
-                        FormUtil.InstanceFormUtil.Utilisateur = (Utilisateur)utilisateur;
-                        FormUtil.InstanceFormUtil.ShowDialog();
-                    }
-                }
+        //Initialisation des champs
+        private void InitialiseChamps()
+        {
             rbAdminConnex.Checked = false;
             rbAdminCrea.Checked = false;
             rbUserConnex.Checked = false;
@@ -123,10 +115,9 @@ namespace App
             tbPseudo.Text = null;
             tbMdpConnex.Text = null;
             tbMdpCrea.Text = null;
-            btnValider.Visible=false;
-
-            }
-       
+            btnValider.Visible = false;
+        }
+        //Affichage connexion
         private void btnConnexion_Click(object sender, EventArgs e)
         {
             // fait apparaître la group box correspondante
@@ -134,23 +125,22 @@ namespace App
             gbConnexion.Visible = true;
             btnCreation.BackColor = Color.LightGray;
             btnConnexion.BackColor = Color.PaleGreen;
-
-
         }
+
+        //Affichage création
         private void btnCreation_Click(object sender, EventArgs e)
         {
             gbConnexion.Visible = true;
             gbCreation.Visible = true;
             btnConnexion.BackColor = Color.LightGray;
             btnCreation.BackColor = Color.PeachPuff;
-
         }
 
+        // Modification des statuts
         private void rbUserConnex_CheckedChanged(object sender, EventArgs e)
         {
             CocheStatut = true;
             AffichageRefresh();
-
         }
 
         private void rbAdminConnex_CheckedChanged(object sender, EventArgs e)
@@ -171,6 +161,7 @@ namespace App
             AffichageRefresh();
         }
 
+        //Ecriture du login création
         private void tbLoginCrea_TextChanged(object sender, EventArgs e)
         {
             if (tbLoginCrea.Text != "")
@@ -180,7 +171,7 @@ namespace App
             }
            
         }
-
+        //Ecriture du mdp création
         private void tbMdpCrea_TextChanged(object sender, EventArgs e)
         {
             if (tbMdpCrea.Text != "")
@@ -191,6 +182,7 @@ namespace App
             
         }
 
+        //Ecriture du login connexion
         private void tbLoginConnex_TextChanged(object sender, EventArgs e)
         {
             if (tbLoginConnex.Text != "")
@@ -199,9 +191,9 @@ namespace App
                 AffichageRefresh();
             }
             else { RempliLogin = false; }
-            
         }
 
+        //Ecriture du mdp connextion
         private void tbMdpConnex_TextChanged(object sender, EventArgs e)
         {
             if (tbMdpConnex.Text != "")
@@ -210,9 +202,6 @@ namespace App
                 AffichageRefresh();
             }
             else { RempliMdp = false; }
-            
         }
-
-      
     }
 }

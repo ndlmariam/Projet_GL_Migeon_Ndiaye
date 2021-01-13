@@ -11,18 +11,15 @@ namespace Domain
       
         public virtual List<Album> ListAlbums { get; set; }
         public virtual List<Album> ListSouhaits { get; set; }
-      
         public virtual List<Action> Voeux { get; set; }
         public virtual List<Action> Achats { get; set; }
         public virtual IList<Action> ActionsUser { get; set; }
-
-
 
         public Utilisateur() {
             Voeux = new List<Action>();
             ListSouhaits = new List<Album>();
             ActionsUser = new List<Action>();
-            ListAlbums = new List<Domain.Album>();
+            ListAlbums = new List<Album>();
             this.Type = "User";
         }
         
@@ -33,16 +30,10 @@ namespace Domain
             Login = login;
             Mdp = mdp;
             ListSouhaits = new List<Album>();
-            ListAlbums = new List<Domain.Album>();
+            ListAlbums = new List<Album>();
             Voeux = new List<Action>();
              Achats = new List<Action>();
             ActionsUser = new List<Action>();
-
         }
-
-     
-
-      
     }
-
 }

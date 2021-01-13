@@ -19,6 +19,8 @@ namespace DAL
             Session.SaveOrUpdate(personne);
             Session.Flush();
         }
+
+        //Vérifie que le login et le mot de passe entrés correspondent
         public bool CompareMdp(string login, string mdp)
         {
             string requete = "select Count(Login),Count(Mdp) from Personne pers where pers.Login = ? and pers.Mdp = ? ";
@@ -32,6 +34,8 @@ namespace DAL
             }
             return false;
         }
+
+        //Renvoie une personne dont le login, mdp et type sont entrés en paramètres
         public Personne TrouverPersonne(string login, string mdp,string type)
         {
             Personne p;
@@ -42,13 +46,14 @@ namespace DAL
             foreach (Personne row in result) { p = row; }
             return p;
         }
+
+        //Etudier si un login est déjà présent ou non dans la BDD
         public bool PresentBDD(string login)
         {
             string requete = "select Count(Login),Count(Mdp) from Personne pers where pers.Login = ?";
             var result = Session.CreateQuery(requete).SetString(0, login).Enumerable<object[]>();
             foreach (object[] row in result)
             {
-
                 int nblogin = int.Parse(row[0].ToString());
                 if (nblogin > 0)
                 {
@@ -59,21 +64,5 @@ namespace DAL
             }
             return false;
         }
-        /*  public  IList<Domain.Action> GetWishes(Utilisateur user)
-            { // listes des actions de l'utilisateur qui correspondent à un ajout de voeux
-                string requete = "select a from Action a where Nom = ? and Personne.ID = ?";
-               IList <Domain.Action> Voeux = Session.CreateQuery(requete).SetString(0, "AjoutSouhait").SetInt32(1, user.ID).List<Domain.Action>();
-                /* foreach (Domain.Action row in result)
-                 {
-
-                     int idaction = row.idAction;
-                     Album album = _albrepo.GetAlbumByActionID(idaction);
-                     user.ListSouhaits.Add(album);
-
-
-
-                 }
-                return Voeux;
-            }*/
     }
 }
