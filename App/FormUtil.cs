@@ -392,9 +392,9 @@ namespace App
                 }
                 NextNecessary = true;
                 if (Numero > 0) { PreviousNecessary = true; }
-                if (lblAlbums.ForeColor == Color.Black || lblMarché.ForeColor == Color.Black) { couleurBtn(AlbumsDuMarché, Numero, btnNext, btnPrevious); }
-                else { couleurBtn(AlbumsDuMarché, Numero, btnNextSouhaits, btnPerviousSouhaits); }
             }
+            if (lblAlbums.ForeColor == Color.Black || lblMarché.ForeColor == Color.Black) { couleurBtn(AlbumsDuMarché, Numero, btnNext, btnPrevious); }
+            else { couleurBtn(AlbumsDuMarché, Numero, btnNextSouhaits, btnPerviousSouhaits); }
         }
         //Mise à jour carrousel de la collection
         private void RefreshCollection()
