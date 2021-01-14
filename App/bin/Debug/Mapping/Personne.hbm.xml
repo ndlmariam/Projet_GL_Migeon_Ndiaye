@@ -4,7 +4,7 @@ assembly="Domain"
 namespace="Domain">
 <class name="Personne" table="personne">
   <!-- Mapping des propriétés de la classe -->
-  <id name="ID" column="personne_id" type="int" >
+  <id name="ID" column="person_id" type="int" >
     <generator class="native"></generator>
   </id>
   <discriminator column ="type" type ="String"/>
@@ -23,14 +23,14 @@ namespace="Domain">
 
   <subclass name ="Utilisateur" discriminator-value="User">
     <bag name ="ActionsUser" inverse="true" lazy ="true">
-      <key column ="personne_id"/>
+      <key column ="person_id"/>
       <one-to-many class ="Action"/>
     </bag>
   
 </subclass>
 <subclass name ="Administrateur" discriminator-value="Admin">
   <bag name ="AdminActions" inverse="true" lazy ="true">
-    <key column ="personne_id"/>
+    <key column ="person_id"/>
     <one-to-many class ="Action"/>
     </bag>
   

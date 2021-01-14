@@ -374,7 +374,7 @@ namespace App
                 pb.Image = Image.FromFile(Path.Combine(cheminacces, a1.Couverture));
                 lbl.Text = a1.Nom;
             }
-            else { lbl.Text = a1.Nom; }
+            else { lbl.Text = a1.Nom; pb.Image = null; }
         }
         private void RefreshCarrousel(List<Album> AlbumsDuMarché, bool NextNecessary, bool PreviousNecessary, int Numero, PictureBox pbAlbum1, PictureBox pbAlbum2, PictureBox pbAlbum3, PictureBox pbAlbum4, Label lblTitre1, Label lblTitre2, Label lblTitre3, Label lblTitre4)
         {
@@ -483,6 +483,7 @@ namespace App
             {
                 pbCouvertureDetail.Image = Image.FromFile(Path.Combine(cheminacces, SelectedAlbum.Couverture));
             }
+            else { pbCouvertureDetail.Image = null; }
             lblTitreDetail.Text = SelectedAlbum.Nom;
             lblSerie.Text = SelectedAlbum.Serie;
             lblAuteur.Text = SelectedAlbum.Auteur;

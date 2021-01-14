@@ -1,31 +1,37 @@
 
 drop table if exists album;
 drop table if exists personne;
-drop table if exists marché;
+drop table if exists action;
 
-CREATE TABLE album (
-  album_id int(11) NOT NULL primary key auto_increment,
-  nom varchar(100)  NOT NULL,
-  serie varchar(100) ,
-  auteurs varchar(100)  NOT NULL,
-  categorie varchar(100)  NOT NULL,
-  genre varchar(100)  NOT NULL,
-  editeur varchar(100)  NOT NULL,
-  couverture varchar(800) 
+create table album (
+  album_id int(11) not null primary key auto_increment,
+  nom varchar(255)  not null,
+  serie varchar(255) not null ,
+  auteurs varchar(255)  not null,
+  categorie varchar(255)  not null,
+  genre varchar(255)  not null,
+  editeur varchar(255) not null,
+  couverture varchar(255) ,
+  resume mediumtext  not null
 ) ;
 
-CREATE TABLE personne (
-  person_id int(11) NOT NULL primary key auto_increment,
-  nom int(11) NOT NULL,
-  type varchar(100)  NOT NULL,
-  login varchar(100)  NOT NULL,
-  mdp varchar(100)  NOT NULL
+create table personne (
+  person_id int(11) not null primary key auto_increment,
+  type varchar(255)  not null,
+  nom varchar(255) not null,
+  login varchar(255)  not null,
+  mdp varchar(255)  not null
 ) ;
 
-CREATE TABLE marché (
-  action_id int(11) NOT NULL primary key auto_increment,
-  action_nom varchar(100) NOT NULL,
-  personne_id int(11) DEFAULT NULL,
-  album_id int(11) NOT NULL,
-  date date NOT NULL
+create table action (
+  action_id int(11) not null primary key auto_increment,
+  action_nom varchar(255) not null,
+  date date not null,
+  album_id integer not null,
+  person_id integer not null,
+  foreign key (album_id) references album(album_id),
+  foreign key (person_id) references personne(person_id)
 ) ;
+
+
+

@@ -17,7 +17,6 @@ namespace DALTests
         public void Initialize()
         {
             TestRepository.InitDB();
-
             _actionRepository = new ActionRepository();
             _personneRepo = new PersonneRepository();
             _albumRepository = new AlbumRepository();

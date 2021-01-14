@@ -14,7 +14,7 @@ namespace="Domain">
   <!-- Une action concerne un seul album -->
   <many-to-one name ="Album" class ="Album" column="album_id"  />
   <!-- Plusieurs actions possibles sur le marché pour une personne -->
-  <many-to-one name ="Personne" class="Personne" column="personne_id"  />
+  <many-to-one name ="Personne" class="Personne" column="person_id"  />
 
 </class>
 </hibernate-mapping>
