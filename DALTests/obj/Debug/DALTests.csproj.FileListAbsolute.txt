@@ -39,7 +39,6 @@ C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Microsoft.
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
-C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Mapping\Album.hbm.xml
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DALTests\bin\Debug\Mapping\Personne.hbm.xml

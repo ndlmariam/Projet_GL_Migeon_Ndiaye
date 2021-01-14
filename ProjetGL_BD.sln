@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "App\App.csproj", "{F0AFF6F6-FF1F-4A32-872B-59FF0C48F342}"
 EndProject
@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{221E1A42-1C04-406D-8D71-67AECD6F6103}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainTests", "DomainTests\DomainTests.csproj", "{E54E7FA1-880C-4AA5-B5F6-020590B564F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALTests", "TESTS\DALTests.csproj", "{57EF4739-581B-4641-ADC0-3E177FBAC116}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALTests", "DALTests\DALTests.csproj", "{B926F6F8-4AB7-4A24-BDB6-F2BF1210DB80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainTests", "TESTSDOMAIN\DomainTests.csproj", "{D10CDAEE-D53E-4031-8F2A-2C1A43BA9060}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{221E1A42-1C04-406D-8D71-67AECD6F6103}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{221E1A42-1C04-406D-8D71-67AECD6F6103}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{221E1A42-1C04-406D-8D71-67AECD6F6103}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E54E7FA1-880C-4AA5-B5F6-020590B564F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E54E7FA1-880C-4AA5-B5F6-020590B564F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E54E7FA1-880C-4AA5-B5F6-020590B564F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E54E7FA1-880C-4AA5-B5F6-020590B564F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B926F6F8-4AB7-4A24-BDB6-F2BF1210DB80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B926F6F8-4AB7-4A24-BDB6-F2BF1210DB80}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B926F6F8-4AB7-4A24-BDB6-F2BF1210DB80}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B926F6F8-4AB7-4A24-BDB6-F2BF1210DB80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57EF4739-581B-4641-ADC0-3E177FBAC116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57EF4739-581B-4641-ADC0-3E177FBAC116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57EF4739-581B-4641-ADC0-3E177FBAC116}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57EF4739-581B-4641-ADC0-3E177FBAC116}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D10CDAEE-D53E-4031-8F2A-2C1A43BA9060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D10CDAEE-D53E-4031-8F2A-2C1A43BA9060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D10CDAEE-D53E-4031-8F2A-2C1A43BA9060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D10CDAEE-D53E-4031-8F2A-2C1A43BA9060}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

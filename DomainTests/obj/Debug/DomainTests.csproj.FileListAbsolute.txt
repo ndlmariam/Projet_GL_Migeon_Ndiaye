@@ -36,7 +36,6 @@ C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DomainTests\bin
 C:\Users\ndiay\OneDrive\Documents\GitHub\Projet_GL_Migeon_Ndiaye\DomainTests\bin\Debug\Remotion.Linq.EagerFetching.xml
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DomainTests\bin\Debug\MySql.Data.dll
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DomainTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
-C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DomainTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DomainTests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DomainTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\amigeon\Documents\Projet_GL_Migeon_Ndiaye\DomainTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
