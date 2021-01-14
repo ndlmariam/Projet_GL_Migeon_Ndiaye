@@ -17,19 +17,20 @@ namespace DomainTests
         private string _categorie = "";
         private string _genre = "";
         private string _editeur = "";
+        private string _auteur = "";
         private Domain.Action _action;
 
         [TestInitialize()]
         public void Initialize()
         {
-            _album = new Album(_nom, _serie, _couverture, _categorie, _genre, _editeur);
+            _album = new Album(_nom, _serie, _couverture, _categorie, _genre, _editeur,_auteur);
         }
 
         [TestMethod]
 
         public void TestAdmin_Creation()
         {
-            var album = new Album("L'étoile mystérieuse", "Les Aventures de Tintin", "", "BD", "Aventure", "Casterman");
+            var album = new Album("L'étoile mystérieuse", "Les Aventures de Tintin", "", "BD", "Aventure", "Casterman","Auteur");
             Assert.AreEqual(album.Nom, "L'étoile mystérieuse");
 
         }

@@ -135,6 +135,7 @@ namespace App
         private void affichageAlbums()
         {
             NumeroAlbum = 0;
+            gbListeAlbums.BackColor = Color.Thistle;
             Recherche = false;
             btnFermerPopUp.PerformClick();
             initialiseAffichageMarche();

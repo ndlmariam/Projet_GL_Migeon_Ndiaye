@@ -24,7 +24,7 @@ namespace DomainTests
         public void Initialize()
         {
             
-            _album = new Album("AlbumNom", "Blabla", "cover", "Lacategorie", "Fantastique", "MoietToi");
+            _album = new Album("AlbumNom", "Blabla", "cover", "Lacategorie", "Fantastique", "MoietToi","Auteur");
             //ListAlbums.Add(_album);
             _action = new Domain.Action(_nom, _personne,_album);
             //Album _album2 = new Album("PanierNom", "PanierBlabla", "Paniercover", "PanierLacategorie", "Fantastique", "PanierMoietToi");
@@ -36,7 +36,7 @@ namespace DomainTests
 
         public void TestAction_Creation()
         {
-            _album = new Album("AlbumNom", "Blabla", "cover", "Lacategorie", "Fantastique", "MoietToi");
+            _album = new Album("AlbumNom", "Blabla", "cover", "Lacategorie", "Fantastique", "MoietToi","Auteur");
             var personne = new Administrateur("Jean", "Admin", "jp", "pj");
             var action = new Domain.Action("AjoutMarché", personne, _album);
             Assert.AreEqual(action.Personne.Nom, "Jean");
