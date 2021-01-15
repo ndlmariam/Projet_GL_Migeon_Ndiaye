@@ -27,11 +27,11 @@ namespace DALTests
         public void TestActionRepo_GetAll()
         {
             var actions = _actionRepository.GetAll();
-            // 21 actions dans le jeu de données de test
-            Assert.AreEqual(21, actions.Count);
+            //  actions dans le jeu de données de test
+            Assert.AreEqual(27, actions.Count);
             var actual = actions.Select(action => action.Nom).ToList();
             // Nom des actions
-            var expected = new List<string> { "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjouterSouhait", "AjouterSouhait", "AjouterSouhait", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché" };
+            var expected = new List<string> { "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjouterSouhait", "AjouterSouhait", "AjouterSouhait", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché", "AjoutMarché" };
             CollectionAssert.AreEquivalent(actual, expected);
         }
 

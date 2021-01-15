@@ -25,8 +25,8 @@ namespace DALTests
         public void TestAlbumRepo_GetAll()
         {
             var albums = _albumRepository.GetAll();
-            // 18 albums dans le jeu de données de test
-            Assert.AreEqual(18, albums.Count);
+            //  albums dans le jeu de données de test
+            Assert.AreEqual(24, albums.Count);
         }
 
         //Test de sauvegarde d'un nouvel album

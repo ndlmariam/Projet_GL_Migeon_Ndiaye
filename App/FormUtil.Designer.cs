@@ -734,6 +734,7 @@
             this.tbResumé.Multiline = true;
             this.tbResumé.Name = "tbResumé";
             this.tbResumé.ReadOnly = true;
+            this.tbResumé.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbResumé.Size = new System.Drawing.Size(219, 184);
             this.tbResumé.TabIndex = 5;
             // 
@@ -1207,6 +1208,7 @@
             this.Controls.Add(this.tbGenre);
             this.Controls.Add(this.tbExplications);
             this.Controls.Add(this.lblChamp);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormUtil";

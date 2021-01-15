@@ -52,3 +52,29 @@ C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\obj\Debug\D
 C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\obj\Debug\DomainTests.csproj.CopyComplete
 C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\obj\Debug\TESTSDOMAIN.dll
 C:\Users\Mariam\Documents\GitHub\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\obj\Debug\TESTSDOMAIN.pdb
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\MySql.Data.dll
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\Mapping\Album.hbm.xml
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\Mapping\Personne.hbm.xml
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\Mapping\Action.hbm.xml
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\hibernate.cfg.xml
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\TESTSDOMAIN.dll
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\TESTSDOMAIN.pdb
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\Antlr3.Runtime.dll
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\DAL.dll
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\Domain.dll
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\Iesi.Collections.dll
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\NHibernate.dll
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\Remotion.Linq.dll
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\Remotion.Linq.EagerFetching.dll
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\DAL.pdb
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\Domain.pdb
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\Antlr3.Runtime.xml
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\Iesi.Collections.xml
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\NHibernate.xml
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\Remotion.Linq.xml
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\Remotion.Linq.EagerFetching.xml
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\bin\Debug\fr\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\obj\Debug\DomainTests.csprojResolveAssemblyReference.cache
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\obj\Debug\TESTSDOMAIN.dll
+C:\Users\Agathe Sauvage\Documents\Nouveau dossier\fin\Projet_GL_Migeon_Ndiaye\TESTSDOMAIN\obj\Debug\TESTSDOMAIN.pdb
